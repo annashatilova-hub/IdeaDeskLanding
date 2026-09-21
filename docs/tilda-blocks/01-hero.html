@@ -9,7 +9,7 @@
     box-sizing: border-box;
     width: 100%;
     background: linear-gradient(135deg, #f4f7ff 0%, #e8efff 45%, #dce8ff 100%);
-    padding: 72px 24px 88px;
+    padding: 64px 24px 80px;
     position: relative;
     overflow: hidden;
   }
@@ -23,18 +23,18 @@
     pointer-events: none;
   }
   .tg-hero-inner {
-    max-width: 1160px;
+    max-width: 1240px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.25fr;
-    gap: 36px;
+    grid-template-columns: minmax(280px, 0.82fr) minmax(420px, 1.45fr);
+    gap: 32px 28px;
     align-items: center;
     position: relative;
     z-index: 1;
   }
   .tg-hero-title {
     margin: 0 0 18px;
-    font-size: clamp(32px, 4.5vw, 52px);
+    font-size: clamp(32px, 4.2vw, 50px);
     line-height: 1.08;
     font-weight: 800;
     letter-spacing: -0.03em;
@@ -51,7 +51,7 @@
     font-size: 20px;
     line-height: 1.65;
     color: var(--tg-muted);
-    max-width: 540px;
+    max-width: 480px;
   }
   .tg-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
   .tg-btn {
@@ -78,70 +78,96 @@
   }
 
   .tg-hero-laptop-scene {
-    perspective: 1800px;
-    padding: 8px 0 28px;
     display: flex;
     justify-content: center;
+    padding: 4px 0 8px;
   }
   .tg-laptop {
     width: 100%;
-    max-width: 640px;
-    transform: rotateY(-12deg) rotateX(7deg);
-    transform-style: preserve-3d;
-    filter: drop-shadow(0 28px 48px rgba(15, 23, 42, 0.18));
+    max-width: 780px;
+    filter: drop-shadow(0 22px 40px rgba(15, 23, 42, 0.16));
   }
-  .tg-laptop-screen-shell {
-    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
-    border-radius: 16px 16px 0 0;
-    padding: 12px 12px 0;
-    border: 1px solid #334155;
+  .tg-laptop-lid {
+    background: #1c1c1e;
+    border-radius: 14px 14px 0 0;
+    padding: 14px 12px 0;
+    border: 1px solid #2c2c2e;
+    border-bottom: none;
   }
   .tg-laptop-camera {
-    width: 8px;
-    height: 8px;
-    margin: 0 auto 6px;
+    width: 7px;
+    height: 7px;
+    margin: 0 auto 8px;
     border-radius: 50%;
-    background: #334155;
-    box-shadow: inset 0 0 0 2px #1e293b, 0 0 0 1px #475569;
+    background: radial-gradient(circle at 40% 35%, #4b5563 0%, #111827 70%);
   }
   .tg-laptop-display {
+    position: relative;
+    overflow: hidden;
     background: #f4f6fb;
     border-radius: 4px 4px 0 0;
-    overflow: hidden;
-    line-height: 0;
+    aspect-ratio: 16 / 10.2;
   }
   .tg-laptop-display img {
-    display: block;
-    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 168%;
+    max-width: none;
     height: auto;
+    display: block;
   }
-  .tg-laptop-base {
-    height: 14px;
-    margin: 0 10%;
-    background: linear-gradient(180deg, #cbd5e1, #64748b);
-    border-radius: 0 0 12px 12px;
-    box-shadow: 0 6px 12px rgba(15, 23, 42, 0.15);
+  .tg-laptop-hinge {
+    height: 6px;
+    background: linear-gradient(180deg, #3f3f46, #18181b);
   }
-  .tg-laptop-notch {
-    width: 18%;
+  .tg-laptop-deck {
+    position: relative;
+    height: 22px;
+    background: linear-gradient(180deg, #e7e7ea 0%, #c9c9cf 45%, #b4b4bb 100%);
+    border-radius: 0 0 18px 18px;
+    border: 1px solid #c4c4cc;
+    border-top: none;
+  }
+  .tg-laptop-deck::before {
+    content: "";
+    position: absolute;
+    left: -3.5%;
+    right: -3.5%;
+    top: 0;
+    height: 10px;
+    background: linear-gradient(180deg, #d8d8de, #b8b8c0);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+  }
+  .tg-laptop-deck::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    width: 72px;
     height: 5px;
-    margin: 0 auto 2px;
-    background: #475569;
+    transform: translateX(-50%);
+    background: #9ca3af;
     border-radius: 0 0 4px 4px;
+    z-index: 1;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 960px) {
     .tg-hero-inner { grid-template-columns: 1fr; gap: 36px; }
-    .tg-hero-wrap { padding: 64px 24px 72px; }
-    .tg-laptop { transform: rotateY(-6deg) rotateX(4deg); max-width: 100%; }
+    .tg-hero-wrap { padding: 56px 20px 64px; }
+    .tg-laptop { max-width: 100%; }
+    .tg-laptop-display img { width: 155%; }
   }
   @media (max-width: 560px) {
-    .tg-hero-wrap { padding: 72px 22px 84px; }
+    .tg-hero-wrap { padding: 64px 18px 72px; }
     .tg-hero-title { font-size: clamp(30px, 8.5vw, 40px); }
     .tg-hero-sub { font-size: 18px; }
     .tg-hero-actions { flex-direction: column; }
     .tg-hero-actions .tg-btn { width: 100%; }
-    .tg-laptop { transform: none; }
+    .tg-laptop-display { aspect-ratio: 16 / 11; }
+    .tg-laptop-display img { width: 210%; }
+    .tg-laptop-lid { padding: 10px 8px 0; }
   }
 </style>
 
@@ -158,14 +184,14 @@
 
     <div class="tg-hero-laptop-scene">
       <div class="tg-laptop">
-        <div class="tg-laptop-screen-shell">
+        <div class="tg-laptop-lid">
           <div class="tg-laptop-camera"></div>
           <div class="tg-laptop-display">
-            <img src="https://kolomoets-netizen.github.io/Link/assets/hero-crm-kanban.png" alt="Канбан-воронка сделок iStockLink: новые закупки, подача предложения, заключение контракта">
+            <img src="https://kolomoets-netizen.github.io/Link/assets/hero-crm-kanban.png" alt="Канбан-воронка сделок iStockLink">
           </div>
         </div>
-        <div class="tg-laptop-notch"></div>
-        <div class="tg-laptop-base"></div>
+        <div class="tg-laptop-hinge"></div>
+        <div class="tg-laptop-deck"></div>
       </div>
     </div>
   </div>
