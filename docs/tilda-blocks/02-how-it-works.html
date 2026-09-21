@@ -1,4 +1,4 @@
-<!-- iStockLink T123 · 02-how-it-works.html · build 72ac5bc · 2026-09-21 -->
+<!-- iStockLink T123 · 02-how-it-works.html · build 2042a7f · 2026-09-21 -->
 <!-- Tilda block: How it works (animated flow) -->
 <style>
   .tg-how-wrap {
@@ -54,12 +54,15 @@
   }
   .tg-flow-board {
     position: relative;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
     min-height: 200px;
     margin-left: 28px;
   }
+  .tg-flow-cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+  .tg-flow-col-wrap { min-width: 0; }
   .tg-flow-col-label {
     font-size: 11px;
     font-weight: 800;
@@ -81,8 +84,8 @@
   .tg-flow-card {
     position: absolute;
     left: 0;
-    top: 38px;
-    width: calc(25% - 12px);
+    top: 28px;
+    width: calc(25% - 9px);
     z-index: 3;
     background: #fff;
     border-radius: 12px;
