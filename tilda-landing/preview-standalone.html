@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta name="build" content="9ad3545">
+<meta name="build" content="49d2c76">
 <title>iStockLink</title>
 <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
-<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=9ad3545">
-<link rel="stylesheet" href="assets/enhancements.css?v=9ad3545">
+<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=49d2c76">
+<link rel="stylesheet" href="assets/enhancements.css?v=49d2c76">
 <style>
   body{margin:0}
   .tg-preview-bar{
@@ -21,7 +21,7 @@
 </style>
 </head>
 <body>
-<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка 2026-09-21 (9ad3545) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
+<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка 2026-09-21 (49d2c76) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
 <!-- Tilda block: Hero -->
 <style>
   .tg-hero-wrap {
@@ -980,6 +980,11 @@
     border: 1px solid #e8edf5;
     border-radius: 16px;
     padding: 24px 20px;
+    height: 100%;
+  }
+  .tg-step-card--with-cta {
+    display: flex;
+    flex-direction: column;
   }
   .tg-step-num {
     width: 32px; height: 32px;
@@ -995,7 +1000,8 @@
   .tg-step-text { font-size: 17px; line-height: 1.55; color: #64748b; margin: 0; }
   .tg-step-link {
     display: inline-block;
-    margin-top: 14px;
+    margin-top: auto;
+    padding-top: 16px;
     padding: 10px 18px;
     border-radius: 999px;
     background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
@@ -1128,7 +1134,7 @@
     </div>
 
     <div class="tg-steps-row">
-      <div class="tg-step-card">
+      <div class="tg-step-card tg-step-card--with-cta">
         <div class="tg-step-num">1</div>
         <h3 class="tg-step-title">Подключите агрегаторы</h3>
         <p class="tg-step-text">Добавьте ключ агрегатора — настройка занимает пару минут.</p>
@@ -1425,64 +1431,60 @@
     text-transform: uppercase;
   }
   .tg-bitrix-title {
-    margin: 0 0 12px;
+    margin: 0 0 32px;
     font-size: clamp(26px, 3.2vw, 36px);
     font-weight: 800;
     letter-spacing: -0.02em;
     line-height: 1.15;
     color: var(--tg-text);
   }
-  .tg-bitrix-sub {
-    margin: 0 0 28px;
-    max-width: 640px;
-    font-size: 18px;
-    line-height: 1.6;
-    color: var(--tg-muted);
-  }
   .tg-bitrix-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-    margin-bottom: 28px;
+    gap: 20px;
+    margin-bottom: 36px;
   }
   .tg-bitrix-item {
-    border-radius: 16px;
+    border-radius: 18px;
     border: 1px solid #e8edf5;
     background: #f8faff;
-    padding: 20px 18px;
+    padding: 28px 22px;
   }
   .tg-bitrix-item strong {
     display: block;
-    margin-bottom: 8px;
-    font-size: 17px;
+    margin-bottom: 12px;
+    font-size: clamp(20px, 2.2vw, 24px);
     font-weight: 800;
     color: var(--tg-text);
+    line-height: 1.2;
   }
   .tg-bitrix-item span {
-    font-size: 15px;
+    font-size: clamp(16px, 1.6vw, 18px);
     line-height: 1.55;
     color: var(--tg-muted);
   }
   .tg-bitrix-highlight {
     color: var(--tg-primary);
-    font-weight: 700;
+    font-weight: 800;
+  }
+  .tg-bitrix-cta-row {
+    text-align: center;
   }
   .tg-bitrix-cta {
     display: inline-block;
-    padding: 12px 22px;
+    padding: 16px 32px;
     border-radius: 999px;
     background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
     color: #fff !important;
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 17px;
+    font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 8px 24px rgba(28, 80, 222, 0.28);
+    box-shadow: 0 10px 28px rgba(28, 80, 222, 0.32);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
-  .tg-bitrix-note {
-    margin: 14px 0 0;
-    font-size: 13px;
-    line-height: 1.5;
-    color: #94a3b8;
+  .tg-bitrix-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 12px 32px rgba(28, 80, 222, 0.38);
   }
   @media (max-width: 900px) {
     .tg-bitrix-grid { grid-template-columns: 1fr; }
@@ -1490,7 +1492,7 @@
   }
   @media (max-width: 560px) {
     .tg-bitrix-wrap { padding: 56px 20px; }
-    .tg-bitrix-sub { font-size: 17px; }
+    .tg-bitrix-item { padding: 24px 20px; }
   }
 </style>
 
@@ -1499,13 +1501,10 @@
     <div class="tg-bitrix-card">
       <span class="tg-bitrix-badge">Спецусловия</span>
       <h2 class="tg-bitrix-title">Переход с Битрикс24 на iStockLink</h2>
-      <p class="tg-bitrix-sub">
-        Если закупки и тендеры живут в CRM с доработками и приложениями — можно перейти на платформу под ваш процесс без долгого внедрения.
-      </p>
       <div class="tg-bitrix-grid">
         <div class="tg-bitrix-item">
           <strong>За 1 день</strong>
-          <span>Подключите агрегаторы и начните вести воронку — без проекта на месяцы.</span>
+          <span>Настроим CRM систему под ваш бизнес процесс</span>
         </div>
         <div class="tg-bitrix-item">
           <strong>Бесплатный старт</strong>
@@ -1513,11 +1512,12 @@
         </div>
         <div class="tg-bitrix-item">
           <strong><span class="tg-bitrix-highlight">−50%</span> на год</strong>
-          <span>При переходе с Битрикс24 — скидка 50% на годовую подписку iStockLink (по условиям акции).</span>
+          <span>При переходе с Битрикс24 — скидка 50% на годовую подписку.</span>
         </div>
       </div>
-      <a class="tg-bitrix-cta" href="#demo">Получить условия перехода</a>
-      <p class="tg-bitrix-note">Укажите при обращении, что переходите с Битрикс24 — менеджер подтвердит скидку и поможет с запуском.</p>
+      <div class="tg-bitrix-cta-row">
+        <a class="tg-bitrix-cta" href="#demo">Получить условия перехода</a>
+      </div>
     </div>
   </div>
 </div>
@@ -2492,8 +2492,8 @@
     </div>
   </div>
 </div>
-<script src="assets/vendor/lenis/lenis.min.js?v=9ad3545"></script>
-<script src="assets/vendor/aos/aos.js?v=9ad3545"></script>
-<script src="assets/enhancements.js?v=9ad3545"></script>
+<script src="assets/vendor/lenis/lenis.min.js?v=49d2c76"></script>
+<script src="assets/vendor/aos/aos.js?v=49d2c76"></script>
+<script src="assets/enhancements.js?v=49d2c76"></script>
 </body>
 </html>
