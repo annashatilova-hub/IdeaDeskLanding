@@ -216,6 +216,24 @@
   }
   .tg-step-title { font-size: 18px; font-weight: 700; color: var(--tg-text); margin: 0 0 8px; }
   .tg-step-text { font-size: 17px; line-height: 1.55; color: #64748b; margin: 0; }
+  .tg-step-link {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(28, 80, 222, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tg-step-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(28, 80, 222, 0.35);
+  }
 
   @media (max-width: 960px) {
     .tg-diagram-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -337,6 +355,7 @@
         <div class="tg-step-num">1</div>
         <h3 class="tg-step-title">Подключите агрегаторы</h3>
         <p class="tg-step-text">Добавьте ключ агрегатора — настройка занимает пару минут.</p>
+        <a class="tg-step-link" href="https://kontur.ru/api-zakupki?p=w55732&amp;from=ref_cabinet" target="_blank" rel="noopener noreferrer">Подключить агрегатор</a>
       </div>
       <div class="tg-step-card">
         <div class="tg-step-num">2</div>

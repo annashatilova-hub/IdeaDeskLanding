@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta name="build" content="67e9b97">
+<meta name="build" content="9ad3545">
 <title>iStockLink</title>
 <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
-<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=67e9b97">
-<link rel="stylesheet" href="assets/enhancements.css?v=67e9b97">
+<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=9ad3545">
+<link rel="stylesheet" href="assets/enhancements.css?v=9ad3545">
 <style>
   body{margin:0}
   .tg-preview-bar{
@@ -21,7 +21,7 @@
 </style>
 </head>
 <body>
-<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка 2026-09-10 (67e9b97) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
+<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка 2026-09-21 (9ad3545) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
 <!-- Tilda block: Hero -->
 <style>
   .tg-hero-wrap {
@@ -993,6 +993,24 @@
   }
   .tg-step-title { font-size: 18px; font-weight: 700; color: var(--tg-text); margin: 0 0 8px; }
   .tg-step-text { font-size: 17px; line-height: 1.55; color: #64748b; margin: 0; }
+  .tg-step-link {
+    display: inline-block;
+    margin-top: 14px;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(28, 80, 222, 0.28);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .tg-step-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(28, 80, 222, 0.35);
+  }
 
   @media (max-width: 960px) {
     .tg-diagram-grid { grid-template-columns: 1fr; gap: 24px; }
@@ -1114,6 +1132,7 @@
         <div class="tg-step-num">1</div>
         <h3 class="tg-step-title">Подключите агрегаторы</h3>
         <p class="tg-step-text">Добавьте ключ агрегатора — настройка занимает пару минут.</p>
+        <a class="tg-step-link" href="https://kontur.ru/api-zakupki?p=w55732&amp;from=ref_cabinet" target="_blank" rel="noopener noreferrer">Подключить агрегатор</a>
       </div>
       <div class="tg-step-card">
         <div class="tg-step-num">2</div>
@@ -1327,7 +1346,7 @@
       margin-bottom: 6px;
     }
     .tg-compare-matrix-cell.crm::before {
-      content: "Обычная CRM";
+      content: "CRM (например, Битрикс24)";
       color: #94a3b8;
     }
     .tg-compare-matrix-cell.us::before {
@@ -1350,7 +1369,7 @@
     <div class="tg-compare-matrix">
       <div class="tg-compare-matrix-head">
         <div class="tg-compare-matrix-crit">Критерий</div>
-        <div class="tg-compare-matrix-col crm">Обычная CRM</div>
+        <div class="tg-compare-matrix-col crm">CRM (например, Битрикс24)</div>
         <div class="tg-compare-matrix-col us">iStockLink</div>
       </div>
       <div class="tg-compare-matrix-row highlight">
@@ -1368,6 +1387,137 @@
         <div class="tg-compare-matrix-cell crm">Закупки достраивают интеграторами и модулями</div>
         <div class="tg-compare-matrix-cell us">Агрегаторы, воронка и оцифровка КП из коробки<span class="tg-compare-win">всё под тендеры</span></div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Tilda block: переход с Битрикс24 -->
+<style>
+  .tg-bitrix-wrap {
+    --tg-primary: #1c50de;
+    --tg-text: #0f172a;
+    --tg-muted: #64748b;
+    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    background: linear-gradient(180deg, #f4f7ff 0%, #fff 100%);
+    padding: 72px 24px;
+  }
+  .tg-bitrix-wrap *, .tg-bitrix-wrap *::before, .tg-bitrix-wrap *::after { box-sizing: border-box; }
+  .tg-bitrix-inner { max-width: 1120px; margin: 0 auto; }
+  .tg-bitrix-card {
+    border-radius: 24px;
+    border: 1px solid rgba(28, 80, 222, 0.18);
+    background: #fff;
+    padding: 36px 32px;
+    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.06);
+  }
+  .tg-bitrix-badge {
+    display: inline-block;
+    margin-bottom: 14px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(28, 80, 222, 0.1);
+    color: var(--tg-primary);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .tg-bitrix-title {
+    margin: 0 0 12px;
+    font-size: clamp(26px, 3.2vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+    color: var(--tg-text);
+  }
+  .tg-bitrix-sub {
+    margin: 0 0 28px;
+    max-width: 640px;
+    font-size: 18px;
+    line-height: 1.6;
+    color: var(--tg-muted);
+  }
+  .tg-bitrix-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .tg-bitrix-item {
+    border-radius: 16px;
+    border: 1px solid #e8edf5;
+    background: #f8faff;
+    padding: 20px 18px;
+  }
+  .tg-bitrix-item strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--tg-text);
+  }
+  .tg-bitrix-item span {
+    font-size: 15px;
+    line-height: 1.55;
+    color: var(--tg-muted);
+  }
+  .tg-bitrix-highlight {
+    color: var(--tg-primary);
+    font-weight: 700;
+  }
+  .tg-bitrix-cta {
+    display: inline-block;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
+    color: #fff !important;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(28, 80, 222, 0.28);
+  }
+  .tg-bitrix-note {
+    margin: 14px 0 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #94a3b8;
+  }
+  @media (max-width: 900px) {
+    .tg-bitrix-grid { grid-template-columns: 1fr; }
+    .tg-bitrix-card { padding: 28px 22px; }
+  }
+  @media (max-width: 560px) {
+    .tg-bitrix-wrap { padding: 56px 20px; }
+    .tg-bitrix-sub { font-size: 17px; }
+  }
+</style>
+
+<div class="tg-bitrix-wrap" id="bitrix-switch">
+  <div class="tg-bitrix-inner">
+    <div class="tg-bitrix-card">
+      <span class="tg-bitrix-badge">Спецусловия</span>
+      <h2 class="tg-bitrix-title">Переход с Битрикс24 на iStockLink</h2>
+      <p class="tg-bitrix-sub">
+        Если закупки и тендеры живут в CRM с доработками и приложениями — можно перейти на платформу под ваш процесс без долгого внедрения.
+      </p>
+      <div class="tg-bitrix-grid">
+        <div class="tg-bitrix-item">
+          <strong>За 1 день</strong>
+          <span>Подключите агрегаторы и начните вести воронку — без проекта на месяцы.</span>
+        </div>
+        <div class="tg-bitrix-item">
+          <strong>Бесплатный старт</strong>
+          <span>14 дней полного доступа — оцените процесс до оплаты тарифа.</span>
+        </div>
+        <div class="tg-bitrix-item">
+          <strong><span class="tg-bitrix-highlight">−50%</span> на год</strong>
+          <span>При переходе с Битрикс24 — скидка 50% на годовую подписку iStockLink (по условиям акции).</span>
+        </div>
+      </div>
+      <a class="tg-bitrix-cta" href="#demo">Получить условия перехода</a>
+      <p class="tg-bitrix-note">Укажите при обращении, что переходите с Битрикс24 — менеджер подтвердит скидку и поможет с запуском.</p>
     </div>
   </div>
 </div>
@@ -2342,8 +2492,8 @@
     </div>
   </div>
 </div>
-<script src="assets/vendor/lenis/lenis.min.js?v=67e9b97"></script>
-<script src="assets/vendor/aos/aos.js?v=67e9b97"></script>
-<script src="assets/enhancements.js?v=67e9b97"></script>
+<script src="assets/vendor/lenis/lenis.min.js?v=9ad3545"></script>
+<script src="assets/vendor/aos/aos.js?v=9ad3545"></script>
+<script src="assets/enhancements.js?v=9ad3545"></script>
 </body>
 </html>

@@ -24,7 +24,8 @@ HTML-блоки для встраивания в Tilda через блок **T12
 | 3 | `07-crm-srm-kp.html` | Вся тендерная работа в iStockLink |
 | 3a | `08-kontur-search-widget.html` | Виджет Контур.Закупки (iframe) |
 | 4 | `02-how-it-works.html` | Как это работает |
-| 5 | `08-crm-compare.html` | Сравнение с обычной CRM |
+| 5 | `08-crm-compare.html` | Сравнение с CRM (например, Битрикс24) |
+| 5b | `14-bitrix-switch-promo.html` | Переход с Битрикс24: −50% на год, старт за день |
 | 6 | `11-pricing-value.html` | Стоимость: ценность, от 1 260 ₽, ссылка на тарифы |
 | 7 | `04-audience-pricing.html` | *(опционально)* три карточки тарифов с переключателем |
 | 8 | `06-director-case-proof.html` | Подтверждённый пример директора торговой компании |
@@ -103,6 +104,16 @@ https://github.com/kolomoets-netizen/Link/raw/main/tilda-landing/preview-standal
 **Логотипы:** лежат в `tilda-landing/assets/partners/` (+ `kontur.png` на GitHub Pages в `assets/`). **В Tilda:** можно оставить ссылки на `kolomoets-netizen.github.io/Link/assets/...` — они работают в T123. Для автономности загрузите те же файлы в **Контент сайта → Файлы**, скопируйте URL с `static.tildacdn.com` и замените `src` у каждого `<img>` в блоке.
 
 **Превью:** https://kolomoets-netizen.github.io/Link/preview-partners-grid.html
+
+## SEO страницы `/trading` (Title, Description, OG)
+
+Мета-теги **не в HTML-блоках** — только в Tilda: настройки страницы «Торговые компanies» → SEO. Подробно: [docs/tilda-trading-seo.md](../docs/tilda-trading-seo.md).
+
+## Блок «Переход с Битрикс24» (`14-bitrix-switch-promo.html`)
+
+**Куда ставить на `/trading`:** сразу после `08-crm-compare.html` (логично после сравнения с CRM).
+
+**Смысл:** оффер «за день», бесплатный период, **−50% на год** при переходе с Битрикс24. CTA ведёт на `#demo` — привяжите к вашей форме/якорю на Tilda.
 
 ## Блок «Поиск Контур» (`08-kontur-search-widget.html`)
 

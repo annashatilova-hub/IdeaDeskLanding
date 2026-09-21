@@ -25,6 +25,7 @@ const blocks = [
   '07-crm-srm-kp.html',
   '02-how-it-works.html',
   '08-crm-compare.html',
+  '14-bitrix-switch-promo.html',
   '11-pricing-value.html',
   '06-director-case-proof.html',
   '06-industrial-case-proof.html',
