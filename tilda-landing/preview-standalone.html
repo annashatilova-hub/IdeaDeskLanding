@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta name="build" content="b81fa1e">
+<meta name="build" content="8722f8c">
 <title>iStockLink</title>
 <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
-<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=b81fa1e">
-<link rel="stylesheet" href="assets/enhancements.css?v=b81fa1e">
+<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=8722f8c">
+<link rel="stylesheet" href="assets/enhancements.css?v=8722f8c">
 <style>
   body{margin:0}
   .tg-preview-bar{
@@ -21,7 +21,7 @@
 </style>
 </head>
 <body>
-<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка 2026-09-21 (b81fa1e) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
+<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка 2026-09-21 (8722f8c) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
 <!-- Tilda block: Hero -->
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&display=swap');
@@ -118,11 +118,13 @@
 
   .tg-hero-visual {
     position: relative;
-    padding: 8px 12px 0 0;
+    padding: 0;
+    --col2: 20.22%;
+    --col2w: 19%;
   }
   .tg-hero-blob {
     position: absolute;
-    left: 20.5%;
+    left: var(--col2);
     right: -6px;
     top: 72px;
     bottom: 0;
@@ -147,9 +149,9 @@
   }
   .tg-hero-col-glow {
     position: absolute;
-    left: 20.8%;
+    left: var(--col2);
     top: 26%;
-    width: 18.4%;
+    width: var(--col2w);
     height: 62%;
     border-radius: 16px;
     background: rgba(220, 232, 255, 0.35);
@@ -159,7 +161,7 @@
   }
   .tg-hero-pop {
     position: absolute;
-    left: 22%;
+    left: calc(var(--col2) + 8px);
     top: 29%;
     z-index: 3;
     pointer-events: none;
@@ -245,33 +247,46 @@
     position: relative;
     z-index: 1;
     display: grid;
-    grid-template-columns: 20.5% 1fr 1fr;
-    gap: 16px 20px;
+    grid-template-columns: var(--col2) var(--col2w) 1fr;
+    column-gap: 0;
     margin-top: 18px;
-    padding: 6px 16px 22px 10px;
+    padding: 8px 8px 24px 0;
   }
   .tg-hero-step {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 8px;
+    column-gap: 8px;
     align-items: start;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 600;
-    line-height: 1.4;
+    line-height: 1.35;
     color: #334155;
+    min-width: 0;
   }
+  .tg-hero-step:nth-child(1) { padding: 0 12px 0 12px; }
+  .tg-hero-step:nth-child(2) { padding-left: 10px; }
+  .tg-hero-step:nth-child(3) { padding-left: 16px; }
   .tg-hero-step b {
     color: #1c50de;
     font-weight: 800;
-    font-size: 17px;
-    line-height: 1.4;
+    font-size: 16px;
+    line-height: 1.35;
   }
-  .tg-hero-step span { font-weight: 600; }
+  .tg-hero-step span {
+    font-weight: 600;
+    min-width: 0;
+  }
+  .tg-hero-step span i {
+    display: block;
+    font-style: normal;
+    font-weight: 600;
+    white-space: nowrap;
+  }
 
   @media (max-width: 960px) {
     .tg-hero-inner { grid-template-columns: 1fr; gap: 32px; }
     .tg-hero-visual { padding: 0; }
-    .tg-hero-blob { left: 20%; width: auto; top: 40px; }
+    .tg-hero-blob { left: var(--col2); width: auto; top: 40px; }
   }
   @media (max-width: 560px) {
     .tg-hero-wrap { padding: 48px 18px 40px; }
@@ -321,9 +336,9 @@
         </div>
       </div>
       <div class="tg-hero-steps">
-        <div class="tg-hero-step"><b>1</b><span>Тендер приходит из<br>Контура или Seldon</span></div>
-        <div class="tg-hero-step"><b>2</b><span>Специалист ведёт заявку<br>по этапам</span></div>
-        <div class="tg-hero-step"><b>3</b><span>Контракт заключён, всё<br>в одном окне</span></div>
+        <div class="tg-hero-step"><b>1</b><span><i>Тендер приходит из</i><i>Контура или Seldon</i></span></div>
+        <div class="tg-hero-step"><b>2</b><span><i>Специалист ведёт заявку</i><i>по этапам</i></span></div>
+        <div class="tg-hero-step"><b>3</b><span><i>Контракт заключён, всё</i><i>в одном окне</i></span></div>
       </div>
     </div>
   </div>
@@ -2366,8 +2381,8 @@
     </div>
   </div>
 </div>
-<script src="assets/vendor/lenis/lenis.min.js?v=b81fa1e"></script>
-<script src="assets/vendor/aos/aos.js?v=b81fa1e"></script>
-<script src="assets/enhancements.js?v=b81fa1e"></script>
+<script src="assets/vendor/lenis/lenis.min.js?v=8722f8c"></script>
+<script src="assets/vendor/aos/aos.js?v=8722f8c"></script>
+<script src="assets/enhancements.js?v=8722f8c"></script>
 </body>
 </html>
