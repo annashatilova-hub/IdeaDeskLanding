@@ -13,6 +13,8 @@ HTML-блоки для встраивания в Tilda через блок **T12
 
 **Правильный URL превью:** `https://kolomoets-netizen.github.io/Link/` (с `/Link/` в конце). Без `/Link/` будет 404.
 
+**Только последние правки `/trading`:** [preview-trading-changes.html](https://kolomoets-netizen.github.io/Link/preview-trading-changes.html) — блоки «Как работает», сравнение CRM и переход с Битрикса.
+
 **Жёсткое обновление:** Ctrl+Shift+R (Win) / Cmd+Shift+R (Mac).
 
 ## Порядок блоков на странице

@@ -114,6 +114,22 @@ const audiencePreview = audienceShell
 writeFileSync(join(docs, 'preview-partner-audience.html'), audiencePreview, 'utf-8');
 writeFileSync(join(base, 'preview-partner-audience.html'), audiencePreview, 'utf-8');
 
+const tradingChangeBlocks = [
+  '02-how-it-works.html',
+  '08-crm-compare.html',
+  '14-bitrix-switch-promo.html',
+];
+const tradingChangesBody = tradingChangeBlocks
+  .map((name) => readFileSync(join(base, name), 'utf-8').trim())
+  .join('\n\n');
+const tradingChangesShell = readFileSync(join(base, 'preview-trading-changes.shell.html'), 'utf-8');
+const tradingChangesPreview = tradingChangesShell
+  .replace('__BLOCKS__', tradingChangesBody)
+  .replaceAll('__BUILD_STAMP__', konturBuildStamp)
+  .replaceAll('__BUILD_ID__', buildId);
+writeFileSync(join(docs, 'preview-trading-changes.html'), tradingChangesPreview, 'utf-8');
+writeFileSync(join(base, 'preview-trading-changes.html'), tradingChangesPreview, 'utf-8');
+
 const emailsSrc = join(root, 'content', 'emails');
 const emailsDocs = join(docs, 'emails');
 mkdirSync(emailsDocs, { recursive: true });
