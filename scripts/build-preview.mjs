@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, cpSync, mkdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, cpSync, mkdirSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -129,6 +129,64 @@ const tradingChangesPreview = tradingChangesShell
   .replaceAll('__BUILD_ID__', buildId);
 writeFileSync(join(docs, 'preview-trading-changes.html'), tradingChangesPreview, 'utf-8');
 writeFileSync(join(base, 'preview-trading-changes.html'), tradingChangesPreview, 'utf-8');
+
+const tildaBlocksDir = join(docs, 'tilda-blocks');
+mkdirSync(tildaBlocksDir, { recursive: true });
+const tildaBlockFiles = readdirSync(base)
+  .filter((name) => /^(0?\d{1,2}-|14-).+\.html$/.test(name))
+  .sort();
+const tildaBlockLinks = [];
+for (const name of tildaBlockFiles) {
+  const body = readFileSync(join(base, name), 'utf-8').trimStart();
+  const stamped =
+    `<!-- iStockLink T123 · ${name} · build ${buildId} · ${buildDate} -->\n` + body;
+  writeFileSync(join(tildaBlocksDir, name), stamped, 'utf-8');
+  tildaBlockLinks.push({ name, href: `./${name}` });
+}
+const tradingRecent = [
+  '02-how-it-works.html',
+  '08-crm-compare.html',
+  '14-bitrix-switch-promo.html',
+];
+writeFileSync(
+  join(tildaBlocksDir, 'index.html'),
+  `<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <title>HTML-блоки для Tilda · iStockLink</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px 20px 48px; color: #0f172a; line-height: 1.5; }
+    h1 { font-size: 1.35rem; }
+    .meta { color: #64748b; font-size: 14px; margin-bottom: 24px; }
+    .recent { background: #eef3ff; border-radius: 12px; padding: 16px 18px; margin-bottom: 28px; }
+    .recent a { font-weight: 600; }
+    ul { padding-left: 1.2rem; }
+    li { margin: 8px 0; }
+    a { color: #1c50de; }
+    code { font-size: 13px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>HTML-блоки для Tilda (T123)</h1>
+  <p class="meta">Сборка ${buildDate} · <code>${buildId}</code> · те же файлы, что в превью на GitHub Pages</p>
+  <div class="recent">
+    <strong>Недавние правки /trading:</strong>
+    ${tradingRecent.map((n) => `<div><a href="./${n}">${n}</a></div>`).join('')}
+  </div>
+  <p>Откройте файл → <strong>Ctrl+A</strong> → скопируйте весь код (включая <code>&lt;style&gt;</code>) → вставьте в блок T123.</p>
+  <p>В первой строке файла — комментарий с номером сборки; если там старый <code>build</code>, обновите страницу (Ctrl+Shift+R).</p>
+  <ul>
+    ${tildaBlockLinks.map(({ name, href }) => `<li><a href="${href}">${name}</a></li>`).join('\n    ')}
+  </ul>
+  <p><a href="../preview-trading-changes.html">Превью изменённых блоков</a> · <a href="../">полный лендинг</a></p>
+</body>
+</html>
+`,
+  'utf-8',
+);
 
 const emailsSrc = join(root, 'content', 'emails');
 const emailsDocs = join(docs, 'emails');

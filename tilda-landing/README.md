@@ -127,8 +127,18 @@ https://github.com/kolomoets-netizen/Link/raw/main/tilda-landing/preview-standal
 
 ## Как вставить в Tilda
 
+**Копируйте код с GitHub Pages** (обновляется вместе с превью, без кэша `raw.githubusercontent.com`):
+
+**https://kolomoets-netizen.github.io/Link/tilda-blocks/**
+
+- `02-how-it-works.html` — «Как работает», кнопка агрегатора  
+- `08-crm-compare.html` — сравнение с CRM  
+- `14-bitrix-switch-promo.html` — переход с Битрикс24  
+
+Альтернатива: файлы в репозитории `tilda-landing/*.html` (ветка `main`).
+
 1. Откройте редактор страницы → **Добавить блок** → **Другое** → **T123 HTML-код**
-2. Скопируйте **весь** содержимое файла (включая `<style>`) и вставьте в блок
+2. Скопируйте **весь** код из ссылки выше (включая `<style>` и первую строку-комментарий с `build …`) и вставьте в блок
 3. У блока в настройках отключите отступы сверху/снизу (0px), если нужен seamless-вид
 4. Для якорей `#demo` и `#how` — в Tilda можно добавить Zero Block с id или привязать кнопки Tilda к якорям
 

@@ -1,0 +1,100 @@
+<!-- iStockLink T123 · 05-faq-cta.html · build ba02386 · 2026-09-21 -->
+<!-- Tilda block: CTA -->
+<!--
+  Попап Tilda:
+  1. Добавьте блок попапа (BF501 / BF502 / BF503) с формой Email
+  2. В Контенте попапа укажите Popup link: #popup:demo
+  3. Тот же #popup:demo — в href кнопки ниже (или свой linkhook из попапа)
+-->
+<style>
+  .tg-cta-wrap {
+    --tg-primary: #1c50de;
+    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    box-sizing: border-box;
+    width: 100%;
+    background: linear-gradient(180deg, #eef3ff 0%, #f4f7ff 100%);
+    padding: 80px 24px;
+  }
+  .tg-cta-wrap *, .tg-cta-wrap *::before, .tg-cta-wrap *::after { box-sizing: border-box; }
+  .tg-cta-inner { max-width: 1120px; margin: 0 auto; }
+
+  .tg-cta-box {
+    background: linear-gradient(135deg, #1c50de 0%, #2a5fe8 40%, #3b6df0 100%);
+    border-radius: 24px;
+    padding: 56px 48px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .tg-cta-box::before {
+    content: "";
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .tg-cta-content { position: relative; z-index: 1; }
+  .tg-cta-title {
+    font-size: clamp(26px, 3.5vw, 38px);
+    font-weight: 800;
+    margin: 0 0 14px;
+    letter-spacing: -0.02em;
+  }
+  .tg-cta-sub {
+    font-size: 19px;
+    opacity: 0.9;
+    margin: 0 auto 28px;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+  .tg-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    border-radius: 12px;
+    border: none;
+    background: #fff;
+    color: var(--tg-primary);
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transition: transform .2s, box-shadow .2s;
+    white-space: nowrap;
+  }
+  .tg-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+    color: var(--tg-primary);
+  }
+  .tg-cta-note {
+    margin-top: 16px;
+    font-size: 15px;
+    opacity: 0.75;
+  }
+
+  @media (max-width: 700px) {
+    .tg-cta-wrap { padding: 56px 20px 64px; }
+    .tg-cta-box { padding: 36px 20px; border-radius: 20px; }
+    .tg-cta-sub { font-size: 18px; margin-bottom: 24px; }
+    .tg-cta-btn { width: 100%; max-width: 320px; }
+  }
+</style>
+
+<div class="tg-cta-wrap">
+  <div class="tg-cta-inner">
+    <div class="tg-cta-box">
+      <div class="tg-cta-content">
+        <h2 class="tg-cta-title">Подключите iStockLink за 2 минуты</h2>
+        <p class="tg-cta-sub">Оставьте email и мы пришлём доступ к демо и инструкцию по подключению агрегатора.</p>
+        <a href="#popup:demo" class="tg-cta-btn">Получить демо</a>
+        <p class="tg-cta-note">Бесплатный период 14 дней · Без привязки карты</p>
+      </div>
+    </div>
+  </div>
+</div>
