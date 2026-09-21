@@ -97,16 +97,26 @@
     padding: 0;
     --col2: 20.22%;
     --col2w: 19%;
+    --col4: 58.33%;
   }
   .tg-hero-blob {
     position: absolute;
-    left: var(--col2);
-    right: -6px;
     top: 72px;
     bottom: 0;
-    background: #dce8ff;
-    border-radius: 28px;
     z-index: 0;
+    pointer-events: none;
+  }
+  .tg-hero-blob--blue {
+    left: var(--col2);
+    right: calc(100% - var(--col4));
+    background: #dce8ff;
+    border-radius: 28px 0 0 28px;
+  }
+  .tg-hero-blob--green {
+    left: var(--col4);
+    right: -6px;
+    background: #d8f3e4;
+    border-radius: 0 28px 28px 0;
   }
   .tg-hero-ui {
     position: relative;
@@ -262,7 +272,8 @@
   @media (max-width: 960px) {
     .tg-hero-inner { grid-template-columns: 1fr; gap: 32px; }
     .tg-hero-visual { padding: 0; }
-    .tg-hero-blob { left: var(--col2); width: auto; top: 40px; }
+    .tg-hero-blob--blue { top: 40px; }
+    .tg-hero-blob--green { top: 40px; }
   }
   @media (max-width: 560px) {
     .tg-hero-wrap { padding: 48px 18px 40px; }
@@ -291,7 +302,8 @@
     </div>
 
     <div class="tg-hero-visual">
-      <div class="tg-hero-blob"></div>
+      <div class="tg-hero-blob tg-hero-blob--blue"></div>
+      <div class="tg-hero-blob tg-hero-blob--green"></div>
       <div class="tg-hero-ui">
         <img src="https://kolomoets-netizen.github.io/Link/assets/hero-crm-kanban.png?v=3" alt="Воронка сделок iStockLink">
         <div class="tg-hero-col-glow"></div>
