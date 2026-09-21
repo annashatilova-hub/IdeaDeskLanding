@@ -1,4 +1,4 @@
-<!-- iStockLink T123 · 01-hero.html · build 1b39715 · 2026-09-21 -->
+<!-- iStockLink T123 · 01-hero.html · build 72ac5bc · 2026-09-21 -->
 <!-- Tilda block: Hero -->
 <style>
   .tg-hero-wrap {
@@ -26,8 +26,8 @@
     max-width: 1120px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1.05fr;
-    gap: 48px;
+    grid-template-columns: 1fr 1.15fr;
+    gap: 40px;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -77,115 +77,133 @@
     border: 1px solid rgba(28,80,222,0.22);
   }
 
-  /* Illustration */
-  .tg-hero-visual {
-    background: #fff;
-    border-radius: 24px;
-    border: 1px solid rgba(28,80,222,0.12);
-    box-shadow: 0 24px 60px rgba(15,23,42,0.08);
-    overflow: hidden;
+  .tg-hero-laptop-scene {
+    perspective: 1600px;
+    padding: 8px 0 24px;
+    display: flex;
+    justify-content: center;
   }
-  .tg-mock-head {
+  .tg-laptop {
+    width: 100%;
+    max-width: 560px;
+    transform: rotateY(-14deg) rotateX(8deg);
+    transform-style: preserve-3d;
+    filter: drop-shadow(0 28px 48px rgba(15, 23, 42, 0.18));
+  }
+  .tg-laptop-screen-shell {
+    background: linear-gradient(180deg, #cbd5e1 0%, #94a3b8 100%);
+    border-radius: 16px 16px 0 0;
+    padding: 10px 10px 0;
+    border: 1px solid #94a3b8;
+  }
+  .tg-laptop-bezel {
+    background: #0f172a;
+    border-radius: 8px 8px 0 0;
+    padding: 6px 6px 0;
+  }
+  .tg-laptop-display {
+    background: #eef2ff;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    min-height: 300px;
+  }
+  .tg-kb-topbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 18px;
-    background: linear-gradient(90deg, #1c50de, #3b6df0);
-    color: #fff;
-  }
-  .tg-mock-head span { font-size: 13px; font-weight: 700; }
-  .tg-mock-dots { display: flex; gap: 5px; }
-  .tg-mock-dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.45); display: block; }
-  .tg-mock-body { padding: 18px; }
-  .tg-mock-label {
+    padding: 8px 12px;
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
     font-size: 11px;
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #94a3b8;
-    margin: 0 0 10px;
+    color: #475569;
   }
-  .tg-source-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 18px;
-  }
-  .tg-src-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 7px 12px;
-    border-radius: 999px;
-    background: #f1f5ff;
-    border: 1px solid #e2e8f0;
-    font-size: 12px;
-    font-weight: 600;
-    color: #334155;
-  }
-  .tg-src-chip img { width: 18px; height: 18px; border-radius: 4px; object-fit: contain; }
-  .tg-src-chip.arrow { background: #1c50de; color: #fff; border: none; }
-  .tg-feed-item {
+  .tg-kb-topbar img { height: 16px; width: auto; vertical-align: middle; margin-right: 6px; }
+  .tg-kb-board {
     display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 12px;
-    align-items: center;
-    padding: 14px 16px;
-    border-radius: 14px;
-    background: #fafbff;
-    border: 1px solid #eef2ff;
-    margin-bottom: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    padding: 10px;
+    background: linear-gradient(180deg, #f8faff 0%, #eef2ff 100%);
+    min-height: 252px;
   }
-  .tg-feed-item:last-child { margin-bottom: 0; }
-  .tg-feed-item.highlight { border-color: rgba(28,80,222,0.25); background: linear-gradient(90deg, #f8faff, #f1f5ff); }
-  .tg-feed-title { font-size: 15px; font-weight: 700; color: #1e293b; margin: 0 0 4px; }
-  .tg-feed-meta { font-size: 14px; color: #94a3b8; margin: 0; }
-  .tg-feed-stage {
-    font-size: 11px;
-    font-weight: 700;
-    padding: 5px 10px;
-    border-radius: 8px;
+  .tg-kb-col-head {
+    font-size: 9px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #64748b;
+    padding: 0 2px 6px;
     white-space: nowrap;
   }
-  .tg-feed-stage.new { background: rgba(28,80,222,0.1); color: #1c50de; }
-  .tg-feed-stage.work { background: rgba(6,214,160,0.12); color: #059669; }
-  .tg-feed-stage.deadline { background: rgba(255,209,102,0.2); color: #b45309; }
+  .tg-kb-col {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 0;
+  }
+  .tg-kb-card {
+    background: #fff;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    padding: 8px 7px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.05);
+  }
+  .tg-kb-card strong {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #1e293b;
+    margin-bottom: 4px;
+  }
+  .tg-kb-card em {
+    display: block;
+    font-style: normal;
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--tg-primary);
+  }
+  .tg-kb-card span {
+    display: block;
+    font-size: 8px;
+    color: #94a3b8;
+    margin-top: 3px;
+    line-height: 1.3;
+  }
+  .tg-kb-card.accent {
+    border-color: rgba(28, 80, 222, 0.35);
+    box-shadow: 0 4px 12px rgba(28, 80, 222, 0.12);
+  }
+  .tg-laptop-base {
+    height: 12px;
+    margin: 0 12%;
+    background: linear-gradient(180deg, #cbd5e1, #64748b);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 6px 12px rgba(15, 23, 42, 0.15);
+  }
+  .tg-laptop-notch {
+    width: 18%;
+    height: 4px;
+    margin: 0 auto 2px;
+    background: #64748b;
+    border-radius: 0 0 4px 4px;
+  }
+
   @media (max-width: 900px) {
-    .tg-hero-inner { grid-template-columns: 1fr; gap: 40px; }
+    .tg-hero-inner { grid-template-columns: 1fr; gap: 36px; }
     .tg-hero-wrap { padding: 64px 24px 72px; }
-    .tg-hero-visual { margin-top: 4px; }
+    .tg-laptop { transform: rotateY(-6deg) rotateX(4deg); max-width: 100%; }
   }
   @media (max-width: 560px) {
     .tg-hero-wrap { padding: 72px 22px 84px; }
-    .tg-hero-inner { gap: 44px; }
-    .tg-hero-title {
-      margin-bottom: 22px;
-      font-size: clamp(30px, 8.5vw, 40px);
-      line-height: 1.12;
-    }
-    .tg-hero-sub {
-      font-size: 18px;
-      line-height: 1.65;
-      margin-bottom: 28px;
-      max-width: none;
-    }
-    .tg-hero-actions { flex-direction: column; gap: 12px; margin-bottom: 8px; }
-    .tg-hero-actions .tg-btn { width: 100%; padding: 15px 24px; }
-    .tg-hero-visual { border-radius: 20px; }
-    .tg-mock-head { padding: 16px 18px; }
-    .tg-mock-body { padding: 18px 16px 20px; }
-    .tg-mock-label { margin-bottom: 12px; }
-    .tg-source-row { gap: 8px; margin-bottom: 18px; }
-    .tg-feed-item {
-      grid-template-columns: 1fr;
-      gap: 10px;
-      padding: 14px 16px;
-      margin-bottom: 12px;
-      border-radius: 16px;
-    }
-    .tg-feed-title { font-size: 16px; margin-bottom: 6px; }
-    .tg-feed-meta { font-size: 15px; line-height: 1.45; }
-    .tg-feed-stage { align-self: flex-start; white-space: normal; }
+    .tg-hero-title { font-size: clamp(30px, 8.5vw, 40px); }
+    .tg-hero-sub { font-size: 18px; }
+    .tg-hero-actions { flex-direction: column; }
+    .tg-hero-actions .tg-btn { width: 100%; }
+    .tg-laptop { transform: none; }
+    .tg-kb-board { grid-template-columns: repeat(2, 1fr); min-height: auto; }
+    .tg-kb-card strong, .tg-kb-card em { font-size: 11px; }
   }
 </style>
 
@@ -200,39 +218,59 @@
       </div>
     </div>
 
-    <div class="tg-hero-visual">
-      <div class="tg-mock-head">
-        <div class="tg-mock-dots"><i></i><i></i><i></i></div>
-        <span>Единая лента закупок</span>
-      </div>
-      <div class="tg-mock-body">
-        <p class="tg-mock-label">Агрегаторы</p>
-        <div class="tg-source-row">
-          <span class="tg-src-chip"><img src="https://kolomoets-netizen.github.io/Link/assets/kontur.png" alt="">Контур</span>
-          <span class="tg-src-chip"><img src="https://kolomoets-netizen.github.io/Link/assets/seldon.png" alt="">Seldon</span>
-        </div>
-        <p class="tg-mock-label">Тендеры в работе</p>
-        <div class="tg-feed-item highlight">
-          <div>
-            <p class="tg-feed-title">Поставка медоборудования</p>
-            <p class="tg-feed-meta">4,2 млн ₽ · 44-ФЗ · Москва · Контур</p>
+    <div class="tg-hero-laptop-scene" aria-hidden="true">
+      <div class="tg-laptop">
+        <div class="tg-laptop-screen-shell">
+          <div class="tg-laptop-bezel">
+            <div class="tg-laptop-display">
+              <div class="tg-kb-topbar">
+                <span><img src="https://kolomoets-netizen.github.io/Link/assets/istocklink-icon.png" alt="">Воронка торгов</span>
+                <span>4 в работе</span>
+              </div>
+              <div class="tg-kb-board">
+                <div class="tg-kb-col">
+                  <div class="tg-kb-col-head">Новый</div>
+                  <div class="tg-kb-card accent">
+                    <strong>Лицензии ПО для госсектора</strong>
+                    <em>890 000 ₽</em>
+                    <span>223-ФЗ · до 28.06</span>
+                  </div>
+                  <div class="tg-kb-card">
+                    <strong>Канцтовары для школ</strong>
+                    <em>420 000 ₽</em>
+                    <span>44-ФЗ · Казань</span>
+                  </div>
+                </div>
+                <div class="tg-kb-col">
+                  <div class="tg-kb-col-head">Анализ</div>
+                  <div class="tg-kb-card accent">
+                    <strong>Поставка медоборудования</strong>
+                    <em>4 200 000 ₽</em>
+                    <span>44-ФЗ · Москва · Контур</span>
+                  </div>
+                </div>
+                <div class="tg-kb-col">
+                  <div class="tg-kb-col-head">Подача</div>
+                  <div class="tg-kb-card">
+                    <strong>Ремонт офисных помещений</strong>
+                    <em>1 100 000 ₽</em>
+                    <span>коммерция · СПб</span>
+                  </div>
+                </div>
+                <div class="tg-kb-col">
+                  <div class="tg-kb-col-head">Контракт</div>
+                  <div class="tg-kb-card">
+                    <strong>Серверное оборудование</strong>
+                    <em>2 800 000 ₽</em>
+                    <span>Seldon · в работе</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <span class="tg-feed-stage work">Анализ</span>
         </div>
-        <div class="tg-feed-item">
-          <div>
-            <p class="tg-feed-title">Ремонт офисных помещений</p>
-            <p class="tg-feed-meta">1,1 млн ₽ · коммерция · СПб</p>
-          </div>
-          <span class="tg-feed-stage new">Новый</span>
-        </div>
-        <div class="tg-feed-item">
-          <div>
-            <p class="tg-feed-title">Лицензии ПО для госсектора</p>
-            <p class="tg-feed-meta">890 тыс. ₽ · 223-ФЗ · до 28.06</p>
-          </div>
-          <span class="tg-feed-stage deadline">Подача</span>
-        </div>
+        <div class="tg-laptop-notch"></div>
+        <div class="tg-laptop-base"></div>
       </div>
     </div>
   </div>

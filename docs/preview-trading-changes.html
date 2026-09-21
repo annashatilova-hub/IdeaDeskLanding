@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="build" content="1b39715">
+  <meta name="build" content="72ac5bc">
   <title>Превью — изменения /trading (агрегатор, CRM, Битрикс)</title>
   <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
-  <link rel="stylesheet" href="assets/vendor/aos/aos.css?v=1b39715">
-  <link rel="stylesheet" href="assets/enhancements.css?v=1b39715">
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css?v=72ac5bc">
+  <link rel="stylesheet" href="assets/enhancements.css?v=72ac5bc">
   <style>
     body { margin: 0; background: #f1f5f9; }
     .tg-preview-bar {
@@ -42,7 +42,7 @@
 </head>
 <body>
   <div class="tg-preview-bar">
-    Превью только изменённых блоков · сборка 2026-09-21 (1b39715)
+    Превью только изменённых блоков · сборка 2026-09-21 (72ac5bc)
     <ul>
       <li>02-how-it-works · 08-crm-compare · 14-bitrix-switch-promo</li>
     </ul>
@@ -54,7 +54,7 @@
   <p class="tg-preview-ctx">↑ на странице выше: «Вся тендерная работа» и т.д.</p>
   <div class="tg-preview-fake">… предыдущие секции лендинга …</div>
 
-<!-- Tilda block: How it works -->
+<!-- Tilda block: How it works (animated flow) -->
 <style>
   .tg-how-wrap {
     --tg-primary: #1c50de;
@@ -68,16 +68,7 @@
   }
   .tg-how-wrap *, .tg-how-wrap *::before, .tg-how-wrap *::after { box-sizing: border-box; }
   .tg-how-inner { max-width: 1120px; margin: 0 auto; }
-  .tg-how-header { text-align: center; margin-bottom: 48px; }
-  .tg-section-label {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--tg-primary);
-    margin-bottom: 12px;
-  }
+  .tg-how-header { text-align: center; margin-bottom: 40px; }
   .tg-section-title {
     margin: 0 0 14px;
     font-size: clamp(28px, 3.5vw, 40px);
@@ -94,227 +85,190 @@
     max-width: 720px;
   }
 
-  .tg-diagram {
-    background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%);
-    border: 1px solid rgba(28,80,222,0.1);
-    border-radius: 24px;
-    padding: 36px 28px 40px;
-    margin-bottom: 40px;
+  .tg-flow-stage {
     position: relative;
+    background: linear-gradient(180deg, #f8faff 0%, #fff 100%);
+    border: 1px solid rgba(28, 80, 222, 0.12);
+    border-radius: 24px;
+    padding: 28px 20px 32px;
+    margin-bottom: 28px;
     overflow: hidden;
   }
-  .tg-diagram-grid {
-    display: grid;
-    grid-template-columns: 1fr auto 1.2fr auto 1fr;
-    gap: 16px;
-    align-items: stretch;
-    position: relative;
-    z-index: 1;
-  }
-  .tg-diagram-col { display: flex; flex-direction: column; gap: 10px; }
-  .tg-diagram-col-title {
-    font-size: 12px;
+  .tg-flow-incoming {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 11px;
     font-weight: 700;
+    color: #94a3b8;
     text-transform: uppercase;
     letter-spacing: 0.06em;
-    color: #94a3b8;
-    text-align: center;
-    margin-bottom: 4px;
+    writing-mode: vertical-rl;
+    transform: translateY(-50%) rotate(180deg);
   }
-  .tg-source-card {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 14px;
-    padding: 12px 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .tg-source-card.builtin {
-    border-style: dashed;
-    border-color: rgba(28,80,222,0.35);
-    background: linear-gradient(135deg, rgba(28,80,222,0.04), rgba(28,80,222,0.01));
-  }
-  .tg-source-logo {
-    width: 36px; height: 36px;
-    border-radius: 8px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
-  .tg-source-name { font-size: 15px; font-weight: 700; color: #1e293b; margin: 0; }
-  .tg-source-desc { font-size: 15px; color: #94a3b8; margin: 2px 0 0; }
-  .tg-diagram-arrow {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    color: var(--tg-primary);
-    min-width: 48px;
-  }
-  .tg-diagram-arrow-line {
-    width: 3px;
-    height: 40px;
-    background: linear-gradient(180deg, transparent, var(--tg-primary), transparent);
-    border-radius: 2px;
-  }
-  .tg-diagram-arrow-icon {
-    width: 40px; height: 40px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #1c50de, #3b6df0);
-    color: #fff;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 22px;
-    font-weight: 900;
-    box-shadow: 0 6px 16px rgba(28,80,222,0.3);
-  }
-  .tg-core-box {
-    background: linear-gradient(145deg, #1c50de 0%, #2a5fe8 50%, #3b6df0 100%);
-    border-radius: 20px;
-    padding: 24px 20px;
-    color: #fff;
-    text-align: center;
-    box-shadow: 0 20px 50px rgba(28,80,222,0.35);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 220px;
-  }
-  .tg-core-icon {
-    width: auto; height: 28px;
-    margin: 0 auto 14px;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .tg-core-icon img { height: 28px; width: auto; display: block; }
-  .tg-core-title { font-size: 16px; font-weight: 800; margin: 0 0 8px; }
-  .tg-core-steps { list-style: none; padding: 0; margin: 0; text-align: left; }
-  .tg-core-steps li {
-    font-size: 16px;
-    padding: 7px 0 7px 20px;
+  .tg-flow-board {
     position: relative;
-    color: #fff;
-    opacity: 1;
-    border-bottom: 1px solid rgba(255,255,255,0.18);
-  }
-  .tg-core-steps li:last-child { border-bottom: none; }
-  .tg-core-steps li::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    font-weight: 700;
-  }
-  .tg-output-card {
-    background: #fff;
-    border: 2px solid rgba(28,80,222,0.35);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 12px 32px rgba(15,23,42,0.06);
-  }
-  .tg-output-header {
-    background: #fff;
-    color: var(--tg-primary);
-    padding: 12px 16px;
-    font-size: 14px;
-    font-weight: 700;
-    border-bottom: 1px solid rgba(28,80,222,0.2);
-  }
-  .tg-output-body { padding: 12px; }
-  .tg-output-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 6px;
-    background: #f8faff;
-    font-size: 14px;
-  }
-  .tg-output-row:last-child { margin-bottom: 0; }
-  .tg-output-row .check {
-    width: 20px; height: 20px;
-    border-radius: 6px;
-    background: rgba(6,214,160,0.15);
-    color: #059669;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 700;
-    flex-shrink: 0;
-  }
-  .tg-output-row .label { flex: 1; color: #334155; font-weight: 500; }
-  .tg-output-row .badge {
-    font-size: 10px;
-    font-weight: 700;
-    padding: 3px 8px;
-    border-radius: 6px;
-    background: rgba(28,80,222,0.1);
-    color: var(--tg-primary);
-  }
-
-  .tg-steps-row {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 12px;
+    min-height: 200px;
+    margin-left: 28px;
   }
-  .tg-step-card {
+  .tg-flow-col-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .tg-flow-col {
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 14px;
+    border: 1px dashed #dbeafe;
+    padding: 10px 8px;
+    min-height: 168px;
+  }
+  .tg-flow-col:nth-child(4) { border-color: rgba(5, 150, 105, 0.35); background: rgba(236, 253, 245, 0.5); }
+
+  .tg-flow-card {
+    position: absolute;
+    left: 0;
+    top: 38px;
+    width: calc(25% - 12px);
+    z-index: 3;
     background: #fff;
-    border: 1px solid #e8edf5;
-    border-radius: 16px;
-    padding: 24px 20px;
-    height: 100%;
+    border-radius: 12px;
+    border: 2px solid rgba(28, 80, 222, 0.35);
+    box-shadow: 0 12px 28px rgba(28, 80, 222, 0.2);
+    padding: 12px 11px;
+    animation: tg-flow-move 14s ease-in-out infinite;
   }
-  .tg-step-card--with-cta {
-    display: flex;
-    flex-direction: column;
+  .tg-flow-card strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1.3;
+    color: #1e293b;
+    margin-bottom: 6px;
   }
-  .tg-step-num {
-    width: 32px; height: 32px;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #1c50de, #4d7aef);
-    color: #fff;
+  .tg-flow-card em {
+    font-style: normal;
     font-size: 14px;
     font-weight: 800;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 14px;
+    color: var(--tg-primary);
   }
-  .tg-step-title { font-size: 18px; font-weight: 700; color: var(--tg-text); margin: 0 0 8px; }
-  .tg-step-text { font-size: 17px; line-height: 1.55; color: #64748b; margin: 0; }
-  .tg-step-link {
+  .tg-flow-card span {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #94a3b8;
+  }
+
+  @keyframes tg-flow-move {
+    0%, 4% {
+      left: -32%;
+      opacity: 0;
+      transform: scale(0.92);
+    }
+    8%, 22% {
+      left: 0;
+      opacity: 1;
+      transform: scale(1);
+    }
+    28%, 42% {
+      left: calc(25% + 4px);
+    }
+    48%, 62% {
+      left: calc(50% + 8px);
+    }
+    68%, 82% {
+      left: calc(75% + 12px);
+      border-color: rgba(5, 150, 105, 0.45);
+    }
+    88%, 100% {
+      left: calc(75% + 12px);
+      opacity: 1;
+    }
+  }
+
+  .tg-flow-kps {
+    position: absolute;
+    right: 8px;
+    bottom: 16px;
     display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+    animation: tg-flow-kps 14s ease-in-out infinite;
+  }
+  .tg-flow-kp {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #334155;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+  }
+  .tg-flow-kp small {
+    display: block;
+    font-weight: 600;
+    color: var(--tg-primary);
+    margin-top: 2px;
+  }
+
+  @keyframes tg-flow-kps {
+    0%, 72% { opacity: 0; transform: translateX(12px); }
+    78%, 92% { opacity: 1; transform: translateX(0); }
+    100% { opacity: 0; transform: translateX(8px); }
+  }
+
+  .tg-flow-caption {
+    text-align: center;
+    font-size: 15px;
+    color: var(--tg-muted);
+    margin: 0 0 20px;
+    line-height: 1.5;
+  }
+  .tg-flow-cta-wrap { text-align: center; }
+  .tg-step-link {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
-    padding: 12px 18px;
-    width: 100%;
+    padding: 12px 22px;
     border-radius: 999px;
     background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
     color: #fff !important;
     font-size: 14px;
     font-weight: 600;
-    line-height: 1.25;
-    text-align: center;
     text-decoration: none;
     box-shadow: 0 4px 14px rgba(28, 80, 222, 0.28);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .tg-step-link:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 6px 18px rgba(28, 80, 222, 0.35);
   }
 
-  @media (max-width: 960px) {
-    .tg-diagram-grid { grid-template-columns: 1fr; gap: 24px; }
-    .tg-diagram-arrow { flex-direction: row; min-width: auto; }
-    .tg-diagram-arrow-line { width: 40px; height: 2px; }
-    .tg-steps-row { grid-template-columns: 1fr 1fr; }
-    .tg-how-wrap { padding: 56px 20px 64px; }
+  @media (prefers-reduced-motion: reduce) {
+    .tg-flow-card { animation: none; left: calc(75% + 12px); }
+    .tg-flow-kps { animation: none; opacity: 1; }
+  }
+
+  @media (max-width: 760px) {
+    .tg-flow-board { grid-template-columns: repeat(2, 1fr); min-height: 280px; }
+    .tg-flow-card { width: calc(50% - 10px); animation-name: tg-flow-move-mobile; }
+    @keyframes tg-flow-move-mobile {
+      0%, 4% { left: -40%; opacity: 0; }
+      10%, 30% { left: 0; opacity: 1; }
+      36%, 55% { left: calc(50% + 6px); }
+      62%, 100% { left: calc(50% + 6px); top: 120px; }
+    }
+    .tg-flow-incoming { display: none; }
+    .tg-flow-board { margin-left: 0; }
   }
   @media (max-width: 560px) {
-    .tg-steps-row { grid-template-columns: 1fr; gap: 16px; }
-    .tg-how-wrap { padding: 56px 20px 64px; }
-    .tg-diagram { margin-bottom: 24px; padding: 20px 16px 24px; }
-    .tg-how-header { margin-bottom: 32px; }
+    .tg-how-wrap { padding: 56px 20px; }
     .tg-section-sub { font-size: 18px; }
-    .tg-output-row { flex-wrap: wrap; gap: 8px; }
-    .tg-step-card { padding: 20px 18px; }
   }
 </style>
 
@@ -322,132 +276,55 @@
   <div class="tg-how-inner">
     <div class="tg-how-header">
       <h2 class="tg-section-title">Как это работает</h2>
-      <p class="tg-section-sub">Подключите агрегаторы, получайте данные о торгах прямо в воронку CRM и проводите закупки со своими поставщиками.</p>
+      <p class="tg-section-sub">Тендер из агрегатора попадает в воронку, проходит этапы до контракта — поставщики и КП рядом, без переключения сервисов.</p>
     </div>
 
-    <div class="tg-diagram">
-      <div class="tg-diagram-grid">
-        <div class="tg-diagram-col">
-          <div class="tg-diagram-col-title">Откуда приходят закупки</div>
-          <div class="tg-source-card">
-            <img class="tg-source-logo" src="https://kolomoets-netizen.github.io/Link/assets/kontur.png" alt="">
-            <div>
-              <p class="tg-source-name">Контур.Закупки</p>
-              <p class="tg-source-desc">ваш ключ доступа</p>
-            </div>
+    <div class="tg-flow-stage">
+      <div class="tg-flow-incoming">Контур · Seldon</div>
+      <div class="tg-flow-board">
+        <div class="tg-flow-cols">
+          <div class="tg-flow-col-wrap">
+            <div class="tg-flow-col-label">Новый</div>
+            <div class="tg-flow-col"></div>
           </div>
-          <div class="tg-source-card">
-            <img class="tg-source-logo" src="https://kolomoets-netizen.github.io/Link/assets/seldon.png" alt="">
-            <div>
-              <p class="tg-source-name">Seldon</p>
-              <p class="tg-source-desc">ваш ключ доступа</p>
-            </div>
+          <div class="tg-flow-col-wrap">
+            <div class="tg-flow-col-label">Анализ</div>
+            <div class="tg-flow-col"></div>
           </div>
-          <div class="tg-source-card">
-            <div class="tg-source-logo" style="display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;background:#eef3ff;border-radius:8px;width:36px;height:36px;color:#1c50de;">…</div>
-            <div>
-              <p class="tg-source-name">Другой агрегатор</p>
-              <p class="tg-source-desc">ваш ключ доступа</p>
-            </div>
+          <div class="tg-flow-col-wrap">
+            <div class="tg-flow-col-label">Подача</div>
+            <div class="tg-flow-col"></div>
           </div>
-          <div class="tg-source-card builtin">
-            <div class="tg-source-logo" style="display:flex;align-items:center;justify-content:center;font-size:20px;background:#eef3ff;border-radius:8px;width:36px;height:36px;">🏛</div>
-            <div>
-              <p class="tg-source-name">Госзакупки</p>
-              <p class="tg-source-desc">реестр ЕИС</p>
-            </div>
+          <div class="tg-flow-col-wrap">
+            <div class="tg-flow-col-label">Контракт</div>
+            <div class="tg-flow-col"></div>
           </div>
         </div>
-
-        <div class="tg-diagram-arrow">
-          <div class="tg-diagram-arrow-line"></div>
-          <div class="tg-diagram-arrow-icon">→</div>
-          <div class="tg-diagram-arrow-line"></div>
+        <div class="tg-flow-card">
+          <strong>Поставка медоборудования</strong>
+          <em>4 200 000 ₽</em>
+          <span>44-ФЗ · Москва</span>
         </div>
-
-        <div class="tg-core-box">
-          <div class="tg-core-icon"><img src="https://kolomoets-netizen.github.io/Link/assets/istocklink-logo-white.svg" alt="iStockLink"></div>
-          <ul class="tg-core-steps">
-            <li>Сбор тендеров с агрегаторов</li>
-            <li>Единый формат карточки тендера</li>
-            <li>Фильтры по ключевым словам и регионам</li>
-            <li>Воронка: от «новый» до «контракт»</li>
-            <li>Уведомления и задачи команде</li>
-          </ul>
-        </div>
-
-        <div class="tg-diagram-arrow">
-          <div class="tg-diagram-arrow-line"></div>
-          <div class="tg-diagram-arrow-icon">→</div>
-          <div class="tg-diagram-arrow-line"></div>
-        </div>
-
-        <div class="tg-diagram-col">
-          <div class="tg-diagram-col-title">Что видите вы</div>
-          <div class="tg-output-card">
-            <div class="tg-output-header">Единая лента закупок</div>
-            <div class="tg-output-body">
-              <div class="tg-output-row">
-                <span class="check">✓</span>
-                <span class="label">Медоборудование · 4,2 млн</span>
-                <span class="badge">анализ</span>
-              </div>
-              <div class="tg-output-row">
-                <span class="check">✓</span>
-                <span class="label">ИТ-лицензии · 890 тыс.</span>
-                <span class="badge">новый</span>
-              </div>
-              <div class="tg-output-row">
-                <span class="check">✓</span>
-                <span class="label">Ремонт офиса · коммерция</span>
-                <span class="badge">подача</span>
-              </div>
-            </div>
-          </div>
-          <div class="tg-source-card" style="margin-top:10px">
-            <div class="tg-source-logo" style="display:flex;align-items:center;justify-content:center;font-size:18px;background:#eef3ff;border-radius:8px;width:36px;height:36px;">🔔</div>
-            <div>
-              <p class="tg-source-name">Задачи · поставщики · КП</p>
-              <p class="tg-source-desc">всё в одном окне</p>
-            </div>
-          </div>
+        <div class="tg-flow-kps">
+          <div class="tg-flow-kp">КП «МедТех Снаб»<small>3 890 000 ₽ · 45 дней</small></div>
+          <div class="tg-flow-kp">КП «ПромКомплект»<small>4 050 000 ₽ · 40 дней</small></div>
         </div>
       </div>
     </div>
 
-    <div class="tg-steps-row">
-      <div class="tg-step-card tg-step-card--with-cta">
-        <div class="tg-step-num">1</div>
-        <h3 class="tg-step-title">Подключите агрегаторы</h3>
-        <p class="tg-step-text">Добавьте ключ агрегатора — настройка занимает пару минут.</p>
-        <a class="tg-step-link" href="https://kontur.ru/api-zakupki?p=w55732&amp;from=ref_cabinet" target="_blank" rel="noopener noreferrer">Подключить агрегатор</a>
-      </div>
-      <div class="tg-step-card">
-        <div class="tg-step-num">2</div>
-        <h3 class="tg-step-title">Настройте фильтры</h3>
-        <p class="tg-step-text">Ключевые слова, регионы, коды ОКПД2, тип закупки — правила работают для всех подключённых источников.</p>
-      </div>
-      <div class="tg-step-card">
-        <div class="tg-step-num">3</div>
-        <h3 class="tg-step-title">Проведите закупки</h3>
-        <p class="tg-step-text">Запрашивайте КП у поставщиков, сравнивайте предложения и ведите закупку до контракта в SRM.</p>
-      </div>
-      <div class="tg-step-card">
-        <div class="tg-step-num">4</div>
-        <h3 class="tg-step-title">Ведите до контракта</h3>
-        <p class="tg-step-text">Переводите тендеры по этапам, назначайте задачи, запрашивайте КП у поставщиков — без переключения между сервисами.</p>
-      </div>
+    <p class="tg-flow-caption">Один сценарий: от карточки в ленте до контракта и сравнения коммерческих предложений.</p>
+    <div class="tg-flow-cta-wrap">
+      <a class="tg-step-link" href="https://kontur.ru/api-zakupki?p=w55732&amp;from=ref_cabinet" target="_blank" rel="noopener noreferrer">Подключить агрегатор</a>
     </div>
   </div>
 </div>
 
-<!-- Tilda block: CRM comparison -->
+<!-- Tilda block: comparison matrix -->
 <style>
   .tg-compare-wrap {
     --tg-primary: #1c50de;
     --tg-text: #0f172a;
     --tg-muted: #64748b;
-    --tg-win: #059669;
     font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     box-sizing: border-box;
     width: 100%;
@@ -456,17 +333,7 @@
   }
   .tg-compare-wrap *, .tg-compare-wrap *::before, .tg-compare-wrap *::after { box-sizing: border-box; }
   .tg-compare-inner { max-width: 1120px; margin: 0 auto; }
-
-  .tg-compare-header { text-align: center; margin-bottom: 40px; }
-  .tg-section-label {
-    display: inline-block;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--tg-primary);
-    margin-bottom: 12px;
-  }
+  .tg-compare-header { text-align: center; margin-bottom: 36px; }
   .tg-section-title {
     margin: 0 0 14px;
     font-size: clamp(28px, 3.5vw, 40px);
@@ -479,170 +346,83 @@
     font-size: 19px;
     line-height: 1.6;
     color: var(--tg-muted);
-    max-width: 640px;
+    max-width: 720px;
   }
-
+  .tg-compare-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
+  }
   .tg-compare-matrix {
+    min-width: 920px;
     border-radius: 20px;
     overflow: hidden;
-    border: 1px solid rgba(28,80,222,0.12);
+    border: 1px solid rgba(28, 80, 222, 0.12);
     background: #fff;
-    box-shadow: 0 16px 40px rgba(15,23,42,0.06);
   }
   .tg-compare-matrix-head,
   .tg-compare-matrix-row {
     display: grid;
-    grid-template-columns: minmax(120px, 0.85fr) 1fr 1.15fr;
+    grid-template-columns: minmax(148px, 1.1fr) repeat(4, minmax(120px, 1fr));
     border-bottom: 1px solid #eef2ff;
   }
   .tg-compare-matrix-row:last-child { border-bottom: none; }
   .tg-compare-matrix-head {
-    background: #fff;
-    font-weight: 700;
-    font-size: 17px;
+    background: #f8fafc;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 1.35;
     color: var(--tg-text);
     border-bottom: 2px solid #e2e8f0;
   }
   .tg-compare-matrix-crit,
-  .tg-compare-matrix-cell,
-  .tg-compare-matrix-col {
-    padding: 20px 22px;
-    font-size: 17px;
-    line-height: 1.55;
+  .tg-compare-matrix-cell {
+    padding: 16px 14px;
+    font-size: 15px;
+    line-height: 1.45;
     border-right: 1px solid #eef2ff;
-    background: #fff;
+    vertical-align: top;
   }
   .tg-compare-matrix-head .tg-compare-matrix-crit,
-  .tg-compare-matrix-head .tg-compare-matrix-col {
-    padding: 22px 24px;
-    border-right-color: #e2e8f0;
-    font-size: 17px;
-    font-weight: 800;
-    letter-spacing: -0.01em;
+  .tg-compare-matrix-head .tg-compare-matrix-cell {
+    padding: 18px 14px;
   }
-  .tg-compare-matrix-head .tg-compare-matrix-crit {
-    color: var(--tg-text);
-    background: #f8fafc;
-  }
-  .tg-compare-matrix-head .tg-compare-matrix-col.crm {
-    color: #475569;
-    background: #e2e8f0;
-  }
-  .tg-compare-matrix-head .tg-compare-matrix-col.us {
-    color: #153fb8;
-    background: #dce8ff;
-  }
-  .tg-compare-matrix-crit:last-child,
-  .tg-compare-matrix-cell:last-child,
-  .tg-compare-matrix-col:last-child { border-right: none; }
   .tg-compare-matrix-crit {
     font-weight: 800;
     color: var(--tg-text);
     background: #f8fafc;
   }
-  .tg-compare-matrix-cell.crm {
-    color: #475569;
-    background: #eef1f5;
-  }
-  .tg-compare-matrix-row .tg-compare-matrix-crit,
-  .tg-compare-matrix-row .tg-compare-matrix-cell {
-    border-right: 1px solid #eef2ff;
-  }
-  .tg-compare-matrix-cell.us {
+  .tg-compare-matrix-cell:last-child,
+  .tg-compare-matrix-head .tg-compare-matrix-cell:last-child { border-right: none; }
+  .tg-compare-matrix-cell.col-excel { background: #fafafa; color: #475569; }
+  .tg-compare-matrix-cell.col-bitrix { background: #f1f5f9; color: #475569; }
+  .tg-compare-matrix-cell.col-search { background: #f8fafc; color: #475569; }
+  .tg-compare-matrix-cell.col-us {
+    background: linear-gradient(180deg, #e8efff 0%, #f0f5ff 100%);
     color: #0f172a;
     font-weight: 600;
-    background: linear-gradient(180deg, #e8efff 0%, #f0f5ff 100%);
-    border-left: 4px solid var(--tg-primary);
+    border-left: 3px solid var(--tg-primary);
   }
-  .tg-compare-win {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 10px;
-    font-size: 14px;
+  .tg-compare-matrix-head .col-us {
+    color: #153fb8;
+    background: #dce8ff;
+  }
+  .tg-compare-matrix-row.row-wide .tg-compare-matrix-crit,
+  .tg-compare-matrix-row.row-wide .tg-compare-matrix-cell {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .tg-compare-matrix-row.row-wide .col-bitrix {
+    font-weight: 600;
+    color: #334155;
+  }
+  .tg-compare-matrix-row.row-wide .col-us {
     font-weight: 700;
-    color: var(--tg-win);
-  }
-  .tg-compare-win::before {
-    content: "✓";
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: rgba(6,214,160,0.15);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    flex-shrink: 0;
-  }
-  .tg-compare-matrix-row.highlight .tg-compare-matrix-crit,
-  .tg-compare-matrix-row.highlight .tg-compare-matrix-cell {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-  .tg-compare-matrix-row.highlight .tg-compare-matrix-cell.us {
-    font-size: clamp(20px, 2.5vw, 26px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
     color: var(--tg-primary);
-    line-height: 1.25;
-  }
-
-  @media (max-width: 900px) {
-    .tg-compare-wrap { padding: 56px 20px 64px; }
-    .tg-compare-matrix-crit,
-    .tg-compare-matrix-cell,
-    .tg-compare-matrix-col { padding: 16px 14px; font-size: 16px; }
-    .tg-compare-matrix-head .tg-compare-matrix-col { padding: 18px 16px; font-size: 17px; }
-  }
-  @media (max-width: 760px) {
-    .tg-compare-wrap { padding: 56px 20px 64px; }
-    .tg-compare-header { margin-bottom: 32px; }
-    .tg-compare-matrix-head { display: none; }
-    .tg-compare-matrix-row {
-      grid-template-columns: 1fr;
-      gap: 0;
-      padding: 16px 0 4px;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .tg-compare-matrix-row:last-child { padding-bottom: 8px; }
-    .tg-compare-matrix-crit {
-      border-right: none;
-      padding: 0 16px 10px;
-      font-size: 15px;
-      background: transparent;
-    }
-    .tg-compare-matrix-cell {
-      border-right: none;
-      padding: 12px 16px;
-      font-size: 15px;
-    }
-    .tg-compare-matrix-cell.us {
-      border-left: none;
-      border-top: 3px solid var(--tg-primary);
-    }
-    .tg-compare-matrix-row.highlight .tg-compare-matrix-cell.us {
-      font-size: 20px;
-    }
-    .tg-compare-matrix-cell.crm::before,
-    .tg-compare-matrix-cell.us::before {
-      display: block;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-    .tg-compare-matrix-cell.crm::before {
-      content: "CRM (например, Битрикс24)";
-      color: #94a3b8;
-    }
-    .tg-compare-matrix-cell.us::before {
-      content: "iStockLink";
-      color: var(--tg-primary);
-    }
   }
   @media (max-width: 560px) {
+    .tg-compare-wrap { padding: 56px 16px; }
     .tg-section-sub { font-size: 18px; }
   }
 </style>
@@ -650,30 +430,68 @@
 <div class="tg-compare-wrap">
   <div class="tg-compare-inner">
     <div class="tg-compare-header">
-      <h2 class="tg-section-title">Готовый инструмент вместо долгого внедрения</h2>
-      <p class="tg-section-sub">iStockLink создан под тендеры и закупки без настройки CRM с нуля и скрытых расходов на внедрение и доработки.</p>
+      <h2 class="tg-section-title">Чем iStockLink отличается от привычных инструментов</h2>
+      <p class="tg-section-sub">Сравнение по запуску, стоимости и возможностям именно для тендерного отдела — без «универсальной CRM ради всего».</p>
     </div>
 
-    <div class="tg-compare-matrix">
-      <div class="tg-compare-matrix-head">
-        <div class="tg-compare-matrix-crit">Критерий</div>
-        <div class="tg-compare-matrix-col crm">CRM (например, Битрикс24)</div>
-        <div class="tg-compare-matrix-col us">iStockLink</div>
-      </div>
-      <div class="tg-compare-matrix-row highlight">
-        <div class="tg-compare-matrix-crit">Стоимость</div>
-        <div class="tg-compare-matrix-cell crm">от 100 000 ₽ + ежемесячная подписка</div>
-        <div class="tg-compare-matrix-cell us">от 6 000 ₽/мес<span class="tg-compare-win">выгоднее для старта</span></div>
-      </div>
-      <div class="tg-compare-matrix-row">
-        <div class="tg-compare-matrix-crit">Запуск</div>
-        <div class="tg-compare-matrix-cell crm">Недели и месяцы настройки воронок, интеграций и обучения</div>
-        <div class="tg-compare-matrix-cell us">Старт за 1 день: лента и воронка уже в платформе<span class="tg-compare-win">быстрее в работу</span></div>
-      </div>
-      <div class="tg-compare-matrix-row">
-        <div class="tg-compare-matrix-crit">Тендеры</div>
-        <div class="tg-compare-matrix-cell crm">Закупки достраивают интеграторами и модулями</div>
-        <div class="tg-compare-matrix-cell us">Агрегаторы, воронка и оцифровка КП из коробки<span class="tg-compare-win">всё под тендеры</span></div>
+    <div class="tg-compare-scroll">
+      <div class="tg-compare-matrix">
+        <div class="tg-compare-matrix-head">
+          <div class="tg-compare-matrix-crit"></div>
+          <div class="tg-compare-matrix-cell col-excel">Excel и таблицы</div>
+          <div class="tg-compare-matrix-cell col-bitrix">Битрикс24 + внедрение</div>
+          <div class="tg-compare-matrix-cell col-search">Сервисы поиска тендеров</div>
+          <div class="tg-compare-matrix-cell col-us">iStockLink</div>
+        </div>
+        <div class="tg-compare-matrix-row">
+          <div class="tg-compare-matrix-crit">Запуск</div>
+          <div class="tg-compare-matrix-cell col-excel">сразу</div>
+          <div class="tg-compare-matrix-cell col-bitrix">недели и месяцы</div>
+          <div class="tg-compare-matrix-cell col-search">сразу</div>
+          <div class="tg-compare-matrix-cell col-us">1 день</div>
+        </div>
+        <div class="tg-compare-matrix-row">
+          <div class="tg-compare-matrix-crit">Стоимость старта</div>
+          <div class="tg-compare-matrix-cell col-excel">0</div>
+          <div class="tg-compare-matrix-cell col-bitrix">от 100 000 ₽ + подписка</div>
+          <div class="tg-compare-matrix-cell col-search">подписка</div>
+          <div class="tg-compare-matrix-cell col-us">от 6 000 ₽/мес</div>
+        </div>
+        <div class="tg-compare-matrix-row">
+          <div class="tg-compare-matrix-crit">Тендеры из агрегаторов</div>
+          <div class="tg-compare-matrix-cell col-excel">вручную</div>
+          <div class="tg-compare-matrix-cell col-bitrix">через интегратора</div>
+          <div class="tg-compare-matrix-cell col-search">да</div>
+          <div class="tg-compare-matrix-cell col-us">Контур, Seldon, из коробки</div>
+        </div>
+        <div class="tg-compare-matrix-row">
+          <div class="tg-compare-matrix-crit">Воронка по этапам</div>
+          <div class="tg-compare-matrix-cell col-excel">нет</div>
+          <div class="tg-compare-matrix-cell col-bitrix">да, после настройки</div>
+          <div class="tg-compare-matrix-cell col-search">нет</div>
+          <div class="tg-compare-matrix-cell col-us">из коробки</div>
+        </div>
+        <div class="tg-compare-matrix-row">
+          <div class="tg-compare-matrix-crit">Работа с поставщиками и КП</div>
+          <div class="tg-compare-matrix-cell col-excel">вручную</div>
+          <div class="tg-compare-matrix-cell col-bitrix">доработка</div>
+          <div class="tg-compare-matrix-cell col-search">нет</div>
+          <div class="tg-compare-matrix-cell col-us">SRM в том же окне</div>
+        </div>
+        <div class="tg-compare-matrix-row">
+          <div class="tg-compare-matrix-crit">Нагрузка по специалистам</div>
+          <div class="tg-compare-matrix-cell col-excel">нет</div>
+          <div class="tg-compare-matrix-cell col-bitrix">после настройки</div>
+          <div class="tg-compare-matrix-cell col-search">нет</div>
+          <div class="tg-compare-matrix-cell col-us">из коробки</div>
+        </div>
+        <div class="tg-compare-matrix-row row-wide">
+          <div class="tg-compare-matrix-crit">Универсальные задачи бизнеса</div>
+          <div class="tg-compare-matrix-cell col-excel">нет</div>
+          <div class="tg-compare-matrix-cell col-bitrix">да, шире</div>
+          <div class="tg-compare-matrix-cell col-search">нет</div>
+          <div class="tg-compare-matrix-cell col-us">только тендеры и закупки</div>
+        </div>
       </div>
     </div>
   </div>
@@ -814,8 +632,8 @@
     Кнопка «Получить условия перехода» в блоке Битрикс ведёт сюда.
   </div>
 
-  <script src="assets/vendor/lenis/lenis.min.js?v=1b39715"></script>
-  <script src="assets/vendor/aos/aos.js?v=1b39715"></script>
-  <script src="assets/enhancements.js?v=1b39715"></script>
+  <script src="assets/vendor/lenis/lenis.min.js?v=72ac5bc"></script>
+  <script src="assets/vendor/aos/aos.js?v=72ac5bc"></script>
+  <script src="assets/enhancements.js?v=72ac5bc"></script>
 </body>
 </html>

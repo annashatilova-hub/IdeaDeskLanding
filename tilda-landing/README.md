@@ -26,7 +26,7 @@ HTML-блоки для встраивания в Tilda через блок **T12
 | 3 | `07-crm-srm-kp.html` | Вся тендерная работа в iStockLink |
 | 3a | `08-kontur-search-widget.html` | Виджет Контур.Закупки (iframe) |
 | 4 | `02-how-it-works.html` | Как это работает |
-| 5 | `08-crm-compare.html` | Сравнение с CRM (например, Битрикс24) |
+| 5 | `08-crm-compare.html` | Сравнение: Excel, Битрикс, поиск тендеров, iStockLink |
 | 5b | `14-bitrix-switch-promo.html` | Переход с Битрикс24: −50% на год, старт за день |
 | 6 | `11-pricing-value.html` | Стоимость: ценность, от 1 260 ₽, ссылка на тарифы |
 | 7 | `04-audience-pricing.html` | *(опционально)* три карточки тарифов с переключателем |
