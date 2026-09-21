@@ -9,17 +9,17 @@
     box-sizing: border-box;
     width: 100%;
     background: #f4f7fb;
-    padding: 56px 24px 40px;
+    padding: 72px 24px 64px;
     position: relative;
     overflow: hidden;
   }
   .tg-hero-wrap *, .tg-hero-wrap *::before, .tg-hero-wrap *::after { box-sizing: border-box; }
   .tg-hero-inner {
-    max-width: 1240px;
+    max-width: 1280px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(280px, 0.78fr) minmax(420px, 1.35fr);
-    gap: 28px 40px;
+    grid-template-columns: minmax(280px, 0.68fr) minmax(520px, 1.55fr);
+    gap: 32px 28px;
     align-items: center;
     position: relative;
     z-index: 1;
@@ -41,8 +41,9 @@
   }
   .tg-hero-actions {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
     gap: 12px;
     margin-bottom: 22px;
   }
@@ -50,10 +51,10 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 28px;
-    border-radius: 999px;
-    font-size: 16px;
-    font-weight: 700;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
     text-decoration: none;
     transition: transform .2s, box-shadow .2s;
   }
@@ -93,17 +94,16 @@
 
   .tg-hero-visual {
     position: relative;
-    padding: 12px 8px 0 0;
+    padding: 8px 12px 0 0;
   }
-  .tg-hero-visual::before {
-    content: "";
+  .tg-hero-blob {
     position: absolute;
     right: 0;
-    top: 48px;
-    width: 72%;
-    height: 78%;
+    top: 56px;
+    bottom: 0;
+    width: 78%;
     background: #e4ecfb;
-    border-radius: 28px;
+    border-radius: 32px;
     z-index: 0;
   }
   .tg-hero-ui {
@@ -134,41 +134,43 @@
   }
   .tg-hero-pop {
     position: absolute;
-    left: 20.4%;
-    top: 31%;
+    left: 22%;
+    top: 29%;
     z-index: 3;
-    width: 228px;
-    transform: scale(1.42);
-    transform-origin: top left;
     pointer-events: none;
   }
   .tg-hero-pop-card {
     font-family: 'Commissioner', 'TildaSans', sans-serif;
+    width: 168px;
+    min-height: 236px;
     background: #fff;
     border-radius: 10px;
     border: 1px solid #e8eef7;
-    box-shadow: 0 16px 40px rgba(28, 80, 222, 0.18);
-    padding: 12px 12px 10px;
+    box-shadow: 0 14px 36px rgba(28, 80, 222, 0.16);
+    padding: 10px 10px 12px;
+    display: flex;
+    flex-direction: column;
   }
   .tg-hero-pop-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .tg-hero-pop-num {
-    font-size: 12px;
-    font-weight: 600;
-    color: #1c50de;
-  }
-  .tg-hero-pop-src {
     font-size: 11px;
     font-weight: 600;
     color: #1c50de;
   }
+  .tg-hero-pop-menu {
+    color: #94a3b8;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 1px;
+  }
   .tg-hero-pop-title {
     margin: 0 0 10px;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 600;
     line-height: 1.35;
     color: #0f172a;
@@ -176,25 +178,42 @@
   .tg-hero-pop-row {
     display: flex;
     justify-content: space-between;
-    gap: 8px;
-    font-size: 12px;
+    gap: 6px;
+    font-size: 10px;
     line-height: 1.4;
-    margin-bottom: 4px;
+    margin-bottom: 3px;
   }
   .tg-hero-pop-row span { color: #94a3b8; font-weight: 400; }
   .tg-hero-pop-row b { color: #0f172a; font-weight: 600; }
   .tg-hero-pop-row b.price { color: #1c50de; }
+  .tg-hero-pop-date {
+    margin: 6px 0 2px;
+    font-size: 10px;
+    color: #64748b;
+  }
+  .tg-hero-pop-created {
+    font-size: 10px;
+    color: #94a3b8;
+    margin-bottom: 8px;
+  }
   .tg-hero-pop-timer {
     display: inline-flex;
-    margin-top: 8px;
-    padding: 4px 8px;
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 3px 7px;
     border-radius: 6px;
     background: #e8f8ef;
     color: #15803d;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 600;
     font-variant-numeric: tabular-nums;
-    letter-spacing: 0.01em;
+  }
+  .tg-hero-pop-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #1c50de;
   }
 
   .tg-hero-steps {
@@ -202,39 +221,39 @@
     z-index: 1;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 16px;
-    margin-top: 22px;
-    padding: 0 8px 8px;
+    gap: 20px 28px;
+    margin-top: 20px;
+    padding: 4px 20px 18px 12px;
   }
   .tg-hero-step {
-    font-size: 14px;
-    line-height: 1.45;
-    color: #334155;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 8px;
+    align-items: start;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #64748b;
   }
   .tg-hero-step b {
-    display: inline;
     color: #1c50de;
-    font-weight: 800;
-    margin-right: 4px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.4;
   }
 
   @media (max-width: 960px) {
     .tg-hero-inner { grid-template-columns: 1fr; gap: 32px; }
     .tg-hero-visual { padding: 0; }
-    .tg-hero-visual::before { width: 70%; height: 70%; top: auto; bottom: 40px; }
-    .tg-hero-pop { transform: scale(1.28); }
+    .tg-hero-blob { width: 82%; top: 40px; }
   }
   @media (max-width: 560px) {
-    .tg-hero-wrap { padding: 48px 18px 36px; }
+    .tg-hero-wrap { padding: 48px 18px 40px; }
     .tg-hero-title { font-size: clamp(30px, 8.5vw, 40px); }
+    .tg-hero-actions { flex-direction: column; }
     .tg-hero-actions .tg-btn { width: 100%; }
     .tg-hero-col-glow { display: none; }
-    .tg-hero-pop {
-      left: 8%;
-      top: 34%;
-      transform: scale(1.15);
-    }
-    .tg-hero-steps { grid-template-columns: 1fr; gap: 10px; }
+    .tg-hero-pop { left: 10%; top: 32%; }
+    .tg-hero-steps { grid-template-columns: 1fr; gap: 12px; }
   }
 </style>
 
@@ -254,26 +273,30 @@
     </div>
 
     <div class="tg-hero-visual">
+      <div class="tg-hero-blob"></div>
       <div class="tg-hero-ui">
-        <img src="https://kolomoets-netizen.github.io/Link/assets/hero-crm-kanban.png?v=2" alt="Воронка сделок iStockLink">
+        <img src="https://kolomoets-netizen.github.io/Link/assets/hero-crm-kanban.png?v=3" alt="Воронка сделок iStockLink">
         <div class="tg-hero-col-glow"></div>
         <div class="tg-hero-pop">
           <div class="tg-hero-pop-card">
             <div class="tg-hero-pop-head">
               <span class="tg-hero-pop-num">0021</span>
-              <span class="tg-hero-pop-src">Seldon</span>
+              <span class="tg-hero-pop-menu">···</span>
             </div>
             <p class="tg-hero-pop-title">Поставка медицинского оборудования для больницы</p>
             <div class="tg-hero-pop-row"><span>НМЦК</span><b class="price">4 200 000 ₽</b></div>
             <div class="tg-hero-pop-row"><span>Ответственный</span><b>Игорь Громов</b></div>
+            <div class="tg-hero-pop-date">22.09.2026</div>
+            <div class="tg-hero-pop-created">Создано 21.09.2026, 13:17</div>
             <span class="tg-hero-pop-timer">0 д 18:52:51</span>
+            <span class="tg-hero-pop-link">Площадка</span>
           </div>
         </div>
       </div>
       <div class="tg-hero-steps">
-        <div class="tg-hero-step"><b>1</b> Тендер приходит из Контура или Seldon</div>
-        <div class="tg-hero-step"><b>2</b> Специалист ведёт заявку по этапам</div>
-        <div class="tg-hero-step"><b>3</b> Контракт заключён, всё в одном окне</div>
+        <div class="tg-hero-step"><b>1</b><span>Тендер приходит из<br>Контура или Seldon</span></div>
+        <div class="tg-hero-step"><b>2</b><span>Специалист ведёт заявку<br>по этапам</span></div>
+        <div class="tg-hero-step"><b>3</b><span>Контракт заключён, всё<br>в одном окне</span></div>
       </div>
     </div>
   </div>
