@@ -11,7 +11,7 @@
     padding: 80px 24px;
   }
   .tg-compare-wrap *, .tg-compare-wrap *::before, .tg-compare-wrap *::after { box-sizing: border-box; }
-  .tg-compare-inner { max-width: 1120px; margin: 0 auto; }
+  .tg-compare-inner { max-width: 1200px; margin: 0 auto; }
   .tg-compare-header { text-align: center; margin-bottom: 36px; }
   .tg-section-title {
     margin: 0 0 14px;
@@ -34,7 +34,7 @@
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
   }
   .tg-compare-matrix {
-    min-width: 920px;
+    min-width: 1040px;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(28, 80, 222, 0.12);
@@ -43,29 +43,29 @@
   .tg-compare-matrix-head,
   .tg-compare-matrix-row {
     display: grid;
-    grid-template-columns: minmax(148px, 1.1fr) repeat(4, minmax(120px, 1fr));
+    grid-template-columns: minmax(168px, 1.15fr) repeat(4, minmax(140px, 1fr));
     border-bottom: 1px solid #eef2ff;
   }
   .tg-compare-matrix-row:last-child { border-bottom: none; }
   .tg-compare-matrix-head {
     background: #f8fafc;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 17px;
     line-height: 1.35;
     color: var(--tg-text);
     border-bottom: 2px solid #e2e8f0;
   }
   .tg-compare-matrix-crit,
   .tg-compare-matrix-cell {
-    padding: 16px 14px;
-    font-size: 15px;
-    line-height: 1.45;
+    padding: 22px 18px;
+    font-size: 18px;
+    line-height: 1.5;
     border-right: 1px solid #eef2ff;
     vertical-align: top;
   }
   .tg-compare-matrix-head .tg-compare-matrix-crit,
   .tg-compare-matrix-head .tg-compare-matrix-cell {
-    padding: 18px 14px;
+    padding: 22px 18px;
   }
   .tg-compare-matrix-crit {
     font-weight: 800;
@@ -87,19 +87,6 @@
     color: #153fb8;
     background: #dce8ff;
   }
-  .tg-compare-matrix-row.row-wide .tg-compare-matrix-crit,
-  .tg-compare-matrix-row.row-wide .tg-compare-matrix-cell {
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-  .tg-compare-matrix-row.row-wide .col-bitrix {
-    font-weight: 600;
-    color: #334155;
-  }
-  .tg-compare-matrix-row.row-wide .col-us {
-    font-weight: 700;
-    color: var(--tg-primary);
-  }
   @media (max-width: 560px) {
     .tg-compare-wrap { padding: 56px 16px; }
     .tg-section-sub { font-size: 18px; }
@@ -110,14 +97,14 @@
   <div class="tg-compare-inner">
     <div class="tg-compare-header">
       <h2 class="tg-section-title">Чем iStockLink отличается от привычных инструментов</h2>
-      <p class="tg-section-sub">Сравнение по запуску, стоимости и возможностям именно для тендерного отдела — без «универсальной CRM ради всего».</p>
+      <p class="tg-section-sub">iStockLink создан под тендеры и закупки без настройки CRM с нуля и скрытых расходов на внедрение и доработки.</p>
     </div>
 
     <div class="tg-compare-scroll">
       <div class="tg-compare-matrix">
         <div class="tg-compare-matrix-head">
           <div class="tg-compare-matrix-crit"></div>
-          <div class="tg-compare-matrix-cell col-excel">Excel и таблицы</div>
+          <div class="tg-compare-matrix-cell col-excel">Excel</div>
           <div class="tg-compare-matrix-cell col-bitrix">Битрикс24 + внедрение</div>
           <div class="tg-compare-matrix-cell col-search">Сервисы поиска тендеров</div>
           <div class="tg-compare-matrix-cell col-us">iStockLink</div>
@@ -134,7 +121,7 @@
           <div class="tg-compare-matrix-cell col-excel">0</div>
           <div class="tg-compare-matrix-cell col-bitrix">от 100 000 ₽ + подписка</div>
           <div class="tg-compare-matrix-cell col-search">подписка</div>
-          <div class="tg-compare-matrix-cell col-us">от 6 000 ₽/мес</div>
+          <div class="tg-compare-matrix-cell col-us">от 1260 ₽/мес</div>
         </div>
         <div class="tg-compare-matrix-row">
           <div class="tg-compare-matrix-crit">Тендеры из агрегаторов</div>
@@ -163,13 +150,6 @@
           <div class="tg-compare-matrix-cell col-bitrix">после настройки</div>
           <div class="tg-compare-matrix-cell col-search">нет</div>
           <div class="tg-compare-matrix-cell col-us">из коробки</div>
-        </div>
-        <div class="tg-compare-matrix-row row-wide">
-          <div class="tg-compare-matrix-crit">Универсальные задачи бизнеса</div>
-          <div class="tg-compare-matrix-cell col-excel">нет</div>
-          <div class="tg-compare-matrix-cell col-bitrix">да, шире</div>
-          <div class="tg-compare-matrix-cell col-search">нет</div>
-          <div class="tg-compare-matrix-cell col-us">только тендеры и закупки</div>
         </div>
       </div>
     </div>
