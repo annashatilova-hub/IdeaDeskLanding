@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <meta name="build" content="2042a7f">
+  <meta name="build" content="20a400f">
   <title>Превью — изменения /trading (агрегатор, CRM, Битрикс)</title>
   <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
-  <link rel="stylesheet" href="assets/vendor/aos/aos.css?v=2042a7f">
-  <link rel="stylesheet" href="assets/enhancements.css?v=2042a7f">
+  <link rel="stylesheet" href="assets/vendor/aos/aos.css?v=20a400f">
+  <link rel="stylesheet" href="assets/enhancements.css?v=20a400f">
   <style>
     body { margin: 0; background: #f1f5f9; }
     .tg-preview-bar {
@@ -42,7 +42,7 @@
 </head>
 <body>
   <div class="tg-preview-bar">
-    Превью только изменённых блоков · сборка 2026-09-21 (2042a7f)
+    Превью только изменённых блоков · сборка 2026-09-22 (20a400f)
     <ul>
       <li>02-how-it-works · 08-crm-compare · 14-bitrix-switch-promo</li>
     </ul>
@@ -352,13 +352,13 @@
     max-width: 720px;
   }
   .tg-compare-scroll {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow: visible;
     border-radius: 20px;
     box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
   }
   .tg-compare-matrix {
-    min-width: 1040px;
+    width: 100%;
+    min-width: 0;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid rgba(28, 80, 222, 0.12);
@@ -367,7 +367,7 @@
   .tg-compare-matrix-head,
   .tg-compare-matrix-row {
     display: grid;
-    grid-template-columns: minmax(168px, 1.15fr) repeat(4, minmax(140px, 1fr));
+    grid-template-columns: minmax(0, 1.15fr) repeat(4, minmax(0, 1fr));
     border-bottom: 1px solid #eef2ff;
   }
   .tg-compare-matrix-row:last-child { border-bottom: none; }
@@ -381,15 +381,17 @@
   }
   .tg-compare-matrix-crit,
   .tg-compare-matrix-cell {
-    padding: 22px 18px;
-    font-size: 18px;
-    line-height: 1.5;
+    padding: 18px 12px;
+    font-size: 16px;
+    line-height: 1.4;
+    overflow-wrap: break-word;
     border-right: 1px solid #eef2ff;
     vertical-align: top;
   }
   .tg-compare-matrix-head .tg-compare-matrix-crit,
   .tg-compare-matrix-head .tg-compare-matrix-cell {
-    padding: 22px 18px;
+    padding: 18px 12px;
+    overflow-wrap: break-word;
   }
   .tg-compare-matrix-crit {
     font-weight: 800;
@@ -411,9 +413,19 @@
     color: #153fb8;
     background: #dce8ff;
   }
+  @media (max-width: 900px) {
+    .tg-compare-matrix-head,
+    .tg-compare-matrix-row { font-size: 15px; }
+    .tg-compare-matrix-crit,
+    .tg-compare-matrix-cell { padding: 14px 8px; font-size: 14px; }
+    .tg-compare-matrix-head { font-size: 14px; }
+  }
   @media (max-width: 560px) {
     .tg-compare-wrap { padding: 56px 16px; }
     .tg-section-sub { font-size: 18px; }
+    .tg-compare-matrix-crit,
+    .tg-compare-matrix-cell { padding: 12px 6px; font-size: 13px; }
+    .tg-compare-matrix-head { font-size: 13px; }
   }
 </style>
 
@@ -615,8 +627,8 @@
     Кнопка «Получить условия перехода» в блоке Битрикс ведёт сюда.
   </div>
 
-  <script src="assets/vendor/lenis/lenis.min.js?v=2042a7f"></script>
-  <script src="assets/vendor/aos/aos.js?v=2042a7f"></script>
-  <script src="assets/enhancements.js?v=2042a7f"></script>
+  <script src="assets/vendor/lenis/lenis.min.js?v=20a400f"></script>
+  <script src="assets/vendor/aos/aos.js?v=20a400f"></script>
+  <script src="assets/enhancements.js?v=20a400f"></script>
 </body>
 </html>
