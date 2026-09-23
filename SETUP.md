@@ -43,12 +43,16 @@ start docs\index.html
 
 Список в сборке: `scripts/build-preview.mjs` → массив `blocks`.
 
-## 5. Тексты (источник)
+## 5. Тексты и прототипы (источник)
 
-Прототип v4 и ТЗ в репозитории **idea-desk**:
+| Файл | Назначение |
+|---|---|
+| [docs/tz-landing.md](./docs/tz-landing.md) | Постановка: структура, тексты, критерии приёмки |
+| [docs/landing-prototype/](./docs/landing-prototype/) | 4 HTML-прототипа (v1–v4) |
+| `docs/landing-prototype/index-omnidata-inspired.html` | v4 — ориентир для текущих блоков `tilda-landing/` |
+| `docs/landing-prototype/index-tilda-style.html` | v3 — минимальные правки live Tilda |
 
-- `docs/landing-prototype/index-omnidata-inspired.html`
-- `docs/tz-landing-lite-istock.md` §10
+Живая страница: [lite-istock.tilda.ws](https://lite-istock.tilda.ws/)
 
 ## 6. Cursor
 

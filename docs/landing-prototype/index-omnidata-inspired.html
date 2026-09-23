@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Idea Desk помогает управлять разработкой коллекций: собирать идеи, согласовывать модели и формировать ассортимент для разных каналов продаж.">
+  <title>Idea Desk — управление разработкой коллекций</title>
+  <style>
+    :root {
+      --ink: #1c1f22;
+      --muted: #5f6870;
+      --line: #dfe4ea;
+      --soft: #f5f7fa;
+      --blue: #3669fd;
+      --blue-dark: #2e5ee8;
+      --blue-soft: #ebf0fe;
+      --teal: #00a987;
+      --white: #fff;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: Arial, "Helvetica Neue", sans-serif;
+      line-height: 1.55;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+
+    :focus-visible {
+      outline: 3px solid rgba(54, 105, 253, .35);
+      outline-offset: 3px;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max));
+      margin-inline: auto;
+    }
+
+    .prototype {
+      padding: 7px 16px;
+      color: #6d5900;
+      background: #fff7d6;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .prototype a { text-decoration: underline; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      color: var(--white);
+      background: rgba(28, 31, 34, .96);
+      backdrop-filter: blur(12px);
+    }
+
+    .header__inner {
+      min-height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+    }
+
+    .brand__mark {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, var(--blue) 0 48%, transparent 48%),
+        linear-gradient(315deg, var(--teal) 0 48%, #b9c9ff 48%);
+    }
+
+    .brand small {
+      display: block;
+      color: #b9c0c7;
+      font-size: 11px;
+      font-weight: 400;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: #d9dde1;
+      font-size: 13px;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 44px;
+      padding: 0 22px;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      border-radius: 7px;
+      color: var(--white);
+      background: var(--blue);
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .button:hover { background: var(--blue-dark); }
+
+    .button--light {
+      color: var(--blue);
+      background: var(--white);
+      border: 1px solid var(--line);
+    }
+
+    .button--light:hover { background: var(--blue-soft); }
+
+    .hero {
+      padding: 72px 0 52px;
+      overflow: hidden;
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 54px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      margin-bottom: 18px;
+      padding: 6px 10px;
+      color: var(--blue-dark);
+      background: var(--blue-soft);
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 580px;
+      margin-bottom: 20px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -.045em;
+    }
+
+    .hero__lead {
+      max-width: 590px;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 19px;
+    }
+
+    .hero__note {
+      max-width: 560px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .product-shot {
+      position: relative;
+      min-height: 430px;
+      padding: 20px 20px 0;
+      background: linear-gradient(145deg, #edf2ff, #eefbf8);
+      border-radius: 28px;
+    }
+
+    .product-shot::before {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -50px;
+      top: -50px;
+      border: 1px solid rgba(54, 105, 253, .25);
+      border-radius: 50%;
+    }
+
+    .window {
+      position: relative;
+      z-index: 1;
+      margin-top: 28px;
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid #cdd5df;
+      border-radius: 14px;
+      box-shadow: 0 24px 50px rgba(31, 43, 65, .18);
+    }
+
+    .window__bar {
+      height: 38px;
+      padding: 13px 14px;
+      background: #f0f2f5;
+    }
+
+    .window__bar span,
+    .window__bar span::before,
+    .window__bar span::after {
+      display: block;
+      width: 8px;
+      height: 8px;
+      background: #b8c0c8;
+      border-radius: 50%;
+    }
+
+    .window__bar span { position: relative; }
+    .window__bar span::before { content: ""; position: absolute; left: 13px; }
+    .window__bar span::after { content: ""; position: absolute; left: 26px; }
+
+    .window__body {
+      min-height: 320px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+    }
+
+    .window__sidebar {
+      padding: 20px 14px;
+      background: #252a30;
+    }
+
+    .window__sidebar i {
+      display: block;
+      height: 8px;
+      margin-bottom: 14px;
+      background: rgba(255, 255, 255, .22);
+      border-radius: 3px;
+    }
+
+    .window__sidebar i:nth-child(2) { width: 72%; background: var(--blue); }
+    .window__sidebar i:nth-child(4) { width: 84%; }
+
+    .window__content { padding: 24px; }
+
+    .window__title {
+      width: 46%;
+      height: 16px;
+      margin-bottom: 24px;
+      background: var(--ink);
+      border-radius: 3px;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .kpi {
+      padding: 14px;
+      background: var(--soft);
+      border-radius: 8px;
+    }
+
+    .kpi b { display: block; font-size: 22px; }
+    .kpi small { color: var(--muted); }
+
+    .pipeline {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+    }
+
+    .pipeline__row {
+      display: grid;
+      grid-template-columns: 1fr 2fr 36px;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    .pipeline__bar {
+      height: 7px;
+      overflow: hidden;
+      background: #e7ebf0;
+      border-radius: 5px;
+    }
+
+    .pipeline__bar i {
+      display: block;
+      height: 100%;
+      background: var(--blue);
+      border-radius: inherit;
+    }
+
+    .trust {
+      padding: 24px 0;
+      background: var(--soft);
+      border-block: 1px solid var(--line);
+    }
+
+    .trust__grid {
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, 1fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .trust__title { font-weight: 700; }
+
+    .trust__item {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .trust__item strong {
+      display: block;
+      color: var(--ink);
+      font-size: 16px;
+    }
+
+    section { padding: 82px 0; }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 42px;
+    }
+
+    .section-head--center {
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 14px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -.035em;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .problem-card {
+      min-height: 230px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+    }
+
+    .problem-card__number {
+      display: block;
+      margin-bottom: 36px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .problem-card h3 { margin-bottom: 10px; font-size: 20px; }
+    .problem-card p { color: var(--muted); font-size: 14px; }
+
+    .flow { background: var(--soft); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--white);
+      overflow: hidden;
+    }
+
+    .step {
+      min-height: 230px;
+      padding: 24px;
+      border-right: 1px solid var(--line);
+    }
+
+    .step:last-child {
+      color: var(--white);
+      background: var(--ink);
+      border-right: 0;
+    }
+
+    .step b {
+      display: block;
+      margin-bottom: 32px;
+      color: var(--blue);
+      font-size: 13px;
+    }
+
+    .step:last-child b { color: #8da8ff; }
+    .step h3 { font-size: 17px; }
+    .step p { color: var(--muted); font-size: 13px; }
+    .step:last-child p { color: #cbd0d5; }
+
+    .evidence-grid {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 52px;
+      align-items: center;
+    }
+
+    .evidence-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .evidence-item {
+      padding: 20px 22px;
+      border-left: 4px solid var(--blue);
+      background: var(--soft);
+    }
+
+    .evidence-item strong { display: block; margin-bottom: 4px; }
+    .evidence-item span { color: var(--muted); font-size: 14px; }
+
+    .case-placeholder {
+      min-height: 390px;
+      padding: 34px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: var(--white);
+      background:
+        linear-gradient(180deg, transparent 15%, rgba(20, 26, 34, .9) 100%),
+        linear-gradient(135deg, #7ea1ff, #4b6b78);
+      border-radius: 16px;
+    }
+
+    .case-placeholder small {
+      margin-bottom: auto;
+      align-self: flex-start;
+      padding: 6px 9px;
+      color: var(--ink);
+      background: #fff7d6;
+      border-radius: 4px;
+      font-weight: 700;
+    }
+
+    .case-placeholder h3 { margin-bottom: 10px; font-size: 26px; }
+    .case-placeholder p { margin-bottom: 0; color: #e0e5e9; }
+
+    .offer {
+      color: var(--white);
+      background: var(--ink);
+    }
+
+    .offer__grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 62px;
+      align-items: start;
+    }
+
+    .offer .eyebrow { color: #c8d5ff; background: rgba(54, 105, 253, .2); }
+    .offer p { color: #cbd0d5; }
+
+    .price {
+      margin: 22px 0 8px;
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+
+    .price span { font-size: 16px; font-weight: 400; color: #cbd0d5; }
+
+    .form {
+      padding: 30px;
+      color: var(--ink);
+      background: var(--white);
+      border-radius: 14px;
+    }
+
+    .form h3 { margin-bottom: 20px; }
+
+    .form label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      min-height: 44px;
+      margin-bottom: 14px;
+      padding: 11px 12px;
+      color: var(--ink);
+      background: var(--soft);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+    }
+
+    .form textarea { min-height: 82px; resize: vertical; }
+    .form .button { width: 100%; }
+
+    .form__note {
+      margin: 10px 0 0;
+      color: var(--muted) !important;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    footer {
+      padding: 30px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer a { color: var(--blue); margin-inline: 6px; }
+
+    @media (max-width: 900px) {
+      .nav a:not(.button) { display: none; }
+      .hero__grid,
+      .evidence-grid,
+      .offer__grid { grid-template-columns: 1fr; }
+      .product-shot { min-height: 370px; }
+      .problem-grid { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr 1fr; }
+      .step { border-bottom: 1px solid var(--line); }
+      .trust__grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 560px) {
+      .container { width: min(calc(100% - 28px), var(--max)); }
+      .header__inner { min-height: 58px; }
+      .nav { gap: 8px; }
+      .nav .button { min-height: 40px; padding-inline: 14px; }
+      .hero { padding-top: 48px; }
+      h1 { font-size: 38px; }
+      .hero__actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .hero__actions .button { width: 100%; }
+      .window__body { grid-template-columns: 76px 1fr; }
+      .window__content { padding: 14px; }
+      .kpis { grid-template-columns: 1fr; }
+      .kpi:nth-child(n+2) { display: none; }
+      .product-shot { min-height: 340px; }
+      .trust__grid,
+      .problem-grid,
+      .steps { grid-template-columns: 1fr; }
+      .step { border-right: 0; }
+      section { padding: 64px 0; }
+      .case-placeholder { min-height: 320px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="prototype">
+    Прототип v4 — приёмы Omnidata без копирования бренда и текстов ·
+    <a href="index-tilda-style.html">v3 Tilda</a> ·
+    <a href="index-saas.html">v2 SaaS</a>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span>Idea Desk<small>стол идей · istock</small></span>
+      </a>
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#flow">Как работает</a>
+        <a href="#result">Результат</a>
+        <a href="#platform">Связь с istock</a>
+        <a class="button" href="#request">Оставить заявку</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero__grid">
+        <div>
+          <span class="eyebrow">Idea Desk · стол идей · платформа istock</span>
+          <h1>Собирайте идеи в готовый ассортимент</h1>
+          <p class="hero__lead">
+            Управляйте разработкой коллекций: от поиска и оценки идей
+            до согласованных моделей для маркетплейсов, собственных продаж и заказных проектов.
+          </p>
+          <div class="hero__actions">
+            <a class="button" href="#request">Оставить заявку</a>
+            <a class="button button--light" href="#flow">Посмотреть процесс</a>
+          </div>
+        </div>
+
+        <div class="product-shot" aria-label="Макет интерфейса Idea Desk">
+          <div class="window">
+            <div class="window__bar"><span></span></div>
+            <div class="window__body">
+              <aside class="window__sidebar" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i>
+              </aside>
+              <div class="window__content">
+                <div class="window__title"></div>
+                <div class="kpis">
+                  <div class="kpi"><b>12</b><small>моделей</small></div>
+                  <div class="kpi"><b>8</b><small>согласовано</small></div>
+                  <div class="kpi"><b>34</b><small>идеи</small></div>
+                </div>
+                <div class="pipeline">
+                  <div class="pipeline__row"><span>Согласование</span><div class="pipeline__bar"><i style="width:74%"></i></div><b>8/12</b></div>
+                  <div class="pipeline__row"><span>Идентификация</span><div class="pipeline__bar"><i style="width:54%"></i></div><b>6/12</b></div>
+                  <div class="pipeline__row"><span>Образцы</span><div class="pipeline__bar"><i style="width:36%"></i></div><b>4/12</b></div>
+                  <div class="pipeline__row"><span>Заказы</span><div class="pipeline__bar"><i style="width:22%"></i></div><b>2/12</b></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="container trust__grid">
+        <div class="trust__title">От идеи до ассортимента</div>
+        <div class="trust__item"><strong>1. Идеи</strong>Источники, фото и параметры</div>
+        <div class="trust__item"><strong>2. Отбор</strong>Оценка и согласование</div>
+        <div class="trust__item"><strong>3. Модели</strong>Готовы к следующему этапу</div>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Знакомо?</span>
+          <h2>Новые модели нужны постоянно — а решений становится всё больше</h2>
+          <p>Idea Desk помогает удерживать темп разработки и видеть состояние каждой идеи и модели.</p>
+        </div>
+        <div class="problem-grid">
+          <article class="problem-card">
+            <span class="problem-card__number">01</span>
+            <h3>Слишком много идей одновременно</h3>
+            <p>Сезонные коллекции, капсулы, клиентские запросы и тренды конкурируют за внимание команды.</p>
+          </article>
+          <article class="problem-card">
+            <span class="problem-card__number">02</span>
+            <h3>Решения теряются между участниками</h3>
+            <p>Фото готово, оценка проведена, но неясно, кто принимает решение и что должно произойти дальше.</p>
+          </article>
+          <article class="problem-card">
+            <span class="problem-card__number">03</span>
+            <h3>Не видна готовность ассортимента</h3>
+            <p>Сложно быстро понять, какие модели рассматривают, какие согласованы и какие готовы к следующему этапу.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="flow" id="flow">
+      <div class="container">
+        <div class="section-head section-head--center">
+          <span class="eyebrow">Как это работает</span>
+          <h2>Пять этапов от идеи до готового ассортимента</h2>
+          <p>Один процесс для сезонных коллекций, капсул под маркетплейсы и заказных проектов.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <b>01</b>
+            <h3>Создаёте проект</h3>
+            <p>Сезон, капсула или клиентский заказ — с понятными рамками и ответственными.</p>
+          </article>
+          <article class="step">
+            <b>02</b>
+            <h3>Собираете идеи</h3>
+            <p>Источники, фото, цвета и параметры остаются связаны с идеей.</p>
+          </article>
+          <article class="step">
+            <b>03</b>
+            <h3>Оцениваете варианты</h3>
+            <p>Фото, артикул и коммерческая оценка проходят свои этапы.</p>
+          </article>
+          <article class="step">
+            <b>04</b>
+            <h3>Согласуете модели</h3>
+            <p>Решения по моделям и цветам фиксируются и остаются понятны команде.</p>
+          </article>
+          <article class="step" id="platform">
+            <b>05 · результат</b>
+            <h3>Формируете ассортимент</h3>
+            <p>Согласованные модели готовы к работе в нужном канале или проекте.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="result">
+      <div class="container evidence-grid">
+        <div>
+          <span class="eyebrow">Результат</span>
+          <h2>По каждой модели понятно, что делать дальше</h2>
+          <div class="evidence-list">
+            <div class="evidence-item">
+              <strong>Весь портфель разработок на виду</strong>
+              <span>Сколько идей рассматривают, сколько моделей согласуют и что уже вошло в ассортимент.</span>
+            </div>
+            <div class="evidence-item">
+              <strong>Каждый участник видит свой этап</strong>
+              <span>Фото, оценка и согласование разделены, но остаются частью общего процесса.</span>
+            </div>
+            <div class="evidence-item">
+              <strong>Следующий шаг определён</strong>
+              <span>Согласованная модель готова к дальнейшей работе — независимо от канала продаж.</span>
+            </div>
+          </div>
+        </div>
+        <article class="case-placeholder">
+          <small>Место под подтверждённый кейс</small>
+          <h3>Здесь нужен результат компании с активной разработкой коллекций</h3>
+          <p>Например: сколько проектов команда ведёт параллельно и как изменилось время согласования моделей.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="offer" id="request">
+      <div class="container offer__grid">
+        <div>
+          <span class="eyebrow">Платформа istock</span>
+          <h2>Покажем, как Idea Desk впишется в ваш цикл разработки</h2>
+          <p>
+            Idea Desk входит в платформу istock (20 000 ₽/мес).
+            Разберём ваши типы коллекций, роли и каналы продаж — и покажем подходящий сценарий.
+          </p>
+          <div class="price">20 000 ₽ <span>/ месяц · вся платформа</span></div>
+          <p>Idea Desk — часть платформы. Сопровождение — по договорённости.</p>
+        </div>
+        <form class="form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
+          <h3>Оставить заявку</h3>
+          <label for="name">Имя</label>
+          <input id="name" name="name" autocomplete="name" required>
+          <label for="company">Компания</label>
+          <input id="company" name="organization" autocomplete="organization" required>
+          <label for="contact">Телефон или email</label>
+          <input id="contact" name="contact" autocomplete="email" required>
+          <label for="comment">Что хотите упорядочить?</label>
+          <textarea id="comment" name="comment" placeholder="Например: ведём много коллекций, сложно отслеживать согласование моделей"></textarea>
+          <button class="button" type="submit">Оставить заявку</button>
+          <p class="form__note">Свяжемся и покажем Idea Desk на примере, близком к вашему процессу.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <a href="index-omnidata-inspired.html">v4 Evidence-first</a>
+      <a href="index-tilda-style.html">v3 Tilda</a>
+      <a href="index-saas.html">v2 SaaS</a>
+      <p>Idea Desk · часть платформы istock · прототип v4</p>
+    </div>
+  </footer>
+</body>
+</html>

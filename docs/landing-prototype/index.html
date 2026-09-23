@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Idea Desk — стол идей | прототип лендинга</title>
+  <style>
+    :root {
+      --primary: #3669fd;
+      --primary-dark: #2e5ee8;
+      --bg: #f5f6f8;
+      --white: #ffffff;
+      --text: #1c1f22;
+      --text-secondary: #494f54;
+      --text-muted: #868f96;
+      --border: #d1d6dc;
+      --success: #00b96b;
+      --shadow: 0 8px 32px rgba(28, 31, 34, 0.08);
+      --radius: 12px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(100% - 32px, var(--max));
+      margin: 0 auto;
+    }
+
+    /* Header — как у Tilda: лого слева, якоря, CTA справа */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo__name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .logo__tag {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: lowercase;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .nav a:hover { color: var(--primary); text-decoration: none; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+
+    .btn--primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .btn--primary:hover {
+      background: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    .btn--ghost {
+      background: transparent;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    /* Hero — двухколоночный блок как типичный Tilda cover */
+    .hero {
+      padding: 56px 0 72px;
+      background: linear-gradient(180deg, var(--bg) 0%, var(--white) 100%);
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero__badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(54, 105, 253, 0.12);
+      color: var(--primary-dark);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+
+    .hero__lead {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+
+    .hero__note {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      padding-left: 12px;
+      border-left: 3px solid var(--border);
+    }
+
+    .hero__actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .screen-placeholder {
+      background: var(--white);
+      border: 1px dashed var(--border);
+      border-radius: var(--radius);
+      min-height: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      text-align: center;
+    }
+
+    .screen-placeholder strong {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Sections */
+    section {
+      padding: 64px 0;
+    }
+
+    section:nth-child(even) {
+      background: var(--bg);
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: clamp(1.4rem, 3vw, 1.85rem);
+      margin-bottom: 12px;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin: 0 auto 40px;
+    }
+
+    /* Pain cards — сетка как на Tilda */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    section:nth-child(even) .card {
+      border: 1px solid var(--border);
+      box-shadow: none;
+    }
+
+    .card__icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(54, 105, 253, 0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+
+    /* Solution */
+    .solution-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 40px;
+      box-shadow: var(--shadow);
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .solution-box h2 { margin-bottom: 16px; }
+
+    .solution-box p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    /* Steps — timeline вместо карусели модулей PLM */
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 20px;
+      padding: 24px 0;
+      position: relative;
+    }
+
+    .step:not(:last-child)::before {
+      content: "";
+      position: absolute;
+      left: 27px;
+      top: 56px;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .step__num {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .step--platform .step__num {
+      background: var(--text);
+    }
+
+    .step__body h3 {
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .step__body p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .step__note {
+      margin-top: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Two systems table */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .compare-col {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 28px;
+      border: 1px solid var(--border);
+    }
+
+    .compare-col--accent {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px rgba(54, 105, 253, 0.2);
+    }
+
+    .compare-col h3 {
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .compare-col dl {
+      display: grid;
+      gap: 12px;
+    }
+
+    .compare-col dt {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+    }
+
+    .compare-col dd {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .compare-footnote {
+      text-align: center;
+      color: var(--text-secondary);
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    /* Pricing + form — как блок Tilda с ценой */
+    .pricing {
+      background: var(--text);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .pricing__price {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 12px 0;
+    }
+
+    .pricing__price span {
+      font-size: 1rem;
+      font-weight: 400;
+      opacity: 0.7;
+    }
+
+    .pricing__note {
+      opacity: 0.75;
+      font-size: 0.9rem;
+    }
+
+    .form label {
+      display: block;
+      font-size: 0.85rem;
+      margin-bottom: 6px;
+      opacity: 0.9;
+    }
+
+    .form input,
+    .form textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--white);
+      font-size: 0.95rem;
+      margin-bottom: 14px;
+    }
+
+    .form input::placeholder,
+    .form textarea::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    .form textarea { min-height: 80px; resize: vertical; }
+
+    .form .btn--primary {
+      width: 100%;
+      margin-top: 4px;
+    }
+
+    /* Final CTA */
+    .final-cta {
+      text-align: center;
+      padding: 56px 0;
+    }
+
+    .final-cta p {
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin: 12px auto 24px;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .proto-banner {
+      background: #fff3bf;
+      color: #7a5d00;
+      text-align: center;
+      padding: 8px 16px;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero__grid,
+      .compare,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      .nav { display: none; }
+
+      .header__inner { justify-content: space-between; }
+
+      .pricing { padding: 32px 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="proto-banner">
+    Прототип v1 — стиль Tilda / корпоративный B2B ·
+    <a href="index-tilda-style.html" style="color: inherit; font-weight: 600;">v3: стиль вашей Tilda →</a>
+    ·
+    <a href="index-saas.html" style="color: inherit;">v2 SaaS</a>
+  </div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <div class="logo">
+        <span class="logo__name">Idea Desk</span>
+        <span class="logo__tag">стол идей</span>
+      </div>
+      <nav class="nav">
+        <a href="#solution">Как устроено</a>
+        <a href="#steps">Этапы</a>
+        <a href="#platform">Что дальше</a>
+        <a href="#request">Заявка</a>
+      </nav>
+      <a class="btn btn--primary" href="#request">Оставить заявку</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="hero__badge">Платформа istock · лёгкая промышленность</span>
+        <h1>С чего начать коллекцию — и как довести её до готовой модели</h1>
+        <p class="hero__lead">
+          Idea Desk — система, которая ведёт коллекцию по этапам: от идеи с фото до согласованной модели.
+          Готовую модель передаёте в платформу istock — там производство заказов по фабрикам.
+        </p>
+        <p class="hero__note">
+          Начинаете с нуля или уже работаете в istock — Idea Desk закрывает этап «до производства»,
+          чтобы коллекция не жила в Excel и чатах.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#request">Оставить заявку</a>
+          <a class="btn btn--ghost" href="#steps">Как это работает</a>
+        </div>
+      </div>
+      <div class="screen-placeholder">
+        <strong>Скрин: карточка коллекции</strong>
+        <span>Этапы коллекции + KPI (демо-данные idea-desk)</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="pains">
+    <div class="container">
+      <h2 class="section-title">Знакомые сложности при старте коллекции</h2>
+      <p class="section-subtitle">Не про «срыв отгрузки», а про хаос до того, как модель попадает в производство.</p>
+      <div class="cards">
+        <article class="card">
+          <div class="card__icon">1</div>
+          <h3>Непонятно, с чего начать</h3>
+          <p>Новый сезон — папка с фото и переписка в чате. Нет точки: «это наша коллекция, вот первый шаг».</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">2</div>
+          <h3>Всё размазано</h3>
+          <p>Идея в таблице, фото в мессенджере, решение на созвоне. История теряется.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">3</div>
+          <h3>Не видно этапов</h3>
+          <p>Неясно, что обработано, что оценено, что согласовано — и кто за что отвечает.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">4</div>
+          <h3>Модель «почти готова»</h3>
+          <p>Обсуждение затянулось, но непонятно: можно ли уже отдавать в производство.</p>
+        </article>
+        <article class="card">
+          <div class="card__icon">5</div>
+          <h3>Разрыв с производством</h3>
+          <p>Модель собрали — и снова переносят вручную в другую систему или таблицу.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="solution">
+    <div class="container">
+      <div class="solution-box">
+        <h2>Idea Desk — уже работающая система, не «ещё одна таблица»</h2>
+        <p>
+          Вы заводите коллекцию как процесс: идеи, фото, оценка и согласование идут по этапам и очередям.
+          Продакт, фото, оценка и руководитель видят своё — без свалки полей.
+          На выходе — <strong>завершённая модель</strong>, которую можно передать в istock.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="steps">
+    <div class="container">
+      <h2 class="section-title">Как это работает</h2>
+      <p class="section-subtitle">Шесть шагов: пять — в Idea Desk, шестой — платформа istock.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">1</div>
+            <div class="step__body">
+              <h3>Заводите коллекцию</h3>
+              <p>Сезон или проект: сроки, состав, кто ведёт. Понятно, с чего начать.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">2</div>
+            <div class="step__body">
+              <h3>Собираете идеи</h3>
+              <p>Фото, источник, предмет, цвет — в одном месте, не в чате.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">3</div>
+            <div class="step__body">
+              <h3>Готовите материалы</h3>
+              <p>Обработка фото, артикул, оценка — идея готова к решению.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">4</div>
+            <div class="step__body">
+              <h3>Согласовываете модель</h3>
+              <p>Цвета, решение «берём / нет» — из идей получается модель.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">5</div>
+            <div class="step__body">
+              <h3>Доводите модель</h3>
+              <p>Образец, идентификация, подготовка заказа — модель завершена.</p>
+            </div>
+          </div>
+          <div class="step step--platform">
+            <div class="step__num">6</div>
+            <div class="step__body">
+              <h3>Передаёте в istock</h3>
+              <p>Заказы на фабрики и контроль производства — без ручного переноса.</p>
+              <p class="step__note">Шаг 6 — платформа istock. Idea Desk заканчивается на готовой модели.</p>
+            </div>
+          </div>
+        </div>
+        <div class="screen-placeholder" style="min-height: 480px;">
+          <strong>Скрины idea-desk</strong>
+          <span>Список идей · очередь · карточка коллекции</span>
+          <span style="margin-top: 12px; font-size: 0.75rem;">Шаг 6 — схема «модель → istock»</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Что такое «готовая модель»</h2>
+      <p class="section-subtitle">
+        Согласованное решение, подготовленные фото и коммерческие данные, понятный статус —
+        не «ещё обсуждаем в чате», а <strong>можно передавать в istock</strong>.
+      </p>
+    </div>
+  </section>
+
+  <section id="platform">
+    <div class="container">
+      <h2 class="section-title">Idea Desk и istock — один путь, два этапа</h2>
+      <div class="compare">
+        <div class="compare-col compare-col--accent">
+          <h3>Idea Desk</h3>
+          <dl>
+            <div><dt>Задача</dt><dd>С чего начать коллекцию и довести до модели</dd></div>
+            <div><dt>Результат</dt><dd>Готовая модель</dd></div>
+            <div><dt>Для кого</dt><dd>Отдел разработки коллекции</dd></div>
+          </dl>
+        </div>
+        <div class="compare-col">
+          <h3>Платформа istock</h3>
+          <dl>
+            <div><dt>Задача</dt><dd>Производство заказов по фабрикам</dd></div>
+            <div><dt>Результат</dt><dd>Заказ на фабрике, контроль производства</dd></div>
+            <div><dt>Для кого</dt><dd>Производство и закупки</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="compare-footnote">
+        Если вы <strong>уже в istock</strong> — Idea Desk добавляет системный старт коллекции, не меняя контур производства.
+        Если <strong>начинаете с нуля</strong> — сначала коллекция в Idea Desk, затем производство в той же платформе.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <h2 class="section-title">Почему Idea Desk</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Быстрый старт</h3>
+          <p>Не нужно внедрять «всё предприятие сразу» — начинаете с коллекции.</p>
+        </article>
+        <article class="card">
+          <h3>Этапы на виду</h3>
+          <p>Все участники видят, где коллекция сейчас.</p>
+        </article>
+        <article class="card">
+          <h3>Каждый видит своё</h3>
+          <p>Фото, оценка и решение — без лишних полей.</p>
+        </article>
+        <article class="card">
+          <h3>Связка с производством</h3>
+          <p>Готовая модель уходит в istock без ручного переноса.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="request">
+    <div class="container">
+      <div class="pricing">
+        <div>
+          <h2 style="font-size: 1.5rem; margin-bottom: 8px;">Платформа istock для лёгкой промышленности</h2>
+          <div class="pricing__price">20 000 ₽ <span>/ месяц</span></div>
+          <p class="pricing__note">
+            Idea Desk (стол идей) входит в платформу istock.<br />
+            Сопровождение и персональный менеджер — по договорённости.
+          </p>
+        </div>
+        <form class="form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
+          <label for="name">Имя</label>
+          <input id="name" type="text" placeholder="Как к вам обращаться" required />
+          <label for="company">Компания</label>
+          <input id="company" type="text" placeholder="Название бренда" required />
+          <label for="contact">Телефон или email</label>
+          <input id="contact" type="text" placeholder="+7 … или email" required />
+          <label for="comment">Комментарий (необязательно)</label>
+          <textarea id="comment" placeholder="Кратко о задаче"></textarea>
+          <button class="btn btn--primary" type="submit">Оставить заявку</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="section-title">Начните коллекцию системно</h2>
+      <p>Оставьте заявку — покажем Idea Desk и расскажем, как модель из стола идей передаётся в производство в istock.</p>
+      <a class="btn btn--primary" href="#request">Оставить заявку</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p style="margin-bottom: 8px;">
+        <a href="index-tilda-style.html">v3 Tilda-стиль</a>
+        · <a href="index.html">v1</a>
+        · <a href="index-saas.html">v2 SaaS</a>
+      </p>
+      Idea Desk · часть платформы istock · прототип v1
+    </div>
+  </footer>
+</body>
+</html>

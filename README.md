@@ -2,8 +2,12 @@
 
 HTML-блоки для лендинга **Idea Desk** (Tilda T123) + preview на GitHub Pages.
 
-Fork шаблона [kolomoets-netizen/Link](https://github.com/kolomoets-netizen/Link).
+**Preview:** https://annashatilova-hub.github.io/IdeaDeskLanding/
 
-**Preview:** https://annashatilova-hub.github.io/IdeaDeskLanding/ (после включения Pages)
+**Tilda:** [lite-istock.tilda.ws](https://lite-istock.tilda.ws/)
 
-Инструкция: [SETUP.md](./SETUP.md)
+| Документ | Описание |
+|---|---|
+| [SETUP.md](./SETUP.md) | Сборка, T123-блоки, рабочий цикл |
+| [docs/tz-landing.md](./docs/tz-landing.md) | Постановка лендинга |
+| [docs/landing-prototype/](./docs/landing-prototype/) | HTML-прототипы v1–v4 |
