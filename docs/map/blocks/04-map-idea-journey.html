@@ -1,0 +1,136 @@
+<!-- Idea Desk map T123 · 04-map-idea-journey.html · build 2862a38 · 2026-09-24 -->
+<style>
+  .idesk-map-journey {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 56px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #f5f7fa;
+  }
+  .idesk-map-journey *, .idesk-map-journey *::before, .idesk-map-journey *::after { box-sizing: border-box; }
+  .idesk-map-journey-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .idesk-map-journey .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-map-journey-title {
+    margin: 0 0 12px;
+    font-size: clamp(24px, 3.2vw, 36px);
+    line-height: 1.15;
+    font-weight: 800;
+  }
+  .idesk-map-journey-lead {
+    margin: 0 0 28px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #5f6870;
+  }
+  .idesk-map-journey-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 3px solid #3669fd;
+  }
+  .idesk-map-journey-item {
+    position: relative;
+    padding: 0 0 24px 24px;
+  }
+  .idesk-map-journey-item:last-child { padding-bottom: 0; }
+  .idesk-map-journey-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #3669fd;
+    border: 3px solid #f5f7fa;
+  }
+  .idesk-map-journey-item--istock::before { background: #1c1f22; }
+  .idesk-map-journey-item b {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+  .idesk-map-journey-item p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5f6870;
+  }
+  .idesk-map-journey-tag {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: #ebf0fe;
+    color: #3669fd;
+  }
+  .idesk-map-journey-item--istock .idesk-map-journey-tag {
+    background: #1c1f22;
+    color: #8da8ff;
+  }
+</style>
+
+<section class="idesk-map-journey" id="journey">
+  <div class="idesk-map-journey-inner">
+    <span class="idesk-eyebrow">Один пример</span>
+    <h2 class="idesk-map-journey-title">Путь одной идеи</h2>
+    <p class="idesk-map-journey-lead">Как одна идея проходит систему — от загрузки до готовности к производству.</p>
+    <ol class="idesk-map-journey-list">
+      <li class="idesk-map-journey-item">
+        <b>Идея создана</b>
+        <p>Продакт загружает фото и параметры в коллекцию сезона.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Фото обработано</b>
+        <p>Специалист по фото берёт из очереди, загружает готовый материал.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Оценка проставлена</b>
+        <p>Артикул и коммерческие данные — идея готова к решению.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Решение «берём»</b>
+        <p>Руководитель или команда фиксирует: идея входит в модель.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Модель согласована</b>
+        <p>Цвета и состав модели утверждены, статус понятен всем.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Модель готова к передаче</b>
+        <p>Фото, оценка и решение собраны — не «ещё обсуждаем в чате».</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item idesk-map-journey-item--istock">
+        <b>Передано в istock</b>
+        <p>Модель уходит в производственный контур — заказы на фабрики.</p>
+        <span class="idesk-map-journey-tag">istock</span>
+      </li>
+    </ol>
+  </div>
+</section>

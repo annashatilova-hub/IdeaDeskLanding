@@ -2,9 +2,11 @@
 
 HTML-блоки для лендинга **Idea Desk** (Tilda T123) + preview на GitHub Pages.
 
-**Preview:** https://annashatilova-hub.github.io/IdeaDeskLanding/
+**Preview лендинга:** https://annashatilova-hub.github.io/IdeaDeskLanding/
 
-**Tilda:** [lite-istock.tilda.ws/idea-desk](https://lite-istock.tilda.ws/idea-desk)
+**Preview карты:** https://annashatilova-hub.github.io/IdeaDeskLanding/map/
+
+**Tilda:** [lite-istock.tilda.ws/idea-desk](https://lite-istock.tilda.ws/idea-desk) · карта: `/karta` (после публикации на Tilda)
 
 | Документ | Описание |
 |---|---|

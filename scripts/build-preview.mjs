@@ -52,7 +52,7 @@ const html = `<!DOCTYPE html>
 </style>
 </head>
 <body>
-<div class="tg-preview-bar">Превью Idea Desk · сборка ${buildDate} (${buildId}) · <a href="./tilda-blocks/">блоки T123 для Tilda</a></div>
+<div class="tg-preview-bar">Превью Idea Desk · сборка ${buildDate} (${buildId}) · <a href="./map/">карта продукта</a> · <a href="./tilda-blocks/">блоки T123 для Tilda</a></div>
 ${body}
 </body>
 </html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Idea Desk — карта процесса разработки коллекции</title>
+<link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
+<style>
+  body{margin:0;background:#fff;color:#1c1f22;font-family:'TildaSans',Arial,sans-serif}
+  .tg-preview-bar{position:sticky;top:0;z-index:9999;padding:8px 16px;text-align:center;font-size:13px;font-weight:600;background:#3669fd;color:#fff;border-bottom:1px solid rgba(255,255,255,.2)}
+  .tg-preview-bar a{color:#dbeafe}
+</style>
+</head>
+<body>
+<div class="tg-preview-bar">Карта Idea Desk · сборка 2026-09-24 (2862a38) · <a href="../">лендинг</a> · <a href="./blocks/">блоки T123</a></div>
+<style>
+  .idesk-map-hero {
+    --idesk-menu-offset: 72px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: calc(var(--idesk-menu-offset) + 40px) 20px 48px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #fff;
+    scroll-margin-top: var(--idesk-menu-offset);
+  }
+  .idesk-map-hero *, .idesk-map-hero *::before, .idesk-map-hero *::after { box-sizing: border-box; }
+  .idesk-map-hero-inner { max-width: 760px; margin: 0 auto; }
+  .idesk-map-hero .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-map-hero-title {
+    margin: 0 0 16px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .idesk-map-hero-lead {
+    margin: 0 0 20px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: #5f6870;
+  }
+  .idesk-map-hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .idesk-map-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .idesk-map-link-primary { background: #3669fd; color: #fff !important; }
+  .idesk-map-link-light { background: #f5f7fa; color: #3669fd !important; border: 1px solid #dfe4ea; }
+  @media (max-width: 900px) {
+    .idesk-map-hero { --idesk-menu-offset: 64px; padding-top: calc(var(--idesk-menu-offset) + 28px); }
+  }
+</style>
+
+<section class="idesk-map-hero">
+  <div class="idesk-map-hero-inner">
+    <span class="idesk-eyebrow">Карта продукта</span>
+    <h1 class="idesk-map-hero-title">Как устроен Idea Desk</h1>
+    <p class="idesk-map-hero-lead">Схема процесса разработки коллекции: роли в команде, этапы от идеи до модели и передача в платформу istock. Для тех, кому нужно понять систему глубже, чем на коротком лендинге.</p>
+    <div class="idesk-map-hero-links">
+      <a class="idesk-map-link idesk-map-link-light" href="/idea-desk">← К лендингу Idea Desk</a>
+      <a class="idesk-map-link idesk-map-link-primary" href="/idea-desk#request">Оставить заявку</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .idesk-map-flow {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 56px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #f5f7fa;
+  }
+  .idesk-map-flow *, .idesk-map-flow *::before, .idesk-map-flow *::after { box-sizing: border-box; }
+  .idesk-map-flow-inner { max-width: 1160px; margin: 0 auto; }
+  .idesk-map-flow .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-map-flow-title {
+    margin: 0 0 10px;
+    text-align: center;
+    font-size: clamp(24px, 3.2vw, 36px);
+    line-height: 1.15;
+    font-weight: 800;
+  }
+  .idesk-map-flow-lead {
+    margin: 0 auto 36px;
+    max-width: 680px;
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #5f6870;
+  }
+  .idesk-map-zones { display: grid; gap: 16px; }
+  .idesk-map-zone {
+    padding: 20px;
+    border-radius: 16px;
+    border: 1px solid #dfe4ea;
+  }
+  .idesk-map-zone--idesk { background: #fff; }
+  .idesk-map-zone--istock {
+    background: #1c1f22;
+    color: #fff;
+    border-color: #1c1f22;
+  }
+  .idesk-map-zone-label {
+    display: block;
+    margin-bottom: 16px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .idesk-map-zone--idesk .idesk-map-zone-label { color: #3669fd; }
+  .idesk-map-zone--istock .idesk-map-zone-label { color: #8da8ff; }
+  .idesk-map-nodes {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    align-items: stretch;
+  }
+  .idesk-map-node {
+    position: relative;
+    min-height: 88px;
+    padding: 14px 12px;
+    border-radius: 10px;
+    background: #f5f7fa;
+    border: 1px solid #dfe4ea;
+    font-size: 13px;
+    line-height: 1.35;
+  }
+  .idesk-map-node b { display: block; margin-bottom: 4px; font-size: 14px; color: #1c1f22; }
+  .idesk-map-node span { color: #5f6870; font-size: 12px; }
+  .idesk-map-node--ready {
+    background: #ebf0fe;
+    border-color: #3669fd;
+  }
+  .idesk-map-handoff {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #3669fd;
+  }
+  .idesk-map-handoff-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, #3669fd, #8da8ff);
+    max-width: 120px;
+  }
+  .idesk-map-istock-node {
+    max-width: 360px;
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+  }
+  .idesk-map-istock-node b { display: block; margin-bottom: 6px; font-size: 16px; }
+  .idesk-map-istock-node p { margin: 0; font-size: 13px; line-height: 1.5; color: #cbd0d5; }
+  @media (max-width: 900px) {
+    .idesk-map-nodes { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .idesk-map-nodes { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section class="idesk-map-flow" id="schema">
+  <div class="idesk-map-flow-inner">
+    <span class="idesk-eyebrow">Общая схема</span>
+    <h2 class="idesk-map-flow-title">От коллекции до производства</h2>
+    <p class="idesk-map-flow-lead">Шесть шагов в Idea Desk — затем передача готовой модели в istock. Две зоны, один непрерывный процесс.</p>
+
+    <div class="idesk-map-zones">
+      <div class="idesk-map-zone idesk-map-zone--idesk">
+        <span class="idesk-map-zone-label">Idea Desk · стол идей</span>
+        <div class="idesk-map-nodes">
+          <div class="idesk-map-node">
+            <b>1. Коллекция</b>
+            <span>Сезон, проект, состав</span>
+          </div>
+          <div class="idesk-map-node">
+            <b>2. Идеи</b>
+            <span>Фото, источник, предмет</span>
+          </div>
+          <div class="idesk-map-node">
+            <b>3. Фото</b>
+            <span>Обработка материалов</span>
+          </div>
+          <div class="idesk-map-node">
+            <b>4. Оценка</b>
+            <span>Артикул, коммерция</span>
+          </div>
+          <div class="idesk-map-node">
+            <b>5. Модель</b>
+            <span>Согласование, цвета</span>
+          </div>
+          <div class="idesk-map-node idesk-map-node--ready">
+            <b>6. Готова</b>
+            <span>К передаче в istock</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="idesk-map-handoff" aria-hidden="true">
+        <span class="idesk-map-handoff-line"></span>
+        <span>передача модели →</span>
+        <span class="idesk-map-handoff-line"></span>
+      </div>
+
+      <div class="idesk-map-zone idesk-map-zone--istock">
+        <span class="idesk-map-zone-label">Платформа istock</span>
+        <div class="idesk-map-istock-node">
+          <b>7. Производство</b>
+          <p>Заказы на фабрики, контроль производства и поставки — после того как модель подготовлена в Idea Desk.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .idesk-map-roles {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 56px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #fff;
+  }
+  .idesk-map-roles *, .idesk-map-roles *::before, .idesk-map-roles *::after { box-sizing: border-box; }
+  .idesk-map-roles-inner { max-width: 1160px; margin: 0 auto; }
+  .idesk-map-roles .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-map-roles-title {
+    margin: 0 0 12px;
+    font-size: clamp(24px, 3.2vw, 36px);
+    line-height: 1.15;
+    font-weight: 800;
+    max-width: 640px;
+  }
+  .idesk-map-roles-lead {
+    margin: 0 0 28px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #5f6870;
+    max-width: 640px;
+  }
+  .idesk-map-roles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .idesk-map-role {
+    padding: 22px;
+    border: 1px solid #dfe4ea;
+    border-radius: 12px;
+    background: #fff;
+  }
+  .idesk-map-role-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    background: #ebf0fe;
+    color: #3669fd;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .idesk-map-role h3 { margin: 0 0 8px; font-size: 16px; }
+  .idesk-map-role p { margin: 0; font-size: 13px; line-height: 1.5; color: #5f6870; }
+  @media (max-width: 900px) { .idesk-map-roles-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .idesk-map-roles-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="idesk-map-roles" id="roles">
+  <div class="idesk-map-roles-inner">
+    <span class="idesk-eyebrow">Роли</span>
+    <h2 class="idesk-map-roles-title">Каждый видит своё — без общей «свалки» полей</h2>
+    <p class="idesk-map-roles-lead">Idea Desk разделяет работу по ролям, но все шаги остаются частью одной коллекции.</p>
+    <div class="idesk-map-roles-grid">
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">П</div>
+        <h3>Продакт</h3>
+        <p>Создаёт идеи по своим предметам, следит за статусами, участвует в решении «берём / нет».</p>
+      </article>
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">Ф</div>
+        <h3>Специалист по фото</h3>
+        <p>Очередь на обработку, загрузка готового фото — без лишних полей из других этапов.</p>
+      </article>
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">О</div>
+        <h3>Специалист по оценке</h3>
+        <p>Коммерческая оценка, артикул, сроки — только то, что нужно для принятия решения.</p>
+      </article>
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">Р</div>
+        <h3>Руководитель</h3>
+        <p>Видит все идеи команды, согласует модели и контролирует готовность коллекции.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .idesk-map-journey {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 56px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #f5f7fa;
+  }
+  .idesk-map-journey *, .idesk-map-journey *::before, .idesk-map-journey *::after { box-sizing: border-box; }
+  .idesk-map-journey-inner {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .idesk-map-journey .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-map-journey-title {
+    margin: 0 0 12px;
+    font-size: clamp(24px, 3.2vw, 36px);
+    line-height: 1.15;
+    font-weight: 800;
+  }
+  .idesk-map-journey-lead {
+    margin: 0 0 28px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #5f6870;
+  }
+  .idesk-map-journey-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-left: 3px solid #3669fd;
+  }
+  .idesk-map-journey-item {
+    position: relative;
+    padding: 0 0 24px 24px;
+  }
+  .idesk-map-journey-item:last-child { padding-bottom: 0; }
+  .idesk-map-journey-item::before {
+    content: '';
+    position: absolute;
+    left: -9px;
+    top: 4px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #3669fd;
+    border: 3px solid #f5f7fa;
+  }
+  .idesk-map-journey-item--istock::before { background: #1c1f22; }
+  .idesk-map-journey-item b {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+  }
+  .idesk-map-journey-item p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5f6870;
+  }
+  .idesk-map-journey-tag {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 3px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    border-radius: 4px;
+    background: #ebf0fe;
+    color: #3669fd;
+  }
+  .idesk-map-journey-item--istock .idesk-map-journey-tag {
+    background: #1c1f22;
+    color: #8da8ff;
+  }
+</style>
+
+<section class="idesk-map-journey" id="journey">
+  <div class="idesk-map-journey-inner">
+    <span class="idesk-eyebrow">Один пример</span>
+    <h2 class="idesk-map-journey-title">Путь одной идеи</h2>
+    <p class="idesk-map-journey-lead">Как одна идея проходит систему — от загрузки до готовности к производству.</p>
+    <ol class="idesk-map-journey-list">
+      <li class="idesk-map-journey-item">
+        <b>Идея создана</b>
+        <p>Продакт загружает фото и параметры в коллекцию сезона.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Фото обработано</b>
+        <p>Специалист по фото берёт из очереди, загружает готовый материал.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Оценка проставлена</b>
+        <p>Артикул и коммерческие данные — идея готова к решению.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Решение «берём»</b>
+        <p>Руководитель или команда фиксирует: идея входит в модель.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Модель согласована</b>
+        <p>Цвета и состав модели утверждены, статус понятен всем.</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item">
+        <b>Модель готова к передаче</b>
+        <p>Фото, оценка и решение собраны — не «ещё обсуждаем в чате».</p>
+        <span class="idesk-map-journey-tag">Idea Desk</span>
+      </li>
+      <li class="idesk-map-journey-item idesk-map-journey-item--istock">
+        <b>Передано в istock</b>
+        <p>Модель уходит в производственный контур — заказы на фабрики.</p>
+        <span class="idesk-map-journey-tag">istock</span>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<style>
+  .idesk-map-cta {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 56px 20px 72px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #fff;
+    background: #1c1f22;
+  }
+  .idesk-map-cta *, .idesk-map-cta *::before, .idesk-map-cta *::after { box-sizing: border-box; }
+  .idesk-map-cta-inner {
+    max-width: 640px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .idesk-map-cta-title {
+    margin: 0 0 12px;
+    font-size: clamp(24px, 3.2vw, 34px);
+    line-height: 1.15;
+    font-weight: 800;
+  }
+  .idesk-map-cta-lead {
+    margin: 0 0 24px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #cbd0d5;
+  }
+  .idesk-map-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .idesk-map-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .idesk-map-cta-btn-primary { background: #3669fd; color: #fff !important; }
+  .idesk-map-cta-btn-light {
+    background: transparent;
+    color: #fff !important;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+  }
+</style>
+
+<section class="idesk-map-cta">
+  <div class="idesk-map-cta-inner">
+    <h2 class="idesk-map-cta-title">Покажем Idea Desk на вашем процессе</h2>
+    <p class="idesk-map-cta-lead">Idea Desk входит в платформу istock (20 000 ₽/мес). Оставьте заявку — разберём ваши коллекции, роли и сценарий внедрения.</p>
+    <div class="idesk-map-cta-actions">
+      <a class="idesk-map-cta-btn idesk-map-cta-btn-primary" href="/idea-desk#request">Оставить заявку</a>
+      <a class="idesk-map-cta-btn idesk-map-cta-btn-light" href="/idea-desk">Вернуться на лендинг</a>
+    </div>
+  </div>
+</section>
+</body>
+</html>
