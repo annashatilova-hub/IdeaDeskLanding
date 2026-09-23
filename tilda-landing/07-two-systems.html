@@ -1,0 +1,157 @@
+<style>
+  .idesk-systems-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 64px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #fff;
+  }
+  .idesk-systems-wrap *, .idesk-systems-wrap *::before, .idesk-systems-wrap *::after { box-sizing: border-box; }
+  .idesk-systems-inner { max-width: 1160px; margin: 0 auto; }
+  .idesk-systems-wrap .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-systems-title {
+    margin: 0 0 12px;
+    font-size: clamp(26px, 3.5vw, 40px);
+    line-height: 1.12;
+    font-weight: 800;
+    max-width: 760px;
+  }
+  .idesk-systems-lead {
+    margin: 0 0 32px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #5f6870;
+    max-width: 760px;
+  }
+  .idesk-systems-bridge {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 16px;
+    align-items: stretch;
+    margin-bottom: 28px;
+  }
+  .idesk-systems-card {
+    padding: 24px;
+    border: 1px solid #dfe4ea;
+    border-radius: 14px;
+    background: #f5f7fa;
+  }
+  .idesk-systems-card--istock {
+    background: #1c1f22;
+    color: #fff;
+    border-color: #1c1f22;
+  }
+  .idesk-systems-card-label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #3669fd;
+  }
+  .idesk-systems-card--istock .idesk-systems-card-label { color: #8da8ff; }
+  .idesk-systems-card h3 { margin: 0 0 10px; font-size: 20px; line-height: 1.2; }
+  .idesk-systems-card p { margin: 0; font-size: 14px; line-height: 1.55; color: #5f6870; }
+  .idesk-systems-card--istock p { color: #cbd0d5; }
+  .idesk-systems-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: 700;
+    color: #3669fd;
+  }
+  .idesk-systems-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border: 1px solid #dfe4ea;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .idesk-systems-table th,
+  .idesk-systems-table td {
+    padding: 14px 16px;
+    text-align: left;
+    vertical-align: top;
+    border-bottom: 1px solid #dfe4ea;
+  }
+  .idesk-systems-table th {
+    background: #ebf0fe;
+    font-weight: 700;
+    width: 22%;
+  }
+  .idesk-systems-table td { color: #5f6870; }
+  .idesk-systems-table tr:last-child th,
+  .idesk-systems-table tr:last-child td { border-bottom: 0; }
+  .idesk-systems-note {
+    margin: 20px 0 0;
+    font-size: 14px;
+    line-height: 1.55;
+    color: #5f6870;
+    max-width: 760px;
+  }
+  @media (max-width: 900px) {
+    .idesk-systems-bridge { grid-template-columns: 1fr; }
+    .idesk-systems-arrow { transform: rotate(90deg); padding: 8px 0; }
+    .idesk-systems-table th { width: 32%; }
+  }
+</style>
+
+<section class="idesk-systems-wrap" id="systems">
+  <div class="idesk-systems-inner">
+    <span class="idesk-eyebrow">Две системы</span>
+    <h2 class="idesk-systems-title">Idea Desk и istock — разные этапы, одна платформа</h2>
+    <p class="idesk-systems-lead">Idea Desk не заменяет производственный контур. Он снимает хаос до старта производства и отдаёт в istock готовую модель.</p>
+
+    <div class="idesk-systems-bridge">
+      <article class="idesk-systems-card">
+        <span class="idesk-systems-card-label">Idea Desk</span>
+        <h3>Собрать коллекцию по этапам до модели</h3>
+        <p>С чего начать сезон, как довести идеи до согласованной модели с фото и оценкой.</p>
+      </article>
+      <div class="idesk-systems-arrow" aria-hidden="true">→</div>
+      <article class="idesk-systems-card idesk-systems-card--istock">
+        <span class="idesk-systems-card-label">Платформа istock</span>
+        <h3>Производство заказов по фабрикам</h3>
+        <p>Как сшить, разместить заказ и контролировать производство после передачи модели.</p>
+      </article>
+    </div>
+
+    <table class="idesk-systems-table">
+      <tbody>
+        <tr>
+          <th>Главный вопрос</th>
+          <td><strong>Idea Desk:</strong> с чего начать и как довести до модели</td>
+          <td><strong>istock:</strong> как сшить и разместить заказ</td>
+        </tr>
+        <tr>
+          <th>Результат</th>
+          <td>Завершённая модель</td>
+          <td>Производство и поставка</td>
+        </tr>
+        <tr>
+          <th>Когда</th>
+          <td>Сезон начинается здесь</td>
+          <td>После передачи модели</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="idesk-systems-note">Уже работаете в istock? Idea Desk — дополнение платформы для этапа до производства, а не вторая система с нуля.</p>
+  </div>
+</section>

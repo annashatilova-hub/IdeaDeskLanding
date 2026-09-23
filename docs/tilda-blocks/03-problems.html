@@ -1,4 +1,4 @@
-<!-- Idea Desk T123 · 03-problems.html · build 035e9a0 · 2026-09-23 -->
+<!-- Idea Desk T123 · local · 2026-09-24 -->
 <style>
   .idesk-problems-wrap {
     box-sizing: border-box;
@@ -11,7 +11,8 @@
   .idesk-problems-wrap *, .idesk-problems-wrap *::before, .idesk-problems-wrap *::after { box-sizing: border-box; }
   .idesk-problems-inner { max-width: 1160px; margin: 0 auto; }
   .idesk-problems-wrap .idesk-eyebrow {
-    display: inline-block;
+    display: block;
+    width: fit-content;
     margin: 0 0 14px;
     padding: 6px 10px;
     font-size: 12px;
@@ -24,7 +25,11 @@
   }
   .idesk-problems-title { margin: 0 0 12px; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.12; font-weight: 800; max-width: 760px; }
   .idesk-problems-lead { margin: 0 0 32px; font-size: 17px; color: #5f6870; max-width: 760px; }
-  .idesk-problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .idesk-problems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
   .idesk-problem-card {
     min-height: 200px;
     padding: 24px;
@@ -35,29 +40,40 @@
   .idesk-problem-num { display: block; margin-bottom: 28px; color: #3669fd; font-size: 13px; font-weight: 700; }
   .idesk-problem-card h3 { margin: 0 0 10px; font-size: 18px; }
   .idesk-problem-card p { margin: 0; font-size: 14px; line-height: 1.55; color: #5f6870; }
-  @media (max-width: 900px) { .idesk-problems-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 900px) { .idesk-problems-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .idesk-problems-grid { grid-template-columns: 1fr; } }
 </style>
 
 <section class="idesk-problems-wrap">
   <div class="idesk-problems-inner">
     <span class="idesk-eyebrow">Знакомо?</span>
-    <h2 class="idesk-problems-title">Новые модели нужны постоянно — а решений становится всё больше</h2>
+    <h2 class="idesk-problems-title">Новый сезон начинается не с коллекции, а с хаоса</h2>
     <p class="idesk-problems-lead">Idea Desk помогает удерживать темп разработки и видеть состояние каждой идеи и модели.</p>
     <div class="idesk-problems-grid">
       <article class="idesk-problem-card">
         <span class="idesk-problem-num">01</span>
-        <h3>Слишком много идей одновременно</h3>
-        <p>Сезонные коллекции, капсулы, клиентские запросы и тренды конкурируют за внимание команды.</p>
+        <h3>Непонятно, с чего начать</h3>
+        <p>Новый сезон — папка с фото и чат. Нет рамки «это коллекция, вот первый шаг».</p>
       </article>
       <article class="idesk-problem-card">
         <span class="idesk-problem-num">02</span>
-        <h3>Решения теряются между участниками</h3>
-        <p>Фото готово, оценка проведена, но неясно, кто принимает решение и что должно произойти дальше.</p>
+        <h3>Всё размазано</h3>
+        <p>Идея в Excel, фото в мессенджере, решение на созвоне. История теряется между участниками.</p>
       </article>
       <article class="idesk-problem-card">
         <span class="idesk-problem-num">03</span>
-        <h3>Не видна готовность ассортимента</h3>
-        <p>Сложно быстро понять, какие модели рассматривают, какие согласованы и какие готовы к следующему этапу.</p>
+        <h3>Нет этапов</h3>
+        <p>Не видно, что уже обработано, что оценено и что согласовано — команда работает вслепую.</p>
+      </article>
+      <article class="idesk-problem-card">
+        <span class="idesk-problem-num">04</span>
+        <h3>Модель «почти готова»</h3>
+        <p>Неясно, можно ли уже отдавать в производство или ещё что-то не доделано.</p>
+      </article>
+      <article class="idesk-problem-card">
+        <span class="idesk-problem-num">05</span>
+        <h3>Разрыв с производством</h3>
+        <p>Даже когда модель собрали, дальше снова ручной перенос в другую систему или таблицу.</p>
       </article>
     </div>
   </div>

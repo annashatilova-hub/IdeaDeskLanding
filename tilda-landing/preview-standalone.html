@@ -4,2409 +4,547 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta name="build" content="20a400f">
-<title>iStockLink</title>
+<meta name="build" content="035e9a0">
+<title>Idea Desk — управление разработкой коллекций</title>
 <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
-<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=20a400f">
-<link rel="stylesheet" href="assets/enhancements.css?v=20a400f">
 <style>
-  body{margin:0}
+  body{margin:0;background:#fff;color:#1c1f22;font-family:'TildaSans',Arial,sans-serif}
   .tg-preview-bar{
     position:sticky;top:0;z-index:9999;
     padding:8px 16px;text-align:center;font-size:13px;font-weight:600;
-    background:#1c50de;color:#fff;font-family:'TildaSans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#3669fd;color:#fff;
     border-bottom:1px solid rgba(255,255,255,.2);
   }
   .tg-preview-bar a{color:#dbeafe}
 </style>
 </head>
 <body>
-<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка 2026-09-22 (20a400f) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
-<!-- Tilda block: Hero -->
+<div class="tg-preview-bar">Превью Idea Desk · сборка 2026-09-23 (035e9a0) · <a href="./tilda-blocks/">блоки T123 для Tilda</a></div>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&display=swap');
-  .tg-hero-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  .idesk-hero-wrap {
+    --idesk-ink: #1c1f22;
+    --idesk-muted: #5f6870;
+    --idesk-line: #dfe4ea;
+    --idesk-soft: #f5f7fa;
+    --idesk-blue: #3669fd;
+    --idesk-blue-dark: #2e5ee8;
+    --idesk-blue-soft: #ebf0fe;
     box-sizing: border-box;
     width: 100%;
-    background: #f4f7fb;
-    padding: 72px 24px 64px;
-    position: relative;
-    overflow: hidden;
+    padding: 60px 20px 48px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--idesk-ink);
+    background: #fff;
   }
-  .tg-hero-wrap *, .tg-hero-wrap *::before, .tg-hero-wrap *::after { box-sizing: border-box; }
-  .tg-hero-inner {
-    max-width: 1280px;
+  .idesk-hero-wrap *, .idesk-hero-wrap *::before, .idesk-hero-wrap *::after { box-sizing: border-box; }
+  .idesk-hero-inner {
+    max-width: 1160px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(280px, 0.68fr) minmax(520px, 1.55fr);
-    gap: 32px 28px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
     align-items: center;
-    position: relative;
-    z-index: 1;
   }
-  .tg-hero-title {
+  .idesk-hero-wrap .idesk-eyebrow {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1e4fd4;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-hero-title {
     margin: 0 0 18px;
-    font-size: clamp(36px, 4.4vw, 56px);
-    line-height: 1.05;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.08;
     font-weight: 800;
     letter-spacing: -0.03em;
-    color: var(--tg-text);
+    max-width: 580px;
   }
-  .tg-hero-sub {
-    margin: 0 0 28px;
+  .idesk-hero-lead {
+    margin: 0 0 24px;
+    max-width: 560px;
     font-size: 18px;
-    line-height: 1.6;
-    color: #475569;
-    max-width: 420px;
+    line-height: 1.55;
+    color: var(--idesk-muted);
   }
-  .tg-hero-actions {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 22px;
-  }
-  .tg-btn {
+  .idesk-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .idesk-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 24px;
-    border-radius: 12px;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 7px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
+    border: 0;
+    cursor: pointer;
   }
-  .tg-btn-primary {
-    background: #1c50de;
-    color: #fff !important;
-    box-shadow: 0 10px 24px rgba(28,80,222,0.28);
-  }
-  .tg-btn-primary:hover { transform: translateY(-1px); }
-  .tg-btn-secondary {
-    background: #fff;
-    color: var(--tg-text);
-    border: 1px solid #e2e8f0;
-  }
-  .tg-hero-checks { list-style: none; padding: 0; margin: 0; }
-  .tg-hero-checks li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    color: #334155;
-    margin-bottom: 8px;
-  }
-  .tg-hero-checks li::before {
-    content: "✓";
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    background: #dcfce7;
-    color: #16a34a;
-    font-size: 12px;
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .tg-hero-visual {
+  .idesk-btn-primary { background: var(--idesk-blue); color: #fff !important; }
+  .idesk-btn-light { background: #fff; color: var(--idesk-blue); border: 1px solid var(--idesk-line); }
+  .idesk-product-shot {
+    min-height: 360px;
+    padding: 20px 20px 0;
+    background: linear-gradient(145deg, #edf2ff, #eefbf8);
+    border-radius: 24px;
     position: relative;
-    padding: 0;
-    --col2: 20.22%;
-    --col2w: 19%;
-    --col4: 58.33%;
   }
-  .tg-hero-blob {
-    position: absolute;
-    top: 72px;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .tg-hero-blob--blue {
-    left: var(--col2);
-    right: calc(100% - var(--col4));
-    background: #dce8ff;
-    border-radius: 28px 0 0 28px;
-  }
-  .tg-hero-blob--green {
-    left: var(--col4);
-    right: -6px;
-    background: #d8f3e4;
-    border-radius: 0 28px 28px 0;
-  }
-  .tg-hero-ui {
-    position: relative;
-    z-index: 1;
+  .idesk-window {
+    margin-top: 20px;
     background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
-    overflow: visible;
-    border: 1px solid #e8edf5;
+    border: 1px solid #cdd5df;
+    border-radius: 14px;
+    box-shadow: 0 20px 44px rgba(31, 43, 65, 0.15);
+    overflow: hidden;
   }
-  .tg-hero-ui img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-  }
-  .tg-hero-col-glow {
-    position: absolute;
-    left: var(--col2);
-    top: 26%;
-    width: var(--col2w);
-    height: 62%;
-    border-radius: 16px;
-    background: rgba(220, 232, 255, 0.35);
-    box-shadow: inset 0 0 0 2px rgba(147, 180, 255, 0.55);
-    pointer-events: none;
-    z-index: 2;
-  }
-  .tg-hero-pop {
-    position: absolute;
-    left: calc(var(--col2) + 8px);
-    top: 29%;
-    z-index: 3;
-    pointer-events: none;
-  }
-  .tg-hero-pop-card {
-    font-family: 'Commissioner', 'TildaSans', sans-serif;
-    width: 168px;
-    min-height: 236px;
-    background: #fff;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
-    padding: 10px 10px 12px;
-    display: flex;
-    flex-direction: column;
-  }
-  .tg-hero-pop-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 6px;
-  }
-  .tg-hero-pop-num {
-    font-size: 11px;
-    font-weight: 600;
-    color: #1c50de;
-  }
-  .tg-hero-pop-menu {
-    color: #94a3b8;
-    font-size: 14px;
-    line-height: 1;
-    letter-spacing: 1px;
-  }
-  .tg-hero-pop-title {
-    margin: 0 0 10px;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 1.35;
-    color: #0f172a;
-  }
-  .tg-hero-pop-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-    font-size: 10px;
-    line-height: 1.4;
-    margin-bottom: 3px;
-  }
-  .tg-hero-pop-row span { color: #94a3b8; font-weight: 400; }
-  .tg-hero-pop-row b { color: #0f172a; font-weight: 600; }
-  .tg-hero-pop-row b.price { color: #1c50de; }
-  .tg-hero-pop-date {
-    margin: 6px 0 2px;
-    font-size: 10px;
-    color: #64748b;
-  }
-  .tg-hero-pop-created {
-    font-size: 10px;
-    color: #94a3b8;
-    margin-bottom: 8px;
-  }
-  .tg-hero-pop-timer {
-    display: inline-flex;
-    align-self: flex-start;
-    margin-top: auto;
-    padding: 3px 7px;
-    border-radius: 6px;
-    background: #e8f8ef;
-    color: #15803d;
-    font-size: 10px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-  }
-  .tg-hero-pop-link {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 10px;
-    font-weight: 600;
-    color: #1c50de;
-  }
-
-  .tg-hero-steps {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    column-gap: 0;
-    margin-top: 18px;
-    padding: 8px 8px 24px 0;
-  }
-  .tg-hero-step {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 8px;
-    align-items: start;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.35;
-    color: #334155;
-    min-width: 0;
-  }
-  .tg-hero-step:nth-child(1) { grid-column: 1; padding: 0 12px 0 12px; }
-  .tg-hero-step:nth-child(2) { grid-column: 2 / span 2; padding-left: 10px; padding-right: 16px; }
-  .tg-hero-step:nth-child(3) { grid-column: 4 / span 2; padding-left: 8px; }
-  .tg-hero-step b {
-    color: #1c50de;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 1.35;
-  }
-  .tg-hero-step span {
-    font-weight: 600;
-    min-width: 0;
-  }
-  .tg-hero-step span i {
-    display: block;
-    font-style: normal;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 960px) {
-    .tg-hero-inner { grid-template-columns: 1fr; gap: 32px; }
-    .tg-hero-visual { padding: 0; }
-    .tg-hero-blob--blue { top: 40px; }
-    .tg-hero-blob--green { top: 40px; }
-  }
-  @media (max-width: 560px) {
-    .tg-hero-wrap { padding: 48px 18px 40px; }
-    .tg-hero-title { font-size: clamp(30px, 8.5vw, 40px); }
-    .tg-hero-actions { flex-direction: column; }
-    .tg-hero-actions .tg-btn { width: 100%; }
-    .tg-hero-col-glow { display: none; }
-    .tg-hero-pop { left: 10%; top: 32%; }
-    .tg-hero-steps { grid-template-columns: 1fr; gap: 12px; }
+  .idesk-window-bar { height: 36px; background: #f0f2f5; padding: 13px 14px; }
+  .idesk-window-body { display: grid; grid-template-columns: 80px 1fr; min-height: 280px; }
+  .idesk-window-sidebar { background: #252a30; padding: 16px 12px; }
+  .idesk-window-sidebar i { display: block; height: 8px; margin-bottom: 12px; background: rgba(255,255,255,.22); border-radius: 3px; }
+  .idesk-window-sidebar i:nth-child(2) { width: 72%; background: var(--idesk-blue); }
+  .idesk-window-content { padding: 20px; }
+  .idesk-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+  .idesk-kpi { padding: 12px; background: var(--idesk-soft); border-radius: 8px; }
+  .idesk-kpi b { display: block; font-size: 20px; }
+  .idesk-kpi small { color: var(--idesk-muted); font-size: 12px; }
+  .idesk-pipeline { padding: 14px; border: 1px solid var(--idesk-line); border-radius: 8px; font-size: 11px; color: var(--idesk-muted); }
+  .idesk-pipeline-row { display: grid; grid-template-columns: 1fr 2fr 32px; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .idesk-pipeline-bar { height: 6px; background: #e7ebf0; border-radius: 4px; overflow: hidden; }
+  .idesk-pipeline-bar span { display: block; height: 100%; background: var(--idesk-blue); }
+  @media (max-width: 900px) {
+    .idesk-hero-inner { grid-template-columns: 1fr; }
+    .idesk-hero-actions { display: grid; grid-template-columns: 1fr; }
+    .idesk-btn { width: 100%; }
   }
 </style>
 
-<div class="tg-hero-wrap">
-  <div class="tg-hero-inner">
+<section class="idesk-hero-wrap" id="top">
+  <div class="idesk-hero-inner">
     <div>
-      <h1 class="tg-hero-title">CRM для тендерного отдела за 1 день</h1>
-      <p class="tg-hero-sub">Больше тендеров в работе на одного специалиста. Без месяцев внедрения и доработок.</p>
-      <div class="tg-hero-actions">
-        <a href="#popup:demo" class="tg-btn tg-btn-primary">Запросить демо</a>
-        <a href="#how" class="tg-btn tg-btn-secondary">Как это работает</a>
+      <span class="idesk-eyebrow">Idea Desk · стол идей · платформа istock</span>
+      <h1 class="idesk-hero-title">Собирайте идеи в готовый ассортимент</h1>
+      <p class="idesk-hero-lead">Управляйте разработкой коллекций: от поиска и оценки идей до согласованных моделей для маркетплейсов, собственных продаж и заказных проектов.</p>
+      <div class="idesk-hero-actions">
+        <a class="idesk-btn idesk-btn-primary" href="#request">Оставить заявку</a>
+        <a class="idesk-btn idesk-btn-light" href="#flow">Посмотреть процесс</a>
       </div>
-      <ul class="tg-hero-checks">
-        <li>14 дней бесплатно, без карты</li>
-        <li>В реестре российского ПО</li>
-      </ul>
     </div>
-
-    <div class="tg-hero-visual">
-      <div class="tg-hero-blob tg-hero-blob--blue"></div>
-      <div class="tg-hero-blob tg-hero-blob--green"></div>
-      <div class="tg-hero-ui">
-        <img src="https://kolomoets-netizen.github.io/Link/assets/hero-crm-kanban.png?v=3" alt="Воронка сделок iStockLink">
-        <div class="tg-hero-col-glow"></div>
-        <div class="tg-hero-pop">
-          <div class="tg-hero-pop-card">
-            <div class="tg-hero-pop-head">
-              <span class="tg-hero-pop-num">0021</span>
-              <span class="tg-hero-pop-menu">···</span>
+    <div class="idesk-product-shot" aria-hidden="true">
+      <div class="idesk-window">
+        <div class="idesk-window-bar"></div>
+        <div class="idesk-window-body">
+          <aside class="idesk-window-sidebar"><i></i><i></i><i></i><i></i></aside>
+          <div class="idesk-window-content">
+            <div class="idesk-kpis">
+              <div class="idesk-kpi"><b>12</b><small>моделей</small></div>
+              <div class="idesk-kpi"><b>8</b><small>согласовано</small></div>
+              <div class="idesk-kpi"><b>34</b><small>идеи</small></div>
             </div>
-            <p class="tg-hero-pop-title">Поставка медицинского оборудования для больницы</p>
-            <div class="tg-hero-pop-row"><span>НМЦК</span><b class="price">4 200 000 ₽</b></div>
-            <div class="tg-hero-pop-row"><span>Ответственный</span><b>Игорь Громов</b></div>
-            <div class="tg-hero-pop-date">22.09.2026</div>
-            <div class="tg-hero-pop-created">Создано 21.09.2026, 13:17</div>
-            <span class="tg-hero-pop-timer">0 д 18:52:51</span>
-            <span class="tg-hero-pop-link">Площадка</span>
+            <div class="idesk-pipeline">
+              <div class="idesk-pipeline-row"><span>Согласование</span><div class="idesk-pipeline-bar"><span style="width:74%"></span></div><b>8/12</b></div>
+              <div class="idesk-pipeline-row"><span>Идентификация</span><div class="idesk-pipeline-bar"><span style="width:54%"></span></div><b>6/12</b></div>
+              <div class="idesk-pipeline-row"><span>Образцы</span><div class="idesk-pipeline-bar"><span style="width:36%"></span></div><b>4/12</b></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="tg-hero-steps">
-        <div class="tg-hero-step"><b>1</b><span><i>Тендер приходит из</i><i>Контура или Seldon</i></span></div>
-        <div class="tg-hero-step"><b>2</b><span><i>Специалист ведёт заявку</i><i>по этапам</i></span></div>
-        <div class="tg-hero-step"><b>3</b><span><i>Контракт заключён, всё</i><i>в одном окне</i></span></div>
-      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Tilda block: Позиционирование -->
 <style>
-  .tg-positioning-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  .idesk-trust-wrap {
     box-sizing: border-box;
     width: 100%;
-    background: #fff;
-    padding: 64px 24px;
+    padding: 22px 20px;
+    background: #f5f7fa;
+    border-top: 1px solid #dfe4ea;
+    border-bottom: 1px solid #dfe4ea;
+    font-family: 'TildaSans', Arial, sans-serif;
   }
-  .tg-positioning-wrap *, .tg-positioning-wrap *::before, .tg-positioning-wrap *::after { box-sizing: border-box; }
-  .tg-positioning-inner {
-    max-width: 820px;
+  .idesk-trust-wrap *, .idesk-trust-wrap *::before, .idesk-trust-wrap *::after { box-sizing: border-box; }
+  .idesk-trust-grid {
+    max-width: 1160px;
     margin: 0 auto;
-    text-align: center;
-  }
-  .tg-positioning-lead {
-    margin: 0 0 18px;
-    font-size: clamp(22px, 3vw, 30px);
-    line-height: 1.35;
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--tg-text);
-  }
-  .tg-positioning-lead span {
-    color: var(--tg-primary);
-  }
-  .tg-positioning-text {
-    margin: 0;
-    font-size: clamp(18px, 2.4vw, 21px);
-    line-height: 1.65;
-    color: var(--tg-muted);
-  }
-  @media (max-width: 560px) {
-    .tg-positioning-wrap { padding: 48px 20px; }
-    .tg-positioning-lead { margin-bottom: 14px; }
-    .tg-positioning-text { font-size: 18px; line-height: 1.6; }
-  }
-</style>
-
-<div class="tg-positioning-wrap">
-  <div class="tg-positioning-inner">
-    <p class="tg-positioning-lead">iStockLink выстраивает тендерную работу как <span>управляемый процесс</span> — с этапами, сроками и ответственными.</p>
-    <p class="tg-positioning-text">Решение для компаний с регулярным участием в государственных и коммерческих закупках, отчетностью, несколькими филиалами и собственной командой, которая сама ведёт торги от подбора до контракта.</p>
-  </div>
-</div>
-
-<!-- Tilda block: Воронка + поставщики + КП -->
-<style>
-  .tg-platform-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    background: #fff;
-    padding: 80px 24px;
-  }
-  .tg-platform-wrap *, .tg-platform-wrap *::before, .tg-platform-wrap *::after { box-sizing: border-box; }
-  .tg-platform-inner { max-width: 1120px; margin: 0 auto; }
-  .tg-platform-header { text-align: center; margin-bottom: 48px; }
-  .tg-section-label {
-    display: inline-block;
-    font-size: 12px; font-weight: 700;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--tg-primary); margin-bottom: 12px;
-  }
-  .tg-section-title {
-    margin: 0 0 14px;
-    font-size: clamp(28px, 3.5vw, 40px);
-    font-weight: 800; color: var(--tg-text);
-    letter-spacing: -0.02em;
-  }
-  .tg-section-sub {
-    margin: 0 auto; max-width: 680px;
-    font-size: 19px; line-height: 1.6; color: var(--tg-muted);
-  }
-
-  .tg-pillars {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1.2fr repeat(3, 1fr);
     gap: 20px;
-    margin-bottom: 40px;
-  }
-  .tg-pillar {
-    border-radius: 20px;
-    padding: 28px 24px;
-    border: 1px solid #e8edf5;
-    background: linear-gradient(180deg, #fafbff 0%, #fff 100%);
-    position: relative;
-    overflow: hidden;
-  }
-  .tg-pillar::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, #1c50de, #4d7aef);
-  }
-  .tg-pillar-icon { font-size: 28px; margin-bottom: 12px; }
-  .tg-pillar-title { font-size: 18px; font-weight: 800; color: #1e293b; margin: 0 0 8px; }
-  .tg-pillar-tag {
-    display: inline-block;
-    font-size: 11px; font-weight: 700;
-    padding: 4px 10px; border-radius: 6px;
-    background: rgba(28,80,222,0.1); color: var(--tg-primary);
-    margin-bottom: 12px;
-  }
-  .tg-pillar-text {
-    font-size: 17px;
-    line-height: 1.55;
-    color: #64748b;
-    margin: 0 0 16px;
-    min-height: calc(1.55em * 3);
-  }
-  .tg-pillar-list { list-style: none; padding: 0; margin: 0; }
-  .tg-pillar-list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    font-size: 17px;
-    line-height: 1.55;
-    color: #64748b;
-    padding: 6px 0;
-    position: relative;
-  }
-  .tg-pillar-list li::before {
-    content: "•";
-    flex-shrink: 0;
-    width: 6px;
-    color: var(--tg-primary);
-    font-weight: 700;
-    line-height: 1.45;
-  }
-
-  .tg-funnel-board {
-    background: linear-gradient(180deg, #f4f7ff 0%, #fff 100%);
-    border: 1px solid rgba(28,80,222,0.12);
-    border-radius: 24px;
-    padding: 32px;
-    display: flex;
-    flex-direction: column;
-    gap: 28px;
-  }
-  .tg-funnel-kanban-block { width: 100%; }
-  .tg-funnel-kanban-scroll { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .tg-kanban-scroll-hint {
-    display: none;
-    font-size: 14px;
-    color: #94a3b8;
-    margin: 0 0 14px;
-  }
-  .tg-funnel-title {
-    font-size: 20px; font-weight: 800; color: #1e293b;
-    margin: 0 0 20px;
-    letter-spacing: -0.02em;
-  }
-  .tg-kanban-footnote {
-    font-size: 15px;
-    color: #94a3b8;
-    margin: 16px 0 0;
-  }
-  .tg-kanban {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(196px, 1fr));
-    gap: 14px;
-    margin-bottom: 14px;
-    align-items: stretch;
-    min-width: 980px;
-  }
-  .tg-kanban-col {
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #e2e8f0;
-    min-height: 200px;
-    padding: 14px 12px 16px;
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-  }
-  .tg-kanban-head {
-    font-size: 12px; font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #64748b;
-    text-align: center;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #f1f5f9;
-    margin-bottom: 12px;
-    line-height: 1.3;
-  }
-  .tg-kanban-cards { flex: 1; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
-  .tg-kanban-card {
-    background: linear-gradient(135deg, #f8faff, #f1f5ff);
-    border: 1px solid rgba(28,80,222,0.12);
-    border-radius: 12px;
-    padding: 12px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    color: #334155;
-    line-height: 1.35;
-    min-height: 72px;
-    overflow: hidden;
-    word-break: break-word;
-    hyphens: auto;
-  }
-  .tg-kanban-card.active {
-    background: linear-gradient(135deg, #1c50de, #3b6df0);
-    color: #fff; border: none;
-    box-shadow: 0 8px 20px rgba(28,80,222,0.24);
-  }
-  .tg-kanban-card .price {
-    font-size: 12px; opacity: 0.85; margin-top: 4px;
-    font-weight: 500; line-height: 1.3;
-    word-break: break-word;
-  }
-  .tg-kanban-card .tg-card-title {
-    font-size: 14px; font-weight: 700; line-height: 1.3;
-    margin-bottom: 6px; word-break: break-word;
-  }
-  .tg-kanban-card .tg-card-field {
-    font-size: 13px; font-weight: 500; line-height: 1.35;
-    color: #64748b; word-break: break-word;
-  }
-  .tg-kanban-card.active .tg-card-field { color: rgba(255,255,255,0.9); }
-  .tg-kanban-card.won {
-    background: linear-gradient(135deg, rgba(6,214,160,0.14), rgba(6,214,160,0.06));
-    border: 1px solid rgba(6,214,160,0.35);
-    color: #065f46;
-  }
-  .tg-kanban-card.won .tg-card-field { color: #047857; }
-  .tg-kanban-card.empty {
-    background: transparent;
-    border: 1px dashed #e2e8f0;
-    color: #cbd5e1;
-    display: flex; align-items: center; justify-content: center;
-    min-height: 72px; font-size: 14px;
-  }
-  .tg-side-panels {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-  }
-  .tg-panel {
-    background: #fff;
-    border-radius: 16px;
-    border: 1px solid #e8edf5;
-    padding: 22px;
-  }
-  .tg-panel-head {
-    display: flex; align-items: center; gap: 8px;
-    font-size: 16px; font-weight: 700; color: #1e293b;
-    margin-bottom: 16px;
-    line-height: 1.35;
-  }
-  .tg-supplier-row {
-    display: flex; align-items: center; gap: 12px;
-    padding: 12px 0;
-    border-bottom: 1px solid #f8fafc;
-    font-size: 14px;
-  }
-  .tg-supplier-row:last-child { border-bottom: none; }
-  .tg-avatar {
-    width: 40px; height: 40px; border-radius: 10px;
-    background: linear-gradient(135deg, #eef3ff, #dce8ff);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 13px; font-weight: 800; color: var(--tg-primary);
-    flex-shrink: 0;
-  }
-  .tg-supplier-name { font-weight: 600; color: #334155; font-size: 15px; }
-  .tg-supplier-meta { font-size: 15px; color: #94a3b8; margin-top: 2px; }
-  .tg-supplier-badge {
-    margin-left: auto;
-    font-size: 10px; font-weight: 700;
-    padding: 5px 10px; border-radius: 6px;
-    background: rgba(6,214,160,0.12); color: #059669;
-    text-align: center;
-    line-height: 1.3;
-    max-width: 120px;
-  }
-
-  .tg-kp-item {
-    display: flex; align-items: flex-start; gap: 12px;
-    padding: 14px; border-radius: 12px;
-    background: #f8faff; margin-bottom: 10px;
-    font-size: 14px;
-  }
-  .tg-kp-item:last-child { margin-bottom: 0; }
-  .tg-kp-icon {
-    width: 44px;
-    height: 44px;
-    border-radius: 11px;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
   }
-  .tg-kp-icon svg { width: 22px; height: 22px; display: block; }
-  .tg-kp-icon.pdf { background: #fee2e2; color: #dc2626; }
-  .tg-kp-icon.xls { background: #dcfce7; color: #16a34a; }
-  .tg-kp-title { font-weight: 600; color: #334155; margin: 0 0 4px; font-size: 15px; }
-  .tg-kp-meta { color: #94a3b8; margin: 0; font-size: 15px; line-height: 1.4; }
-  .tg-kp-status {
-    margin-left: auto; flex-shrink: 0;
-    font-size: 11px; font-weight: 700;
-    padding: 5px 10px; border-radius: 6px;
-    background: rgba(28,80,222,0.1); color: var(--tg-primary);
+  .idesk-trust-title { font-weight: 700; font-size: 16px; color: #1c1f22; margin: 0; }
+  .idesk-trust-item { font-size: 13px; color: #5f6870; margin: 0; }
+  .idesk-trust-item strong { display: block; font-size: 16px; color: #1c1f22; margin-bottom: 2px; }
+  @media (max-width: 768px) {
+    .idesk-trust-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+    .idesk-trust-title { grid-column: 1 / -1; }
   }
-  .tg-kp-status.done { background: rgba(6,214,160,0.12); color: #059669; }
-
-  @media (max-width: 900px) {
-    .tg-platform-wrap { padding: 56px 20px 64px; }
-    .tg-pillars { grid-template-columns: 1fr; gap: 16px; }
-    .tg-side-panels { grid-template-columns: 1fr; gap: 16px; }
-    .tg-funnel-board { padding: 20px; gap: 20px; }
-    .tg-kanban-scroll-hint { display: block; }
-    .tg-funnel-kanban-scroll {
-      scroll-snap-type: x mandatory;
-      scroll-padding: 0 20px;
-      margin: 0 -4px;
-      padding: 0 4px 10px;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(28,80,222,0.25) transparent;
-    }
-    .tg-funnel-kanban-scroll::-webkit-scrollbar { height: 4px; }
-    .tg-funnel-kanban-scroll::-webkit-scrollbar-thumb {
-      background: rgba(28,80,222,0.25);
-      border-radius: 4px;
-    }
-    .tg-kanban {
-      display: flex;
-      flex-direction: row;
-      gap: 12px;
-      min-width: 0;
-      width: max-content;
-      margin-bottom: 12px;
-    }
-    .tg-kanban-col {
-      flex: 0 0 min(80vw, 300px);
-      scroll-snap-align: start;
-      min-height: 200px;
-    }
-    .tg-kanban-head { font-size: 12px; }
-    .tg-kanban-card { font-size: 14px; padding: 12px 14px; min-height: 72px; }
-    .tg-kanban-card .tg-card-title { font-size: 14px; }
-    .tg-kanban-card .tg-card-field { font-size: 13px; }
-  }
-  @media (max-width: 560px) {
-    .tg-platform-wrap { padding: 56px 20px 64px; }
-    .tg-pillars { margin-bottom: 28px; gap: 16px; }
-    .tg-platform-header { margin-bottom: 32px; }
-    .tg-section-sub { font-size: 18px; }
-    .tg-funnel-board { padding: 16px; gap: 16px; border-radius: 20px; }
-    .tg-funnel-title { font-size: 18px; margin-bottom: 14px; }
-    .tg-panel { padding: 18px 16px; }
-    .tg-panel-head { font-size: 15px; margin-bottom: 14px; }
-    .tg-kp-item { flex-wrap: wrap; gap: 10px; padding: 12px; }
-    .tg-kp-status { margin-left: 0; }
-    .tg-supplier-row { flex-wrap: wrap; gap: 10px; }
-    .tg-supplier-badge { margin-left: 0; }
+  @media (max-width: 480px) {
+    .idesk-trust-grid { grid-template-columns: 1fr; }
   }
 </style>
 
-<div class="tg-platform-wrap">
-  <div class="tg-platform-inner">
-    <div class="tg-platform-header">
-      <h2 class="tg-section-title">Вся тендерная работа в iStockLink</h2>
-      <p class="tg-section-sub">Сервис собирает и хранит информацию по интересующим вас тендерам и позволяет проводить закупки со своими поставщиками.</p>
-    </div>
-
-    <div class="tg-pillars">
-        <div class="tg-pillar">
-        <span class="tg-pillar-tag">Сбор</span>
-        <h3 class="tg-pillar-title">Агрегаторы</h3>
-        <p class="tg-pillar-text">Подключите агрегаторы, чтобы все торги собирались в одной ленте iStockLink.</p>
-        <ul class="tg-pillar-list">
-          <li>Контур, Seldon, Другой агрегатор</li>
-          <li>Фильтры и уведомления</li>
-          <li>Единый список закупок</li>
-        </ul>
-      </div>
-        <div class="tg-pillar">
-        <span class="tg-pillar-tag">Воронка</span>
-        <h3 class="tg-pillar-title">Этапы торгов</h3>
-        <p class="tg-pillar-text">Ведите каждый тендер по этапам: от «новый» до «контракт» с задачами и дедлайнами.</p>
-        <ul class="tg-pillar-list">
-          <li>Доска по статусам</li>
-          <li>Задачи и напоминания</li>
-          <li>Командная работа</li>
-        </ul>
-      </div>
-        <div class="tg-pillar">
-        <span class="tg-pillar-tag">Поставщики</span>
-        <h3 class="tg-pillar-title">База партнёров</h3>
-        <p class="tg-pillar-text">Ищите субподрядчиков, ведите базу текущих партнёров, собирайте и сравнивайте КП.</p>
-        <ul class="tg-pillar-list">
-          <li>База поставщиков</li>
-          <li>Сбор КП по почте</li>
-          <li>Оцифровка предложений ваших поставщиков</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tg-funnel-board">
-      <div class="tg-funnel-kanban-block">
-        <p class="tg-funnel-title">Воронка участия в торгах</p>
-        <p class="tg-kanban-scroll-hint">Листайте колонки →</p>
-        <div class="tg-funnel-kanban-scroll">
-          <div class="tg-kanban">
-          <div class="tg-kanban-col">
-            <div class="tg-kanban-head">Новые</div>
-            <div class="tg-kanban-cards">
-              <div class="tg-kanban-card">
-                <div class="tg-card-title">Поставка медоборудования</div>
-                <div class="tg-card-field">НМЦК: 4 200 000 ₽</div>
-              </div>
-              <div class="tg-kanban-card">
-                <div class="tg-card-title">Лицензии ПО для госсектора</div>
-                <div class="tg-card-field">НМЦК: 890 000 ₽</div>
-              </div>
-            </div>
-          </div>
-          <div class="tg-kanban-col">
-            <div class="tg-kanban-head">Анализ</div>
-            <div class="tg-kanban-cards">
-              <div class="tg-kanban-card active">
-                <div class="tg-card-title">Ремонт офисных помещений</div>
-                <div class="tg-card-field">НМЦК: 1 100 000 ₽</div>
-              </div>
-            </div>
-          </div>
-          <div class="tg-kanban-col">
-            <div class="tg-kanban-head">Подготовка</div>
-            <div class="tg-kanban-cards">
-              <div class="tg-kanban-card">
-                <div class="tg-card-title">Поставка мебели для школы</div>
-                <div class="tg-card-field">НМЦК: 2 450 000 ₽</div>
-              </div>
-            </div>
-          </div>
-          <div class="tg-kanban-col">
-            <div class="tg-kanban-head">Подача</div>
-            <div class="tg-kanban-cards">
-              <div class="tg-kanban-card">
-                <div class="tg-card-title">Уборка территории больницы</div>
-                <div class="tg-card-field">НМЦК: 760 000 ₽</div>
-              </div>
-            </div>
-          </div>
-          <div class="tg-kanban-col">
-            <div class="tg-kanban-head">Контракт</div>
-            <div class="tg-kanban-cards">
-              <div class="tg-kanban-card won">
-                <div class="tg-card-title">Поставка серверного оборудования</div>
-                <div class="tg-card-field">Контракт: 2 800 000 ₽</div>
-              </div>
-              <div class="tg-kanban-card won">
-                <div class="tg-card-title">Канцтовары для школ</div>
-                <div class="tg-card-field">Контракт: 420 000 ₽</div>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-        <p class="tg-kanban-footnote">Перетаскивайте карточки · назначайте ответственных · ставьте задачи</p>
-      </div>
-
-      <div class="tg-side-panels">
-        <div class="tg-panel">
-          <div class="tg-panel-head">Поставщики по тендеру</div>
-          <div class="tg-supplier-row">
-            <div class="tg-avatar">МТ</div>
-            <div>
-              <div class="tg-supplier-name">МедТех Снаб</div>
-              <div class="tg-supplier-meta">Поставлял 12 контрактов · Москва</div>
-            </div>
-            <span class="tg-supplier-badge">надежный поставщик</span>
-          </div>
-          <div class="tg-supplier-row">
-            <div class="tg-avatar">ПК</div>
-            <div>
-              <div class="tg-supplier-name">ПромКомплект</div>
-              <div class="tg-supplier-meta">Новый · найден в базе</div>
-            </div>
-            <span class="tg-supplier-badge">важный поставщик</span>
-          </div>
-        </div>
-
-        <div class="tg-panel">
-          <div class="tg-panel-head">Оцифровка предложений ваших поставщиков</div>
-          <div class="tg-kp-item">
-            <span class="tg-kp-icon pdf" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
-            <div>
-              <p class="tg-kp-title">КП_МедТех.pdf</p>
-              <p class="tg-kp-meta">3 890 000 ₽ · срок 45 дней · 47 позиций</p>
-            </div>
-            <span class="tg-kp-status done">готово</span>
-          </div>
-          <div class="tg-kp-item">
-            <span class="tg-kp-icon xls" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7z"/><path d="M14 2v5h5"/><path d="M8 13l2.5 4L13 13M11 17l2-4"/></svg></span>
-            <div>
-              <p class="tg-kp-title">Коммерческое_ПромКомплект.xlsx</p>
-              <p class="tg-kp-meta">Обработка… извлечение цен и сроков</p>
-            </div>
-            <span class="tg-kp-status">в работе</span>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="idesk-trust-wrap">
+  <div class="idesk-trust-grid">
+    <p class="idesk-trust-title">От идеи до ассортимента</p>
+    <p class="idesk-trust-item"><strong>1. Идеи</strong>Источники, фото и параметры</p>
+    <p class="idesk-trust-item"><strong>2. Отбор</strong>Оценка и согласование</p>
+    <p class="idesk-trust-item"><strong>3. Модели</strong>Готовы к следующему этапу</p>
   </div>
 </div>
 
-<!-- Tilda block: How it works (animated flow) -->
 <style>
-  .tg-how-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  .idesk-problems-wrap {
     box-sizing: border-box;
     width: 100%;
+    padding: 64px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
     background: #fff;
-    padding: 80px 24px;
   }
-  .tg-how-wrap *, .tg-how-wrap *::before, .tg-how-wrap *::after { box-sizing: border-box; }
-  .tg-how-inner { max-width: 1120px; margin: 0 auto; }
-  .tg-how-header { text-align: center; margin-bottom: 40px; }
-  .tg-section-title {
+  .idesk-problems-wrap *, .idesk-problems-wrap *::before, .idesk-problems-wrap *::after { box-sizing: border-box; }
+  .idesk-problems-inner { max-width: 1160px; margin: 0 auto; }
+  .idesk-problems-wrap .idesk-eyebrow {
+    display: inline-block;
     margin: 0 0 14px;
-    font-size: clamp(28px, 3.5vw, 40px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    color: var(--tg-text);
-    line-height: 1.15;
-  }
-  .tg-section-sub {
-    margin: 0 auto;
-    font-size: 19px;
-    line-height: 1.6;
-    color: var(--tg-muted);
-    max-width: 720px;
-  }
-
-  .tg-flow-stage {
-    position: relative;
-    background: linear-gradient(180deg, #f8faff 0%, #fff 100%);
-    border: 1px solid rgba(28, 80, 222, 0.12);
-    border-radius: 24px;
-    padding: 28px 20px 32px;
-    margin-bottom: 28px;
-    overflow: hidden;
-  }
-  .tg-flow-incoming {
-    position: absolute;
-    left: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 11px;
-    font-weight: 700;
-    color: #94a3b8;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    writing-mode: vertical-rl;
-    transform: translateY(-50%) rotate(180deg);
-  }
-  .tg-flow-board {
-    position: relative;
-    min-height: 200px;
-    margin-left: 28px;
-  }
-  .tg-flow-cols {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-  }
-  .tg-flow-col-wrap { min-width: 0; }
-  .tg-flow-col-label {
-    font-size: 11px;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #64748b;
-    text-align: center;
-    margin-bottom: 8px;
-  }
-  .tg-flow-col {
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 14px;
-    border: 1px dashed #dbeafe;
-    padding: 10px 8px;
-    min-height: 168px;
-  }
-  .tg-flow-col:nth-child(4) { border-color: rgba(5, 150, 105, 0.35); background: rgba(236, 253, 245, 0.5); }
-
-  .tg-flow-card {
-    position: absolute;
-    left: 0;
-    top: 28px;
-    width: calc(25% - 9px);
-    z-index: 3;
-    background: #fff;
-    border-radius: 12px;
-    border: 2px solid rgba(28, 80, 222, 0.35);
-    box-shadow: 0 12px 28px rgba(28, 80, 222, 0.2);
-    padding: 12px 11px;
-    animation: tg-flow-move 14s ease-in-out infinite;
-  }
-  .tg-flow-card strong {
-    display: block;
-    font-size: 13px;
-    font-weight: 800;
-    line-height: 1.3;
-    color: #1e293b;
-    margin-bottom: 6px;
-  }
-  .tg-flow-card em {
-    font-style: normal;
-    font-size: 14px;
-    font-weight: 800;
-    color: var(--tg-primary);
-  }
-  .tg-flow-card span {
-    display: block;
-    margin-top: 4px;
-    font-size: 11px;
-    color: #94a3b8;
-  }
-
-  @keyframes tg-flow-move {
-    0%, 4% {
-      left: -32%;
-      opacity: 0;
-      transform: scale(0.92);
-    }
-    8%, 22% {
-      left: 0;
-      opacity: 1;
-      transform: scale(1);
-    }
-    28%, 42% {
-      left: calc(25% + 4px);
-    }
-    48%, 62% {
-      left: calc(50% + 8px);
-    }
-    68%, 82% {
-      left: calc(75% + 12px);
-      border-color: rgba(5, 150, 105, 0.45);
-    }
-    88%, 100% {
-      left: calc(75% + 12px);
-      opacity: 1;
-    }
-  }
-
-  .tg-flow-kps {
-    position: absolute;
-    right: 8px;
-    bottom: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    z-index: 2;
-    animation: tg-flow-kps 14s ease-in-out infinite;
-  }
-  .tg-flow-kp {
-    background: #fff;
-    border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    padding: 8px 12px;
+    padding: 6px 10px;
     font-size: 12px;
     font-weight: 700;
-    color: #334155;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
-  }
-  .tg-flow-kp small {
-    display: block;
-    font-weight: 600;
-    color: var(--tg-primary);
-    margin-top: 2px;
-  }
-
-  @keyframes tg-flow-kps {
-    0%, 72% { opacity: 0; transform: translateX(12px); }
-    78%, 92% { opacity: 1; transform: translateX(0); }
-    100% { opacity: 0; transform: translateX(8px); }
-  }
-
-  .tg-flow-caption {
-    text-align: center;
-    font-size: 15px;
-    color: var(--tg-muted);
-    margin: 0 0 20px;
-    line-height: 1.5;
-  }
-  .tg-flow-cta-wrap { text-align: center; }
-  .tg-step-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 22px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
-    color: #fff !important;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    box-shadow: 0 4px 14px rgba(28, 80, 222, 0.28);
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .tg-flow-card { animation: none; left: calc(75% + 12px); }
-    .tg-flow-kps { animation: none; opacity: 1; }
-  }
-
-  @media (max-width: 760px) {
-    .tg-flow-board { grid-template-columns: repeat(2, 1fr); min-height: 280px; }
-    .tg-flow-card { width: calc(50% - 10px); animation-name: tg-flow-move-mobile; }
-    @keyframes tg-flow-move-mobile {
-      0%, 4% { left: -40%; opacity: 0; }
-      10%, 30% { left: 0; opacity: 1; }
-      36%, 55% { left: calc(50% + 6px); }
-      62%, 100% { left: calc(50% + 6px); top: 120px; }
-    }
-    .tg-flow-incoming { display: none; }
-    .tg-flow-board { margin-left: 0; }
-  }
-  @media (max-width: 560px) {
-    .tg-how-wrap { padding: 56px 20px; }
-    .tg-section-sub { font-size: 18px; }
-  }
-</style>
-
-<div class="tg-how-wrap" id="how">
-  <div class="tg-how-inner">
-    <div class="tg-how-header">
-      <h2 class="tg-section-title">Как это работает</h2>
-      <p class="tg-section-sub">Тендер из агрегатора попадает в воронку, проходит этапы до контракта — поставщики и КП рядом, без переключения сервисов.</p>
-    </div>
-
-    <div class="tg-flow-stage">
-      <div class="tg-flow-incoming">Контур · Seldon</div>
-      <div class="tg-flow-board">
-        <div class="tg-flow-cols">
-          <div class="tg-flow-col-wrap">
-            <div class="tg-flow-col-label">Новый</div>
-            <div class="tg-flow-col"></div>
-          </div>
-          <div class="tg-flow-col-wrap">
-            <div class="tg-flow-col-label">Анализ</div>
-            <div class="tg-flow-col"></div>
-          </div>
-          <div class="tg-flow-col-wrap">
-            <div class="tg-flow-col-label">Подача</div>
-            <div class="tg-flow-col"></div>
-          </div>
-          <div class="tg-flow-col-wrap">
-            <div class="tg-flow-col-label">Контракт</div>
-            <div class="tg-flow-col"></div>
-          </div>
-        </div>
-        <div class="tg-flow-card">
-          <strong>Поставка медоборудования</strong>
-          <em>4 200 000 ₽</em>
-          <span>44-ФЗ · Москва</span>
-        </div>
-        <div class="tg-flow-kps">
-          <div class="tg-flow-kp">КП «МедТех Снаб»<small>3 890 000 ₽ · 45 дней</small></div>
-          <div class="tg-flow-kp">КП «ПромКомплект»<small>4 050 000 ₽ · 40 дней</small></div>
-        </div>
-      </div>
-    </div>
-
-    <p class="tg-flow-caption">Один сценарий: от карточки в ленте до контракта и сравнения коммерческих предложений.</p>
-    <div class="tg-flow-cta-wrap">
-      <a class="tg-step-link" href="https://kontur.ru/api-zakupki?p=w55732&amp;from=ref_cabinet" target="_blank" rel="noopener noreferrer">Подключить агрегатор</a>
-    </div>
-  </div>
-</div>
-
-<!-- Tilda block: comparison matrix -->
-<style>
-  .tg-compare-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    background: linear-gradient(180deg, #fff 0%, #f4f7ff 100%);
-    padding: 80px 24px;
-  }
-  .tg-compare-wrap *, .tg-compare-wrap *::before, .tg-compare-wrap *::after { box-sizing: border-box; }
-  .tg-compare-inner { max-width: 1200px; margin: 0 auto; }
-  .tg-compare-header { text-align: center; margin-bottom: 36px; }
-  .tg-section-title {
-    margin: 0 0 14px;
-    font-size: clamp(28px, 3.5vw, 40px);
-    font-weight: 800;
-    color: var(--tg-text);
-    line-height: 1.15;
-  }
-  .tg-section-sub {
-    margin: 0 auto;
-    font-size: 19px;
-    line-height: 1.6;
-    color: var(--tg-muted);
-    max-width: 720px;
-  }
-  .tg-compare-scroll {
-    overflow: visible;
-    border-radius: 20px;
-    box-shadow: 0 16px 40px rgba(15, 23, 42, 0.06);
-  }
-  .tg-compare-matrix {
-    width: 100%;
-    min-width: 0;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(28, 80, 222, 0.12);
-    background: #fff;
-  }
-  .tg-compare-matrix-head,
-  .tg-compare-matrix-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1.15fr) repeat(4, minmax(0, 1fr));
-    border-bottom: 1px solid #eef2ff;
-  }
-  .tg-compare-matrix-row:last-child { border-bottom: none; }
-  .tg-compare-matrix-head {
-    background: #f8fafc;
-    font-weight: 800;
-    font-size: 17px;
-    line-height: 1.35;
-    color: var(--tg-text);
-    border-bottom: 2px solid #e2e8f0;
-  }
-  .tg-compare-matrix-crit,
-  .tg-compare-matrix-cell {
-    padding: 18px 12px;
-    font-size: 16px;
-    line-height: 1.4;
-    overflow-wrap: break-word;
-    border-right: 1px solid #eef2ff;
-    vertical-align: top;
-  }
-  .tg-compare-matrix-head .tg-compare-matrix-crit,
-  .tg-compare-matrix-head .tg-compare-matrix-cell {
-    padding: 18px 12px;
-    overflow-wrap: break-word;
-  }
-  .tg-compare-matrix-crit {
-    font-weight: 800;
-    color: var(--tg-text);
-    background: #f8fafc;
-  }
-  .tg-compare-matrix-cell:last-child,
-  .tg-compare-matrix-head .tg-compare-matrix-cell:last-child { border-right: none; }
-  .tg-compare-matrix-cell.col-excel { background: #fafafa; color: #475569; }
-  .tg-compare-matrix-cell.col-bitrix { background: #f1f5f9; color: #475569; }
-  .tg-compare-matrix-cell.col-search { background: #f8fafc; color: #475569; }
-  .tg-compare-matrix-cell.col-us {
-    background: linear-gradient(180deg, #e8efff 0%, #f0f5ff 100%);
-    color: #0f172a;
-    font-weight: 600;
-    border-left: 3px solid var(--tg-primary);
-  }
-  .tg-compare-matrix-head .col-us {
-    color: #153fb8;
-    background: #dce8ff;
-  }
-  @media (max-width: 900px) {
-    .tg-compare-matrix-head,
-    .tg-compare-matrix-row { font-size: 15px; }
-    .tg-compare-matrix-crit,
-    .tg-compare-matrix-cell { padding: 14px 8px; font-size: 14px; }
-    .tg-compare-matrix-head { font-size: 14px; }
-  }
-  @media (max-width: 560px) {
-    .tg-compare-wrap { padding: 56px 16px; }
-    .tg-section-sub { font-size: 18px; }
-    .tg-compare-matrix-crit,
-    .tg-compare-matrix-cell { padding: 12px 6px; font-size: 13px; }
-    .tg-compare-matrix-head { font-size: 13px; }
-  }
-</style>
-
-<div class="tg-compare-wrap">
-  <div class="tg-compare-inner">
-    <div class="tg-compare-header">
-      <h2 class="tg-section-title">Чем iStockLink отличается от привычных инструментов</h2>
-      <p class="tg-section-sub">iStockLink создан под тендеры и закупки без настройки CRM с нуля и скрытых расходов на внедрение и доработки.</p>
-    </div>
-
-    <div class="tg-compare-scroll">
-      <div class="tg-compare-matrix">
-        <div class="tg-compare-matrix-head">
-          <div class="tg-compare-matrix-crit"></div>
-          <div class="tg-compare-matrix-cell col-excel">Excel</div>
-          <div class="tg-compare-matrix-cell col-bitrix">Битрикс24 + внедрение</div>
-          <div class="tg-compare-matrix-cell col-search">Сервисы поиска тендеров</div>
-          <div class="tg-compare-matrix-cell col-us">iStockLink</div>
-        </div>
-        <div class="tg-compare-matrix-row">
-          <div class="tg-compare-matrix-crit">Запуск</div>
-          <div class="tg-compare-matrix-cell col-excel">сразу</div>
-          <div class="tg-compare-matrix-cell col-bitrix">недели и месяцы</div>
-          <div class="tg-compare-matrix-cell col-search">сразу</div>
-          <div class="tg-compare-matrix-cell col-us">1 день</div>
-        </div>
-        <div class="tg-compare-matrix-row">
-          <div class="tg-compare-matrix-crit">Стоимость старта</div>
-          <div class="tg-compare-matrix-cell col-excel">0</div>
-          <div class="tg-compare-matrix-cell col-bitrix">от 100 000 ₽ + подписка</div>
-          <div class="tg-compare-matrix-cell col-search">подписка</div>
-          <div class="tg-compare-matrix-cell col-us">от 1260 ₽/мес</div>
-        </div>
-        <div class="tg-compare-matrix-row">
-          <div class="tg-compare-matrix-crit">Тендеры из агрегаторов</div>
-          <div class="tg-compare-matrix-cell col-excel">вручную</div>
-          <div class="tg-compare-matrix-cell col-bitrix">через интегратора</div>
-          <div class="tg-compare-matrix-cell col-search">да</div>
-          <div class="tg-compare-matrix-cell col-us">Контур, Seldon, из коробки</div>
-        </div>
-        <div class="tg-compare-matrix-row">
-          <div class="tg-compare-matrix-crit">Воронка по этапам</div>
-          <div class="tg-compare-matrix-cell col-excel">нет</div>
-          <div class="tg-compare-matrix-cell col-bitrix">да, после настройки</div>
-          <div class="tg-compare-matrix-cell col-search">нет</div>
-          <div class="tg-compare-matrix-cell col-us">из коробки</div>
-        </div>
-        <div class="tg-compare-matrix-row">
-          <div class="tg-compare-matrix-crit">Работа с поставщиками и КП</div>
-          <div class="tg-compare-matrix-cell col-excel">вручную</div>
-          <div class="tg-compare-matrix-cell col-bitrix">доработка</div>
-          <div class="tg-compare-matrix-cell col-search">нет</div>
-          <div class="tg-compare-matrix-cell col-us">SRM в том же окне</div>
-        </div>
-        <div class="tg-compare-matrix-row">
-          <div class="tg-compare-matrix-crit">Нагрузка по специалистам</div>
-          <div class="tg-compare-matrix-cell col-excel">нет</div>
-          <div class="tg-compare-matrix-cell col-bitrix">после настройки</div>
-          <div class="tg-compare-matrix-cell col-search">нет</div>
-          <div class="tg-compare-matrix-cell col-us">из коробки</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Tilda block: переход с Битрикс24 -->
-<style>
-  .tg-bitrix-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    background: linear-gradient(180deg, #f4f7ff 0%, #fff 100%);
-    padding: 72px 24px;
-  }
-  .tg-bitrix-wrap *, .tg-bitrix-wrap *::before, .tg-bitrix-wrap *::after { box-sizing: border-box; }
-  .tg-bitrix-inner { max-width: 1120px; margin: 0 auto; }
-  .tg-bitrix-card {
-    border-radius: 24px;
-    border: 1px solid rgba(28, 80, 222, 0.18);
-    background: #fff;
-    padding: 36px 32px;
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.06);
-  }
-  .tg-bitrix-badge {
-    display: inline-block;
-    margin-bottom: 14px;
-    padding: 6px 12px;
-    border-radius: 999px;
-    background: rgba(28, 80, 222, 0.1);
-    color: var(--tg-primary);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
   }
-  .tg-bitrix-title {
-    margin: 0 0 32px;
-    font-size: clamp(26px, 3.2vw, 36px);
-    font-weight: 800;
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-    color: var(--tg-text);
+  .idesk-problems-title { margin: 0 0 12px; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.12; font-weight: 800; max-width: 760px; }
+  .idesk-problems-lead { margin: 0 0 32px; font-size: 17px; color: #5f6870; max-width: 760px; }
+  .idesk-problems-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .idesk-problem-card {
+    min-height: 200px;
+    padding: 24px;
+    border: 1px solid #dfe4ea;
+    border-radius: 12px;
+    background: #fff;
   }
-  .tg-bitrix-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 36px;
-  }
-  .tg-bitrix-item {
-    border-radius: 18px;
-    border: none;
-    background: #f8faff;
-    padding: 28px 22px;
-  }
-  .tg-bitrix-item strong {
-    display: block;
-    margin-bottom: 12px;
-    font-size: clamp(20px, 2.2vw, 24px);
-    font-weight: 800;
-    color: var(--tg-text);
-    line-height: 1.2;
-  }
-  .tg-bitrix-item span {
-    font-size: clamp(16px, 1.6vw, 18px);
-    line-height: 1.55;
-    color: var(--tg-muted);
-  }
-  .tg-bitrix-item strong.tg-bitrix-highlight {
-    color: var(--tg-primary);
-  }
-  .tg-bitrix-item--promo {
-    background: linear-gradient(155deg, rgba(28, 80, 222, 0.14) 0%, rgba(28, 80, 222, 0.06) 55%, #eef3ff 100%);
-  }
-  .tg-bitrix-cta-row {
-    text-align: center;
-  }
-  .tg-bitrix-cta {
-    display: inline-block;
-    padding: 16px 32px;
-    border-radius: 999px;
-    background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
-    color: #fff !important;
-    font-size: 17px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 10px 28px rgba(28, 80, 222, 0.32);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .tg-bitrix-cta:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 12px 32px rgba(28, 80, 222, 0.38);
-  }
-  @media (max-width: 900px) {
-    .tg-bitrix-grid { grid-template-columns: 1fr; }
-    .tg-bitrix-card { padding: 28px 22px; }
-  }
-  @media (max-width: 560px) {
-    .tg-bitrix-wrap { padding: 56px 20px; }
-    .tg-bitrix-item { padding: 24px 20px; }
-  }
+  .idesk-problem-num { display: block; margin-bottom: 28px; color: #3669fd; font-size: 13px; font-weight: 700; }
+  .idesk-problem-card h3 { margin: 0 0 10px; font-size: 18px; }
+  .idesk-problem-card p { margin: 0; font-size: 14px; line-height: 1.55; color: #5f6870; }
+  @media (max-width: 900px) { .idesk-problems-grid { grid-template-columns: 1fr; } }
 </style>
 
-<div class="tg-bitrix-wrap" id="bitrix-switch">
-  <div class="tg-bitrix-inner">
-    <div class="tg-bitrix-card">
-      <span class="tg-bitrix-badge">Спецусловия</span>
-      <h2 class="tg-bitrix-title">Переход с Битрикс24 на iStockLink</h2>
-      <div class="tg-bitrix-grid">
-        <div class="tg-bitrix-item">
-          <strong>За 1 день</strong>
-          <span>Настроим CRM систему под ваш бизнес процесс</span>
-        </div>
-        <div class="tg-bitrix-item tg-bitrix-item--promo">
-          <strong class="tg-bitrix-highlight">Скидка 50%</strong>
-          <span>При переходе с Битрикс24 — на годовую подписку iStockLink.</span>
-        </div>
-        <div class="tg-bitrix-item">
-          <strong>Бесплатный старт</strong>
-          <span>14 дней полного доступа — оцените процесс до оплаты тарифа.</span>
-        </div>
-      </div>
-      <div class="tg-bitrix-cta-row">
-        <a class="tg-bitrix-cta" href="#demo">Получить условия перехода</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Tilda block: Стоимость — ценность и быстрый старт (вариант 3) -->
-<style>
-  .tg-pval-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    background: #fff;
-    padding: 80px 24px;
-  }
-  .tg-pval-wrap *, .tg-pval-wrap *::before, .tg-pval-wrap *::after { box-sizing: border-box; }
-  .tg-pval-inner { max-width: 1120px; margin: 0 auto; }
-  .tg-pval-header {
-    margin-bottom: 36px;
-    text-align: center;
-  }
-  .tg-pval-header h2 {
-    margin: 0;
-    font-size: clamp(32px, 3.5vw, 44px);
-    font-weight: 800;
-    color: var(--tg-text);
-    line-height: 1.12;
-  }
-  .tg-pval-shell {
-    border-radius: 28px;
-    padding: 8px;
-    background: #e8f0fe;
-  }
-  .tg-pval-body {
-    display: grid;
-    grid-template-columns: 38% minmax(0, 1fr);
-    border-radius: 22px;
-    overflow: hidden;
-    background: #fff;
-    border: 1px solid #e8f0fe;
-  }
-  .tg-pval-left {
-    padding: 40px 32px;
-    background: linear-gradient(180deg, #f0f6ff 0%, #e8f0fe 100%);
-    border-right: 1px solid #e8f0fe;
-  }
-  .tg-pval-row + .tg-pval-row {
-    margin-top: 32px;
-    padding-top: 32px;
-    border-top: 2px solid rgba(28, 80, 222, 0.12);
-  }
-  .tg-pval-row-label {
-    margin: 0 0 6px;
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--tg-muted);
-  }
-  .tg-pval-row-value {
-    margin: 0 0 10px;
-    font-size: clamp(38px, 4.2vw, 48px);
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.04em;
-    color: var(--tg-text);
-  }
-  .tg-pval-row-value em {
-    font-style: normal;
-    font-size: 20px;
-    font-weight: 700;
-    color: #64748b;
-    letter-spacing: 0;
-  }
-  .tg-pval-row-value-sm {
-    margin: 0 0 10px;
-    font-size: 34px;
-    font-weight: 800;
-    line-height: 1.1;
-    color: var(--tg-primary);
-    letter-spacing: -0.02em;
-  }
-  .tg-pval-row-desc {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.55;
-    color: #475569;
-  }
-  .tg-pval-right {
-    padding: 40px 44px 36px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    align-items: start;
-  }
-  .tg-pval-block:first-of-type {
-    padding-right: 36px;
-  }
-  .tg-pval-block--split {
-    padding-left: 36px;
-    border-left: 2px solid rgba(28, 80, 222, 0.14);
-  }
-  .tg-pval-block h3 {
-    margin: 0 0 16px;
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--tg-text);
-    line-height: 1.25;
-  }
-  .tg-pval-block h3::after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 3px;
-    margin-top: 10px;
-    border-radius: 999px;
-    background: var(--tg-primary);
-  }
-  .tg-pval-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .tg-pval-list li {
-    position: relative;
-    padding: 0 0 10px 22px;
-    font-size: 16px;
-    line-height: 1.55;
-    color: #334155;
-  }
-  .tg-pval-list li:last-child { padding-bottom: 0; }
-  .tg-pval-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: var(--tg-primary);
-  }
-  .tg-pval-foot {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding-top: 28px;
-    margin-top: 4px;
-    border-top: 1px solid #e2e8f0;
-  }
-  .tg-pval-link {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--tg-primary);
-    text-decoration: none;
-  }
-  .tg-pval-link:hover { text-decoration: underline; }
-  .tg-pval-btn {
-    display: inline-flex;
-    padding: 15px 36px;
-    border-radius: 14px;
-    font-size: 16px;
-    font-weight: 700;
-    font-family: inherit;
-    text-decoration: none;
-    color: #fff !important;
-    background: var(--tg-primary);
-    box-shadow: 0 8px 24px rgba(28, 80, 222, 0.25);
-    transition: background 0.2s, transform 0.2s;
-  }
-  .tg-pval-btn:hover {
-    background: #1642c4;
-    transform: translateY(-2px);
-  }
-  @media (max-width: 900px) {
-    .tg-pval-body { grid-template-columns: 1fr; }
-    .tg-pval-left {
-      border-right: none;
-      border-bottom: 1px solid #e8f0fe;
-    }
-    .tg-pval-right {
-      grid-template-columns: 1fr;
-      padding: 32px 24px;
-    }
-    .tg-pval-block:first-of-type {
-      padding-right: 0;
-    }
-    .tg-pval-block--split {
-      margin-top: 28px;
-      padding-top: 28px;
-      padding-left: 0;
-      border-left: none;
-      border-top: 2px solid rgba(28, 80, 222, 0.14);
-    }
-  }
-  @media (max-width: 600px) {
-    .tg-pval-wrap { padding: 56px 20px; }
-    .tg-pval-left { padding: 28px 22px; }
-    .tg-pval-foot { flex-direction: column; align-items: stretch; }
-    .tg-pval-btn { justify-content: center; width: 100%; }
-    .tg-pval-link { text-align: center; }
-  }
-</style>
-<div class="tg-pval-wrap" id="pricing-value">
-  <div class="tg-pval-inner">
-    <div class="tg-pval-header">
-      <h2>Стоимость платформы</h2>
-    </div>
-    <div class="tg-pval-shell">
-      <article class="tg-pval-body">
-        <div class="tg-pval-left">
-          <div class="tg-pval-row">
-            <p class="tg-pval-row-label">За пользователя</p>
-            <p class="tg-pval-row-value">от 1 260 ₽ <em>/ мес</em></p>
-            <p class="tg-pval-row-desc">Подходит для 1–2 специалистов.</p>
-          </div>
-          <div class="tg-pval-row">
-            <p class="tg-pval-row-label">На команду</p>
-            <p class="tg-pval-row-value-sm">от 6 000 ₽ / мес</p>
-            <p class="tg-pval-row-desc">Фиксированный тариф, когда в отделе несколько тендерных специалистов.</p>
-          </div>
-        </div>
-        <div class="tg-pval-right">
-          <div class="tg-pval-block">
-            <h3>За эти деньги вы получаете</h3>
-            <ul class="tg-pval-list">
-              <li>Единую ленту закупок из агрегаторов и закрытых торгов</li>
-              <li>Воронку торгов: этапы, задачи, ответственные</li>
-              <li>Работу с поставщиками и проведение закупок</li>
-              <li>Оцифровку коммерческих предложений</li>
-              <li>Объективную картину нагрузки по каждому специалисту</li>
-            </ul>
-          </div>
-          <div class="tg-pval-block tg-pval-block--split">
-            <h3>Быстрый старт</h3>
-            <ul class="tg-pval-list">
-              <li>Подключение за день: подключили агрегатор и работаете</li>
-              <li>Не нужен проект внедрения, доработки CRM и долгое обучение</li>
-              <li>Интерфейс понятен тендерному отделу без отдельного курса</li>
-              <li>14 дней бесплатно, без привязки карты</li>
-            </ul>
-          </div>
-          <div class="tg-pval-foot">
-            <a href="https://istock.link/pricing" class="tg-pval-link" target="_blank" rel="noopener noreferrer">Все тарифы и условия →</a>
-            <a href="#demo" class="tg-pval-btn">Получить демо</a>
-          </div>
-        </div>
+<section class="idesk-problems-wrap">
+  <div class="idesk-problems-inner">
+    <span class="idesk-eyebrow">Знакомо?</span>
+    <h2 class="idesk-problems-title">Новые модели нужны постоянно — а решений становится всё больше</h2>
+    <p class="idesk-problems-lead">Idea Desk помогает удерживать темп разработки и видеть состояние каждой идеи и модели.</p>
+    <div class="idesk-problems-grid">
+      <article class="idesk-problem-card">
+        <span class="idesk-problem-num">01</span>
+        <h3>Слишком много идей одновременно</h3>
+        <p>Сезонные коллекции, капсулы, клиентские запросы и тренды конкурируют за внимание команды.</p>
+      </article>
+      <article class="idesk-problem-card">
+        <span class="idesk-problem-num">02</span>
+        <h3>Решения теряются между участниками</h3>
+        <p>Фото готово, оценка проведена, но неясно, кто принимает решение и что должно произойти дальше.</p>
+      </article>
+      <article class="idesk-problem-card">
+        <span class="idesk-problem-num">03</span>
+        <h3>Не видна готовность ассортимента</h3>
+        <p>Сложно быстро понять, какие модели рассматривают, какие согласованы и какие готовы к следующему этапу.</p>
       </article>
     </div>
   </div>
-</div>
+</section>
 
-<!-- Tilda block: Подтверждённый пример -->
 <style>
-  .tg-proof-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    --tg-radius: 16px;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  .idesk-flow-wrap {
     box-sizing: border-box;
     width: 100%;
-    background: #fff;
-    padding: 80px 24px;
+    padding: 64px 20px;
+    background: #f5f7fa;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
   }
-  .tg-proof-wrap *, .tg-proof-wrap *::before, .tg-proof-wrap *::after { box-sizing: border-box; }
-  .tg-proof-inner { max-width: 1120px; margin: 0 auto; }
-
-  .tg-proof-card {
-    border-radius: 24px;
-    background: #f8fafc;
-    overflow: hidden;
-  }
-
-  .tg-proof-hero {
-    display: grid;
-    grid-template-columns: 200px minmax(0, 1fr);
-    gap: 24px;
-    align-items: start;
-    padding: 24px;
-    background: #f8fafc;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  .tg-proof-photo-box {
-    overflow: hidden;
-    border-radius: var(--tg-radius);
-    background: #fff;
-  }
-  .tg-proof-photo {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    border-radius: var(--tg-radius);
-    object-fit: cover;
-    object-position: center 18%;
-    display: block;
-  }
-  .tg-proof-quote-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 24px 28px 22px;
-    border-radius: var(--tg-radius);
-    background: #fff;
-  }
-  .tg-proof-quote-main {
-    display: flex;
-    align-items: stretch;
-    gap: 18px;
-  }
-  .tg-proof-quote-bar {
-    width: 4px;
-    flex-shrink: 0;
-    border-radius: 999px;
-    background: var(--tg-primary);
-  }
-  .tg-proof-quote-text {
-    margin: 0;
-    font-size: clamp(18px, 2vw, 22px);
-    line-height: 1.55;
-    font-weight: 600;
-    color: var(--tg-text);
-  }
-  .tg-proof-quote-sign {
-    margin: 20px 0 0 22px;
-    padding-top: 16px;
-    border-top: 1px solid #eef2f7;
-  }
-  .tg-proof-quote-name {
-    margin: 0 0 4px;
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--tg-text);
-    line-height: 1.35;
-  }
-  .tg-proof-quote-meta {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.45;
-    color: var(--tg-muted);
-  }
-
-  .tg-proof-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    background: #fff;
-  }
-  .tg-proof-col {
-    padding: 28px 32px;
-    border-top: 1px solid #e2e8f0;
-  }
-  .tg-proof-col.before { border-right: 1px solid #e2e8f0; }
-  .tg-proof-col.after { background: #f8faff; }
-  .tg-proof-col-title {
-    margin: 0 0 16px;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--tg-text);
-  }
-  .tg-proof-col.after .tg-proof-col-title { color: var(--tg-primary); }
-  .tg-proof-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .tg-proof-list li {
-    position: relative;
-    padding: 0 0 14px 18px;
-    font-size: 17px;
-    line-height: 1.58;
-    color: #334155;
-  }
-  .tg-proof-list li:last-child { padding-bottom: 0; }
-  .tg-proof-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.62em;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #94a3b8;
-  }
-  .tg-proof-col.after .tg-proof-list li::before { background: var(--tg-primary); }
-  .tg-proof-hl-bad {
-    color: #475569;
-    font-weight: 700;
-  }
-  .tg-proof-hl-good {
-    color: var(--tg-primary);
-    font-weight: 700;
-  }
-
-  .tg-proof-cta-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 28px 32px;
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-  }
-  .tg-proof-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    border-radius: 12px;
-    border: none;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
-    font-family: inherit;
-    line-height: 1.2;
-    color: #fff !important;
-    background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
-    box-shadow: 0 10px 28px rgba(28,80,222,0.22);
-    transition: transform .2s, box-shadow .2s;
-    white-space: nowrap;
-  }
-  .tg-proof-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 32px rgba(28,80,222,0.28);
-    color: #fff !important;
-  }
-
-  @media (max-width: 860px) {
-    .tg-proof-wrap { padding: 56px 20px 64px; }
-    .tg-proof-hero {
-      grid-template-columns: 1fr;
-      padding: 20px;
-    }
-    .tg-proof-photo-box { max-width: 180px; }
-    .tg-proof-grid { grid-template-columns: 1fr; }
-    .tg-proof-col.before {
-      border-right: none;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .tg-proof-col,
-    .tg-proof-cta-row { padding-left: 22px; padding-right: 22px; }
-  }
-  @media (max-width: 560px) {
-    .tg-proof-btn { width: 100%; max-width: 320px; }
-    .tg-proof-photo-box { max-width: 160px; margin: 0 auto; }
-  }
-</style>
-
-<div class="tg-proof-wrap" id="director-case">
-  <div class="tg-proof-inner">
-    <article class="tg-proof-card">
-      <div class="tg-proof-hero">
-        <div class="tg-proof-photo-box">
-          <img
-            class="tg-proof-photo"
-            src="https://kolomoets-netizen.github.io/Link/assets/case-director.jpg"
-            width="200"
-            height="250"
-            alt="Директор торговой компании"
-            loading="lazy"
-          >
-        </div>
-        <div class="tg-proof-quote-box">
-          <div class="tg-proof-quote-main">
-            <span class="tg-proof-quote-bar" aria-hidden="true"></span>
-            <p class="tg-proof-quote-text">«Моя цель: больше тендеров в работе, больше тендеров, больше денег. Система нужна не только для контроля, а как объективный источник данных для управления процессом».</p>
-          </div>
-          <div class="tg-proof-quote-sign">
-            <p class="tg-proof-quote-name">Директор торговой компании</p>
-            <p class="tg-proof-quote-meta">Торговая компания · 40 сотрудников<br>20 тендерных специалистов</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tg-proof-grid">
-        <div class="tg-proof-col before">
-          <p class="tg-proof-col-title">Было</p>
-          <ul class="tg-proof-list">
-            <li>У каждого специалиста своя Google Таблица: <span class="tg-proof-hl-bad">нет единой картины по заявкам</span>, согласованиям и стадиям.</li>
-            <li>Директор не видел, <span class="tg-proof-hl-bad">кто сколько тендеров ведёт</span>: у одного 20 в работе, у другого 10. Без объективных данных сложно помочь.</li>
-            <li>Битрикс не встроил закупки, 1С оказалась сложной. Месяцы на запуск без полной автоматизации процесса.</li>
-          </ul>
-        </div>
-        <div class="tg-proof-col after">
-          <p class="tg-proof-col-title">Стало</p>
-          <ul class="tg-proof-list">
-            <li>Объективные данные по нагрузке и этапам: можно сравнивать специалистов и <span class="tg-proof-hl-good">повышать показатели</span>.</li>
-            <li>Агрегаторы и закрытые торги в одной ленте iStockLink, <span class="tg-proof-hl-good">без ручного</span> обхода площадок.</li>
-            <li><span class="tg-proof-hl-good">Единый процесс</span> от ленты торгов до закупок с поставщиками, без разрыва между инструментами.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tg-proof-cta-row">
-        <a href="#demo" class="tg-proof-btn" id="case-consult-cta" data-case-cta="demo">Получить демо</a>
-      </div>
-    </article>
-  </div>
-</div>
-
-<!-- Tilda block: Кейс — промышленная компания -->
-<style>
-  .tg-proof2-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    --tg-radius: 16px;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    background: #fff;
-    padding: 80px 24px;
-  }
-  .tg-proof2-wrap *, .tg-proof2-wrap *::before, .tg-proof2-wrap *::after { box-sizing: border-box; }
-  .tg-proof2-inner { max-width: 1120px; margin: 0 auto; }
-
-  .tg-proof2-card {
-    border-radius: 24px;
-    background: #f8fafc;
-    overflow: hidden;
-  }
-
-  .tg-proof2-hero {
-    display: grid;
-    grid-template-columns: 200px minmax(0, 1fr);
-    gap: 24px;
-    align-items: start;
-    padding: 24px;
-    background: #f8fafc;
-    border-bottom: 1px solid #e2e8f0;
-  }
-  .tg-proof2-photo-box {
-    overflow: hidden;
-    border-radius: var(--tg-radius);
-    background: #fff;
-  }
-  .tg-proof2-photo {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    border-radius: var(--tg-radius);
-    object-fit: cover;
-    object-position: center 15%;
-    display: block;
-  }
-  .tg-proof2-quote-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 24px 28px 22px;
-    border-radius: var(--tg-radius);
-    background: #fff;
-  }
-  .tg-proof2-quote-main {
-    display: flex;
-    align-items: stretch;
-    gap: 18px;
-  }
-  .tg-proof2-quote-bar {
-    width: 4px;
-    flex-shrink: 0;
-    border-radius: 999px;
-    background: var(--tg-primary);
-  }
-  .tg-proof2-quote-text {
-    margin: 0;
-    font-size: clamp(18px, 2vw, 22px);
-    line-height: 1.55;
-    font-weight: 600;
-    color: var(--tg-text);
-  }
-  .tg-proof2-quote-sign {
-    margin: 20px 0 0 22px;
-    padding-top: 16px;
-    border-top: 1px solid #eef2f7;
-  }
-  .tg-proof2-quote-name {
-    margin: 0 0 4px;
-    font-size: 16px;
-    font-weight: 800;
-    color: var(--tg-text);
-    line-height: 1.35;
-  }
-  .tg-proof2-quote-meta {
-    margin: 0;
-    font-size: 15px;
-    line-height: 1.45;
-    color: var(--tg-muted);
-  }
-
-  .tg-proof2-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    background: #fff;
-  }
-  .tg-proof2-col {
-    padding: 28px 32px;
-    border-top: 1px solid #e2e8f0;
-  }
-  .tg-proof2-col.before { border-right: 1px solid #e2e8f0; }
-  .tg-proof2-col.after { background: #f8faff; }
-  .tg-proof2-col-title {
-    margin: 0 0 16px;
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--tg-text);
-  }
-  .tg-proof2-col.after .tg-proof2-col-title { color: var(--tg-primary); }
-  .tg-proof2-list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .tg-proof2-list li {
-    position: relative;
-    padding: 0 0 14px 18px;
-    font-size: 17px;
-    line-height: 1.58;
-    color: #334155;
-  }
-  .tg-proof2-list li:last-child { padding-bottom: 0; }
-  .tg-proof2-list li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0.62em;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #94a3b8;
-  }
-  .tg-proof2-col.after .tg-proof2-list li::before { background: var(--tg-primary); }
-  .tg-proof2-hl-bad {
-    color: #475569;
-    font-weight: 700;
-  }
-  .tg-proof2-hl-good {
-    color: var(--tg-primary);
-    font-weight: 700;
-  }
-
-  .tg-proof2-cta-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 28px 32px;
-    background: #f8fafc;
-    border-top: 1px solid #e2e8f0;
-  }
-  .tg-proof2-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    border-radius: 12px;
-    border: none;
-    text-decoration: none;
-    font-size: 15px;
-    font-weight: 700;
-    font-family: inherit;
-    line-height: 1.2;
-    color: #fff !important;
-    background: linear-gradient(135deg, #1c50de 0%, #2f63ea 100%);
-    box-shadow: 0 10px 28px rgba(28,80,222,0.22);
-    transition: transform .2s, box-shadow .2s;
-    white-space: nowrap;
-  }
-  .tg-proof2-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 14px 32px rgba(28,80,222,0.28);
-    color: #fff !important;
-  }
-
-  @media (max-width: 860px) {
-    .tg-proof2-wrap { padding: 56px 20px 64px; }
-    .tg-proof2-hero {
-      grid-template-columns: 1fr;
-      padding: 20px;
-    }
-    .tg-proof2-photo-box { max-width: 180px; }
-    .tg-proof2-grid { grid-template-columns: 1fr; }
-    .tg-proof2-col.before {
-      border-right: none;
-      border-bottom: 1px solid #e2e8f0;
-    }
-    .tg-proof2-col,
-    .tg-proof2-cta-row { padding-left: 22px; padding-right: 22px; }
-  }
-  @media (max-width: 560px) {
-    .tg-proof2-btn { width: 100%; max-width: 320px; }
-    .tg-proof2-photo-box { max-width: 160px; margin: 0 auto; }
-  }
-</style>
-
-<div class="tg-proof2-wrap" id="industrial-case">
-  <div class="tg-proof2-inner">
-    <article class="tg-proof2-card">
-      <div class="tg-proof2-hero">
-        <div class="tg-proof2-photo-box">
-          <img
-            class="tg-proof2-photo"
-            src="https://kolomoets-netizen.github.io/Link/assets/case-director-industrial.jpg"
-            width="200"
-            height="250"
-            alt="Директор промышленной компании"
-            loading="lazy"
-          >
-        </div>
-        <div class="tg-proof2-quote-box">
-          <div class="tg-proof2-quote-main">
-            <span class="tg-proof2-quote-bar" aria-hidden="true"></span>
-            <p class="tg-proof2-quote-text">«По нерегламентированным закупкам мы часто не понимаем, по какой цене покупаем — суммы большие. Нужен инструмент, который поможет упорядочить ценообразование и опираться на факты, а не на память отдельных людей».</p>
-          </div>
-          <div class="tg-proof2-quote-sign">
-            <p class="tg-proof2-quote-name">Директор промышленной компании</p>
-            <p class="tg-proof2-quote-meta">Промышленное производство · 100 сотрудников<br>Отдел снабжения · 15 человек</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tg-proof2-grid">
-        <div class="tg-proof2-col before">
-          <p class="tg-proof2-col-title">Было</p>
-          <ul class="tg-proof2-list">
-            <li>Регламентированные позиции по ведомостям понятны, а по <span class="tg-proof2-hl-bad">остальным комплектующим и ТМЦ</span> — не видно, кто у кого и за сколько берёт.</li>
-            <li>Учёт цен в базе есть, но <span class="tg-proof2-hl-bad">неудобный</span>: счёт на 5&nbsp;000 ₽ за деталь, в истории — около 800 ₽; без быстрого сравнения переплачиваем.</li>
-            <li>Накладные (масла, инструмент, расходники) раздувают <span class="tg-proof2-hl-bad">25–26 счета</span> — при индексации цены зарплату некуда растить: 80% себестоимости — ФОТ.</li>
-            <li>После истории с недобросовестными закупками <span class="tg-proof2-hl-bad">нет уверенности</span>, что по инструменту и мелким закупкам нет скрытых переплат.</li>
-          </ul>
-        </div>
-        <div class="tg-proof2-col after">
-          <p class="tg-proof2-col-title">Стало</p>
-          <ul class="tg-proof2-list">
-            <li>Запускаем <span class="tg-proof2-hl-good">контроль цен</span> с экономикой: счета и закупки снабжения в одном процессе, а не в разрозненных таблицах.</li>
-            <li>Новый счёт <span class="tg-proof2-hl-good">сверяем с историей</span> по позиции до согласования — как с «барашками»: нашли прошлую цену, согласовали ~4&nbsp;100 ₽ вместо 5&nbsp;000.</li>
-            <li>Коммерческие предложения и закупки у поставщиков — <span class="tg-proof2-hl-good">в цифровом контуре</span>, проще держать накладные в нормативе и защищать фонд оплаты труда.</li>
-            <li>Отдел из 15 человек работает по <span class="tg-proof2-hl-good">единым правилам</span>: меньше «ручной» договорённости, больше прозрачности для директора.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="tg-proof2-cta-row">
-        <a href="#demo" class="tg-proof2-btn">Получить демо</a>
-      </div>
-    </article>
-  </div>
-</div>
-
-<!-- Tilda block: Превью письма для поставщиков -->
-<style>
-  .tg-mail-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    background: #f7f9ff;
-    padding: 68px 24px;
-  }
-  .tg-mail-wrap *, .tg-mail-wrap *::before, .tg-mail-wrap *::after { box-sizing: border-box; }
-  .tg-mail-inner { max-width: 1120px; margin: 0 auto; }
-  .tg-mail-head { margin: 0 0 18px; text-align: center; }
-  .tg-mail-kicker {
-    margin: 0 0 10px;
+  .idesk-flow-wrap *, .idesk-flow-wrap *::before, .idesk-flow-wrap *::after { box-sizing: border-box; }
+  .idesk-flow-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .idesk-flow-wrap .idesk-eyebrow {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 6px 10px;
     font-size: 12px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
-    color: var(--tg-primary);
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
   }
-  .tg-mail-title {
-    margin: 0;
-    font-size: clamp(28px, 3.1vw, 38px);
-    line-height: 1.26;
-    font-weight: 800;
-    color: var(--tg-text);
-    letter-spacing: -0.02em;
-  }
-  .tg-mail-sub {
-    margin: 12px auto 0;
-    max-width: 860px;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #334155;
-  }
-  .tg-mail-open {
-    margin: 20px 0 0;
-    text-align: center;
-  }
-  .tg-mail-open a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 13px 24px;
-    border-radius: 12px;
-    background: #1c50de;
-    color: #fff !important;
-    font-size: 15px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 10px 28px rgba(28, 80, 222, 0.22);
-  }
-  .tg-mail-open a:hover { opacity: 0.95; }
-  .tg-mail-frame {
-    margin: 28px auto 0;
-    max-width: 680px;
-    border-radius: 20px;
-    border: 1px solid #dbe4ff;
-    background: #eef3ff;
-    box-shadow: 0 14px 34px rgba(28, 80, 222, 0.09);
-    overflow: hidden;
-  }
-  .tg-mail-frame-label {
-    padding: 12px 16px;
+  .idesk-flow-title { margin: 0 0 12px; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.12; font-weight: 800; }
+  .idesk-flow-lead { margin: 0 0 36px; font-size: 17px; color: #5f6870; max-width: 720px; margin-inline: auto; }
+  .idesk-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid #dfe4ea;
+    border-radius: 14px;
     background: #fff;
-    border-bottom: 1px solid #e8f0fe;
-    font-size: 13px;
-    font-weight: 600;
-    color: #64748b;
-    text-align: center;
+    overflow: hidden;
+    text-align: left;
   }
-  .tg-mail-iframe {
-    display: block;
-    width: 100%;
-    height: 920px;
-    border: 0;
-    background: #eef3ff;
+  .idesk-step {
+    min-height: 200px;
+    padding: 22px;
+    border-right: 1px solid #dfe4ea;
   }
-  .tg-mail-caption {
-    margin: 16px 0 0;
-    text-align: center;
-    color: #64748b;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  .tg-mail-caption a { color: #1c50de; font-weight: 600; }
-  @media (max-width: 860px) {
-    .tg-mail-wrap { padding: 56px 20px; }
-    .tg-mail-iframe { height: 780px; }
-    .tg-mail-sub { font-size: 17px; }
-  }
-</style>
-
-<div class="tg-mail-wrap" id="supplier-email-preview">
-  <div class="tg-mail-inner">
-    <header class="tg-mail-head">
-      <p class="tg-mail-kicker">Рассылка</p>
-      <h2 class="tg-mail-title">HTML-письмо для поставщиков</h2>
-      <p class="tg-mail-sub">Модуль тендеров iStockLink, ИИ-агент и партнёрство с Seldon и Контур. Ниже — опубликованная версия для просмотра и рассылки.</p>
-      <p class="tg-mail-open">
-        <a href="https://kolomoets-netizen.github.io/Link/emails/supplier-tender-module-seldon.html" target="_blank" rel="noopener noreferrer">Открыть письмо на отдельной странице</a>
-      </p>
-    </header>
-
-    <section class="tg-mail-frame" aria-label="Превью HTML-письма">
-      <p class="tg-mail-frame-label">Превью · supplier-tender-module-seldon.html</p>
-      <iframe
-        class="tg-mail-iframe"
-        title="Письмо для поставщиков iStockLink"
-        src="https://kolomoets-netizen.github.io/Link/emails/supplier-tender-module-seldon.html"
-        loading="lazy"
-      ></iframe>
-    </section>
-
-    <p class="tg-mail-caption">
-      Исходник с плейсхолдерами для рассылки:
-      <a href="https://github.com/kolomoets-netizen/Link/blob/main/content/emails/supplier-tender-module-seldon.html">content/emails/supplier-tender-module-seldon.html</a>
-    </p>
-  </div>
-</div>
-
-<!-- Tilda block: CTA -->
-<!--
-  Попап Tilda:
-  1. Добавьте блок попапа (BF501 / BF502 / BF503) с формой Email
-  2. В Контенте попапа укажите Popup link: #popup:demo
-  3. Тот же #popup:demo — в href кнопки ниже (или свой linkhook из попапа)
--->
-<style>
-  .tg-cta-wrap {
-    --tg-primary: #1c50de;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    box-sizing: border-box;
-    width: 100%;
-    background: linear-gradient(180deg, #eef3ff 0%, #f4f7ff 100%);
-    padding: 80px 24px;
-  }
-  .tg-cta-wrap *, .tg-cta-wrap *::before, .tg-cta-wrap *::after { box-sizing: border-box; }
-  .tg-cta-inner { max-width: 1120px; margin: 0 auto; }
-
-  .tg-cta-box {
-    background: linear-gradient(135deg, #1c50de 0%, #2a5fe8 40%, #3b6df0 100%);
-    border-radius: 24px;
-    padding: 56px 48px;
-    text-align: center;
+  .idesk-step:last-child {
+    border-right: 0;
+    background: #1c1f22;
     color: #fff;
-    position: relative;
-    overflow: hidden;
   }
-  .tg-cta-box::before {
-    content: "";
-    position: absolute;
-    top: -80px; right: -80px;
-    width: 300px; height: 300px;
-    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%);
-    pointer-events: none;
+  .idesk-step-num { display: block; margin-bottom: 24px; font-size: 13px; font-weight: 700; color: #3669fd; }
+  .idesk-step:last-child .idesk-step-num { color: #8da8ff; }
+  .idesk-step h3 { margin: 0 0 8px; font-size: 16px; }
+  .idesk-step p { margin: 0; font-size: 13px; line-height: 1.5; color: #5f6870; }
+  .idesk-step:last-child p { color: #cbd0d5; }
+  @media (max-width: 900px) {
+    .idesk-steps { grid-template-columns: 1fr 1fr; }
+    .idesk-step { border-bottom: 1px solid #dfe4ea; }
   }
-  .tg-cta-content { position: relative; z-index: 1; }
-  .tg-cta-title {
-    font-size: clamp(26px, 3.5vw, 38px);
-    font-weight: 800;
-    margin: 0 0 14px;
-    letter-spacing: -0.02em;
-  }
-  .tg-cta-sub {
-    font-size: 19px;
-    opacity: 0.9;
-    margin: 0 auto 28px;
-    max-width: 520px;
-    line-height: 1.6;
-  }
-  .tg-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 32px;
-    border-radius: 12px;
-    border: none;
-    background: #fff;
-    color: var(--tg-primary);
-    font-size: 15px;
-    font-weight: 700;
-    font-family: inherit;
-    text-decoration: none;
-    cursor: pointer;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
-    transition: transform .2s, box-shadow .2s;
-    white-space: nowrap;
-  }
-  .tg-cta-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
-    color: var(--tg-primary);
-  }
-  .tg-cta-note {
-    margin-top: 16px;
-    font-size: 15px;
-    opacity: 0.75;
-  }
-
-  @media (max-width: 700px) {
-    .tg-cta-wrap { padding: 56px 20px 64px; }
-    .tg-cta-box { padding: 36px 20px; border-radius: 20px; }
-    .tg-cta-sub { font-size: 18px; margin-bottom: 24px; }
-    .tg-cta-btn { width: 100%; max-width: 320px; }
+  @media (max-width: 560px) {
+    .idesk-steps { grid-template-columns: 1fr; }
+    .idesk-step { border-right: 0; }
   }
 </style>
 
-<div class="tg-cta-wrap">
-  <div class="tg-cta-inner">
-    <div class="tg-cta-box">
-      <div class="tg-cta-content">
-        <h2 class="tg-cta-title">Подключите iStockLink за 2 минуты</h2>
-        <p class="tg-cta-sub">Оставьте email и мы пришлём доступ к демо и инструкцию по подключению агрегатора.</p>
-        <a href="#popup:demo" class="tg-cta-btn">Получить демо</a>
-        <p class="tg-cta-note">Бесплатный период 14 дней · Без привязки карты</p>
-      </div>
+<section class="idesk-flow-wrap" id="flow">
+  <div class="idesk-flow-inner">
+    <span class="idesk-eyebrow">Как это работает</span>
+    <h2 class="idesk-flow-title">Пять этапов от идеи до готового ассортимента</h2>
+    <p class="idesk-flow-lead">Один процесс для сезонных коллекций, капсул под маркетплейсы и заказных проектов.</p>
+    <div class="idesk-steps">
+      <article class="idesk-step">
+        <b class="idesk-step-num">01</b>
+        <h3>Создаёте проект</h3>
+        <p>Сезон, капсула или клиентский заказ — с понятными рамками и ответственными.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">02</b>
+        <h3>Собираете идеи</h3>
+        <p>Источники, фото, цвета и параметры остаются связаны с идеей.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">03</b>
+        <h3>Оцениваете варианты</h3>
+        <p>Фото, артикул и коммерческая оценка проходят свои этапы.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">04</b>
+        <h3>Согласуете модели</h3>
+        <p>Решения по моделям и цветам фиксируются и остаются понятны команде.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">05 · результат</b>
+        <h3>Формируете ассортимент</h3>
+        <p>Согласованные модели готовы к работе в нужном канале или проекте.</p>
+      </article>
     </div>
   </div>
-</div>
-<script src="assets/vendor/lenis/lenis.min.js?v=20a400f"></script>
-<script src="assets/vendor/aos/aos.js?v=20a400f"></script>
-<script src="assets/enhancements.js?v=20a400f"></script>
+</section>
+
+<style>
+  .idesk-result-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 64px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #fff;
+  }
+  .idesk-result-wrap *, .idesk-result-wrap *::before, .idesk-result-wrap *::after { box-sizing: border-box; }
+  .idesk-result-grid {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .idesk-result-wrap .idesk-eyebrow {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-result-title { margin: 0 0 24px; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.12; font-weight: 800; }
+  .idesk-evidence-list { display: grid; gap: 14px; }
+  .idesk-evidence-item {
+    padding: 18px 20px;
+    border-left: 4px solid #3669fd;
+    background: #f5f7fa;
+  }
+  .idesk-evidence-item strong { display: block; margin-bottom: 4px; font-size: 16px; }
+  .idesk-evidence-item span { font-size: 14px; color: #5f6870; line-height: 1.5; }
+  .idesk-case {
+    min-height: 340px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 16px;
+    color: #fff;
+    background: linear-gradient(180deg, transparent 15%, rgba(20, 26, 34, 0.9) 100%), linear-gradient(135deg, #7ea1ff, #4b6b78);
+  }
+  .idesk-case small {
+    align-self: flex-start;
+    margin-bottom: auto;
+    padding: 6px 9px;
+    background: #fff7d6;
+    color: #1c1f22;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .idesk-case h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.2; }
+  .idesk-case p { margin: 0; font-size: 14px; color: #e0e5e9; line-height: 1.5; }
+  @media (max-width: 900px) { .idesk-result-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="idesk-result-wrap" id="result">
+  <div class="idesk-result-grid">
+    <div>
+      <span class="idesk-eyebrow">Результат</span>
+      <h2 class="idesk-result-title">По каждой модели понятно, что делать дальше</h2>
+      <div class="idesk-evidence-list">
+        <div class="idesk-evidence-item">
+          <strong>Весь портфель разработок на виду</strong>
+          <span>Сколько идей рассматривают, сколько моделей согласуют и что уже вошло в ассортимент.</span>
+        </div>
+        <div class="idesk-evidence-item">
+          <strong>Каждый участник видит свой этап</strong>
+          <span>Фото, оценка и согласование разделены, но остаются частью общего процесса.</span>
+        </div>
+        <div class="idesk-evidence-item">
+          <strong>Следующий шаг определён</strong>
+          <span>Согласованная модель готова к дальнейшей работе — независимо от канала продаж.</span>
+        </div>
+      </div>
+    </div>
+    <article class="idesk-case">
+      <small>Место под подтверждённый кейс</small>
+      <h3>Здесь нужен результат компании с активной разработкой коллекций</h3>
+      <p>Например: сколько проектов команда ведёт параллельно и как изменилось время согласования моделей.</p>
+    </article>
+  </div>
+</section>
+
+<style>
+  .idesk-offer-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 64px 20px;
+    background: #1c1f22;
+    color: #fff;
+    font-family: 'TildaSans', Arial, sans-serif;
+  }
+  .idesk-offer-wrap *, .idesk-offer-wrap *::before, .idesk-offer-wrap *::after { box-sizing: border-box; }
+  .idesk-offer-grid {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .idesk-offer-wrap .idesk-eyebrow {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #c8d5ff;
+    background: rgba(54, 105, 253, 0.2);
+    border-radius: 5px;
+  }
+  .idesk-offer-title { margin: 0 0 16px; font-size: clamp(26px, 3.5vw, 38px); line-height: 1.12; font-weight: 800; }
+  .idesk-offer-lead { margin: 0 0 8px; font-size: 16px; line-height: 1.55; color: #cbd0d5; }
+  .idesk-price { margin: 20px 0 8px; font-size: 44px; font-weight: 800; letter-spacing: -0.03em; }
+  .idesk-price span { font-size: 16px; font-weight: 400; color: #cbd0d5; }
+  .idesk-offer-note { margin: 0; font-size: 14px; color: #cbd0d5; }
+  .idesk-form {
+    padding: 28px;
+    background: #fff;
+    color: #1c1f22;
+    border-radius: 14px;
+  }
+  .idesk-form h3 { margin: 0 0 18px; font-size: 20px; }
+  .idesk-form label { display: block; margin-bottom: 5px; font-size: 12px; font-weight: 700; color: #5f6870; }
+  .idesk-form input,
+  .idesk-form textarea {
+    width: 100%;
+    min-height: 44px;
+    margin-bottom: 14px;
+    padding: 11px 12px;
+    font: inherit;
+    color: #1c1f22;
+    background: #f5f7fa;
+    border: 1px solid #dfe4ea;
+    border-radius: 6px;
+  }
+  .idesk-form textarea { min-height: 82px; resize: vertical; }
+  .idesk-btn {
+    display: flex;
+    width: 100%;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    background: #3669fd;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .idesk-form-note { margin: 10px 0 0; font-size: 11px; text-align: center; color: #5f6870; }
+  @media (max-width: 900px) { .idesk-offer-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="idesk-offer-wrap" id="request">
+  <div class="idesk-offer-grid">
+    <div>
+      <span class="idesk-eyebrow">Платформа istock</span>
+      <h2 class="idesk-offer-title">Покажем, как Idea Desk впишется в ваш цикл разработки</h2>
+      <p class="idesk-offer-lead">Idea Desk входит в платформу istock (20 000 ₽/мес). Разберём ваши типы коллекций, роли и каналы продаж — и покажем подходящий сценарий.</p>
+      <div class="idesk-price">20 000 ₽ <span>/ месяц · вся платформа</span></div>
+      <p class="idesk-offer-note">Idea Desk — часть платформы. Сопровождение — по договорённости.</p>
+    </div>
+    <form class="idesk-form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
+      <h3>Оставить заявку</h3>
+      <label for="idesk-name">Имя</label>
+      <input id="idesk-name" name="name" autocomplete="name" required>
+      <label for="idesk-company">Компания</label>
+      <input id="idesk-company" name="organization" autocomplete="organization" required>
+      <label for="idesk-contact">Телефон или email</label>
+      <input id="idesk-contact" name="contact" autocomplete="email" required>
+      <label for="idesk-comment">Что хотите упорядочить?</label>
+      <textarea id="idesk-comment" name="comment" placeholder="Например: ведём много коллекций, сложно отслеживать согласование моделей"></textarea>
+      <button class="idesk-btn" type="submit">Оставить заявку</button>
+      <p class="idesk-form-note">Свяжемся и покажем Idea Desk на примере, близком к вашему процессу.</p>
+    </form>
+  </div>
+</section>
 </body>
 </html>

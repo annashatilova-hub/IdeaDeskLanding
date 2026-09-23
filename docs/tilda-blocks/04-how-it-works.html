@@ -1,4 +1,4 @@
-<!-- Idea Desk T123 · 04-how-it-works.html · build 035e9a0 · 2026-09-23 -->
+<!-- Idea Desk T123 · local · 2026-09-24 -->
 <style>
   .idesk-flow-wrap {
     box-sizing: border-box;
@@ -38,19 +38,62 @@
     padding: 22px;
     border-right: 1px solid #dfe4ea;
   }
-  .idesk-step:last-child {
-    border-right: 0;
-    background: #1c1f22;
-    color: #fff;
-  }
+  .idesk-step:last-child { border-right: 0; }
   .idesk-step-num { display: block; margin-bottom: 24px; font-size: 13px; font-weight: 700; color: #3669fd; }
-  .idesk-step:last-child .idesk-step-num { color: #8da8ff; }
   .idesk-step h3 { margin: 0 0 8px; font-size: 16px; }
   .idesk-step p { margin: 0; font-size: 13px; line-height: 1.5; color: #5f6870; }
-  .idesk-step:last-child p { color: #cbd0d5; }
+  .idesk-handoff {
+    margin-top: 16px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+    padding: 24px 28px;
+    border-radius: 14px;
+    background: #1c1f22;
+    color: #fff;
+    text-align: left;
+  }
+  .idesk-handoff-arrow {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(54, 105, 253, 0.25);
+    color: #8da8ff;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .idesk-handoff-num {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #8da8ff;
+  }
+  .idesk-handoff h3 { margin: 0 0 8px; font-size: 18px; }
+  .idesk-handoff p { margin: 0; font-size: 14px; line-height: 1.55; color: #cbd0d5; max-width: 720px; }
+  .idesk-handoff-tag {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 4px 8px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1c1f22;
+    background: #fff7d6;
+    border-radius: 4px;
+  }
   @media (max-width: 900px) {
     .idesk-steps { grid-template-columns: 1fr 1fr; }
     .idesk-step { border-bottom: 1px solid #dfe4ea; }
+    .idesk-handoff { grid-template-columns: 1fr; text-align: center; }
+    .idesk-handoff-arrow { margin: 0 auto; }
   }
   @media (max-width: 560px) {
     .idesk-steps { grid-template-columns: 1fr; }
@@ -61,34 +104,43 @@
 <section class="idesk-flow-wrap" id="flow">
   <div class="idesk-flow-inner">
     <span class="idesk-eyebrow">Как это работает</span>
-    <h2 class="idesk-flow-title">Пять этапов от идеи до готового ассортимента</h2>
-    <p class="idesk-flow-lead">Один процесс для сезонных коллекций, капсул под маркетплейсы и заказных проектов.</p>
+    <h2 class="idesk-flow-title">Шесть этапов: от коллекции до производства</h2>
+    <p class="idesk-flow-lead">Пять шагов в Idea Desk — и отдельный шестой: передача готовой модели в платформу istock.</p>
     <div class="idesk-steps">
       <article class="idesk-step">
         <b class="idesk-step-num">01</b>
-        <h3>Создаёте проект</h3>
-        <p>Сезон, капсула или клиентский заказ — с понятными рамками и ответственными.</p>
+        <h3>Заводите коллекцию</h3>
+        <p>Рамка сезона или проекта: сроки, состав, кто ведёт — понятно, с чего начать.</p>
       </article>
       <article class="idesk-step">
         <b class="idesk-step-num">02</b>
         <h3>Собираете идеи</h3>
-        <p>Источники, фото, цвета и параметры остаются связаны с идеей.</p>
+        <p>Фото, источник, предмет и цвет — в одном месте, не в чате.</p>
       </article>
       <article class="idesk-step">
         <b class="idesk-step-num">03</b>
-        <h3>Оцениваете варианты</h3>
-        <p>Фото, артикул и коммерческая оценка проходят свои этапы.</p>
+        <h3>Готовите материалы</h3>
+        <p>Обработка фото, артикул и коммерческая оценка — идея готова к решению.</p>
       </article>
       <article class="idesk-step">
         <b class="idesk-step-num">04</b>
-        <h3>Согласуете модели</h3>
-        <p>Решения по моделям и цветам фиксируются и остаются понятны команде.</p>
+        <h3>Согласовываете модель</h3>
+        <p>Цвета и решение «берём / нет» — из идей получается модель.</p>
       </article>
       <article class="idesk-step">
-        <b class="idesk-step-num">05 · результат</b>
-        <h3>Формируете ассортимент</h3>
-        <p>Согласованные модели готовы к работе в нужном канале или проекте.</p>
+        <b class="idesk-step-num">05</b>
+        <h3>Доводите модель</h3>
+        <p>Образец, идентификация, подготовка — модель завершена, а не «висит».</p>
       </article>
     </div>
+    <article class="idesk-handoff">
+      <div class="idesk-handoff-arrow" aria-hidden="true">→</div>
+      <div>
+        <b class="idesk-handoff-num">06 · платформа istock</b>
+        <h3>Передаёте в производство</h3>
+        <p>Готовую модель передаёте в основную систему istock — заказы на фабрики и контроль производства. Idea Desk не заменяет этот контур, а отдаёт в него подготовленный объект.</p>
+        <span class="idesk-handoff-tag">Не отдельный модуль Idea Desk</span>
+      </div>
+    </article>
   </div>
 </section>

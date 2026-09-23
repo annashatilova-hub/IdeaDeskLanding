@@ -24,6 +24,7 @@ const blocks = [
   '02-trust-bar.html',
   '03-problems.html',
   '04-how-it-works.html',
+  '07-two-systems.html',
   '05-result.html',
   '06-request.html',
 ];
@@ -64,12 +65,12 @@ writeFileSync(join(docs, 'preview-standalone.html'), html, 'utf-8');
 const tildaBlocksDir = join(docs, 'tilda-blocks');
 mkdirSync(tildaBlocksDir, { recursive: true });
 
-const tildaBlockLinks = [];
+const tildaBlockEntries = [];
 for (const name of blocks) {
   const blockBody = readFileSync(join(base, name), 'utf-8').trimStart();
   const stamped = `<!-- Idea Desk T123 · ${name} · build ${buildId} · ${buildDate} -->\n` + blockBody;
   writeFileSync(join(tildaBlocksDir, name), stamped, 'utf-8');
-  tildaBlockLinks.push({ name, href: `./${name}` });
+  tildaBlockEntries.push({ name, href: `./${name}` });
 }
 
 writeFileSync(
@@ -95,7 +96,7 @@ writeFileSync(
   <p class="meta">Сборка ${buildDate} · <code>${buildId}</code></p>
   <p>Откройте файл → <strong>Ctrl+A</strong> → скопируйте весь код → вставьте в блок T123 на Tilda.</p>
   <ul>
-    ${tildaBlockLinks.map(({ name, href }) => `<li><a href="${href}">${name}</a></li>`).join('\n    ')}
+    ${tildaBlockEntries.map(({ name, href }) => `<li><a href="${href}">${name}</a></li>`).join('\n    ')}
   </ul>
   <p><a href="../">Полный preview лендинга</a></p>
 </body>

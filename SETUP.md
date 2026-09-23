@@ -36,10 +36,13 @@ start docs\index.html
 |---|---|---|
 | `01-hero.html` | Hero + макет UI | T123 |
 | `02-trust-bar.html` | От идеи до ассортимента | T123 |
-| `03-problems.html` | Знакомо? + 3 боли | T123 |
-| `04-how-it-works.html` | 5 этапов (`#flow`) | T123 |
+| `03-problems.html` | Знакомо? + 5 болей | T123 |
+| `04-how-it-works.html` | 5 этапов Idea Desk + шаг 6 istock (`#flow`) | T123 |
+| `07-two-systems.html` | Idea Desk vs istock (`#systems`) | T123 |
 | `05-result.html` | Результат (`#result`) | T123 |
 | `06-request.html` | Цена + заявка (`#request`) | T123 |
+
+**Порядок на странице:** 01 → 02 → 03 → 04 → **07** → 05 → 06
 
 Список в сборке: `scripts/build-preview.mjs` → массив `blocks`.
 
@@ -52,7 +55,7 @@ start docs\index.html
 | `docs/landing-prototype/index-omnidata-inspired.html` | v4 — ориентир для текущих блоков `tilda-landing/` |
 | `docs/landing-prototype/index-tilda-style.html` | v3 — минимальные правки live Tilda |
 
-Живая страница: [lite-istock.tilda.ws](https://lite-istock.tilda.ws/)
+Живая страница: [lite-istock.tilda.ws/idea-desk](https://lite-istock.tilda.ws/idea-desk)
 
 ## 6. Cursor
 

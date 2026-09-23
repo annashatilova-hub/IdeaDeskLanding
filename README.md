@@ -4,7 +4,7 @@ HTML-блоки для лендинга **Idea Desk** (Tilda T123) + preview н�
 
 **Preview:** https://annashatilova-hub.github.io/IdeaDeskLanding/
 
-**Tilda:** [lite-istock.tilda.ws](https://lite-istock.tilda.ws/)
+**Tilda:** [lite-istock.tilda.ws/idea-desk](https://lite-istock.tilda.ws/idea-desk)
 
 | Документ | Описание |
 |---|---|
