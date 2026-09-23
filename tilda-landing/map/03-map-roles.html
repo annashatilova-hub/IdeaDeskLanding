@@ -1,0 +1,97 @@
+<style>
+  .idesk-map-roles {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 56px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #fff;
+  }
+  .idesk-map-roles *, .idesk-map-roles *::before, .idesk-map-roles *::after { box-sizing: border-box; }
+  .idesk-map-roles-inner { max-width: 1160px; margin: 0 auto; }
+  .idesk-map-roles .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-map-roles-title {
+    margin: 0 0 12px;
+    font-size: clamp(24px, 3.2vw, 36px);
+    line-height: 1.15;
+    font-weight: 800;
+    max-width: 640px;
+  }
+  .idesk-map-roles-lead {
+    margin: 0 0 28px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #5f6870;
+    max-width: 640px;
+  }
+  .idesk-map-roles-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  .idesk-map-role {
+    padding: 22px;
+    border: 1px solid #dfe4ea;
+    border-radius: 12px;
+    background: #fff;
+  }
+  .idesk-map-role-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    background: #ebf0fe;
+    color: #3669fd;
+    font-size: 18px;
+    font-weight: 800;
+  }
+  .idesk-map-role h3 { margin: 0 0 8px; font-size: 16px; }
+  .idesk-map-role p { margin: 0; font-size: 13px; line-height: 1.5; color: #5f6870; }
+  @media (max-width: 900px) { .idesk-map-roles-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px) { .idesk-map-roles-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="idesk-map-roles" id="roles">
+  <div class="idesk-map-roles-inner">
+    <span class="idesk-eyebrow">Роли</span>
+    <h2 class="idesk-map-roles-title">Каждый видит своё — без общей «свалки» полей</h2>
+    <p class="idesk-map-roles-lead">Idea Desk разделяет работу по ролям, но все шаги остаются частью одной коллекции.</p>
+    <div class="idesk-map-roles-grid">
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">П</div>
+        <h3>Продакт</h3>
+        <p>Создаёт идеи по своим предметам, следит за статусами, участвует в решении «берём / нет».</p>
+      </article>
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">Ф</div>
+        <h3>Специалист по фото</h3>
+        <p>Очередь на обработку, загрузка готового фото — без лишних полей из других этапов.</p>
+      </article>
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">О</div>
+        <h3>Специалист по оценке</h3>
+        <p>Коммерческая оценка, артикул, сроки — только то, что нужно для принятия решения.</p>
+      </article>
+      <article class="idesk-map-role">
+        <div class="idesk-map-role-icon">Р</div>
+        <h3>Руководитель</h3>
+        <p>Видит все идеи команды, согласует модели и контролирует готовность коллекции.</p>
+      </article>
+    </div>
+  </div>
+</section>

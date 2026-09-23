@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tilda-landing/**'
+      - 'docs/tz-product-map.md'
       - 'package.json'
       - 'package-lock.json'
       - 'scripts/**'
@@ -33,6 +34,7 @@ jobs:
         run: |
           npm ci
           npm run build:preview
+          npm run build:map
 
       - name: Commit updated docs
         run: |

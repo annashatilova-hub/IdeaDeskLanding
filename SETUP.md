@@ -57,8 +57,23 @@ start docs\index.html
 
 Живая страница: [lite-istock.tilda.ws/idea-desk](https://lite-istock.tilda.ws/idea-desk)
 
-## 6. Cursor
+## 6. Карта продукта (`/karta`)
+
+Отдельная страница Tilda — схема процесса, роли, путь одной идеи.
+
+| Файл | Содержание |
+|---|---|
+| [docs/tz-product-map.md](./docs/tz-product-map.md) | Постановка |
+| `tilda-landing/map/*.html` | 5 блоков T123 |
+| `docs/map/` | Превью (после `npm run build:map`) |
+
+**Порядок на Tilda:** 01-map-hero → 02-map-flow → 03-map-roles → 04-map-idea-journey → 05-map-cta
+
+**URL:** https://lite-istock.tilda.ws/karta  
+**Ссылка с лендинга:** пункт меню «Как устроено» → `/karta`
+
+## 7. Cursor
 
 Открыть папку `IdeaDeskLanding` как отдельный проект → работать с агентом над `tilda-landing/`.
 
-На этом ПК (без Node): можно править HTML вручную; сборка — на машине с `npm`.
+На этом ПК (без Node): можно править HTML вручную; сборка — на GitHub Actions после push.

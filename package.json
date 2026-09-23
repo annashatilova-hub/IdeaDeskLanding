@@ -4,6 +4,7 @@
   "scripts": {
     "vendor": "node scripts/vendor-sync.mjs",
     "build:preview": "node scripts/build-preview.mjs",
+    "build:map": "node scripts/build-map-preview.mjs",
     "postinstall": "npm run vendor"
   },
   "dependencies": {

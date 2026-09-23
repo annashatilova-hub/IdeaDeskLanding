@@ -1,0 +1,68 @@
+<style>
+  .idesk-map-hero {
+    --idesk-menu-offset: 72px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: calc(var(--idesk-menu-offset) + 40px) 20px 48px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #fff;
+    scroll-margin-top: var(--idesk-menu-offset);
+  }
+  .idesk-map-hero *, .idesk-map-hero *::before, .idesk-map-hero *::after { box-sizing: border-box; }
+  .idesk-map-hero-inner { max-width: 760px; margin: 0 auto; }
+  .idesk-map-hero .idesk-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-map-hero-title {
+    margin: 0 0 16px;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .idesk-map-hero-lead {
+    margin: 0 0 20px;
+    font-size: 18px;
+    line-height: 1.55;
+    color: #5f6870;
+  }
+  .idesk-map-hero-links { display: flex; flex-wrap: wrap; gap: 12px; }
+  .idesk-map-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .idesk-map-link-primary { background: #3669fd; color: #fff !important; }
+  .idesk-map-link-light { background: #f5f7fa; color: #3669fd !important; border: 1px solid #dfe4ea; }
+  @media (max-width: 900px) {
+    .idesk-map-hero { --idesk-menu-offset: 64px; padding-top: calc(var(--idesk-menu-offset) + 28px); }
+  }
+</style>
+
+<section class="idesk-map-hero">
+  <div class="idesk-map-hero-inner">
+    <span class="idesk-eyebrow">Карта продукта</span>
+    <h1 class="idesk-map-hero-title">Как устроен Idea Desk</h1>
+    <p class="idesk-map-hero-lead">Схема процесса разработки коллекции: роли в команде, этапы от идеи до модели и передача в платформу istock. Для тех, кому нужно понять систему глубже, чем на коротком лендинге.</p>
+    <div class="idesk-map-hero-links">
+      <a class="idesk-map-link idesk-map-link-light" href="/idea-desk">← К лендингу Idea Desk</a>
+      <a class="idesk-map-link idesk-map-link-primary" href="/idea-desk#request">Оставить заявку</a>
+    </div>
+  </div>
+</section>
