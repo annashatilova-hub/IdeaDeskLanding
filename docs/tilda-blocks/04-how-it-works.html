@@ -1,0 +1,94 @@
+<!-- Idea Desk T123 · 04-how-it-works.html · build 035e9a0 · 2026-09-23 -->
+<style>
+  .idesk-flow-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 64px 20px;
+    background: #f5f7fa;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+  }
+  .idesk-flow-wrap *, .idesk-flow-wrap *::before, .idesk-flow-wrap *::after { box-sizing: border-box; }
+  .idesk-flow-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .idesk-flow-wrap .idesk-eyebrow {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-flow-title { margin: 0 0 12px; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.12; font-weight: 800; }
+  .idesk-flow-lead { margin: 0 0 36px; font-size: 17px; color: #5f6870; max-width: 720px; margin-inline: auto; }
+  .idesk-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border: 1px solid #dfe4ea;
+    border-radius: 14px;
+    background: #fff;
+    overflow: hidden;
+    text-align: left;
+  }
+  .idesk-step {
+    min-height: 200px;
+    padding: 22px;
+    border-right: 1px solid #dfe4ea;
+  }
+  .idesk-step:last-child {
+    border-right: 0;
+    background: #1c1f22;
+    color: #fff;
+  }
+  .idesk-step-num { display: block; margin-bottom: 24px; font-size: 13px; font-weight: 700; color: #3669fd; }
+  .idesk-step:last-child .idesk-step-num { color: #8da8ff; }
+  .idesk-step h3 { margin: 0 0 8px; font-size: 16px; }
+  .idesk-step p { margin: 0; font-size: 13px; line-height: 1.5; color: #5f6870; }
+  .idesk-step:last-child p { color: #cbd0d5; }
+  @media (max-width: 900px) {
+    .idesk-steps { grid-template-columns: 1fr 1fr; }
+    .idesk-step { border-bottom: 1px solid #dfe4ea; }
+  }
+  @media (max-width: 560px) {
+    .idesk-steps { grid-template-columns: 1fr; }
+    .idesk-step { border-right: 0; }
+  }
+</style>
+
+<section class="idesk-flow-wrap" id="flow">
+  <div class="idesk-flow-inner">
+    <span class="idesk-eyebrow">Как это работает</span>
+    <h2 class="idesk-flow-title">Пять этапов от идеи до готового ассортимента</h2>
+    <p class="idesk-flow-lead">Один процесс для сезонных коллекций, капсул под маркетплейсы и заказных проектов.</p>
+    <div class="idesk-steps">
+      <article class="idesk-step">
+        <b class="idesk-step-num">01</b>
+        <h3>Создаёте проект</h3>
+        <p>Сезон, капсула или клиентский заказ — с понятными рамками и ответственными.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">02</b>
+        <h3>Собираете идеи</h3>
+        <p>Источники, фото, цвета и параметры остаются связаны с идеей.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">03</b>
+        <h3>Оцениваете варианты</h3>
+        <p>Фото, артикул и коммерческая оценка проходят свои этапы.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">04</b>
+        <h3>Согласуете модели</h3>
+        <p>Решения по моделям и цветам фиксируются и остаются понятны команде.</p>
+      </article>
+      <article class="idesk-step">
+        <b class="idesk-step-num">05 · результат</b>
+        <h3>Формируете ассортимент</h3>
+        <p>Согласованные модели готовы к работе в нужном канале или проекте.</p>
+      </article>
+    </div>
+  </div>
+</section>

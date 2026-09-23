@@ -1,333 +1,137 @@
-<!-- Tilda block: Hero -->
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;600;700&display=swap');
-  .tg-hero-wrap {
-    --tg-primary: #1c50de;
-    --tg-text: #0f172a;
-    --tg-muted: #64748b;
-    font-family: 'TildaSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  .idesk-hero-wrap {
+    --idesk-ink: #1c1f22;
+    --idesk-muted: #5f6870;
+    --idesk-line: #dfe4ea;
+    --idesk-soft: #f5f7fa;
+    --idesk-blue: #3669fd;
+    --idesk-blue-dark: #2e5ee8;
+    --idesk-blue-soft: #ebf0fe;
     box-sizing: border-box;
     width: 100%;
-    background: #f4f7fb;
-    padding: 72px 24px 64px;
-    position: relative;
-    overflow: hidden;
+    padding: 60px 20px 48px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--idesk-ink);
+    background: #fff;
   }
-  .tg-hero-wrap *, .tg-hero-wrap *::before, .tg-hero-wrap *::after { box-sizing: border-box; }
-  .tg-hero-inner {
-    max-width: 1280px;
+  .idesk-hero-wrap *, .idesk-hero-wrap *::before, .idesk-hero-wrap *::after { box-sizing: border-box; }
+  .idesk-hero-inner {
+    max-width: 1160px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(280px, 0.68fr) minmax(520px, 1.55fr);
-    gap: 32px 28px;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 40px;
     align-items: center;
-    position: relative;
-    z-index: 1;
   }
-  .tg-hero-title {
+  .idesk-hero-wrap .idesk-eyebrow {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #1e4fd4;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-hero-title {
     margin: 0 0 18px;
-    font-size: clamp(36px, 4.4vw, 56px);
-    line-height: 1.05;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.08;
     font-weight: 800;
     letter-spacing: -0.03em;
-    color: var(--tg-text);
+    max-width: 580px;
   }
-  .tg-hero-sub {
-    margin: 0 0 28px;
+  .idesk-hero-lead {
+    margin: 0 0 24px;
+    max-width: 560px;
     font-size: 18px;
-    line-height: 1.6;
-    color: #475569;
-    max-width: 420px;
+    line-height: 1.55;
+    color: var(--idesk-muted);
   }
-  .tg-hero-actions {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 22px;
-  }
-  .tg-btn {
+  .idesk-hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .idesk-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 14px 24px;
-    border-radius: 12px;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 7px;
     font-size: 15px;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
-    transition: transform .2s, box-shadow .2s;
+    border: 0;
+    cursor: pointer;
   }
-  .tg-btn-primary {
-    background: #1c50de;
-    color: #fff !important;
-    box-shadow: 0 10px 24px rgba(28,80,222,0.28);
-  }
-  .tg-btn-primary:hover { transform: translateY(-1px); }
-  .tg-btn-secondary {
-    background: #fff;
-    color: var(--tg-text);
-    border: 1px solid #e2e8f0;
-  }
-  .tg-hero-checks { list-style: none; padding: 0; margin: 0; }
-  .tg-hero-checks li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    color: #334155;
-    margin-bottom: 8px;
-  }
-  .tg-hero-checks li::before {
-    content: "✓";
-    width: 22px; height: 22px;
-    border-radius: 50%;
-    background: #dcfce7;
-    color: #16a34a;
-    font-size: 12px;
-    font-weight: 800;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-
-  .tg-hero-visual {
+  .idesk-btn-primary { background: var(--idesk-blue); color: #fff !important; }
+  .idesk-btn-light { background: #fff; color: var(--idesk-blue); border: 1px solid var(--idesk-line); }
+  .idesk-product-shot {
+    min-height: 360px;
+    padding: 20px 20px 0;
+    background: linear-gradient(145deg, #edf2ff, #eefbf8);
+    border-radius: 24px;
     position: relative;
-    padding: 0;
-    --col2: 20.22%;
-    --col2w: 19%;
-    --col4: 58.33%;
   }
-  .tg-hero-blob {
-    position: absolute;
-    top: 72px;
-    bottom: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-  .tg-hero-blob--blue {
-    left: var(--col2);
-    right: calc(100% - var(--col4));
-    background: #dce8ff;
-    border-radius: 28px 0 0 28px;
-  }
-  .tg-hero-blob--green {
-    left: var(--col4);
-    right: -6px;
-    background: #d8f3e4;
-    border-radius: 0 28px 28px 0;
-  }
-  .tg-hero-ui {
-    position: relative;
-    z-index: 1;
+  .idesk-window {
+    margin-top: 20px;
     background: #fff;
-    border-radius: 16px;
-    box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
-    overflow: visible;
-    border: 1px solid #e8edf5;
+    border: 1px solid #cdd5df;
+    border-radius: 14px;
+    box-shadow: 0 20px 44px rgba(31, 43, 65, 0.15);
+    overflow: hidden;
   }
-  .tg-hero-ui img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-  }
-  .tg-hero-col-glow {
-    position: absolute;
-    left: var(--col2);
-    top: 26%;
-    width: var(--col2w);
-    height: 62%;
-    border-radius: 16px;
-    background: rgba(220, 232, 255, 0.35);
-    box-shadow: inset 0 0 0 2px rgba(147, 180, 255, 0.55);
-    pointer-events: none;
-    z-index: 2;
-  }
-  .tg-hero-pop {
-    position: absolute;
-    left: calc(var(--col2) + 8px);
-    top: 29%;
-    z-index: 3;
-    pointer-events: none;
-  }
-  .tg-hero-pop-card {
-    font-family: 'Commissioner', 'TildaSans', sans-serif;
-    width: 168px;
-    min-height: 236px;
-    background: #fff;
-    border-radius: 10px;
-    border: none;
-    box-shadow: 0 18px 40px rgba(15, 23, 42, 0.16);
-    padding: 10px 10px 12px;
-    display: flex;
-    flex-direction: column;
-  }
-  .tg-hero-pop-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 6px;
-  }
-  .tg-hero-pop-num {
-    font-size: 11px;
-    font-weight: 600;
-    color: #1c50de;
-  }
-  .tg-hero-pop-menu {
-    color: #94a3b8;
-    font-size: 14px;
-    line-height: 1;
-    letter-spacing: 1px;
-  }
-  .tg-hero-pop-title {
-    margin: 0 0 10px;
-    font-size: 11px;
-    font-weight: 600;
-    line-height: 1.35;
-    color: #0f172a;
-  }
-  .tg-hero-pop-row {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-    font-size: 10px;
-    line-height: 1.4;
-    margin-bottom: 3px;
-  }
-  .tg-hero-pop-row span { color: #94a3b8; font-weight: 400; }
-  .tg-hero-pop-row b { color: #0f172a; font-weight: 600; }
-  .tg-hero-pop-row b.price { color: #1c50de; }
-  .tg-hero-pop-date {
-    margin: 6px 0 2px;
-    font-size: 10px;
-    color: #64748b;
-  }
-  .tg-hero-pop-created {
-    font-size: 10px;
-    color: #94a3b8;
-    margin-bottom: 8px;
-  }
-  .tg-hero-pop-timer {
-    display: inline-flex;
-    align-self: flex-start;
-    margin-top: auto;
-    padding: 3px 7px;
-    border-radius: 6px;
-    background: #e8f8ef;
-    color: #15803d;
-    font-size: 10px;
-    font-weight: 600;
-    font-variant-numeric: tabular-nums;
-  }
-  .tg-hero-pop-link {
-    display: inline-block;
-    margin-top: 8px;
-    font-size: 10px;
-    font-weight: 600;
-    color: #1c50de;
-  }
-
-  .tg-hero-steps {
-    position: relative;
-    z-index: 1;
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    column-gap: 0;
-    margin-top: 18px;
-    padding: 8px 8px 24px 0;
-  }
-  .tg-hero-step {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    column-gap: 8px;
-    align-items: start;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.35;
-    color: #334155;
-    min-width: 0;
-  }
-  .tg-hero-step:nth-child(1) { grid-column: 1; padding: 0 12px 0 12px; }
-  .tg-hero-step:nth-child(2) { grid-column: 2 / span 2; padding-left: 10px; padding-right: 16px; }
-  .tg-hero-step:nth-child(3) { grid-column: 4 / span 2; padding-left: 8px; }
-  .tg-hero-step b {
-    color: #1c50de;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 1.35;
-  }
-  .tg-hero-step span {
-    font-weight: 600;
-    min-width: 0;
-  }
-  .tg-hero-step span i {
-    display: block;
-    font-style: normal;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-
-  @media (max-width: 960px) {
-    .tg-hero-inner { grid-template-columns: 1fr; gap: 32px; }
-    .tg-hero-visual { padding: 0; }
-    .tg-hero-blob--blue { top: 40px; }
-    .tg-hero-blob--green { top: 40px; }
-  }
-  @media (max-width: 560px) {
-    .tg-hero-wrap { padding: 48px 18px 40px; }
-    .tg-hero-title { font-size: clamp(30px, 8.5vw, 40px); }
-    .tg-hero-actions { flex-direction: column; }
-    .tg-hero-actions .tg-btn { width: 100%; }
-    .tg-hero-col-glow { display: none; }
-    .tg-hero-pop { left: 10%; top: 32%; }
-    .tg-hero-steps { grid-template-columns: 1fr; gap: 12px; }
+  .idesk-window-bar { height: 36px; background: #f0f2f5; padding: 13px 14px; }
+  .idesk-window-body { display: grid; grid-template-columns: 80px 1fr; min-height: 280px; }
+  .idesk-window-sidebar { background: #252a30; padding: 16px 12px; }
+  .idesk-window-sidebar i { display: block; height: 8px; margin-bottom: 12px; background: rgba(255,255,255,.22); border-radius: 3px; }
+  .idesk-window-sidebar i:nth-child(2) { width: 72%; background: var(--idesk-blue); }
+  .idesk-window-content { padding: 20px; }
+  .idesk-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 16px; }
+  .idesk-kpi { padding: 12px; background: var(--idesk-soft); border-radius: 8px; }
+  .idesk-kpi b { display: block; font-size: 20px; }
+  .idesk-kpi small { color: var(--idesk-muted); font-size: 12px; }
+  .idesk-pipeline { padding: 14px; border: 1px solid var(--idesk-line); border-radius: 8px; font-size: 11px; color: var(--idesk-muted); }
+  .idesk-pipeline-row { display: grid; grid-template-columns: 1fr 2fr 32px; gap: 8px; align-items: center; margin-bottom: 10px; }
+  .idesk-pipeline-bar { height: 6px; background: #e7ebf0; border-radius: 4px; overflow: hidden; }
+  .idesk-pipeline-bar span { display: block; height: 100%; background: var(--idesk-blue); }
+  @media (max-width: 900px) {
+    .idesk-hero-inner { grid-template-columns: 1fr; }
+    .idesk-hero-actions { display: grid; grid-template-columns: 1fr; }
+    .idesk-btn { width: 100%; }
   }
 </style>
 
-<div class="tg-hero-wrap">
-  <div class="tg-hero-inner">
+<section class="idesk-hero-wrap" id="top">
+  <div class="idesk-hero-inner">
     <div>
-      <h1 class="tg-hero-title">CRM для тендерного отдела за 1 день</h1>
-      <p class="tg-hero-sub">Больше тендеров в работе на одного специалиста. Без месяцев внедрения и доработок.</p>
-      <div class="tg-hero-actions">
-        <a href="#popup:demo" class="tg-btn tg-btn-primary">Запросить демо</a>
-        <a href="#how" class="tg-btn tg-btn-secondary">Как это работает</a>
+      <span class="idesk-eyebrow">Idea Desk · стол идей · платформа istock</span>
+      <h1 class="idesk-hero-title">Собирайте идеи в готовый ассортимент</h1>
+      <p class="idesk-hero-lead">Управляйте разработкой коллекций: от поиска и оценки идей до согласованных моделей для маркетплейсов, собственных продаж и заказных проектов.</p>
+      <div class="idesk-hero-actions">
+        <a class="idesk-btn idesk-btn-primary" href="#request">Оставить заявку</a>
+        <a class="idesk-btn idesk-btn-light" href="#flow">Посмотреть процесс</a>
       </div>
-      <ul class="tg-hero-checks">
-        <li>14 дней бесплатно, без карты</li>
-        <li>В реестре российского ПО</li>
-      </ul>
     </div>
-
-    <div class="tg-hero-visual">
-      <div class="tg-hero-blob tg-hero-blob--blue"></div>
-      <div class="tg-hero-blob tg-hero-blob--green"></div>
-      <div class="tg-hero-ui">
-        <img src="https://kolomoets-netizen.github.io/Link/assets/hero-crm-kanban.png?v=3" alt="Воронка сделок iStockLink">
-        <div class="tg-hero-col-glow"></div>
-        <div class="tg-hero-pop">
-          <div class="tg-hero-pop-card">
-            <div class="tg-hero-pop-head">
-              <span class="tg-hero-pop-num">0021</span>
-              <span class="tg-hero-pop-menu">···</span>
+    <div class="idesk-product-shot" aria-hidden="true">
+      <div class="idesk-window">
+        <div class="idesk-window-bar"></div>
+        <div class="idesk-window-body">
+          <aside class="idesk-window-sidebar"><i></i><i></i><i></i><i></i></aside>
+          <div class="idesk-window-content">
+            <div class="idesk-kpis">
+              <div class="idesk-kpi"><b>12</b><small>моделей</small></div>
+              <div class="idesk-kpi"><b>8</b><small>согласовано</small></div>
+              <div class="idesk-kpi"><b>34</b><small>идеи</small></div>
             </div>
-            <p class="tg-hero-pop-title">Поставка медицинского оборудования для больницы</p>
-            <div class="tg-hero-pop-row"><span>НМЦК</span><b class="price">4 200 000 ₽</b></div>
-            <div class="tg-hero-pop-row"><span>Ответственный</span><b>Игорь Громов</b></div>
-            <div class="tg-hero-pop-date">22.09.2026</div>
-            <div class="tg-hero-pop-created">Создано 21.09.2026, 13:17</div>
-            <span class="tg-hero-pop-timer">0 д 18:52:51</span>
-            <span class="tg-hero-pop-link">Площадка</span>
+            <div class="idesk-pipeline">
+              <div class="idesk-pipeline-row"><span>Согласование</span><div class="idesk-pipeline-bar"><span style="width:74%"></span></div><b>8/12</b></div>
+              <div class="idesk-pipeline-row"><span>Идентификация</span><div class="idesk-pipeline-bar"><span style="width:54%"></span></div><b>6/12</b></div>
+              <div class="idesk-pipeline-row"><span>Образцы</span><div class="idesk-pipeline-bar"><span style="width:36%"></span></div><b>4/12</b></div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="tg-hero-steps">
-        <div class="tg-hero-step"><b>1</b><span><i>Тендер приходит из</i><i>Контура или Seldon</i></span></div>
-        <div class="tg-hero-step"><b>2</b><span><i>Специалист ведёт заявку</i><i>по этапам</i></span></div>
-        <div class="tg-hero-step"><b>3</b><span><i>Контракт заключён, всё</i><i>в одном окне</i></span></div>
-      </div>
     </div>
   </div>
-</div>
+</section>

@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, cpSync, mkdirSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -21,21 +21,14 @@ const buildDate = new Date().toISOString().slice(0, 10);
 
 const blocks = [
   '01-hero.html',
-  '09-audience-positioning.html',
-  '07-crm-srm-kp.html',
-  '02-how-it-works.html',
-  '08-crm-compare.html',
-  '14-bitrix-switch-promo.html',
-  '11-pricing-value.html',
-  '06-director-case-proof.html',
-  '06-industrial-case-proof.html',
-  '10-seldon-email-preview.html',
-  '05-faq-cta.html',
+  '02-trust-bar.html',
+  '03-problems.html',
+  '04-how-it-works.html',
+  '05-result.html',
+  '06-request.html',
 ];
 
-const body = blocks
-  .map((name) => readFileSync(join(base, name), 'utf-8').trim())
-  .join('\n\n');
+const body = blocks.map((name) => readFileSync(join(base, name), 'utf-8').trim()).join('\n\n');
 
 const html = `<!DOCTYPE html>
 <html lang="ru">
@@ -44,27 +37,22 @@ const html = `<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta name="build" content="${buildId}">
-<title>iStockLink</title>
+<title>Idea Desk — управление разработкой коллекций</title>
 <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
-<link rel="stylesheet" href="assets/vendor/aos/aos.css?v=${buildId}">
-<link rel="stylesheet" href="assets/enhancements.css?v=${buildId}">
 <style>
-  body{margin:0}
+  body{margin:0;background:#fff;color:#1c1f22;font-family:'TildaSans',Arial,sans-serif}
   .tg-preview-bar{
     position:sticky;top:0;z-index:9999;
     padding:8px 16px;text-align:center;font-size:13px;font-weight:600;
-    background:#1c50de;color:#fff;font-family:'TildaSans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:#3669fd;color:#fff;
     border-bottom:1px solid rgba(255,255,255,.2);
   }
   .tg-preview-bar a{color:#dbeafe}
 </style>
 </head>
 <body>
-<div class="tg-preview-bar">Превью GitHub Pages · Tilda Sans · сборка ${buildDate} (${buildId}) · <a href="https://github.com/kolomoets-netizen/Link/tree/main/tilda-landing">блоки для Tilda</a> · <a href="./emails/supplier-tender-module-seldon.html">письмо поставщикам</a></div>
+<div class="tg-preview-bar">Превью Idea Desk · сборка ${buildDate} (${buildId}) · <a href="./tilda-blocks/">блоки T123 для Tilda</a></div>
 ${body}
-<script src="assets/vendor/lenis/lenis.min.js?v=${buildId}"></script>
-<script src="assets/vendor/aos/aos.js?v=${buildId}"></script>
-<script src="assets/enhancements.js?v=${buildId}"></script>
 </body>
 </html>
 `;
@@ -73,81 +61,17 @@ writeFileSync(join(base, 'preview-standalone.html'), html, 'utf-8');
 writeFileSync(join(docs, 'index.html'), html, 'utf-8');
 writeFileSync(join(docs, 'preview-standalone.html'), html, 'utf-8');
 
-const docsAssets = join(docs, 'assets');
-mkdirSync(docsAssets, { recursive: true });
-cpSync(join(base, 'assets'), docsAssets, { recursive: true });
-
-const extraPages = [
-  'pricing-value-variants.html',
-  '11-pricing-value-v1.html',
-  '11-pricing-value-v2.html',
-  '11-pricing-value-v3.html',
-  'preview-kontur-headline-variants.html',
-];
-for (const name of extraPages) {
-  cpSync(join(base, name), join(docs, name));
-}
-
-const konturBlock = readFileSync(join(base, '08-kontur-search-widget.html'), 'utf-8').trim();
-const konturShell = readFileSync(join(base, 'preview-kontur-widget.shell.html'), 'utf-8');
-const konturBuildStamp = `${buildDate} (${buildId})`;
-const konturPreview = konturShell
-  .replace('__KONTUR_BLOCK__', konturBlock)
-  .replace('__BUILD_STAMP__', konturBuildStamp);
-const konturPreviewPath = join(base, 'preview-kontur-widget.html');
-writeFileSync(join(docs, 'preview-kontur-widget.html'), konturPreview, 'utf-8');
-writeFileSync(konturPreviewPath, konturPreview, 'utf-8');
-
-const partnersBlock = readFileSync(join(base, '12-partners-grid.html'), 'utf-8').trim();
-const partnersShell = readFileSync(join(base, 'preview-partners-grid.shell.html'), 'utf-8');
-const partnersPreview = partnersShell
-  .replace('__PARTNERS_BLOCK__', partnersBlock)
-  .replace('__BUILD_STAMP__', konturBuildStamp);
-writeFileSync(join(docs, 'preview-partners-grid.html'), partnersPreview, 'utf-8');
-writeFileSync(join(base, 'preview-partners-grid.html'), partnersPreview, 'utf-8');
-
-const audienceBlock = readFileSync(join(base, '13-partner-audience-cards.html'), 'utf-8').trim();
-const audienceShell = readFileSync(join(base, 'preview-partner-audience.shell.html'), 'utf-8');
-const audiencePreview = audienceShell
-  .replace('__AUDIENCE_BLOCK__', audienceBlock)
-  .replace('__BUILD_STAMP__', konturBuildStamp);
-writeFileSync(join(docs, 'preview-partner-audience.html'), audiencePreview, 'utf-8');
-writeFileSync(join(base, 'preview-partner-audience.html'), audiencePreview, 'utf-8');
-
-const tradingChangeBlocks = [
-  '02-how-it-works.html',
-  '08-crm-compare.html',
-  '14-bitrix-switch-promo.html',
-];
-const tradingChangesBody = tradingChangeBlocks
-  .map((name) => readFileSync(join(base, name), 'utf-8').trim())
-  .join('\n\n');
-const tradingChangesShell = readFileSync(join(base, 'preview-trading-changes.shell.html'), 'utf-8');
-const tradingChangesPreview = tradingChangesShell
-  .replace('__BLOCKS__', tradingChangesBody)
-  .replaceAll('__BUILD_STAMP__', konturBuildStamp)
-  .replaceAll('__BUILD_ID__', buildId);
-writeFileSync(join(docs, 'preview-trading-changes.html'), tradingChangesPreview, 'utf-8');
-writeFileSync(join(base, 'preview-trading-changes.html'), tradingChangesPreview, 'utf-8');
-
 const tildaBlocksDir = join(docs, 'tilda-blocks');
 mkdirSync(tildaBlocksDir, { recursive: true });
-const tildaBlockFiles = readdirSync(base)
-  .filter((name) => /^(0?\d{1,2}-|14-).+\.html$/.test(name))
-  .sort();
+
 const tildaBlockLinks = [];
-for (const name of tildaBlockFiles) {
-  const body = readFileSync(join(base, name), 'utf-8').trimStart();
-  const stamped =
-    `<!-- iStockLink T123 · ${name} · build ${buildId} · ${buildDate} -->\n` + body;
+for (const name of blocks) {
+  const blockBody = readFileSync(join(base, name), 'utf-8').trimStart();
+  const stamped = `<!-- Idea Desk T123 · ${name} · build ${buildId} · ${buildDate} -->\n` + blockBody;
   writeFileSync(join(tildaBlocksDir, name), stamped, 'utf-8');
   tildaBlockLinks.push({ name, href: `./${name}` });
 }
-const tradingRecent = [
-  '02-how-it-works.html',
-  '08-crm-compare.html',
-  '14-bitrix-switch-promo.html',
-];
+
 writeFileSync(
   join(tildaBlocksDir, 'index.html'),
   `<!DOCTYPE html>
@@ -155,95 +79,44 @@ writeFileSync(
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-  <title>HTML-блоки для Tilda · iStockLink</title>
+  <title>HTML-блоки Idea Desk для Tilda</title>
   <style>
-    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px 20px 48px; color: #0f172a; line-height: 1.5; }
+    body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px 20px 48px; color: #1c1f22; line-height: 1.5; }
     h1 { font-size: 1.35rem; }
-    .meta { color: #64748b; font-size: 14px; margin-bottom: 24px; }
-    .recent { background: #eef3ff; border-radius: 12px; padding: 16px 18px; margin-bottom: 28px; }
-    .recent a { font-weight: 600; }
+    .meta { color: #5f6870; font-size: 14px; margin-bottom: 24px; }
     ul { padding-left: 1.2rem; }
     li { margin: 8px 0; }
-    a { color: #1c50de; }
-    code { font-size: 13px; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; }
+    a { color: #3669fd; }
+    code { font-size: 13px; background: #f5f7fa; padding: 2px 6px; border-radius: 4px; }
   </style>
 </head>
 <body>
-  <h1>HTML-блоки для Tilda (T123)</h1>
-  <p class="meta">Сборка ${buildDate} · <code>${buildId}</code> · те же файлы, что в превью на GitHub Pages</p>
-  <div class="recent">
-    <strong>Недавние правки /trading:</strong>
-    ${tradingRecent.map((n) => `<div><a href="./${n}">${n}</a></div>`).join('')}
-  </div>
-  <p>Откройте файл → <strong>Ctrl+A</strong> → скопируйте весь код (включая <code>&lt;style&gt;</code>) → вставьте в блок T123.</p>
-  <p>В первой строке файла — комментарий с номером сборки; если там старый <code>build</code>, обновите страницу (Ctrl+Shift+R).</p>
+  <h1>HTML-блоки Idea Desk (T123)</h1>
+  <p class="meta">Сборка ${buildDate} · <code>${buildId}</code></p>
+  <p>Откройте файл → <strong>Ctrl+A</strong> → скопируйте весь код → вставьте в блок T123 на Tilda.</p>
   <ul>
     ${tildaBlockLinks.map(({ name, href }) => `<li><a href="${href}">${name}</a></li>`).join('\n    ')}
   </ul>
-  <p><a href="../preview-trading-changes.html">Превью изменённых блоков</a> · <a href="../">полный лендинг</a></p>
+  <p><a href="../">Полный preview лендинга</a></p>
 </body>
 </html>
 `,
   'utf-8',
 );
 
-const emailsSrc = join(root, 'content', 'emails');
-const emailsDocs = join(docs, 'emails');
-mkdirSync(emailsDocs, { recursive: true });
-const supplierEmail = 'supplier-tender-module-seldon.html';
-let emailHtml = readFileSync(join(emailsSrc, supplierEmail), 'utf-8');
-emailHtml = emailHtml
-  .replaceAll(
-    '{{LEARN_MORE_URL}}',
-    'https://istock.link/trading?utm_source=email&amp;utm_medium=email&amp;utm_campaign=supplier-tender-module&amp;utm_content=learn-more',
-  )
-  .replaceAll(
-    '{{CONNECT_URL}}',
-    'https://istock.link/konturseldon?utm_source=email&amp;utm_medium=email&amp;utm_campaign=supplier-tender-module&amp;utm_content=connect-service',
-  )
-  .replaceAll('{{UNSUBSCRIBE_URL}}', 'https://kolomoets-netizen.github.io/Link/emails/');
-const buildStamp = `<!-- preview build: ${buildDate} ${buildId} -->`;
-if (!emailHtml.includes('Cache-Control')) {
-  emailHtml = emailHtml.replace(
-    '<head>',
-    `<head>\n  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">\n  ${buildStamp}`,
-  );
-}
-writeFileSync(join(emailsDocs, supplierEmail), emailHtml, 'utf-8');
 writeFileSync(
-  join(emailsDocs, 'index.html'),
+  join(docs, '404.html'),
   `<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Письма iStockLink</title>
-  <meta http-equiv="refresh" content="0;url=supplier-tender-module-seldon.html">
+  <meta http-equiv="refresh" content="0;url=./">
+  <title>Idea Desk</title>
 </head>
-<body><p><a href="supplier-tender-module-seldon.html">Письмо для поставщиков</a></p></body>
+<body><p><a href="./">Idea Desk — на главную</a></p></body>
 </html>
 `,
   'utf-8',
 );
 
-const redirect404 = `<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>iStockLink</title>
-  <meta http-equiv="refresh" content="0;url=./">
-  <style>
-    body { font-family: Arial, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f4f7ff; color: #1c50de; text-align: center; padding: 24px; }
-    a { color: #1c50de; }
-  </style>
-</head>
-<body>
-  <p>Страница не найдена. <a href="./">Перейти на лендинг iStockLink</a></p>
-</body>
-</html>
-`;
-writeFileSync(join(docs, '404.html'), redirect404, 'utf-8');
-
-console.log('built preview-standalone.html, docs/index.html and docs/preview-standalone.html');
+console.log('built Idea Desk preview:', blocks.join(', '));

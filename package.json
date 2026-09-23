@@ -1,5 +1,5 @@
 {
-  "name": "istocklink-landing",
+  "name": "idea-desk-landing",
   "private": true,
   "scripts": {
     "vendor": "node scripts/vendor-sync.mjs",

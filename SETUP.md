@@ -30,18 +30,18 @@ start docs\index.html
 3. Смотреть `docs/index.html` или push → GitHub Pages
 4. Копировать из `docs/tilda-blocks/` в блок **T123** на Tilda
 
-## 4. Блоки Idea Desk (целевая структура)
+## 4. Блоки Idea Desk
 
-| Файл | Содержание |
-|---|---|
-| `01-hero.html` | Hero |
-| `02-trust-bar.html` | От идеи до ассортимента |
-| `03-problems.html` | Знакомо? + 3 боли |
-| `04-how-it-works.html` | 5 этапов |
-| `05-result.html` | Результат |
-| `06-request.html` | Цена + заявка |
+| Файл | Содержание | Tilda |
+|---|---|---|
+| `01-hero.html` | Hero + макет UI | T123 |
+| `02-trust-bar.html` | От идеи до ассортимента | T123 |
+| `03-problems.html` | Знакомо? + 3 боли | T123 |
+| `04-how-it-works.html` | 5 этапов (`#flow`) | T123 |
+| `05-result.html` | Результат (`#result`) | T123 |
+| `06-request.html` | Цена + заявка (`#request`) | T123 |
 
-Список блоков в сборке: `scripts/build-preview.mjs` → массив `blocks`.
+Список в сборке: `scripts/build-preview.mjs` → массив `blocks`.
 
 ## 5. Тексты (источник)
 

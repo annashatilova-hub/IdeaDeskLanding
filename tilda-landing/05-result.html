@@ -1,0 +1,91 @@
+<style>
+  .idesk-result-wrap {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 64px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #1c1f22;
+    background: #fff;
+  }
+  .idesk-result-wrap *, .idesk-result-wrap *::before, .idesk-result-wrap *::after { box-sizing: border-box; }
+  .idesk-result-grid {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 40px;
+    align-items: center;
+  }
+  .idesk-result-wrap .idesk-eyebrow {
+    display: inline-block;
+    margin: 0 0 14px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: #ebf0fe;
+    border-radius: 5px;
+  }
+  .idesk-result-title { margin: 0 0 24px; font-size: clamp(26px, 3.5vw, 40px); line-height: 1.12; font-weight: 800; }
+  .idesk-evidence-list { display: grid; gap: 14px; }
+  .idesk-evidence-item {
+    padding: 18px 20px;
+    border-left: 4px solid #3669fd;
+    background: #f5f7fa;
+  }
+  .idesk-evidence-item strong { display: block; margin-bottom: 4px; font-size: 16px; }
+  .idesk-evidence-item span { font-size: 14px; color: #5f6870; line-height: 1.5; }
+  .idesk-case {
+    min-height: 340px;
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    border-radius: 16px;
+    color: #fff;
+    background: linear-gradient(180deg, transparent 15%, rgba(20, 26, 34, 0.9) 100%), linear-gradient(135deg, #7ea1ff, #4b6b78);
+  }
+  .idesk-case small {
+    align-self: flex-start;
+    margin-bottom: auto;
+    padding: 6px 9px;
+    background: #fff7d6;
+    color: #1c1f22;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .idesk-case h3 { margin: 0 0 10px; font-size: 22px; line-height: 1.2; }
+  .idesk-case p { margin: 0; font-size: 14px; color: #e0e5e9; line-height: 1.5; }
+  @media (max-width: 900px) { .idesk-result-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="idesk-result-wrap" id="result">
+  <div class="idesk-result-grid">
+    <div>
+      <span class="idesk-eyebrow">Результат</span>
+      <h2 class="idesk-result-title">По каждой модели понятно, что делать дальше</h2>
+      <div class="idesk-evidence-list">
+        <div class="idesk-evidence-item">
+          <strong>Весь портфель разработок на виду</strong>
+          <span>Сколько идей рассматривают, сколько моделей согласуют и что уже вошло в ассортимент.</span>
+        </div>
+        <div class="idesk-evidence-item">
+          <strong>Каждый участник видит свой этап</strong>
+          <span>Фото, оценка и согласование разделены, но остаются частью общего процесса.</span>
+        </div>
+        <div class="idesk-evidence-item">
+          <strong>Следующий шаг определён</strong>
+          <span>Согласованная модель готова к дальнейшей работе — независимо от канала продаж.</span>
+        </div>
+      </div>
+    </div>
+    <article class="idesk-case">
+      <small>Место под подтверждённый кейс</small>
+      <h3>Здесь нужен результат компании с активной разработкой коллекций</h3>
+      <p>Например: сколько проектов команда ведёт параллельно и как изменилось время согласования моделей.</p>
+    </article>
+  </div>
+</section>
