@@ -12,7 +12,7 @@
 |------|------------|
 | `01-map-hero.html` | Вступление, ссылки на лендинг и заявку |
 | `02-map-flow.html` | Главная схема: Idea Desk → istock |
-| `03-map-roles.html` | 4 роли |
+| `03-map-roles.html` | Роли; дизайнер и конструктор раздельно |
 | `04-map-idea-journey.html` | Путь одной идеи |
 | `05-map-cta.html` | Заявка |
 
