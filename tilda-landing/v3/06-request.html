@@ -1,130 +1,163 @@
 <style>
   .v3-offer {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
     --v3-blue: #3669fd;
-    --v3-blue-dark: #2e5ee8;
-    --v3-muted: #c8d8fe;
+    --v3-blue-dark: #243046;
     box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
     width: 100%;
-    padding: 72px 20px 32px;
+    padding: 56px 20px 64px;
     font-family: 'TildaSans', Arial, sans-serif;
-    color: #fff;
-    background: var(--v3-blue);
+    color: var(--v3-ink);
+    background: #e7eef8;
   }
   .v3-offer *, .v3-offer *::before, .v3-offer *::after { box-sizing: border-box; }
+  .v3-offer-leaf {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    color: #c5d4ee;
+    pointer-events: none;
+  }
+  .v3-offer-leaf svg { width: 100%; height: 100%; fill: currentColor; }
+  .v3-offer-leaf--left { left: -40px; bottom: -50px; transform: rotate(20deg); }
+  .v3-offer-leaf--right { right: -30px; top: -40px; transform: rotate(-30deg); }
   .v3-offer-grid {
+    position: relative;
+    z-index: 1;
     max-width: 1160px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: 40px;
-    align-items: start;
+    grid-template-columns: 0.9fr 1.35fr 0.7fr;
+    gap: 28px 32px;
+    align-items: center;
   }
-  .v3-kicker {
+  .v3-offer .v3-kicker {
     display: block;
     margin: 0 0 12px;
-    font-size: 12px;
+    padding: 0;
+    font-size: 13px;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.04em;
     text-transform: uppercase;
+    color: #2e5ee8;
+    background: none;
+  }
+  .v3-offer .v3-title {
+    margin: 0 0 8px;
+    font-size: clamp(26px, 3vw, 34px);
+    line-height: 1.15;
+    font-weight: 800;
+    color: var(--v3-ink);
+  }
+  .v3-offer .v3-price {
+    margin: 0 0 10px;
+    font-size: clamp(28px, 3vw, 36px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--v3-ink);
+  }
+  .v3-offer .v3-price span { font-size: 0.55em; font-weight: 700; }
+  .v3-offer .v3-note { margin: 0; max-width: 280px; font-size: 14px; line-height: 1.45; color: var(--v3-muted); }
+  .v3-offer .v3-form {
+    padding: 0;
+    border-radius: 0;
+    background: none;
+    color: var(--v3-ink);
+  }
+  .v3-offer .v3-form h3 {
+    margin: 0 0 14px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
     color: var(--v3-muted);
   }
-  .v3-title {
-    margin: 0 0 16px;
-    font-size: clamp(28px, 3.5vw, 40px);
-    line-height: 1.1;
-    font-weight: 800;
+  .v3-offer .v3-fields {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
   }
-  .v3-price {
-    margin: 0 0 8px;
-    font-size: clamp(36px, 4vw, 48px);
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-  .v3-price span { font-size: 16px; font-weight: 400; color: var(--v3-muted); }
-  .v3-note { margin: 0; font-size: 14px; line-height: 1.55; color: var(--v3-muted); }
-  .v3-form {
-    padding: 28px;
-    border-radius: 14px;
-    background: #fff;
-    color: #1c1f22;
-  }
-  .v3-form h3 { margin: 0 0 18px; font-size: 20px; font-weight: 800; }
-  .v3-form label { display: block; margin-bottom: 5px; font-size: 12px; font-weight: 600; color: #5f6870; }
-  .v3-form input,
-  .v3-form textarea {
+  .v3-offer .v3-form input {
     width: 100%;
     min-height: 44px;
-    margin-bottom: 14px;
-    padding: 11px 12px;
+    margin: 0;
+    padding: 11px 14px;
     font: inherit;
-    color: #1c1f22;
-    background: #f5f7fa;
-    border: 1px solid #dfe4ea;
-    border-radius: 7px;
+    font-size: 14px;
+    color: var(--v3-ink);
+    background: #fff;
+    border: 1px solid #e3e8ef;
+    border-radius: 8px;
   }
-  .v3-form textarea { min-height: 82px; resize: vertical; }
-  .v3-btn {
+  .v3-offer .v3-btn {
     display: flex;
-    width: 100%;
-    min-height: 46px;
+    width: min(100%, 220px);
+    min-height: 44px;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
     border: 0;
-    border-radius: 7px;
-    background: var(--v3-blue);
+    border-radius: 8px;
+    background: var(--v3-blue-dark);
     color: #fff;
     font-size: 15px;
     font-weight: 700;
     cursor: pointer;
   }
-  .v3-form-note { margin: 10px 0 0; font-size: 11px; text-align: center; color: #5f6870; }
-  .v3-footer {
-    max-width: 1160px;
-    margin: 40px auto 0;
-    padding-top: 24px;
-    border-top: 1px solid rgba(255,255,255,.2);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px 24px;
-    align-items: center;
-    justify-content: space-between;
-    font-size: 13px;
-    color: var(--v3-muted);
+  .v3-offer .v3-scribble {
+    position: relative;
+    margin: 0;
+    padding-bottom: 28px;
+    font-family: 'Segoe Print', 'Comic Sans MS', cursive;
+    font-size: 18px;
+    line-height: 1.35;
+    color: #3a4558;
   }
-  .v3-footer a { color: #fff; text-decoration: none; opacity: .85; }
-  @media (max-width: 900px) { .v3-offer-grid { grid-template-columns: 1fr; } }
+  .v3-offer .v3-scribble svg {
+    position: absolute;
+    left: 8px;
+    bottom: -6px;
+    width: 72px;
+    height: 36px;
+    stroke: #3a4558;
+    fill: none;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+  }
+  @media (max-width: 900px) {
+    .v3-offer-grid { grid-template-columns: 1fr; }
+    .v3-offer .v3-fields { grid-template-columns: 1fr; }
+  }
 </style>
 
 <section class="v3-offer" id="request">
+  <div class="v3-offer-leaf v3-offer-leaf--left" aria-hidden="true">
+    <svg viewBox="0 0 80 80"><path d="M10 70c20-4 28-22 30-40 8 10 22 16 34 14-8 16-24 28-44 30-8 1-16-1-20-4z"/></svg>
+  </div>
+  <div class="v3-offer-leaf v3-offer-leaf--right" aria-hidden="true">
+    <svg viewBox="0 0 80 80"><path d="M70 10C50 14 42 32 40 50c-8-10-22-16-34-14 8 16 24 28 44 30 8 1 16-1 20-4z"/></svg>
+  </div>
   <div class="v3-offer-grid">
     <div>
-      <span class="v3-kicker">06 · Тариф</span>
+      <span class="v3-kicker">06 · Тарифы и заявка</span>
       <h2 class="v3-title">Вся платформа Idea Desk</h2>
       <div class="v3-price">20 000 ₽ <span>/ мес.</span></div>
-      <p class="v3-note">Idea Desk входит в платформу istock. Разберём ваши коллекции, роли и сценарий внедрения.</p>
+      <p class="v3-note">Быстрый старт. Прозрачные условия. Поддержка на всех этапах.</p>
     </div>
     <form class="v3-form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
-      <h3>Оставить заявку</h3>
-      <label for="v3-name">Имя</label>
-      <input id="v3-name" name="name" autocomplete="name" required>
-      <label for="v3-company">Компания</label>
-      <input id="v3-company" name="organization" autocomplete="organization" required>
-      <label for="v3-contact">Телефон или email</label>
-      <input id="v3-contact" name="contact" autocomplete="email" required>
-      <label for="v3-comment">Что хотите упорядочить?</label>
-      <textarea id="v3-comment" name="comment" placeholder="Например: ведём много коллекций, сложно отслеживать согласование моделей"></textarea>
+      <h3>Оставьте заявку, чтобы подключить Idea Desk</h3>
+      <div class="v3-fields">
+        <input id="v3-name" name="name" autocomplete="name" placeholder="Ваше имя" required>
+        <input id="v3-email" name="email" type="email" autocomplete="email" placeholder="E-mail" required>
+        <input id="v3-phone" name="tel" type="tel" autocomplete="tel" placeholder="Телефон" required>
+      </div>
       <button class="v3-btn" type="submit">Оставить заявку</button>
-      <p class="v3-form-note">Свяжемся и покажем Idea Desk на примере, близком к вашему процессу.</p>
     </form>
+    <p class="v3-scribble">Начните создавать коллекции, удобные уже сегодня.
+      <svg viewBox="0 0 72 36" aria-hidden="true"><path d="M64 8c-18 2-32 8-46 18"/><path d="M18 20l-6 8 10-2"/></svg>
+    </p>
   </div>
-  <footer class="v3-footer">
-    <span>Idea Desk · стол идей · платформа istock</span>
-    <nav aria-label="Подвал">
-      <a href="#flow">Как это работает</a>
-      ·
-      <a href="#systems">Две системы</a>
-      ·
-      <a href="../map/">Карта продукта</a>
-    </nav>
-  </footer>
 </section>

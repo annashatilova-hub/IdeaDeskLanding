@@ -2,100 +2,107 @@
   .v3-result {
     --v3-ink: #1c1f22;
     --v3-muted: #5f6870;
-    --v3-line: #dfe4ea;
     --v3-blue: #3669fd;
-    --v3-blue-soft: #ebf0fe;
+    --v3-blue-soft: #e7efff;
     box-sizing: border-box;
     width: 100%;
     padding: 72px 20px;
     font-family: 'TildaSans', Arial, sans-serif;
     color: var(--v3-ink);
-    background: #f5f7fa;
+    background: #f3f6fb;
   }
   .v3-result *, .v3-result *::before, .v3-result *::after { box-sizing: border-box; }
-  .v3-result-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
-  .v3-kicker {
-    display: inline-block;
-    margin: 0 0 12px;
-    padding: 6px 10px;
-    font-size: 12px;
+  .v3-result-inner { max-width: 1160px; margin: 0 auto; text-align: left; }
+  .v3-result .v3-kicker {
+    display: block;
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #2e5ee8;
-    background: var(--v3-blue-soft);
-    border-radius: 5px;
+    background: none;
+    border-radius: 0;
   }
-  .v3-title {
-    margin: 0 0 36px;
-    font-size: clamp(30px, 4vw, 44px);
-    line-height: 1.1;
+  .v3-result .v3-title {
+    margin: 0 0 28px;
+    max-width: none;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.15;
     font-weight: 800;
-  }
-  .v3-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
     text-align: left;
   }
-  .v3-card {
-    padding: 28px;
-    border-radius: 14px;
-    background: #fff;
-    border: 1px solid var(--v3-line);
-    box-shadow: 0 4px 20px rgba(31, 43, 65, 0.04);
+  .v3-result .v3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    text-align: left;
   }
-  .v3-icon {
+  .v3-result .v3-card {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding: 22px 22px 26px;
+    border-radius: 16px;
+    background: #fff;
+    border: none;
+    box-shadow: 0 8px 24px rgba(31, 43, 65, 0.04);
+  }
+  .v3-result .v3-icon {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 48px;
-    height: 48px;
+    width: 44px;
+    height: 44px;
     margin-bottom: 16px;
     border-radius: 50%;
     background: var(--v3-blue-soft);
     color: var(--v3-blue);
-    border: 1px solid rgba(54, 105, 253, 0.12);
+    border: none;
   }
-  .v3-icon svg {
-    width: 24px;
-    height: 24px;
+  .v3-result .v3-icon--rose { background: #fde8e8; color: #e25b5b; }
+  .v3-result .v3-icon svg {
+    width: 22px;
+    height: 22px;
     stroke: currentColor;
     fill: none;
     stroke-width: 1.75;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-  .v3-card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
-  .v3-card p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--v3-muted); }
-  @media (max-width: 900px) { .v3-grid { grid-template-columns: 1fr; } }
+  .v3-result .v3-card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 800; line-height: 1.25; }
+  .v3-result .v3-card p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--v3-muted); }
+  @media (max-width: 900px) {
+    .v3-result .v3-grid { grid-template-columns: 1fr; }
+  }
 </style>
 
 <section class="v3-result" id="result">
   <div class="v3-result-inner">
-    <span class="v3-kicker">05 · Результат</span>
+    <span class="v3-kicker">05 · Результаты</span>
     <h2 class="v3-title">С Idea Desk вы получаете</h2>
     <div class="v3-grid">
       <article class="v3-card">
         <div class="v3-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v5l3 2"/></svg>
         </div>
-        <h3>Экономию времени и ресурсов</h3>
-        <p>Меньше ручной работы и потерь между этапами — команда не дублирует одно и то же в чатах и таблицах.</p>
+        <h3>Экономите время и ресурсы</h3>
+        <p>Вся информация в одном месте, без лишних созвонов и переписок.</p>
       </article>
       <article class="v3-card">
-        <div class="v3-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+        <div class="v3-icon v3-icon--rose" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1.2" fill="currentColor" stroke="none"/></svg>
         </div>
         <h3>Полный контроль над коллекцией</h3>
-        <p>Видно, сколько идей рассматривают, что согласовано и что уже готово к передаче дальше.</p>
+        <p>Видите все этапы, сроки и статусы каждой модели.</p>
       </article>
       <article class="v3-card">
         <div class="v3-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M4 18V6"/><path d="M4 18h16"/><path d="M8 15l3-4 3 2 4-6"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M4 16l5-5 4 3 7-8"/><path d="M14 6h6v6"/></svg>
         </div>
-        <h3>Больше моделей к продаже</h3>
-        <p>Согласованная модель не «висит» — понятен следующий шаг и передача в istock.</p>
+        <h3>Больше готовых моделей к продажам</h3>
+        <p>Согласованные и проверенные модели, готовые к производству и запуску на маркетплейсах.</p>
       </article>
     </div>
   </div>
