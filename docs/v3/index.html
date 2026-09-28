@@ -769,24 +769,26 @@
     background: #fff;
   }
   .v3-systems *, .v3-systems *::before, .v3-systems *::after { box-sizing: border-box; }
-  .v3-systems-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
-  .v3-kicker {
-    display: inline-block;
-    margin: 0 0 12px;
-    padding: 6px 10px;
-    font-size: 12px;
+  .v3-systems-inner { max-width: 1160px; margin: 0 auto; text-align: left; }
+  .v3-systems .v3-kicker {
+    display: block;
+    margin: 0 0 10px;
+    padding: 0;
+    font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #2e5ee8;
-    background: var(--v3-blue-soft);
-    border-radius: 5px;
+    background: none;
+    border-radius: 0;
   }
-  .v3-title {
-    margin: 0 0 36px;
-    font-size: clamp(30px, 4vw, 44px);
-    line-height: 1.1;
+  .v3-systems .v3-title {
+    margin: 0 0 28px;
+    max-width: none;
+    font-size: clamp(28px, 3.4vw, 40px);
+    line-height: 1.15;
     font-weight: 800;
+    text-align: left;
   }
   .v3-bridge {
     display: grid;
@@ -796,140 +798,172 @@
     text-align: left;
   }
   .v3-systems .v3-card {
-    display: flex;
-    flex-direction: column;
-    padding: 32px;
-    border-radius: 20px;
-    background: #f5f7fa;
-    border: 1px solid var(--v3-line);
-    min-height: 340px;
-  }
-  .v3-systems .v3-card--istock { background: var(--v3-blue-soft); border-color: rgba(54, 105, 253, 0.15); }
-  .v3-card-label {
-    display: inline-flex;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px 20px;
     align-items: center;
-    gap: 8px;
-    margin-bottom: 12px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--v3-blue);
+    padding: 28px 24px;
+    border-radius: 16px;
+    background: #f4f7fb;
+    border: none;
+    min-height: 0;
   }
-  .v3-card-label svg {
-    width: 22px;
-    height: 22px;
-    stroke: currentColor;
+  .v3-systems .v3-card--istock { background: #eef3ff; }
+  .v3-systems .v3-card-main { min-width: 0; }
+  .v3-systems .v3-card-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 8px;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--v3-ink);
+    line-height: 1.2;
+  }
+  .v3-systems .v3-card--istock .v3-card-label { color: var(--v3-blue); }
+  .v3-systems .v3-card-label svg {
+    width: 26px;
+    height: 26px;
+    flex: 0 0 26px;
+    stroke: var(--v3-blue);
     fill: none;
-    stroke-width: 1.75;
+    stroke-width: 1.7;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-  .v3-systems .v3-card h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; font-weight: 800; }
-  .v3-list { margin: 0 0 auto; padding: 0; list-style: none; }
-  .v3-list li {
-    position: relative;
-    padding: 0 0 8px 18px;
+  .v3-systems .v3-card h3 {
+    margin: 0 0 16px;
     font-size: 14px;
-    line-height: 1.5;
+    line-height: 1.45;
+    font-weight: 500;
     color: var(--v3-muted);
   }
-  .v3-list li::before {
+  .v3-systems .v3-list { margin: 0; padding: 0; list-style: none; }
+  .v3-systems .v3-list li {
+    position: relative;
+    padding: 0 0 8px 22px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #3d4650;
+  }
+  .v3-systems .v3-list li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 8px;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--v3-blue);
+    top: 3px;
+    width: 12px;
+    height: 7px;
+    border-left: 2px solid var(--v3-blue);
+    border-bottom: 2px solid var(--v3-blue);
+    border-radius: 0;
+    background: none;
+    transform: rotate(-45deg);
   }
-  .v3-illus {
-    margin-top: 24px;
-    height: 120px;
-    border-radius: 14px;
-    background: #fff;
-    border: 1px solid var(--v3-line);
+  .v3-systems .v3-illus {
+    margin: 0;
+    width: 112px;
+    height: auto;
+    border: 0;
+    border-radius: 0;
+    background: none;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--v3-blue);
+    color: #7f93b8;
   }
-  .v3-illus svg {
-    width: 56px;
-    height: 56px;
+  .v3-systems .v3-illus svg {
+    width: 104px;
+    height: 88px;
     stroke: currentColor;
     fill: none;
-    stroke-width: 1.5;
+    stroke-width: 1.4;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-  .v3-systems .v3-card--istock .v3-illus { background: rgba(255,255,255,.7); }
-  .v3-arrow {
+  .v3-systems .v3-arrow {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    padding: 0 8px;
+    gap: 10px;
+    padding: 0 4px;
     font-size: 13px;
     font-weight: 600;
+    line-height: 1.35;
     color: var(--v3-blue);
     text-align: center;
-    max-width: 120px;
+    max-width: 128px;
   }
-  .v3-arrow-icon {
-    width: 44px;
-    height: 44px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--v3-blue-soft);
-    font-size: 22px;
-    line-height: 1;
+  .v3-systems .v3-arrow-icon {
+    width: 72px;
+    height: 2px;
+    display: block;
+    border-radius: 0;
+    background: var(--v3-blue);
+    position: relative;
+    font-size: 0;
+  }
+  .v3-systems .v3-arrow-icon::after {
+    content: '';
+    position: absolute;
+    right: -1px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 8px solid var(--v3-blue);
   }
   @media (max-width: 900px) {
     .v3-bridge { grid-template-columns: 1fr; }
-    .v3-arrow { flex-direction: row; max-width: none; padding: 8px 0; }
+    .v3-systems .v3-arrow { flex-direction: row; max-width: none; padding: 8px 0; }
     .v3-systems .v3-card { min-height: auto; }
   }
 </style>
 
 <section class="v3-systems" id="systems">
   <div class="v3-systems-inner">
-    <span class="v3-kicker">04 · Две системы</span>
+    <span class="v3-kicker">04 · Две системы — один процесс</span>
     <h2 class="v3-title">Idea Desk и istock дополняют друг друга</h2>
     <div class="v3-bridge">
       <article class="v3-card">
-        <span class="v3-card-label">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a5 5 0 0 0-3 9.1V14h6v-2.9A5 5 0 0 0 12 2z"/></svg>
-          Idea Desk
-        </span>
-        <h3>Собрать коллекцию по этапам до модели</h3>
-        <ul class="v3-list">
-          <li>Сбор и оценка идей</li>
-          <li>Работа с материалами и фото</li>
-          <li>Согласование моделей</li>
-        </ul>
+        <div class="v3-card-main">
+          <span class="v3-card-label">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3c-2 3-6 4.5-6 9a6 6 0 0 0 12 0c0-4.5-4-6-6-9z"/><path d="M12 11v8"/></svg>
+            Idea Desk
+          </span>
+          <h3>Платформа для управления коллекциями и разработки моделей</h3>
+          <ul class="v3-list">
+            <li>Сбор и оценка идей</li>
+            <li>Работа с материалами и референсами</li>
+            <li>Согласование моделей</li>
+            <li>Подготовка к передаче в производство</li>
+          </ul>
+        </div>
         <div class="v3-illus" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 20h8"/><path d="M12 17v3"/></svg>
+          <svg viewBox="0 0 120 90"><rect x="18" y="16" width="84" height="52" rx="6"/><path d="M8 76h104"/><path d="M48 68h24"/><path d="M60 28a10 10 0 0 0-6 18h12a10 10 0 0 0-6-18z"/><path d="M56 50h8"/><path d="M58 54h4"/></svg>
         </div>
       </article>
-      <div class="v3-arrow" aria-hidden="true">
-        <span class="v3-arrow-icon">→</span>
+      <div class="v3-arrow">
         <span>Готовая модель передаётся в istock</span>
+        <span class="v3-arrow-icon" aria-hidden="true"></span>
       </div>
       <article class="v3-card v3-card--istock">
-        <span class="v3-card-label">Платформа istock</span>
-        <h3>Производство заказов по фабрикам</h3>
-        <ul class="v3-list">
-          <li>Размещение заказов на фабриках</li>
-          <li>Контроль производства</li>
-          <li>Поставки и статусы</li>
-        </ul>
+        <div class="v3-card-main">
+          <span class="v3-card-label">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 16v2"/><path d="M8 12v6"/><path d="M12 8v10"/><path d="M16 4v14"/><circle cx="16" cy="4" r="1.2" fill="currentColor" stroke="none"/></svg>
+            istock
+          </span>
+          <h3>Платформа для заказов на фабрики и контроль производства</h3>
+          <ul class="v3-list">
+            <li>Размещение заказов на фабрики</li>
+            <li>Контроль сроков и качества</li>
+            <li>Производство и логистика</li>
+          </ul>
+        </div>
         <div class="v3-illus" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M3 21V9l9-5 9 5v12"/><path d="M9 21V12h6v9"/><path d="M3 9h18"/><path d="M12 4v5"/></svg>
+          <svg viewBox="0 0 120 90"><path d="M18 74V42l22-12v44"/><path d="M40 74V28h34v46"/><path d="M74 74V36l24 10v28"/><path d="M52 18h8v10h-8z"/><path d="M48 74V52h16v22"/><path d="M22 56h10"/><path d="M22 64h10"/><path d="M82 54h10"/><path d="M82 62h10"/></svg>
         </div>
       </article>
     </div>
