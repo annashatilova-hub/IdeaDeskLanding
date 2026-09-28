@@ -130,16 +130,20 @@
     stroke-linecap: round;
     stroke-linejoin: round;
   }
+  .v3-offer .v3-scribble-arrow--up { display: none; }
   @media (max-width: 900px) {
     .v3-offer-grid { grid-template-columns: 1fr; }
     .v3-offer .v3-fields { grid-template-columns: 1fr; }
-    .v3-offer .v3-scribble { margin-top: 36px; padding-bottom: 0; }
-    .v3-offer .v3-scribble svg {
-      left: 36px;
+    .v3-offer .v3-scribble { margin-top: 4px; padding-top: 40px; padding-bottom: 0; }
+    .v3-offer .v3-scribble-arrow--side { display: none; }
+    .v3-offer .v3-scribble-arrow--up {
+      display: block;
+      left: 4px;
+      top: 0;
       bottom: auto;
-      top: -32px;
-      transform: rotate(-70deg);
-      transform-origin: 20% 70%;
+      width: 42px;
+      height: 36px;
+      transform: none;
     }
   }
 </style>
@@ -168,7 +172,8 @@
       <button class="v3-btn" type="submit">Оставить заявку</button>
     </form>
     <p class="v3-scribble">Начните создавать коллекции, удобные уже сегодня.
-      <svg viewBox="0 0 64 28" aria-hidden="true"><path d="M58 6C34 8 22 14 10 16"/><path d="M18 8L8 16l12 4"/></svg>
+      <svg class="v3-scribble-arrow--side" viewBox="0 0 64 28" aria-hidden="true"><path d="M58 6C34 8 22 14 10 16"/><path d="M18 8L8 16l12 4"/></svg>
+      <svg class="v3-scribble-arrow--up" viewBox="0 0 42 36" aria-hidden="true"><path d="M8 32C12 18 22 12 28 6"/><path d="M18 10l12-8 2 12"/></svg>
     </p>
   </div>
 </section>
