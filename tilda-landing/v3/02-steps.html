@@ -1,0 +1,403 @@
+<style>
+  .v3-steps {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
+    --v3-line: #dfe4ea;
+    --v3-blue: #3669fd;
+    --v3-blue-soft: #ebf0fe;
+    --v3-blue-arrow: #7a93f6;
+    --v3-blue-arrow-head: #5b7cf7;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v3-ink);
+    background: #fff;
+  }
+  .v3-steps *, .v3-steps *::before, .v3-steps *::after { box-sizing: border-box; }
+  .v3-steps-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .v3-kicker {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: var(--v3-blue-soft);
+    border-radius: 5px;
+  }
+  .v3-title {
+    margin: 0 0 48px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v3-timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    text-align: left;
+  }
+  .v3-step {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .v3-step-head,
+  .v3-step p {
+    position: relative;
+    z-index: 1;
+  }
+  .v3-step-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .v3-step-head h3 {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    font-size: clamp(13px, 1.1vw, 15px);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .v3-step-num {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--v3-blue);
+    background: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--v3-blue);
+    letter-spacing: -0.02em;
+  }
+  .v3-step-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 34%;
+    max-width: 96px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0 2px 8px 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: var(--v3-blue);
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .v3-step-icon svg {
+    width: auto;
+    height: min(82%, 92px);
+    max-height: 100%;
+    transform: translateX(10%);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v3-step p {
+    margin: 0;
+    font-size: clamp(12px, 0.95vw, 13px);
+    line-height: 1.45;
+    color: var(--v3-muted);
+  }
+  .v3-connector {
+    flex: 0 0 28px;
+    position: relative;
+    align-self: flex-start;
+    padding-top: 16px;
+  }
+  .v3-connector::before {
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: 17px;
+    background: var(--v3-line);
+  }
+  .v3-connector::after {
+    content: '';
+    position: absolute;
+    top: 27px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid var(--v3-blue-arrow);
+  }
+  .v3-step--istock .v3-step-num {
+    border-color: var(--v3-blue);
+    background: var(--v3-blue-soft);
+  }
+  .v3-step--istock .v3-step-icon {
+    opacity: 0.09;
+    padding-right: 12px;
+  }
+  .v3-step--istock .v3-step-icon svg {
+    transform: translateX(0);
+  }
+  .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon {
+    padding-right: 12px;
+  }
+  .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon svg {
+    transform: translateX(0);
+  }
+  .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon {
+    padding-right: 12px;
+  }
+  .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon svg {
+    transform: translateX(0);
+  }
+  .v3-step--istock h3 { color: var(--v3-blue); }
+  @media (max-width: 960px) {
+    .v3-steps { padding: 48px 16px; }
+    .v3-steps-inner { text-align: left; }
+    .v3-title {
+      margin-bottom: 28px;
+      font-size: clamp(24px, 6vw, 32px);
+      text-align: left;
+    }
+    .v3-timeline {
+      --v3-card-w: min(88%, 340px);
+      --v3-card-h: 120px;
+      --v3-card-mid: calc(var(--v3-card-h) / 2);
+      --v3-rail-x: 50%;
+      --v3-gap: 72px;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      position: relative;
+    }
+    .v3-step {
+      position: relative;
+      z-index: 2;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      width: var(--v3-card-w);
+      height: var(--v3-card-h);
+      min-height: var(--v3-card-h);
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8faff;
+      border: 1px solid rgba(54, 105, 253, 0.12);
+      overflow: visible;
+    }
+    .v3-step-head {
+      flex: 0 0 auto;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .v3-step-head h3 {
+      font-size: 16px;
+    }
+    .v3-step-num {
+      width: 36px;
+      height: 36px;
+      flex-basis: 36px;
+      font-size: 11px;
+    }
+    .v3-step-icon {
+      width: 30%;
+      max-width: 88px;
+      padding: 0 0 6px;
+      opacity: 0.06;
+    }
+    .v3-step-icon svg {
+      height: min(88%, 96px);
+      transform: translateX(14%);
+    }
+    .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon {
+      padding-right: 14px;
+    }
+    .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon svg {
+      transform: translateX(0);
+    }
+    .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon {
+      padding-right: 14px;
+    }
+    .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon svg {
+      transform: translateX(0);
+    }
+    .v3-step--istock .v3-step-icon {
+      padding-right: 14px;
+    }
+    .v3-step--istock .v3-step-icon svg {
+      transform: translateX(0);
+    }
+    .v3-step p {
+      flex: 1;
+      margin: 0;
+      padding-left: 48px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .v3-step:nth-child(4n + 1) {
+      align-self: flex-start;
+      margin-right: auto;
+    }
+    .v3-step:nth-child(4n + 3) {
+      align-self: flex-end;
+      margin-left: auto;
+    }
+    /* стрелка ▼ — вход сверху в центр блока */
+    .v3-step:nth-child(2n + 1):not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 1px));
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 9px solid var(--v3-blue-arrow-head);
+      z-index: 4;
+      filter: drop-shadow(0 1px 0 rgba(54, 105, 253, 0.15));
+    }
+    .v3-connector {
+      flex: none;
+      width: 100%;
+      height: var(--v3-gap);
+      margin-top: calc(var(--v3-card-mid) * -1);
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      background: none;
+    }
+    .v3-connector::before,
+    .v3-connector::after {
+      content: '';
+      position: absolute;
+      margin: 0;
+      border: 0;
+      display: block;
+      background: var(--v3-blue-arrow);
+    }
+    .v3-connector::before { height: 2.5px; }
+    .v3-connector::after { width: 2.5px; }
+    /* левый блок → правый: из середины правого бока, затем вниз к центру следующего */
+    .v3-connector--to-right::before {
+      left: calc(var(--v3-card-w) - 1px);
+      top: 0;
+      bottom: auto;
+      width: calc(100% - 1.5 * var(--v3-card-w));
+      height: 2.5px;
+      transform: translateY(-50%);
+    }
+    .v3-connector--to-right::after {
+      left: calc(100% - var(--v3-card-w) / 2 - 1px);
+      top: 0;
+      bottom: auto;
+      width: 2.5px;
+      height: calc(var(--v3-gap) - 10px);
+    }
+    /* правый блок → левый: из середины левого бока, затем вниз к центру следующего */
+    .v3-connector--to-left::before {
+      left: calc(var(--v3-card-w) / 2);
+      top: 0;
+      bottom: auto;
+      width: calc(100% - 1.5 * var(--v3-card-w));
+      height: 2.5px;
+      transform: translateY(-50%);
+    }
+    .v3-connector--to-left::after {
+      left: calc(var(--v3-card-w) / 2 - 1px);
+      top: 0;
+      bottom: auto;
+      width: 2.5px;
+      height: calc(var(--v3-gap) - 10px);
+    }
+  }
+</style>
+
+<section class="v3-steps" id="flow">
+  <div class="v3-steps-inner">
+    <span class="v3-kicker">02 · Как это работает</span>
+    <h2 class="v3-title">6 шагов к готовой модели</h2>
+    <div class="v3-timeline">
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">01</span>
+          <h3>Завести коллекцию</h3>
+        </div>
+        <p>Рамка сезона или проекта — понятно, с чего начать.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a5 5 0 0 0-3 9.1V14h6v-2.9A5 5 0 0 0 12 2z"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-right" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">02</span>
+          <h3>Собрать идеи</h3>
+        </div>
+        <p>Фото, источник и предмет — в одном месте.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-left" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">03</span>
+          <h3>Подготовить материалы</h3>
+        </div>
+        <p>Обработка фото, артикул и оценка.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-right" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">04</span>
+          <h3>Согласовать модель</h3>
+        </div>
+        <p>Решение «берём / нет» и цвета модели.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6"/><path d="M14 20c0-2.5 1.8-4.5 4-4.5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-left" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">05</span>
+          <h3>Довести модель</h3>
+        </div>
+        <p>Образец, идентификация, готовность.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7.7 12 12.5l8.7-4.8"/><path d="M12 22V12.5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-right" aria-hidden="true"></div>
+      <article class="v3-step v3-step--istock">
+        <div class="v3-step-head">
+          <span class="v3-step-num">06</span>
+          <h3>Передать в istock</h3>
+        </div>
+        <p>Заказы на фабрики и производство.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 21V9l9-5 9 5v12"/><path d="M9 21V12h6v9"/><path d="M3 9h18"/><path d="M12 4v5"/></svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>

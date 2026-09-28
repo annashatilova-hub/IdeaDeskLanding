@@ -1,0 +1,124 @@
+<style>
+  .v2-steps {
+    --v2-bg: #fff;
+    --v2-ink: #2c3532;
+    --v2-muted: #6b7670;
+    --v2-sage: #9ead9f;
+    --v2-sage-dark: #3f5953;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v2-ink);
+    background: var(--v2-bg);
+  }
+  .v2-steps *, .v2-steps *::before, .v2-steps *::after { box-sizing: border-box; }
+  .v2-steps-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .v2-kicker {
+    display: block;
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--v2-sage-dark);
+  }
+  .v2-title {
+    margin: 0 0 40px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v2-timeline {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px;
+    text-align: center;
+  }
+  .v2-step-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    border: 1px solid rgba(63, 89, 83, 0.15);
+    background: #f4f6f4;
+    color: var(--v2-sage-dark);
+  }
+  .v2-step-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v2-step h3 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .v2-step p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--v2-muted);
+  }
+  @media (max-width: 900px) { .v2-timeline { grid-template-columns: repeat(3, 1fr); row-gap: 28px; } }
+  @media (max-width: 560px) { .v2-timeline { grid-template-columns: 1fr 1fr; } }
+</style>
+
+<section class="v2-steps" id="flow">
+  <div class="v2-steps-inner">
+    <span class="v2-kicker">02 · Как это работает</span>
+    <h2 class="v2-title">6 шагов к готовой модели</h2>
+    <div class="v2-timeline">
+      <article class="v2-step">
+        <div class="v2-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a5 5 0 0 0-3 9.1V14h6v-2.9A5 5 0 0 0 12 2z"/></svg>
+        </div>
+        <h3>Завести коллекцию</h3>
+        <p>Рамка сезона или проекта — понятно, с чего начать.</p>
+      </article>
+      <article class="v2-step">
+        <div class="v2-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+        <h3>Собрать идеи</h3>
+        <p>Фото, источник и предмет — в одном месте.</p>
+      </article>
+      <article class="v2-step">
+        <div class="v2-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+        </div>
+        <h3>Подготовить материалы</h3>
+        <p>Обработка фото, артикул и оценка.</p>
+      </article>
+      <article class="v2-step">
+        <div class="v2-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6"/><path d="M14 20c0-2.5 1.8-4.5 4-4.5"/></svg>
+        </div>
+        <h3>Согласовать модель</h3>
+        <p>Решение «берём / нет» и цвета модели.</p>
+      </article>
+      <article class="v2-step">
+        <div class="v2-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7.7 12 12.5l8.7-4.8"/><path d="M12 22V12.5"/></svg>
+        </div>
+        <h3>Довести модель</h3>
+        <p>Образец, идентификация, готовность.</p>
+      </article>
+      <article class="v2-step v2-step--istock">
+        <div class="v2-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 21V9l9-5 9 5v12"/><path d="M9 21V12h6v9"/><path d="M3 9h18"/><path d="M12 4v5"/></svg>
+        </div>
+        <h3>Передать в istock</h3>
+        <p>Заказы на фабрики и производство.</p>
+      </article>
+    </div>
+  </div>
+</section>

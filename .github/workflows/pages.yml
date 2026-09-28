@@ -35,6 +35,8 @@ jobs:
           npm ci
           npm run build:preview
           npm run build:map
+          npm run build:v2
+          npm run build:v3
 
       - name: Commit updated docs
         run: |

@@ -1,0 +1,131 @@
+<!-- v2 06-request.html -->
+<style>
+  .v2-offer {
+    --v2-sage-dark: #3f5953;
+    --v2-sage-deep: #344842;
+    --v2-muted: #c8d0cb;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px 32px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #fff;
+    background: var(--v2-sage-dark);
+  }
+  .v2-offer *, .v2-offer *::before, .v2-offer *::after { box-sizing: border-box; }
+  .v2-offer-grid {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .v2-kicker {
+    display: block;
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--v2-muted);
+  }
+  .v2-title {
+    margin: 0 0 16px;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v2-price {
+    margin: 0 0 8px;
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .v2-price span { font-size: 16px; font-weight: 400; color: var(--v2-muted); }
+  .v2-note { margin: 0; font-size: 14px; line-height: 1.55; color: var(--v2-muted); }
+  .v2-form {
+    padding: 28px;
+    border-radius: 20px;
+    background: #fff;
+    color: #2c3532;
+  }
+  .v2-form h3 { margin: 0 0 18px; font-size: 20px; font-weight: 800; }
+  .v2-form label { display: block; margin-bottom: 5px; font-size: 12px; font-weight: 600; color: #6b7670; }
+  .v2-form input,
+  .v2-form textarea {
+    width: 100%;
+    min-height: 44px;
+    margin-bottom: 14px;
+    padding: 11px 12px;
+    font: inherit;
+    color: #2c3532;
+    background: #f4f6f4;
+    border: 1px solid rgba(63, 89, 83, 0.12);
+    border-radius: 10px;
+  }
+  .v2-form textarea { min-height: 82px; resize: vertical; }
+  .v2-btn {
+    display: flex;
+    width: 100%;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 999px;
+    background: var(--v2-sage-dark);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .v2-form-note { margin: 10px 0 0; font-size: 11px; text-align: center; color: #6b7670; }
+  .v2-footer {
+    max-width: 1160px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.12);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--v2-muted);
+  }
+  .v2-footer a { color: #fff; text-decoration: none; opacity: .85; }
+  @media (max-width: 900px) { .v2-offer-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="v2-offer" id="request">
+  <div class="v2-offer-grid">
+    <div>
+      <span class="v2-kicker">06 · Тариф</span>
+      <h2 class="v2-title">Вся платформа Idea Desk</h2>
+      <div class="v2-price">20 000 ₽ <span>/ мес.</span></div>
+      <p class="v2-note">Idea Desk входит в платформу istock. Разберём ваши коллекции, роли и сценарий внедрения.</p>
+    </div>
+    <form class="v2-form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
+      <h3>Оставить заявку</h3>
+      <label for="v2-name">Имя</label>
+      <input id="v2-name" name="name" autocomplete="name" required>
+      <label for="v2-company">Компания</label>
+      <input id="v2-company" name="organization" autocomplete="organization" required>
+      <label for="v2-contact">Телефон или email</label>
+      <input id="v2-contact" name="contact" autocomplete="email" required>
+      <label for="v2-comment">Что хотите упорядочить?</label>
+      <textarea id="v2-comment" name="comment" placeholder="Например: ведём много коллекций, сложно отслеживать согласование моделей"></textarea>
+      <button class="v2-btn" type="submit">Оставить заявку</button>
+      <p class="v2-form-note">Свяжемся и покажем Idea Desk на примере, близком к вашему процессу.</p>
+    </form>
+  </div>
+  <footer class="v2-footer">
+    <span>Idea Desk · стол идей · платформа istock</span>
+    <nav aria-label="Подвал">
+      <a href="#flow">Как это работает</a>
+      ·
+      <a href="#systems">Две системы</a>
+      ·
+      <a href="/karta">Карта продукта</a>
+    </nav>
+  </footer>
+</section>

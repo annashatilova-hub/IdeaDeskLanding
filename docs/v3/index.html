@@ -1,0 +1,1173 @@
+<!DOCTYPE html><html lang="ru"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css"><style>body{margin:0;font-family:TildaSans,Arial,sans-serif}</style></head><body><style>
+  .v3-hero {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
+    --v3-line: #dfe4ea;
+    --v3-soft: #f5f7fa;
+    --v3-blue: #3669fd;
+    --v3-blue-dark: #2e5ee8;
+    --v3-blue-soft: #ebf0fe;
+    --v3-menu-offset: 72px;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v3-ink);
+    background: #fff;
+    scroll-margin-top: var(--v3-menu-offset);
+  }
+  .v3-hero *, .v3-hero *::before, .v3-hero *::after { box-sizing: border-box; }
+  .v3-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--v3-line);
+  }
+  .v3-nav-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .v3-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--v3-ink);
+    text-decoration: none;
+  }
+  .v3-brand-mark { width: 28px; height: 28px; flex: 0 0 28px; }
+  .v3-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 14px;
+  }
+  .v3-nav-links a { color: var(--v3-muted); text-decoration: none; }
+  .v3-nav-links a:hover { color: var(--v3-blue); }
+  .v3-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 7px;
+    background: var(--v3-blue);
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .v3-hero-body {
+    position: relative;
+    overflow: hidden;
+    padding: calc(var(--v3-menu-offset) + 24px) 20px 72px;
+  }
+  .v3-blob {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+  }
+  .v3-blob--1 {
+    width: 420px; height: 420px;
+    top: -80px; right: -60px;
+    background: radial-gradient(circle, rgba(54, 105, 253, 0.12), transparent 70%);
+  }
+  .v3-blob--2 {
+    width: 280px; height: 280px;
+    bottom: 40px; left: -40px;
+    background: radial-gradient(circle, rgba(235, 240, 254, 0.9), transparent 70%);
+  }
+  .v3-hero-grid {
+    position: relative;
+    z-index: 1;
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .v3-kicker {
+    display: inline-block;
+    margin: 0 0 16px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--v3-blue-dark);
+    background: var(--v3-blue-soft);
+    border-radius: 5px;
+  }
+  .v3-title {
+    margin: 0 0 18px;
+    font-size: clamp(36px, 4.8vw, 56px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .v3-lead {
+    margin: 0 0 28px;
+    max-width: 520px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--v3-muted);
+  }
+  .v3-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .v3-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 24px;
+    border-radius: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .v3-hero .v3-btn-primary {
+    background: var(--v3-blue) !important;
+    color: #fff !important;
+    -webkit-text-fill-color: #fff !important;
+  }
+  .v3-hero .v3-btn-ghost {
+    background: #fff !important;
+    color: #3669fd !important;
+    -webkit-text-fill-color: #3669fd !important;
+    border: 1px solid var(--v3-line) !important;
+  }
+  .v3-hero .v3-btn-ghost:hover {
+    background: var(--v3-blue-soft) !important;
+    color: #2e5ee8 !important;
+    -webkit-text-fill-color: #2e5ee8 !important;
+  }
+  .v3-shot {
+    position: relative;
+    padding: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(31, 43, 65, 0.12);
+  }
+  .v3-shot-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+  }
+  @media (max-width: 900px) {
+    .v3-hero { --v3-menu-offset: 64px; }
+    .v3-nav-links { display: none; }
+    .v3-hero-grid { grid-template-columns: 1fr; }
+    .v3-actions { display: grid; grid-template-columns: 1fr; }
+    .v3-btn { width: 100%; }
+  }
+</style>
+
+<section class="v3-hero" id="top">
+  <header class="v3-nav">
+    <div class="v3-nav-inner">
+      <a class="v3-brand" href="#top">
+        <svg class="v3-brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M0 12C0 8.27247 0 6.4087 0.608964 4.93853C1.42092 2.97831 2.97831 1.42092 4.93853 0.608964C6.4087 0 8.27247 0 12 0C15.7275 0 17.5913 0 19.0615 0.608964C21.0217 1.42092 22.5791 2.97831 23.391 4.93853C24 6.4087 24 8.27247 24 12C24 15.7275 24 17.5913 23.391 19.0615C22.5791 21.0217 21.0217 22.5791 19.0615 23.391C17.5913 24 15.7275 24 12 24C8.27247 24 6.4087 24 4.93853 23.391C2.97831 22.5791 1.42092 21.0217 0.608964 19.0615C0 17.5913 0 15.7275 0 12Z" fill="url(#v3-mark-nav)"/><path d="M17.2362 7.66642C16.481 6.14093 15.0213 5.01497 13.3292 4.6445C11.5572 4.25223 9.74168 4.67355 8.35461 5.79225C6.96028 6.90368 6.1687 8.56719 6.1687 10.3469C6.1687 12.2284 7.29433 14.197 8.99368 15.3375V15.9404C8.98641 16.1438 8.97915 16.4562 9.22607 16.7104C9.48024 16.9719 9.85787 17.001 10.1556 17.001H13.8811C14.2733 17.001 14.571 16.892 14.7743 16.6886C15.0503 16.4053 15.043 16.0421 15.0358 15.846V15.3375C17.2871 13.8192 18.7032 10.6157 17.2362 7.66642Z" fill="white"/><path d="M14.0546 19.501C14.0167 19.501 13.9725 19.492 13.9346 19.4739C12.6652 18.9604 11.3326 18.9604 10.0631 19.4739C9.82944 19.564 9.58313 19.3748 9.51997 19.0415C9.4505 18.7082 9.58944 18.3568 9.82312 18.2667C11.2505 17.6902 12.7536 17.6902 14.1809 18.2667C14.4146 18.3658 14.5536 18.7082 14.4841 19.0415C14.4209 19.3208 14.2441 19.501 14.0546 19.501Z" fill="white"/><defs><linearGradient id="v3-mark-nav" x1="-3.36" y1="-4.67" x2="10.6" y2="18.1" gradientUnits="userSpaceOnUse"><stop offset="0.14" stop-color="#7296FD"/><stop offset="1" stop-color="#3669FD"/></linearGradient></defs></svg>
+        Idea Desk
+      </a>
+      <nav class="v3-nav-links" aria-label="Навигация">
+        <a href="#steps">Преимущества</a>
+        <a href="#flow">Как это работает</a>
+        <a href="#result">Результат</a>
+        <a href="#request">Тарифы</a>
+      </nav>
+      <a class="v3-nav-cta" href="#request">Оставить заявку</a>
+    </div>
+  </header>
+  <div class="v3-hero-body">
+    <div class="v3-blob v3-blob--1" aria-hidden="true"></div>
+    <div class="v3-blob v3-blob--2" aria-hidden="true"></div>
+    <div class="v3-hero-grid">
+      <div>
+        <span class="v3-kicker">01 · Платформа для управления коллекциями</span>
+        <h1 class="v3-title">Idea Desk — от идеи до готовой модели</h1>
+        <p class="v3-lead">Инструмент для сбора идей в ассортимент и управления процессом разработки коллекции — от поиска и оценки до передачи в маркетплейсы и производство.</p>
+        <div class="v3-actions">
+          <a class="v3-btn v3-btn-primary" href="#request">Оставить заявку</a>
+          <a class="v3-btn v3-btn-ghost" href="#flow">Узнать подробнее</a>
+        </div>
+      </div>
+      <div class="v3-shot">
+        <img
+          class="v3-shot-img"
+          src="../assets/idea-desk-hero-dashboard.png"
+          alt="Интерфейс Idea Desk: коллекция, модели и согласование"
+          width="1280"
+          height="720"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .v3-steps {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
+    --v3-line: #dfe4ea;
+    --v3-blue: #3669fd;
+    --v3-blue-soft: #ebf0fe;
+    --v3-blue-arrow: #7a93f6;
+    --v3-blue-arrow-head: #5b7cf7;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v3-ink);
+    background: #fff;
+  }
+  .v3-steps *, .v3-steps *::before, .v3-steps *::after { box-sizing: border-box; }
+  .v3-steps-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .v3-kicker {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: var(--v3-blue-soft);
+    border-radius: 5px;
+  }
+  .v3-title {
+    margin: 0 0 48px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v3-timeline {
+    display: flex;
+    align-items: flex-start;
+    gap: 0;
+    text-align: left;
+  }
+  .v3-step {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .v3-step-head,
+  .v3-step p {
+    position: relative;
+    z-index: 1;
+  }
+  .v3-step-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+  .v3-step-head h3 {
+    margin: 0;
+    flex: 1;
+    min-width: 0;
+    font-size: clamp(13px, 1.1vw, 15px);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+  .v3-step-num {
+    flex: 0 0 36px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid var(--v3-blue);
+    background: #fff;
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--v3-blue);
+    letter-spacing: -0.02em;
+  }
+  .v3-step-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 34%;
+    max-width: 96px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 0 2px 8px 0;
+    border: none;
+    border-radius: 0;
+    background: none;
+    color: var(--v3-blue);
+    opacity: 0.07;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .v3-step-icon svg {
+    width: auto;
+    height: min(82%, 92px);
+    max-height: 100%;
+    transform: translateX(10%);
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v3-step p {
+    margin: 0;
+    font-size: clamp(12px, 0.95vw, 13px);
+    line-height: 1.45;
+    color: var(--v3-muted);
+  }
+  .v3-connector {
+    flex: 0 0 28px;
+    position: relative;
+    align-self: flex-start;
+    padding-top: 16px;
+  }
+  .v3-connector::before {
+    content: '';
+    display: block;
+    height: 2px;
+    margin-top: 17px;
+    background: var(--v3-line);
+  }
+  .v3-connector::after {
+    content: '';
+    position: absolute;
+    top: 27px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 7px solid var(--v3-blue-arrow);
+  }
+  .v3-step--istock .v3-step-num {
+    border-color: var(--v3-blue);
+    background: var(--v3-blue-soft);
+  }
+  .v3-step--istock .v3-step-icon {
+    opacity: 0.09;
+    padding-right: 12px;
+  }
+  .v3-step--istock .v3-step-icon svg {
+    transform: translateX(0);
+  }
+  .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon {
+    padding-right: 12px;
+  }
+  .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon svg {
+    transform: translateX(0);
+  }
+  .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon {
+    padding-right: 12px;
+  }
+  .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon svg {
+    transform: translateX(0);
+  }
+  .v3-step--istock h3 { color: var(--v3-blue); }
+  @media (max-width: 960px) {
+    .v3-steps { padding: 48px 16px; }
+    .v3-steps-inner { text-align: left; }
+    .v3-title {
+      margin-bottom: 28px;
+      font-size: clamp(24px, 6vw, 32px);
+      text-align: left;
+    }
+    .v3-timeline {
+      --v3-card-w: min(88%, 340px);
+      --v3-card-h: 120px;
+      --v3-card-mid: calc(var(--v3-card-h) / 2);
+      --v3-rail-x: 50%;
+      --v3-gap: 72px;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      position: relative;
+    }
+    .v3-step {
+      position: relative;
+      z-index: 2;
+      isolation: isolate;
+      display: flex;
+      flex-direction: column;
+      width: var(--v3-card-w);
+      height: var(--v3-card-h);
+      min-height: var(--v3-card-h);
+      padding: 12px 14px;
+      border-radius: 12px;
+      background: #f8faff;
+      border: 1px solid rgba(54, 105, 253, 0.12);
+      overflow: visible;
+    }
+    .v3-step-head {
+      flex: 0 0 auto;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+    .v3-step-head h3 {
+      font-size: 16px;
+    }
+    .v3-step-num {
+      width: 36px;
+      height: 36px;
+      flex-basis: 36px;
+      font-size: 11px;
+    }
+    .v3-step-icon {
+      width: 30%;
+      max-width: 88px;
+      padding: 0 0 6px;
+      opacity: 0.06;
+    }
+    .v3-step-icon svg {
+      height: min(88%, 96px);
+      transform: translateX(14%);
+    }
+    .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon {
+      padding-right: 14px;
+    }
+    .v3-timeline > .v3-step:nth-of-type(3) .v3-step-icon svg {
+      transform: translateX(0);
+    }
+    .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon {
+      padding-right: 14px;
+    }
+    .v3-timeline > .v3-step:nth-of-type(5) .v3-step-icon svg {
+      transform: translateX(0);
+    }
+    .v3-step--istock .v3-step-icon {
+      padding-right: 14px;
+    }
+    .v3-step--istock .v3-step-icon svg {
+      transform: translateX(0);
+    }
+    .v3-step p {
+      flex: 1;
+      margin: 0;
+      padding-left: 48px;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    .v3-step:nth-child(4n + 1) {
+      align-self: flex-start;
+      margin-right: auto;
+    }
+    .v3-step:nth-child(4n + 3) {
+      align-self: flex-end;
+      margin-left: auto;
+    }
+    /* стрелка ▼ — вход сверху в центр блока */
+    .v3-step:nth-child(2n + 1):not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, calc(-100% - 1px));
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 9px solid var(--v3-blue-arrow-head);
+      z-index: 4;
+      filter: drop-shadow(0 1px 0 rgba(54, 105, 253, 0.15));
+    }
+    .v3-connector {
+      flex: none;
+      width: 100%;
+      height: var(--v3-gap);
+      margin-top: calc(var(--v3-card-mid) * -1);
+      position: relative;
+      z-index: 1;
+      pointer-events: none;
+      background: none;
+    }
+    .v3-connector::before,
+    .v3-connector::after {
+      content: '';
+      position: absolute;
+      margin: 0;
+      border: 0;
+      display: block;
+      background: var(--v3-blue-arrow);
+    }
+    .v3-connector::before { height: 2.5px; }
+    .v3-connector::after { width: 2.5px; }
+    /* левый блок → правый: из середины правого бока, затем вниз к центру следующего */
+    .v3-connector--to-right::before {
+      left: calc(var(--v3-card-w) - 1px);
+      top: 0;
+      bottom: auto;
+      width: calc(100% - 1.5 * var(--v3-card-w));
+      height: 2.5px;
+      transform: translateY(-50%);
+    }
+    .v3-connector--to-right::after {
+      left: calc(100% - var(--v3-card-w) / 2 - 1px);
+      top: 0;
+      bottom: auto;
+      width: 2.5px;
+      height: calc(var(--v3-gap) - 10px);
+    }
+    /* правый блок → левый: из середины левого бока, затем вниз к центру следующего */
+    .v3-connector--to-left::before {
+      left: calc(var(--v3-card-w) / 2);
+      top: 0;
+      bottom: auto;
+      width: calc(100% - 1.5 * var(--v3-card-w));
+      height: 2.5px;
+      transform: translateY(-50%);
+    }
+    .v3-connector--to-left::after {
+      left: calc(var(--v3-card-w) / 2 - 1px);
+      top: 0;
+      bottom: auto;
+      width: 2.5px;
+      height: calc(var(--v3-gap) - 10px);
+    }
+  }
+</style>
+
+<section class="v3-steps" id="flow">
+  <div class="v3-steps-inner">
+    <span class="v3-kicker">02 · Как это работает</span>
+    <h2 class="v3-title">6 шагов к готовой модели</h2>
+    <div class="v3-timeline">
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">01</span>
+          <h3>Завести коллекцию</h3>
+        </div>
+        <p>Рамка сезона или проекта — понятно, с чего начать.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a5 5 0 0 0-3 9.1V14h6v-2.9A5 5 0 0 0 12 2z"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-right" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">02</span>
+          <h3>Собрать идеи</h3>
+        </div>
+        <p>Фото, источник и предмет — в одном месте.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6"/><path d="M20 20l-3.5-3.5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-left" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">03</span>
+          <h3>Подготовить материалы</h3>
+        </div>
+        <p>Обработка фото, артикул и оценка.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8"/><path d="M8 17h5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-right" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">04</span>
+          <h3>Согласовать модель</h3>
+        </div>
+        <p>Решение «берём / нет» и цвета модели.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6"/><path d="M14 20c0-2.5 1.8-4.5 4-4.5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-left" aria-hidden="true"></div>
+      <article class="v3-step">
+        <div class="v3-step-head">
+          <span class="v3-step-num">05</span>
+          <h3>Довести модель</h3>
+        </div>
+        <p>Образец, идентификация, готовность.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.3 7.7 12 12.5l8.7-4.8"/><path d="M12 22V12.5"/></svg>
+        </div>
+      </article>
+      <div class="v3-connector v3-connector--to-right" aria-hidden="true"></div>
+      <article class="v3-step v3-step--istock">
+        <div class="v3-step-head">
+          <span class="v3-step-num">06</span>
+          <h3>Передать в istock</h3>
+        </div>
+        <p>Заказы на фабрики и производство.</p>
+        <div class="v3-step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 21V9l9-5 9 5v12"/><path d="M9 21V12h6v9"/><path d="M3 9h18"/><path d="M12 4v5"/></svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+<style>
+  .v3-problems {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
+    --v3-blue: #3669fd;
+    --v3-blue-soft: #ebf0fe;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v3-ink);
+    background: #f5f7fa;
+  }
+  .v3-problems *, .v3-problems *::before, .v3-problems *::after { box-sizing: border-box; }
+  .v3-problems-inner { max-width: 1160px; margin: 0 auto; }
+  .v3-kicker {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: var(--v3-blue-soft);
+    border-radius: 5px;
+  }
+  .v3-title {
+    margin: 0 0 36px;
+    max-width: 720px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    align-items: start;
+  }
+  .v3-card {
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #dfe4ea;
+    box-shadow: 0 2px 12px rgba(31, 43, 65, 0.04);
+  }
+  .v3-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background: var(--v3-blue-soft);
+    color: var(--v3-blue);
+  }
+  .v3-card-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v3-card h3 { margin: 0 0 6px; font-size: 18px; font-weight: 700; line-height: 1.25; }
+  .v3-card p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--v3-muted); }
+  @media (max-width: 900px) {
+    .v3-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  }
+  @media (max-width: 560px) {
+    .v3-problems { padding: 48px 16px; }
+    .v3-title { margin-bottom: 24px; font-size: 26px; }
+    .v3-grid { grid-template-columns: 1fr; gap: 10px; }
+    .v3-card {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      column-gap: 14px;
+      row-gap: 4px;
+      padding: 14px 16px;
+    }
+    .v3-card-icon {
+      grid-row: 1 / span 2;
+      margin-bottom: 0;
+      align-self: start;
+    }
+    .v3-card h3 { font-size: 17px; }
+    .v3-card p { font-size: 14px; grid-column: 2; }
+  }
+</style>
+
+<section class="v3-problems" id="steps">
+  <div class="v3-problems-inner">
+    <span class="v3-kicker">03 · Знакомо?</span>
+    <h2 class="v3-title">Что мешает создавать коллекции быстро и эффективно?</h2>
+    <div class="v3-grid">
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        </div>
+        <h3>Непонятно, с чего начать</h3>
+        <p>Новый сезон — папка с фото и чат. Нет рамки «это коллекция, вот первый шаг».</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Всё размазано</h3>
+        <p>Идея в Excel, фото в мессенджере, решение на созвоне. История теряется между участниками.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h14"/></svg>
+        </div>
+        <h3>Нет этапов</h3>
+        <p>Не видно, что уже обработано, что оценено и что согласовано — команда работает вслепую.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3>Модель «почти готова»</h3>
+        <p>Неясно, можно ли уже отдавать в производство или ещё что-то не доделано.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 12h8"/><path d="M12 8v8"/><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/></svg>
+        </div>
+        <h3>Разрыв с производством</h3>
+        <p>Даже когда модель собрали, дальше снова ручной перенос в другую систему или таблицу.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .v3-systems {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
+    --v3-line: #dfe4ea;
+    --v3-blue: #3669fd;
+    --v3-blue-soft: #ebf0fe;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v3-ink);
+    background: #fff;
+  }
+  .v3-systems *, .v3-systems *::before, .v3-systems *::after { box-sizing: border-box; }
+  .v3-systems-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .v3-kicker {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: var(--v3-blue-soft);
+    border-radius: 5px;
+  }
+  .v3-title {
+    margin: 0 0 36px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v3-bridge {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: stretch;
+    text-align: left;
+  }
+  .v3-card {
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 20px;
+    background: #f5f7fa;
+    border: 1px solid var(--v3-line);
+    min-height: 340px;
+  }
+  .v3-card--istock { background: var(--v3-blue-soft); border-color: rgba(54, 105, 253, 0.15); }
+  .v3-card-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--v3-blue);
+  }
+  .v3-card-label svg {
+    width: 22px;
+    height: 22px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v3-card h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; font-weight: 800; }
+  .v3-list { margin: 0 0 auto; padding: 0; list-style: none; }
+  .v3-list li {
+    position: relative;
+    padding: 0 0 8px 18px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--v3-muted);
+  }
+  .v3-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--v3-blue);
+  }
+  .v3-illus {
+    margin-top: 24px;
+    height: 120px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid var(--v3-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--v3-blue);
+  }
+  .v3-illus svg {
+    width: 56px;
+    height: 56px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v3-card--istock .v3-illus { background: rgba(255,255,255,.7); }
+  .v3-arrow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--v3-blue);
+    text-align: center;
+    max-width: 120px;
+  }
+  .v3-arrow-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--v3-blue-soft);
+    font-size: 22px;
+    line-height: 1;
+  }
+  @media (max-width: 900px) {
+    .v3-bridge { grid-template-columns: 1fr; }
+    .v3-arrow { flex-direction: row; max-width: none; padding: 8px 0; }
+    .v3-card { min-height: auto; }
+  }
+</style>
+
+<section class="v3-systems" id="systems">
+  <div class="v3-systems-inner">
+    <span class="v3-kicker">04 · Две системы</span>
+    <h2 class="v3-title">Idea Desk и istock дополняют друг друга</h2>
+    <div class="v3-bridge">
+      <article class="v3-card">
+        <span class="v3-card-label">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a5 5 0 0 0-3 9.1V14h6v-2.9A5 5 0 0 0 12 2z"/></svg>
+          Idea Desk
+        </span>
+        <h3>Собрать коллекцию по этапам до модели</h3>
+        <ul class="v3-list">
+          <li>Сбор и оценка идей</li>
+          <li>Работа с материалами и фото</li>
+          <li>Согласование моделей</li>
+        </ul>
+        <div class="v3-illus" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="13" rx="2"/><path d="M8 20h8"/><path d="M12 17v3"/></svg>
+        </div>
+      </article>
+      <div class="v3-arrow" aria-hidden="true">
+        <span class="v3-arrow-icon">→</span>
+        <span>Готовая модель передаётся в istock</span>
+      </div>
+      <article class="v3-card v3-card--istock">
+        <span class="v3-card-label">Платформа istock</span>
+        <h3>Производство заказов по фабрикам</h3>
+        <ul class="v3-list">
+          <li>Размещение заказов на фабриках</li>
+          <li>Контроль производства</li>
+          <li>Поставки и статусы</li>
+        </ul>
+        <div class="v3-illus" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M3 21V9l9-5 9 5v12"/><path d="M9 21V12h6v9"/><path d="M3 9h18"/><path d="M12 4v5"/></svg>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .v3-result {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
+    --v3-line: #dfe4ea;
+    --v3-blue: #3669fd;
+    --v3-blue-soft: #ebf0fe;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v3-ink);
+    background: #f5f7fa;
+  }
+  .v3-result *, .v3-result *::before, .v3-result *::after { box-sizing: border-box; }
+  .v3-result-inner { max-width: 1160px; margin: 0 auto; text-align: center; }
+  .v3-kicker {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: var(--v3-blue-soft);
+    border-radius: 5px;
+  }
+  .v3-title {
+    margin: 0 0 36px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: left;
+  }
+  .v3-card {
+    padding: 28px;
+    border-radius: 14px;
+    background: #fff;
+    border: 1px solid var(--v3-line);
+    box-shadow: 0 4px 20px rgba(31, 43, 65, 0.04);
+  }
+  .v3-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 16px;
+    border-radius: 50%;
+    background: var(--v3-blue-soft);
+    color: var(--v3-blue);
+    border: 1px solid rgba(54, 105, 253, 0.12);
+  }
+  .v3-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v3-card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 700; }
+  .v3-card p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--v3-muted); }
+  @media (max-width: 900px) { .v3-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="v3-result" id="result">
+  <div class="v3-result-inner">
+    <span class="v3-kicker">05 · Результат</span>
+    <h2 class="v3-title">С Idea Desk вы получаете</h2>
+    <div class="v3-grid">
+      <article class="v3-card">
+        <div class="v3-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l3 2"/></svg>
+        </div>
+        <h3>Экономию времени и ресурсов</h3>
+        <p>Меньше ручной работы и потерь между этапами — команда не дублирует одно и то же в чатах и таблицах.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg>
+        </div>
+        <h3>Полный контроль над коллекцией</h3>
+        <p>Видно, сколько идей рассматривают, что согласовано и что уже готово к передаче дальше.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 18V6"/><path d="M4 18h16"/><path d="M8 15l3-4 3 2 4-6"/></svg>
+        </div>
+        <h3>Больше моделей к продаже</h3>
+        <p>Согласованная модель не «висит» — понятен следующий шаг и передача в istock.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<style>
+  .v3-offer {
+    --v3-blue: #3669fd;
+    --v3-blue-dark: #2e5ee8;
+    --v3-muted: #c8d8fe;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px 32px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: #fff;
+    background: var(--v3-blue);
+  }
+  .v3-offer *, .v3-offer *::before, .v3-offer *::after { box-sizing: border-box; }
+  .v3-offer-grid {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 40px;
+    align-items: start;
+  }
+  .v3-kicker {
+    display: block;
+    margin: 0 0 12px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--v3-muted);
+  }
+  .v3-title {
+    margin: 0 0 16px;
+    font-size: clamp(28px, 3.5vw, 40px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v3-price {
+    margin: 0 0 8px;
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+  .v3-price span { font-size: 16px; font-weight: 400; color: var(--v3-muted); }
+  .v3-note { margin: 0; font-size: 14px; line-height: 1.55; color: var(--v3-muted); }
+  .v3-form {
+    padding: 28px;
+    border-radius: 14px;
+    background: #fff;
+    color: #1c1f22;
+  }
+  .v3-form h3 { margin: 0 0 18px; font-size: 20px; font-weight: 800; }
+  .v3-form label { display: block; margin-bottom: 5px; font-size: 12px; font-weight: 600; color: #5f6870; }
+  .v3-form input,
+  .v3-form textarea {
+    width: 100%;
+    min-height: 44px;
+    margin-bottom: 14px;
+    padding: 11px 12px;
+    font: inherit;
+    color: #1c1f22;
+    background: #f5f7fa;
+    border: 1px solid #dfe4ea;
+    border-radius: 7px;
+  }
+  .v3-form textarea { min-height: 82px; resize: vertical; }
+  .v3-btn {
+    display: flex;
+    width: 100%;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 7px;
+    background: var(--v3-blue);
+    color: #fff;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .v3-form-note { margin: 10px 0 0; font-size: 11px; text-align: center; color: #5f6870; }
+  .v3-footer {
+    max-width: 1160px;
+    margin: 40px auto 0;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,.2);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    color: var(--v3-muted);
+  }
+  .v3-footer a { color: #fff; text-decoration: none; opacity: .85; }
+  @media (max-width: 900px) { .v3-offer-grid { grid-template-columns: 1fr; } }
+</style>
+
+<section class="v3-offer" id="request">
+  <div class="v3-offer-grid">
+    <div>
+      <span class="v3-kicker">06 · Тариф</span>
+      <h2 class="v3-title">Вся платформа Idea Desk</h2>
+      <div class="v3-price">20 000 ₽ <span>/ мес.</span></div>
+      <p class="v3-note">Idea Desk входит в платформу istock. Разберём ваши коллекции, роли и сценарий внедрения.</p>
+    </div>
+    <form class="v3-form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
+      <h3>Оставить заявку</h3>
+      <label for="v3-name">Имя</label>
+      <input id="v3-name" name="name" autocomplete="name" required>
+      <label for="v3-company">Компания</label>
+      <input id="v3-company" name="organization" autocomplete="organization" required>
+      <label for="v3-contact">Телефон или email</label>
+      <input id="v3-contact" name="contact" autocomplete="email" required>
+      <label for="v3-comment">Что хотите упорядочить?</label>
+      <textarea id="v3-comment" name="comment" placeholder="Например: ведём много коллекций, сложно отслеживать согласование моделей"></textarea>
+      <button class="v3-btn" type="submit">Оставить заявку</button>
+      <p class="v3-form-note">Свяжемся и покажем Idea Desk на примере, близком к вашему процессу.</p>
+    </form>
+  </div>
+  <footer class="v3-footer">
+    <span>Idea Desk · стол идей · платформа istock</span>
+    <nav aria-label="Подвал">
+      <a href="#flow">Как это работает</a>
+      ·
+      <a href="#systems">Две системы</a>
+      ·
+      <a href="../map/">Карта продукта</a>
+    </nav>
+  </footer>
+</section></body></html>

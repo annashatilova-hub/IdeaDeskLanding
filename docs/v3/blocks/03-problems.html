@@ -1,0 +1,136 @@
+<style>
+  .v3-problems {
+    --v3-ink: #1c1f22;
+    --v3-muted: #5f6870;
+    --v3-blue: #3669fd;
+    --v3-blue-soft: #ebf0fe;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 72px 20px;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v3-ink);
+    background: #f5f7fa;
+  }
+  .v3-problems *, .v3-problems *::before, .v3-problems *::after { box-sizing: border-box; }
+  .v3-problems-inner { max-width: 1160px; margin: 0 auto; }
+  .v3-kicker {
+    display: inline-block;
+    margin: 0 0 12px;
+    padding: 6px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #2e5ee8;
+    background: var(--v3-blue-soft);
+    border-radius: 5px;
+  }
+  .v3-title {
+    margin: 0 0 36px;
+    max-width: 720px;
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.1;
+    font-weight: 800;
+  }
+  .v3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    align-items: start;
+  }
+  .v3-card {
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid #dfe4ea;
+    box-shadow: 0 2px 12px rgba(31, 43, 65, 0.04);
+  }
+  .v3-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    background: var(--v3-blue-soft);
+    color: var(--v3-blue);
+  }
+  .v3-card-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    fill: none;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .v3-card h3 { margin: 0 0 6px; font-size: 18px; font-weight: 700; line-height: 1.25; }
+  .v3-card p { margin: 0; font-size: 15px; line-height: 1.5; color: var(--v3-muted); }
+  @media (max-width: 900px) {
+    .v3-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+  }
+  @media (max-width: 560px) {
+    .v3-problems { padding: 48px 16px; }
+    .v3-title { margin-bottom: 24px; font-size: 26px; }
+    .v3-grid { grid-template-columns: 1fr; gap: 10px; }
+    .v3-card {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      column-gap: 14px;
+      row-gap: 4px;
+      padding: 14px 16px;
+    }
+    .v3-card-icon {
+      grid-row: 1 / span 2;
+      margin-bottom: 0;
+      align-self: start;
+    }
+    .v3-card h3 { font-size: 17px; }
+    .v3-card p { font-size: 14px; grid-column: 2; }
+  }
+</style>
+
+<section class="v3-problems" id="steps">
+  <div class="v3-problems-inner">
+    <span class="v3-kicker">03 · Знакомо?</span>
+    <h2 class="v3-title">Что мешает создавать коллекции быстро и эффективно?</h2>
+    <div class="v3-grid">
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        </div>
+        <h3>Непонятно, с чего начать</h3>
+        <p>Новый сезон — папка с фото и чат. Нет рамки «это коллекция, вот первый шаг».</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+        </div>
+        <h3>Всё размазано</h3>
+        <p>Идея в Excel, фото в мессенджере, решение на созвоне. История теряется между участниками.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M4 6h16"/><path d="M4 12h10"/><path d="M4 18h14"/></svg>
+        </div>
+        <h3>Нет этапов</h3>
+        <p>Не видно, что уже обработано, что оценено и что согласовано — команда работает вслепую.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2v4"/><path d="M12 18v4"/><path d="M4.93 4.93l2.83 2.83"/><path d="M16.24 16.24l2.83 2.83"/><path d="M2 12h4"/><path d="M18 12h4"/><circle cx="12" cy="12" r="4"/></svg>
+        </div>
+        <h3>Модель «почти готова»</h3>
+        <p>Неясно, можно ли уже отдавать в производство или ещё что-то не доделано.</p>
+      </article>
+      <article class="v3-card">
+        <div class="v3-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M8 12h8"/><path d="M12 8v8"/><path d="M3 12a9 9 0 1 0 18 0 9 9 0 0 0-18 0z"/></svg>
+        </div>
+        <h3>Разрыв с производством</h3>
+        <p>Даже когда модель собрали, дальше снова ручной перенос в другую систему или таблицу.</p>
+      </article>
+    </div>
+  </div>
+</section>

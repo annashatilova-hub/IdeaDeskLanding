@@ -5,6 +5,8 @@
     "vendor": "node scripts/vendor-sync.mjs",
     "build:preview": "node scripts/build-preview.mjs",
     "build:map": "node scripts/build-map-preview.mjs",
+    "build:v2": "node scripts/build-v2-preview.mjs",
+    "build:v3": "node scripts/build-v3-preview.mjs",
     "postinstall": "npm run vendor"
   },
   "dependencies": {

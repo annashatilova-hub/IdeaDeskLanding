@@ -1,0 +1,228 @@
+<!-- v2 01-hero.html -->
+<style>
+  .v2-hero {
+    --v2-bg: #f4f6f4;
+    --v2-ink: #2c3532;
+    --v2-muted: #6b7670;
+    --v2-sage: #9ead9f;
+    --v2-sage-dark: #3f5953;
+    --v2-beige: #e8e4dc;
+    --v2-menu-offset: 72px;
+    box-sizing: border-box;
+    width: 100%;
+    font-family: 'TildaSans', Arial, sans-serif;
+    color: var(--v2-ink);
+    background: var(--v2-bg);
+    scroll-margin-top: var(--v2-menu-offset);
+  }
+  .v2-hero *, .v2-hero *::before, .v2-hero *::after { box-sizing: border-box; }
+  .v2-nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 14px 20px;
+    background: rgba(244, 246, 244, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(63, 89, 83, 0.08);
+  }
+  .v2-nav-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .v2-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--v2-ink);
+    text-decoration: none;
+  }
+  .v2-brand-mark { width: 28px; height: 28px; flex: 0 0 28px; }
+  .v2-nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    font-size: 14px;
+  }
+  .v2-nav-links a { color: var(--v2-muted); text-decoration: none; }
+  .v2-nav-links a:hover { color: var(--v2-sage-dark); }
+  .v2-nav-cta {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: var(--v2-sage-dark);
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .v2-hero-body {
+    position: relative;
+    overflow: hidden;
+    padding: calc(var(--v2-menu-offset) + 24px) 20px 72px;
+  }
+  .v2-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(0);
+    pointer-events: none;
+  }
+  .v2-blob--1 {
+    width: 420px; height: 420px;
+    top: -80px; right: -60px;
+    background: radial-gradient(circle, rgba(158, 173, 159, 0.35), transparent 70%);
+  }
+  .v2-blob--2 {
+    width: 280px; height: 280px;
+    bottom: 40px; left: -40px;
+    background: radial-gradient(circle, rgba(232, 228, 220, 0.9), transparent 70%);
+  }
+  .v2-hero-grid {
+    position: relative;
+    z-index: 1;
+    max-width: 1160px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.05fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .v2-kicker {
+    display: block;
+    margin: 0 0 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--v2-sage-dark);
+  }
+  .v2-title {
+    margin: 0 0 18px;
+    font-size: clamp(36px, 4.8vw, 56px);
+    line-height: 1.05;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .v2-lead {
+    margin: 0 0 28px;
+    max-width: 520px;
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--v2-muted);
+  }
+  .v2-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .v2-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 46px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .v2-btn-primary { background: var(--v2-sage-dark); color: #fff !important; }
+  .v2-btn-ghost { background: #fff; color: var(--v2-sage-dark) !important; border-color: rgba(63, 89, 83, 0.18); }
+  .v2-shot {
+    position: relative;
+    min-height: 380px;
+    padding: 24px 24px 0;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #eef2ee, #f8f6f1);
+    box-shadow: 0 24px 60px rgba(44, 53, 50, 0.08);
+  }
+  .v2-window {
+    margin-top: 12px;
+    background: #fff;
+    border: 1px solid rgba(63, 89, 83, 0.12);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(44, 53, 50, 0.1);
+  }
+  .v2-window-bar { height: 34px; background: #eef1ee; }
+  .v2-window-body { display: grid; grid-template-columns: 72px 1fr; min-height: 260px; }
+  .v2-sidebar {
+    background: var(--v2-sage-dark);
+    padding: 14px 10px;
+  }
+  .v2-sidebar i { display: block; height: 7px; margin-bottom: 10px; background: rgba(255,255,255,.2); border-radius: 3px; }
+  .v2-sidebar i:nth-child(2) { width: 70%; background: var(--v2-sage); }
+  .v2-content { padding: 18px; }
+  .v2-kpis { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 14px; }
+  .v2-kpi { padding: 10px; background: var(--v2-bg); border-radius: 10px; }
+  .v2-kpi b { display: block; font-size: 18px; color: var(--v2-sage-dark); }
+  .v2-kpi small { color: var(--v2-muted); font-size: 11px; }
+  .v2-bars { padding: 12px; border: 1px solid rgba(63,89,83,.1); border-radius: 10px; font-size: 11px; color: var(--v2-muted); }
+  .v2-bar-row { display: grid; grid-template-columns: 1fr 2fr 28px; gap: 8px; align-items: center; margin-bottom: 8px; }
+  .v2-bar { height: 6px; background: #e3e8e4; border-radius: 4px; overflow: hidden; }
+  .v2-bar span { display: block; height: 100%; background: var(--v2-sage-dark); }
+  @media (max-width: 900px) {
+    .v2-hero { --v2-menu-offset: 64px; }
+    .v2-nav-links { display: none; }
+    .v2-hero-grid { grid-template-columns: 1fr; }
+    .v2-actions { display: grid; grid-template-columns: 1fr; }
+    .v2-btn { width: 100%; }
+  }
+</style>
+
+<section class="v2-hero" id="top">
+  <header class="v2-nav">
+    <div class="v2-nav-inner">
+      <a class="v2-brand" href="#top">
+        <svg class="v2-brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M0 12C0 8.27247 0 6.4087 0.608964 4.93853C1.42092 2.97831 2.97831 1.42092 4.93853 0.608964C6.4087 0 8.27247 0 12 0C15.7275 0 17.5913 0 19.0615 0.608964C21.0217 1.42092 22.5791 2.97831 23.391 4.93853C24 6.4087 24 8.27247 24 12C24 15.7275 24 17.5913 23.391 19.0615C22.5791 21.0217 21.0217 22.5791 19.0615 23.391C17.5913 24 15.7275 24 12 24C8.27247 24 6.4087 24 4.93853 23.391C2.97831 22.5791 1.42092 21.0217 0.608964 19.0615C0 17.5913 0 15.7275 0 12Z" fill="url(#v2-mark-nav)"/><path d="M17.2362 7.66642C16.481 6.14093 15.0213 5.01497 13.3292 4.6445C11.5572 4.25223 9.74168 4.67355 8.35461 5.79225C6.96028 6.90368 6.1687 8.56719 6.1687 10.3469C6.1687 12.2284 7.29433 14.197 8.99368 15.3375V15.9404C8.98641 16.1438 8.97915 16.4562 9.22607 16.7104C9.48024 16.9719 9.85787 17.001 10.1556 17.001H13.8811C14.2733 17.001 14.571 16.892 14.7743 16.6886C15.0503 16.4053 15.043 16.0421 15.0358 15.846V15.3375C17.2871 13.8192 18.7032 10.6157 17.2362 7.66642Z" fill="white"/><path d="M14.0546 19.501C14.0167 19.501 13.9725 19.492 13.9346 19.4739C12.6652 18.9604 11.3326 18.9604 10.0631 19.4739C9.82944 19.564 9.58313 19.3748 9.51997 19.0415C9.4505 18.7082 9.58944 18.3568 9.82312 18.2667C11.2505 17.6902 12.7536 17.6902 14.1809 18.2667C14.4146 18.3658 14.5536 18.7082 14.4841 19.0415C14.4209 19.3208 14.2441 19.501 14.0546 19.501Z" fill="white"/><defs><linearGradient id="v2-mark-nav" x1="-3.36" y1="-4.67" x2="10.6" y2="18.1" gradientUnits="userSpaceOnUse"><stop offset="0.14" stop-color="#7296FD"/><stop offset="1" stop-color="#3669FD"/></linearGradient></defs></svg>
+        Idea Desk
+      </a>
+      <nav class="v2-nav-links" aria-label="Навигация">
+        <a href="#steps">Преимущества</a>
+        <a href="#flow">Как это работает</a>
+        <a href="#result">Кейсы</a>
+        <a href="#request">Тарифы</a>
+      </nav>
+      <a class="v2-nav-cta" href="#request">Оставить заявку</a>
+    </div>
+  </header>
+  <div class="v2-hero-body">
+    <div class="v2-blob v2-blob--1" aria-hidden="true"></div>
+    <div class="v2-blob v2-blob--2" aria-hidden="true"></div>
+    <div class="v2-hero-grid">
+      <div>
+        <span class="v2-kicker">01 · Платформа для управления коллекциями</span>
+        <h1 class="v2-title">Idea Desk — от идеи до готовой модели</h1>
+        <p class="v2-lead">Инструмент для сбора идей в ассортимент и управления процессом разработки коллекции — от поиска и оценки до передачи в маркетплейсы и производство.</p>
+        <div class="v2-actions">
+          <a class="v2-btn v2-btn-primary" href="#request">Оставить заявку</a>
+          <a class="v2-btn v2-btn-ghost" href="#flow">Узнать подробнее</a>
+        </div>
+      </div>
+      <div class="v2-shot" aria-hidden="true">
+        <div class="v2-window">
+          <div class="v2-window-bar"></div>
+          <div class="v2-window-body">
+            <aside class="v2-sidebar"><i></i><i></i><i></i><i></i></aside>
+            <div class="v2-content">
+              <div class="v2-kpis">
+                <div class="v2-kpi"><b>12</b><small>моделей</small></div>
+                <div class="v2-kpi"><b>8</b><small>согласовано</small></div>
+                <div class="v2-kpi"><b>34</b><small>идеи</small></div>
+              </div>
+              <div class="v2-bars">
+                <div class="v2-bar-row"><span>Согласование</span><div class="v2-bar"><span style="width:74%"></span></div><b>8/12</b></div>
+                <div class="v2-bar-row"><span>Идентификация</span><div class="v2-bar"><span style="width:54%"></span></div><b>6/12</b></div>
+                <div class="v2-bar-row"><span>Образцы</span><div class="v2-bar"><span style="width:36%"></span></div><b>4/12</b></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

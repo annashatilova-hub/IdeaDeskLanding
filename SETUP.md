@@ -50,6 +50,7 @@ start docs\index.html
 
 | Файл | Назначение |
 |---|---|
+| [docs/designs.md](./docs/designs.md) | Сводный список всех дизайнов и ссылок на превью |
 | [docs/tz-landing.md](./docs/tz-landing.md) | Постановка: структура, тексты, критерии приёмки |
 | [docs/landing-prototype/](./docs/landing-prototype/) | 4 HTML-прототипа (v1–v4) |
 | `docs/landing-prototype/index-omnidata-inspired.html` | v4 — ориентир для текущих блоков `tilda-landing/` |
@@ -57,7 +58,29 @@ start docs\index.html
 
 Живая страница: [lite-istock.tilda.ws/idea-desk](https://lite-istock.tilda.ws/idea-desk)
 
-## 6. Карта продукта (`/karta`)
+## 6. Лендинг v2 (sage-green)
+
+Альтернативная версия по макету: sage-палитра, шрифт TildaSans как в v1, 6 блоков.
+
+| Файл | Содержание |
+|---|---|
+| `tilda-landing/v2/*.html` | 6 блоков T123 |
+| `docs/v2/` | Превью (после `npm run build:v2`) |
+
+**Сборка:** `npm run build:v2` → `docs/v2/index.html`
+
+## 7. Лендинг v3 (синий timeline)
+
+Версия по новому макету: синий `#3669FD`, timeline 01–06 со стрелками, 6 блоков.
+
+| Файл | Содержание |
+|---|---|
+| `tilda-landing/v3/*.html` | 6 блоков T123 |
+| `docs/v3/` | Превью (после `npm run build:v3`) |
+
+**Сборка:** `npm run build:v3` → `docs/v3/index.html`
+
+## 8. Карта продукта (`/karta`)
 
 Отдельная страница Tilda — схема процесса, роли, путь одной идеи.
 
@@ -72,7 +95,7 @@ start docs\index.html
 **URL:** https://lite-istock.tilda.ws/karta  
 **Ссылка с лендинга:** пункт меню «Как устроено» → `/karta`
 
-## 7. Cursor
+## 9. Cursor
 
 Открыть папку `IdeaDeskLanding` как отдельный проект → работать с агентом над `tilda-landing/`.
 
