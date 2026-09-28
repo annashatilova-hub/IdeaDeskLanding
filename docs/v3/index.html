@@ -391,7 +391,7 @@
       gap: 0;
       width: 100%;
       max-width: 720px;
-      margin: 0;
+      margin: 0 auto;
       position: relative;
     }
     .v3-step {
@@ -614,8 +614,6 @@
   </div>
 </section>
 
-
-
 <style>
   .v3-problems {
     --v3-ink: #1c1f22;
@@ -656,7 +654,10 @@
     gap: 14px;
     align-items: start;
   }
-  .v3-card {
+  .v3-problems .v3-card {
+    display: block;
+    height: auto;
+    min-height: 0;
     padding: 18px 20px;
     border-radius: 12px;
     background: #fff;
@@ -692,7 +693,7 @@
     .v3-problems { padding: 48px 16px; }
     .v3-title { margin-bottom: 24px; font-size: 26px; }
     .v3-grid { grid-template-columns: 1fr; gap: 10px; }
-    .v3-card {
+    .v3-problems .v3-card {
       display: grid;
       grid-template-columns: 36px 1fr;
       column-gap: 14px;
@@ -794,7 +795,7 @@
     align-items: stretch;
     text-align: left;
   }
-  .v3-card {
+  .v3-systems .v3-card {
     display: flex;
     flex-direction: column;
     padding: 32px;
@@ -803,7 +804,7 @@
     border: 1px solid var(--v3-line);
     min-height: 340px;
   }
-  .v3-card--istock { background: var(--v3-blue-soft); border-color: rgba(54, 105, 253, 0.15); }
+  .v3-systems .v3-card--istock { background: var(--v3-blue-soft); border-color: rgba(54, 105, 253, 0.15); }
   .v3-card-label {
     display: inline-flex;
     align-items: center;
@@ -824,7 +825,7 @@
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-  .v3-card h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; font-weight: 800; }
+  .v3-systems .v3-card h3 { margin: 0 0 12px; font-size: 22px; line-height: 1.2; font-weight: 800; }
   .v3-list { margin: 0 0 auto; padding: 0; list-style: none; }
   .v3-list li {
     position: relative;
@@ -863,7 +864,7 @@
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-  .v3-card--istock .v3-illus { background: rgba(255,255,255,.7); }
+  .v3-systems .v3-card--istock .v3-illus { background: rgba(255,255,255,.7); }
   .v3-arrow {
     display: flex;
     flex-direction: column;
@@ -891,7 +892,7 @@
   @media (max-width: 900px) {
     .v3-bridge { grid-template-columns: 1fr; }
     .v3-arrow { flex-direction: row; max-width: none; padding: 8px 0; }
-    .v3-card { min-height: auto; }
+    .v3-systems .v3-card { min-height: auto; }
   }
 </style>
 
