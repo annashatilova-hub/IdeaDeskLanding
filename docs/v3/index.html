@@ -454,16 +454,20 @@
       height: 44px;
       width: auto;
       justify-self: stretch;
-      background: linear-gradient(var(--v3-blue-arrow), var(--v3-blue-arrow)) calc((100% - 96px) / 6) 2px / 2px calc(100% - 10px) no-repeat;
+      overflow: visible;
+      background: linear-gradient(var(--v3-blue-arrow), var(--v3-blue-arrow)) calc((100% - 96px) / 6) 0 / 2px calc(100% - 8px) no-repeat;
     }
     .v3-timeline > .v3-connector:nth-child(6)::before {
       position: absolute;
-      top: 2px;
+      top: -12px;
       left: calc((100% - 96px) / 6);
       right: calc((100% - 96px) / 6);
       width: auto;
-      height: 2px;
+      height: 14px;
       margin: 0;
+      background:
+        linear-gradient(var(--v3-blue-arrow), var(--v3-blue-arrow)) right 0 top 0 / 2px 14px no-repeat,
+        linear-gradient(var(--v3-blue-arrow), var(--v3-blue-arrow)) left 0 bottom 0 / 100% 2px no-repeat;
     }
     .v3-timeline > .v3-connector:nth-child(6)::after {
       top: auto;
