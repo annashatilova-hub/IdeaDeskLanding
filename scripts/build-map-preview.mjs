@@ -28,6 +28,10 @@ const blocks = [
 ];
 
 const body = blocks.map((name) => readFileSync(join(base, name), 'utf-8').trim()).join('\n\n');
+const previewBody = body.replace(
+  'class="idesk-map-link idesk-map-link-light" href="/idea-desk"',
+  'class="idesk-map-link idesk-map-link-light" href="../"',
+);
 
 const html = `<!DOCTYPE html>
 <html lang="ru">
@@ -51,7 +55,7 @@ const html = `<!DOCTYPE html>
 </head>
 <body>
 <div class="tg-preview-bar">Карта Idea Desk · сборка ${buildDate} (${buildId}) · <a href="../">лендинг</a> · <a href="./blocks/">блоки T123</a></div>
-${body}
+${previewBody}
 </body>
 </html>
 `;
