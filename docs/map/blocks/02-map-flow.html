@@ -1,4 +1,4 @@
-<!-- Idea Desk map T123 · 02-map-flow.html · build d39c2f3 · 2026-09-28 -->
+<!-- Idea Desk map T123 · 02-map-flow.html · build e57bbcb · 2026-09-29 -->
 <style>
   .idesk-map-flow {
     box-sizing: border-box;
@@ -13,7 +13,7 @@
   .idesk-map-flow .idesk-eyebrow {
     display: block;
     width: fit-content;
-    margin: 0 auto 14px;
+    margin: 0 0 14px;
     padding: 6px 10px;
     font-size: 12px;
     font-weight: 700;
@@ -25,15 +25,15 @@
   }
   .idesk-map-flow-title {
     margin: 0 0 10px;
-    text-align: center;
+    text-align: left;
     font-size: clamp(24px, 3.2vw, 36px);
     line-height: 1.15;
     font-weight: 800;
   }
   .idesk-map-flow-lead {
-    margin: 0 auto 36px;
+    margin: 0 0 36px;
     max-width: 680px;
-    text-align: center;
+    text-align: left;
     font-size: 16px;
     line-height: 1.55;
     color: #5f6870;
@@ -46,9 +46,9 @@
   }
   .idesk-map-zone--idesk { background: #fff; }
   .idesk-map-zone--istock {
-    background: #1c1f22;
-    color: #fff;
-    border-color: #1c1f22;
+    background: #eef3ff;
+    color: #1c1f22;
+    border-color: rgba(54, 105, 253, 0.15);
   }
   .idesk-map-zone-label {
     display: block;
@@ -59,7 +59,7 @@
     text-transform: uppercase;
   }
   .idesk-map-zone--idesk .idesk-map-zone-label { color: #3669fd; }
-  .idesk-map-zone--istock .idesk-map-zone-label { color: #8da8ff; }
+  .idesk-map-zone--istock .idesk-map-zone-label { color: #3669fd; }
   .idesk-map-nodes {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -71,8 +71,8 @@
     min-height: 88px;
     padding: 14px 12px;
     border-radius: 10px;
-    background: #f5f7fa;
-    border: 1px solid #dfe4ea;
+    background: #f8faff;
+    border: 1px solid rgba(54, 105, 253, 0.12);
     font-size: 13px;
     line-height: 1.35;
   }
@@ -102,13 +102,13 @@
     max-width: 360px;
     padding: 20px;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #fff;
+    border: 1px solid rgba(54, 105, 253, 0.12);
   }
-  .idesk-map-istock-node b { display: block; margin-bottom: 6px; font-size: 16px; }
-  .idesk-map-istock-node p { margin: 0; font-size: 13px; line-height: 1.5; color: #cbd0d5; }
+  .idesk-map-istock-node b { display: block; margin-bottom: 6px; font-size: 16px; color: #3669fd; }
+  .idesk-map-istock-node p { margin: 0; font-size: 13px; line-height: 1.5; color: #5f6870; }
   @media (max-width: 900px) {
-    .idesk-map-nodes { grid-template-columns: 1fr 1fr; }
+    .idesk-map-nodes { grid-template-columns: 1fr; }
   }
   @media (max-width: 560px) {
     .idesk-map-nodes { grid-template-columns: 1fr; }
@@ -119,7 +119,7 @@
   <div class="idesk-map-flow-inner">
     <span class="idesk-eyebrow">Общая схема</span>
     <h2 class="idesk-map-flow-title">От коллекции до производства</h2>
-    <p class="idesk-map-flow-lead">Шесть шагов в Idea Desk — затем передача готовой модели в istock. Две зоны, один непрерывный процесс.</p>
+    <p class="idesk-map-flow-lead">Шесть шагов в Idea Desk — затем передача готовой модели в istock.info. Две зоны, один непрерывный процесс.</p>
 
     <div class="idesk-map-zones">
       <div class="idesk-map-zone idesk-map-zone--idesk">
@@ -147,7 +147,7 @@
           </div>
           <div class="idesk-map-node idesk-map-node--ready">
             <b>6. Готова</b>
-            <span>К передаче в istock</span>
+            <span>К передаче в istock.info</span>
           </div>
         </div>
       </div>
@@ -159,7 +159,7 @@
       </div>
 
       <div class="idesk-map-zone idesk-map-zone--istock">
-        <span class="idesk-map-zone-label">Платформа istock</span>
+        <span class="idesk-map-zone-label">istock.info</span>
         <div class="idesk-map-istock-node">
           <b>7. Производство</b>
           <p>Заказы на фабрики, контроль производства и поставки — после того как модель подготовлена в Idea Desk.</p>
