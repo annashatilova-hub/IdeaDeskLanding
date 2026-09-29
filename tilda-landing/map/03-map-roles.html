@@ -2,116 +2,170 @@
   .idesk-map-roles {
     box-sizing: border-box;
     width: 100%;
-    padding: 56px 20px;
+    padding: 76px 20px;
     font-family: 'TildaSans', Arial, sans-serif;
     color: #1c1f22;
-    background: #f3f6fb;
+    background: linear-gradient(180deg, #fff 0%, #f7f9ff 100%);
+    border-top: 1px solid #edf1f7;
+    border-bottom: 1px solid #edf1f7;
   }
   .idesk-map-roles *, .idesk-map-roles *::before, .idesk-map-roles *::after { box-sizing: border-box; }
   .idesk-map-roles-inner { max-width: 1160px; margin: 0 auto; }
   .idesk-map-roles .idesk-eyebrow {
     display: block;
     width: fit-content;
-    margin: 0 0 14px;
-    padding: 6px 10px;
-    font-size: 12px;
+    margin: 0 0 8px;
+    padding: 0;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 0.04em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: #2e5ee8;
-    background: #ebf0fe;
-    border-radius: 5px;
+    color: #3669fd;
   }
+  .idesk-map-roles-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 34px; }
   .idesk-map-roles-title {
-    margin: 0 0 12px;
-    font-size: clamp(24px, 3.2vw, 36px);
+    margin: 0;
+    font-size: clamp(28px, 3.4vw, 40px);
     line-height: 1.15;
     font-weight: 800;
-    max-width: 640px;
+    max-width: 680px;
+    letter-spacing: -0.02em;
   }
   .idesk-map-roles-lead {
-    margin: 0 0 28px;
-    font-size: 16px;
-    line-height: 1.55;
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
     color: #5f6870;
-    max-width: 640px;
+    max-width: 390px;
   }
   .idesk-map-roles-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 16px;
   }
   .idesk-map-role {
-    padding: 22px;
-    border: none;
-    border-radius: 16px;
-    background: #fff;
-    box-shadow: 0 8px 24px rgba(31, 43, 65, 0.04);
-  }
-  .idesk-map-role-icon {
+    --role-color: #3669fd;
+    --role-soft: #ebf0fe;
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    margin-bottom: 14px;
-    border-radius: 50%;
-    background: #ebf0fe;
-    color: #3669fd;
-    font-size: 18px;
+    flex-direction: column;
+    min-height: 220px;
+    padding: 20px;
+    border: 1px solid #e3e8f0;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 12px 34px rgba(31, 43, 65, 0.055);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .idesk-map-role:hover { transform: translateY(-4px); border-color: #cfd8e6; box-shadow: 0 18px 42px rgba(31, 43, 65, 0.1); }
+  .idesk-map-role--violet { --role-color: #7c5ce7; --role-soft: #f0edff; }
+  .idesk-map-role--cyan { --role-color: #168baa; --role-soft: #e8f7fb; }
+  .idesk-map-role--green { --role-color: #248b64; --role-soft: #e8f6f0; }
+  .idesk-map-role--amber { --role-color: #b66a1c; --role-soft: #fff3e5; }
+  .idesk-map-role-head { display: grid; grid-template-columns: 44px 1fr; gap: 12px; align-items: center; }
+  .idesk-map-role-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: var(--role-soft);
+    color: var(--role-color);
+    font-size: 16px;
     font-weight: 800;
   }
-  .idesk-map-role h3 { margin: 0 0 8px; font-size: 16px; }
-  .idesk-map-role p { margin: 0; font-size: 13px; line-height: 1.5; color: #5f6870; }
-  @media (max-width: 900px) { .idesk-map-roles-grid { grid-template-columns: 1fr; gap: 14px; } }
-  @media (max-width: 560px) { .idesk-map-roles-grid { grid-template-columns: 1fr; } }
+  .idesk-map-role-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .idesk-map-role h3 { margin: 0; font-size: 15px; line-height: 1.25; letter-spacing: -0.01em; }
+  .idesk-map-role p { margin: 16px 0 18px; font-size: 14px; line-height: 1.5; color: #5f6870; }
+  .idesk-map-role-scope {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    margin-top: auto;
+    color: #68717b;
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .idesk-map-role-scope::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--role-color);
+    box-shadow: 0 0 0 4px var(--role-soft);
+  }
+  @media (max-width: 900px) {
+    .idesk-map-roles-head { display: block; }
+    .idesk-map-roles-lead { margin-top: 15px; }
+    .idesk-map-roles-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .idesk-map-roles { padding: 58px 14px; }
+    .idesk-map-roles-grid { grid-template-columns: 1fr; }
+    .idesk-map-role { min-height: auto; }
+  }
 </style>
 
 <section class="idesk-map-roles" id="roles">
   <div class="idesk-map-roles-inner">
-    <span class="idesk-eyebrow">Роли</span>
-    <h2 class="idesk-map-roles-title">Каждый видит своё — без общей «свалки» полей</h2>
-    <p class="idesk-map-roles-lead">Idea Desk разделяет работу по ролям, но все шаги остаются частью одной коллекции.</p>
+    <div class="idesk-map-roles-head">
+      <div>
+        <span class="idesk-eyebrow">03 · Роли и доступы</span>
+        <h2 class="idesk-map-roles-title">Своя зона ответственности — один общий процесс</h2>
+      </div>
+      <p class="idesk-map-roles-lead">Каждый видит только нужные поля и задачи, а руководители — всю коллекцию и её готовность.</p>
+    </div>
     <div class="idesk-map-roles-grid">
       <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">П</div>
-        <h3>Продуктовый менеджер</h3>
-        <p>Создаёт идеи по своим предметам, следит за статусами, участвует в решении «берём / нет».</p>
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M8.4 14.5A6 6 0 1 1 15.6 14.5C14.5 15.3 14 16.2 14 18h-4c0-1.8-.5-2.7-1.6-3.5Z"/></svg></div><h3>Продуктовый менеджер</h3></div>
+        <p>Создаёт идеи, следит за статусами и участвует в решении «берём / нет».</p>
+        <span class="idesk-map-role-scope">Идеи</span>
       </article>
-      <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">Л</div>
-        <h3>Продуктовый лид</h3>
+      <article class="idesk-map-role idesk-map-role--violet">
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3.5 19c.5-3.2 2.4-5 5.5-5s5 1.8 5.5 5M14 15c2.8-.8 5.5.5 6.5 3"/></svg></div><h3>Руководитель продуктовой команды</h3></div>
         <p>Видит идеи команды, согласует модели и контролирует готовность коллекции.</p>
+        <span class="idesk-map-role-scope">Команда</span>
       </article>
-      <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">Б</div>
-        <h3>Бизнес-лид</h3>
-        <p>Видит портфель компании и участвует в решениях по моделям.</p>
+      <article class="idesk-map-role idesk-map-role--violet">
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Руководитель направления</h3></div>
+        <p>Видит все коллекции компании и принимает решения по моделям.</p>
+        <span class="idesk-map-role-scope">Портфель</span>
       </article>
-      <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">Ф</div>
-        <h3>Фотоспециалист</h3>
-        <p>Очередь на обработку, загрузка готового фото — без лишних полей из других этапов.</p>
+      <article class="idesk-map-role idesk-map-role--cyan">
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4V8Z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3>Фотоспециалист</h3></div>
+        <p>Берёт фото в работу и загружает результат, не отвлекаясь на чужие поля.</p>
+        <span class="idesk-map-role-scope">Контент</span>
       </article>
-      <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">О</div>
-        <h3>Специалист по оценке</h3>
-        <p>Коммерческая оценка, артикул, сроки — только то, что нужно для принятия решения.</p>
+      <article class="idesk-map-role idesk-map-role--amber">
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></div><h3>Специалист по оценке</h3></div>
+        <p>Указывает артикул, цену, сроки и объём для принятия решения.</p>
+        <span class="idesk-map-role-scope">Оценка</span>
       </article>
-      <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">Д</div>
-        <h3>Дизайнер</h3>
-        <p>Техническая отрисовка модели — графическая часть, когда она нужна.</p>
+      <article class="idesk-map-role idesk-map-role--cyan">
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.5-1 10-10-3.5-3.5-10 10L4 20Z"/><path d="m13.5 7 3.5 3.5M4.8 16l3.2 3"/></svg></div><h3>Дизайнер</h3></div>
+        <p>Добавляет технический рисунок модели, когда он нужен команде.</p>
+        <span class="idesk-map-role-scope">Дизайн</span>
       </article>
-      <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">К</div>
-        <h3>Конструктор</h3>
-        <p>Технические параметры модели.</p>
+      <article class="idesk-map-role idesk-map-role--green">
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 18 13-13 3 3L8 21H5v-3Z"/><path d="m10 13 2 2M13 10l2 2M16 7l2 2"/></svg></div><h3>Конструктор</h3></div>
+        <p>Задаёт размеры и технические параметры будущей модели.</p>
+        <span class="idesk-map-role-scope">Конструкция</span>
       </article>
-      <article class="idesk-map-role">
-        <div class="idesk-map-role-icon">Р</div>
-        <h3>Руководитель производственного отдела</h3>
-        <p>Идентификация моделей и база лекал после согласования.</p>
+      <article class="idesk-map-role idesk-map-role--green">
+        <div class="idesk-map-role-head"><div class="idesk-map-role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l6 3V9l6 4V6h4v15H3Z"/><path d="M7 17h2M13 17h2M19 10h2"/></svg></div><h3>Руководитель производства</h3></div>
+        <p>После согласования ведёт учёт моделей и работу с лекалами.</p>
+        <span class="idesk-map-role-scope">Производство</span>
       </article>
     </div>
   </div>
