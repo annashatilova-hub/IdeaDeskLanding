@@ -4,29 +4,30 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Idea Desk — карта процесса разработки коллекции</title>
+<link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 <style>
 :root{
-  --bg:#f7f9fb;
+  --bg:#fff;
   --surface:#fff;
-  --surface-soft:#f1f5f8;
-  --text:#19344b;
-  --text-2:#536b80;
-  --muted:#7c8e9d;
-  --line:#dce5ec;
-  --blue:#45657f;
-  --blue-dark:#29465f;
-  --blue-soft:#e8f0f5;
-  --accent:#cf7569;
-  --accent-soft:#f7e9e6;
-  --shadow:0 14px 40px rgba(33,57,78,.07);
-  --radius:22px;
-  --container:1180px;
+  --surface-soft:#f8faff;
+  --text:#1c1f22;
+  --text-2:#5f6870;
+  --muted:#5f6870;
+  --line:#dfe4ea;
+  --blue:#3669fd;
+  --blue-dark:#2e5ee8;
+  --blue-soft:#ebf0fe;
+  --accent:#3669fd;
+  --accent-soft:#eef3ff;
+  --shadow:0 8px 24px rgba(31,43,65,.04);
+  --radius:16px;
+  --container:1160px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   margin:0;
-  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-family:'TildaSans',Arial,sans-serif;
   color:var(--text);
   background:var(--bg);
   line-height:1.5;
@@ -41,7 +42,7 @@ a{color:inherit;text-decoration:none}
 }
 .brand{display:flex;align-items:center;gap:11px;font-weight:650;font-size:17px;letter-spacing:-.02em}
 .brand-mark{
-  width:24px;height:24px;border-radius:7px;background:var(--blue-dark);
+  width:24px;height:24px;border-radius:7px;background:var(--blue);
   position:relative;overflow:hidden
 }
 .brand-mark:after{
@@ -51,8 +52,8 @@ a{color:inherit;text-decoration:none}
 .nav{display:flex;gap:26px;font-size:13px;color:var(--text-2)}
 .nav a:hover{color:var(--text)}
 .top-cta{
-  padding:11px 18px;border-radius:10px;background:var(--blue-dark);color:#fff;
-  font-size:13px;font-weight:600;box-shadow:0 5px 16px rgba(41,70,95,.16)
+  padding:11px 18px;border-radius:7px;background:var(--blue);color:#fff;
+  font-size:14px;font-weight:600
 }
 .hero{padding:72px 0 64px}
 .eyebrow,.section-kicker{
@@ -60,14 +61,14 @@ a{color:inherit;text-decoration:none}
 }
 .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
 h1{
-  margin:13px 0 20px;font-size:clamp(40px,5vw,64px);line-height:1.02;
-  letter-spacing:-.055em;font-weight:720;max-width:620px
+  margin:13px 0 20px;font-size:clamp(36px,4.4vw,48px);line-height:1.12;
+  letter-spacing:-.02em;font-weight:800;max-width:640px
 }
 .lead{font-size:18px;line-height:1.55;color:var(--text-2);max-width:590px;margin:0}
 .hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:11px;font-size:14px;font-weight:650}
-.btn-primary{background:var(--blue-dark);color:#fff}
-.btn-secondary{border:1px solid #b9cbd8;background:#fff;color:var(--blue-dark)}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border-radius:7px;font-size:14px;font-weight:700}
+.btn-primary{background:var(--blue);color:#fff}
+.btn-secondary{border:1px solid var(--line);background:#f5f7fa;color:var(--blue)}
 .hero-card{
   background:var(--surface);border:1px solid var(--line);border-radius:28px;
   padding:24px;box-shadow:var(--shadow)
@@ -88,11 +89,11 @@ h1{
 .connector:after{content:"›";position:absolute;right:-2px;top:-12px;color:var(--blue);font-size:20px}
 section{padding:76px 0}
 .section-head{display:flex;justify-content:space-between;gap:40px;align-items:end;margin-bottom:34px}
-h2{font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.045em;margin:8px 0 0}
+h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:8px 0 0;font-weight:800}
 .section-copy{max-width:390px;color:var(--text-2);font-size:15px}
-.process{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.process{background:#f5f7fa;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .process-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
-.step{position:relative;padding:20px 16px 22px;background:var(--surface-soft);border-radius:17px;min-height:170px}
+.step{position:relative;padding:20px 16px 22px;background:#fff;border:1px solid rgba(54,105,253,.12);border-radius:16px;min-height:170px}
 .step:first-child{background:var(--blue-soft)}
 .step-num{
   width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
@@ -101,10 +102,10 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.045em;margin
 .step h3{font-size:15px;line-height:1.25;margin:0 0 8px;letter-spacing:-.015em}
 .step p{font-size:12px;color:var(--text-2);margin:0}
 .transfer{
-  margin-top:14px;padding:16px 20px;border-radius:16px;background:var(--text);
-  color:#fff;display:flex;align-items:center;justify-content:center;gap:16px;font-size:13px
+  margin-top:14px;padding:16px 20px;border-radius:16px;background:#eef3ff;
+  color:var(--blue);display:flex;align-items:center;justify-content:center;gap:16px;font-size:15px;font-weight:700
 }
-.transfer span{opacity:.65}.transfer strong{font-weight:650}
+.transfer span{opacity:1;color:var(--text-2);font-weight:600}.transfer strong{font-weight:700;color:var(--text)}
 .roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .role{
   background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;min-height:170px;
@@ -116,7 +117,7 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.045em;margin
 }
 .role h3{font-size:15px;line-height:1.25;margin:0 0 8px}
 .role p{font-size:12px;color:var(--text-2);margin:0}
-.journey{background:var(--surface-soft)}
+.journey{background:#f3f6fb}
 .timeline{position:relative;margin-top:38px}
 .timeline:before{
   content:"";position:absolute;left:24px;top:0;bottom:0;width:1px;background:#c9d7e1
@@ -150,21 +151,21 @@ h2{font-size:clamp(30px,4vw,44px);line-height:1.08;letter-spacing:-.045em;margin
 .result h3{font-size:17px;line-height:1.25;margin:0 0 8px}
 .result p{font-size:12px;color:var(--text-2);margin:0}
 .cta{
-  margin-top:20px;border-radius:26px;background:var(--blue-dark);color:#fff;padding:34px;
+  margin-top:20px;border-radius:16px;background:#d3deef;color:var(--text);padding:34px;
   display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center
 }
-.cta .section-kicker{color:#cbd9e2}
-.cta h2{margin-top:8px;color:#fff}
+.cta .section-kicker{color:var(--blue)}
+.cta h2{margin-top:8px;color:var(--text)}
 .price{font-size:25px;font-weight:700;margin-top:18px}.price span{font-size:13px;font-weight:500;opacity:.7}
 .form{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
 .form input{
-  width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.22);
-  background:rgba(255,255,255,.1);color:#fff;outline:none
+  width:100%;padding:13px 14px;border-radius:7px;border:1px solid var(--line);
+  background:#fff;color:var(--text);outline:none;font-family:inherit
 }
-.form input::placeholder{color:rgba(255,255,255,.62)}
+.form input::placeholder{color:var(--muted)}
 .form button{
-  grid-column:1/-1;border:0;background:#fff;color:var(--blue-dark);padding:13px 16px;
-  border-radius:10px;font-weight:700;cursor:pointer
+  grid-column:1/-1;border:0;background:#243046;color:#fff;padding:13px 16px;
+  border-radius:7px;font-weight:700;cursor:pointer;font-family:inherit
 }
 footer{padding:28px 0 36px;color:var(--muted);font-size:12px}
 .footer-inner{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:24px}
@@ -319,7 +320,7 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:12px}
     </div>
     <div class="cta" id="form">
       <div><div class="section-kicker">07 · Тарифы и заявка</div><h2>Покажем Idea Desk на вашем процессе</h2><div class="price">20 000 ₽ <span>/ мес.</span></div></div>
-      <div><p style="margin-top:0;color:#dce5ec;font-size:13px">Оставьте заявку — разберём ваши коллекции, роли и сценарий внедрения.</p>
+      <div><p style="margin-top:0;color:#5f6870;font-size:15px">Оставьте заявку — разберём ваши коллекции, роли и сценарий внедрения.</p>
         <form class="form" action="../v3/#request"><input placeholder="Ваше имя"><input placeholder="E-mail"><input placeholder="Телефон"><button type="submit">Оставить заявку</button></form>
       </div>
     </div>
