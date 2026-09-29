@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta name="build" content="e57bbcb">
+<meta name="build" content="6ccf9ed">
 <title>Idea Desk — карта процесса разработки коллекции</title>
 <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 <style>
@@ -19,21 +19,21 @@
 </style>
 </head>
 <body>
-<div class="tg-preview-bar">Карта Idea Desk · сборка 2026-09-29 (e57bbcb) · <a href="../">лендинг</a> · <a href="./blocks/">блоки T123</a></div>
+<div class="tg-preview-bar">Карта Idea Desk · сборка 2026-09-29 (6ccf9ed) · <a href="../">лендинг</a> · <a href="./blocks/">блоки T123</a></div>
 <style>
   .idesk-map-hero {
     --idesk-menu-offset: 72px;
     box-sizing: border-box;
     width: 100%;
-    padding: calc(var(--idesk-menu-offset) + 40px) 20px 48px;
+    padding: calc(var(--idesk-menu-offset) + 16px) 20px 20px;
     font-family: 'TildaSans', Arial, sans-serif;
     color: #1c1f22;
     background: #fff;
     scroll-margin-top: var(--idesk-menu-offset);
   }
   .idesk-map-hero *, .idesk-map-hero *::before, .idesk-map-hero *::after { box-sizing: border-box; }
-  .idesk-map-hero-inner { max-width: 760px; margin: 0 auto; }
-  .idesk-mark { display: block; width: 48px; height: 48px; margin: 0 0 16px; }
+  .idesk-map-hero-inner { max-width: 1160px; margin: 0 auto; }
+  .idesk-mark { display: block; width: 40px; height: 40px; margin: 0 0 10px; }
   .idesk-map-hero .idesk-eyebrow {
     display: block;
     width: fit-content;
@@ -48,15 +48,16 @@
     border-radius: 5px;
   }
   .idesk-map-hero-title {
-    margin: 0 0 16px;
-    font-size: clamp(28px, 4vw, 44px);
+    margin: 0 0 8px;
+    font-size: clamp(28px, 4vw, 40px);
     line-height: 1.1;
     font-weight: 800;
     letter-spacing: -0.02em;
   }
   .idesk-map-hero-lead {
-    margin: 0 0 20px;
-    font-size: 18px;
+    margin: 0 0 14px;
+    max-width: 720px;
+    font-size: 16px;
     line-height: 1.55;
     color: #5f6870;
   }
@@ -73,6 +74,31 @@
   }
   .idesk-map-link-primary { background: #3669fd; color: #fff !important; }
   .idesk-map-link-light { background: #f5f7fa; color: #3669fd !important; border: 1px solid #dfe4ea; }
+  .idesk-map-path {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+  }
+  .idesk-map-path li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: #eef3ff;
+    color: #1c1f22;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .idesk-map-path li::after {
+    content: '→';
+    color: #3669fd;
+    font-weight: 800;
+  }
+  .idesk-map-path li:last-child::after { content: none; }
   @media (max-width: 900px) {
     .idesk-map-hero { --idesk-menu-offset: 64px; padding-top: calc(var(--idesk-menu-offset) + 28px); }
   }
@@ -91,9 +117,17 @@
         </linearGradient>
       </defs>
     </svg>
-    <span class="idesk-eyebrow">Карта продукта</span>
-    <h1 class="idesk-map-hero-title">Как устроен Idea Desk</h1>
-    <p class="idesk-map-hero-lead">Схема процесса разработки коллекции: роли в команде, этапы от идеи до модели и передача в istock.info.</p>
+    <span class="idesk-eyebrow">Как работает пользователь</span>
+    <h1 class="idesk-map-hero-title">Один человек ведёт идею — команда подключается на своём шаге</h1>
+    <p class="idesk-map-hero-lead">Продакт создаёт идею в коллекции. Дальше её берут фото, оценка и согласование — каждый видит только свою работу. Готовая модель уходит в istock.info.</p>
+    <ol class="idesk-map-path">
+      <li>Продакт: идея</li>
+      <li>Фото</li>
+      <li>Оценка</li>
+      <li>Решение «берём»</li>
+      <li>Модель</li>
+      <li>istock.info</li>
+    </ol>
     <div class="idesk-map-hero-links">
       <a class="idesk-map-link idesk-map-link-light" href="../">← К лендингу Idea Desk</a>
       <a class="idesk-map-link idesk-map-link-primary" href="/idea-desk#request">Оставить заявку</a>
@@ -105,7 +139,7 @@
   .idesk-map-flow {
     box-sizing: border-box;
     width: 100%;
-    padding: 56px 20px;
+    padding: 28px 20px 40px;
     font-family: 'TildaSans', Arial, sans-serif;
     color: #1c1f22;
     background: #f5f7fa;
@@ -133,7 +167,7 @@
     font-weight: 800;
   }
   .idesk-map-flow-lead {
-    margin: 0 0 36px;
+    margin: 0 0 16px;
     max-width: 680px;
     text-align: left;
     font-size: 16px;
@@ -220,8 +254,8 @@
 <section class="idesk-map-flow" id="schema">
   <div class="idesk-map-flow-inner">
     <span class="idesk-eyebrow">Общая схема</span>
-    <h2 class="idesk-map-flow-title">От коллекции до производства</h2>
-    <p class="idesk-map-flow-lead">Шесть шагов в Idea Desk — затем передача готовой модели в istock.info. Две зоны, один непрерывный процесс.</p>
+    <h2 class="idesk-map-flow-title">Так идея проходит по рукам</h2>
+    <p class="idesk-map-flow-lead">Сначала работа в Idea Desk: от коллекции до готовой модели. Потом передача в istock.info — на производство.</p>
 
     <div class="idesk-map-zones">
       <div class="idesk-map-zone idesk-map-zone--idesk">
