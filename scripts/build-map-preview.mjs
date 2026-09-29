@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -27,13 +27,14 @@ const blocks = [
   '05-map-cta.html',
 ];
 
+const pagePath = join(base, 'page.html');
 const body = blocks.map((name) => readFileSync(join(base, name), 'utf-8').trim()).join('\n\n');
 const previewBody = body.replace(
   'class="idesk-map-link idesk-map-link-light" href="/idea-desk"',
   'class="idesk-map-link idesk-map-link-light" href="../"',
 );
 
-const html = `<!DOCTYPE html>
+const composed = `<!DOCTYPE html>
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -61,6 +62,9 @@ ${previewBody}
 `;
 
 mkdirSync(docsMap, { recursive: true });
+const html = existsSync(pagePath)
+  ? readFileSync(pagePath, 'utf-8').replace('<head>', `<head>\n<meta name="build" content="${buildId}">`)
+  : composed;
 writeFileSync(join(docsMap, 'index.html'), html, 'utf-8');
 
 const blocksDir = join(docsMap, 'blocks');
