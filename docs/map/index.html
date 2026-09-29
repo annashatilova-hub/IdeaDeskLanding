@@ -102,15 +102,16 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:-.02em;margi
 .transfer span{opacity:1;color:var(--text-2);font-weight:600}.transfer strong{font-weight:700;color:var(--text)}
 .roles-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .role{
-  background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;min-height:170px;
-  box-shadow:0 8px 28px rgba(33,57,78,.035)
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;min-height:170px;
+  box-shadow:0 8px 28px rgba(33,57,78,.035);
+  display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center
 }
 .role-icon{
-  width:34px;height:34px;border-radius:10px;background:var(--blue-soft);
-  color:var(--blue-dark);display:grid;place-items:center;font-size:12px;font-weight:750;margin-bottom:25px
+  width:40px;height:40px;border-radius:12px;background:var(--blue-soft);
+  color:var(--blue);display:grid;place-items:center;font-size:16px;font-weight:750
 }
-.role h3{font-size:15px;line-height:1.25;margin:0 0 8px}
-.role p{font-size:12px;color:var(--text-2);margin:0}
+.role h3{font-size:18px;line-height:1.25;margin:0}
+.role p{grid-column:1 / -1;margin:14px 0 0;font-size:16px;line-height:1.45;color:var(--text-2)}
 .journey{background:#f3f6fb}
 .timeline{position:relative;margin-top:38px}
 .timeline:before{
