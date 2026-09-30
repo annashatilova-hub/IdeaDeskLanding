@@ -1348,15 +1348,51 @@
       <div class="v3-price">20 000 ₽ <span>/ мес.</span></div>
       <p class="v3-note">Быстрый старт. Прозрачные условия. Поддержка на всех этапах.</p>
     </div>
-    <form class="v3-form" onsubmit="event.preventDefault(); alert('Спасибо! Мы свяжемся с вами в ближайшее время.');">
+    <form class="v3-form" action="https://formsubmit.co/ajax/support@istock.info" method="POST">
       <h3>Оставьте заявку, чтобы подключить Idea Desk</h3>
+      <input type="hidden" name="_subject" value="Заявка Idea Desk">
+      <input type="hidden" name="_template" value="table">
       <div class="v3-fields">
         <input id="v3-name" name="name" autocomplete="name" placeholder="Ваше имя" required>
         <input id="v3-email" name="email" type="email" autocomplete="email" placeholder="E-mail" required>
-        <input id="v3-phone" name="tel" type="tel" autocomplete="tel" placeholder="Телефон" required>
+        <input id="v3-phone" name="phone" type="tel" autocomplete="tel" placeholder="Телефон" required>
       </div>
       <button class="v3-btn" type="submit">Оставить заявку</button>
+      <p class="v3-form-status" hidden></p>
     </form>
+    <script>
+      (function () {
+        var form = document.querySelector('.v3-offer .v3-form');
+        if (!form) return;
+        var status = form.querySelector('.v3-form-status');
+        var button = form.querySelector('button');
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+          button.disabled = true;
+          status.hidden = false;
+          status.textContent = 'Отправляем…';
+          fetch(form.action, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify({
+              name: form.name.value,
+              email: form.email.value,
+              phone: form.phone.value,
+              _subject: 'Заявка Idea Desk',
+              _template: 'table'
+            })
+          }).then(function (response) {
+            if (!response.ok) throw new Error('fail');
+            form.reset();
+            status.textContent = 'Спасибо! Мы свяжемся с вами в ближайшее время.';
+          }).catch(function () {
+            status.textContent = 'Не удалось отправить. Напишите на support@istock.info';
+          }).finally(function () {
+            button.disabled = false;
+          });
+        });
+      })();
+    </script>
     <p class="v3-scribble">Начните создавать коллекции, удобные уже сегодня.
       <svg class="v3-scribble-arrow--side" viewBox="0 0 64 28" aria-hidden="true"><path d="M58 6C34 8 22 14 10 16"/><path d="M18 8L8 16l12 4"/></svg>
       <svg class="v3-scribble-arrow--up" viewBox="0 0 42 36" aria-hidden="true"><path d="M8 32C12 18 22 12 28 6"/><path d="M18 10l12-8 2 12"/></svg>
