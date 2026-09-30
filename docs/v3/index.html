@@ -1195,7 +1195,7 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    padding: 56px 20px 64px;
+    padding: 56px 20px 28px;
     font-family: 'TildaSans', Arial, sans-serif;
     color: var(--v3-ink);
     background: #d3deef;
@@ -1217,7 +1217,7 @@
     max-width: 1160px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 0.8fr;
+    grid-template-columns: 1fr;
     gap: 28px 32px;
     align-items: center;
   }
@@ -1248,13 +1248,18 @@
     color: var(--v3-ink);
   }
   .v3-offer .v3-price span { font-size: 0.55em; font-weight: 700; }
-  .v3-offer .v3-note { margin: 0; max-width: 280px; font-size: 14px; line-height: 1.45; color: var(--v3-muted); }
+  .v3-offer .v3-note { margin: 8px 0 0; font-size: 14px; line-height: 1.45; color: var(--v3-muted); }
+  .v3-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 720px; margin-top: 8px; }
+  .v3-plan { padding: 18px 20px; border-radius: 14px; background: rgba(255,255,255,.55); }
+  .v3-plan b { display: block; margin-bottom: 6px; font-size: 14px; letter-spacing: .03em; text-transform: uppercase; color: #2e5ee8; }
+  .v3-plan .v3-price { margin: 0; font-size: 28px; }
   .v3-offer .v3-form {
     padding: 0;
     border-radius: 0;
     background: none;
     color: var(--v3-ink);
   }
+  .v3-form-status { margin: 12px 0 0; font-size: 14px; line-height: 1.4; color: #243046; }
   .v3-offer .v3-form h3 {
     margin: 0 0 14px;
     font-size: 15px;
@@ -1297,8 +1302,9 @@
   }
   .v3-offer .v3-scribble {
     position: relative;
-    margin: 0;
-    padding-bottom: 36px;
+    margin: 28px 0 0;
+    padding-bottom: 48px;
+    max-width: 280px;
     font-family: 'Segoe Print', 'Comic Sans MS', cursive;
     font-size: 18px;
     line-height: 1.35;
@@ -1306,31 +1312,20 @@
   }
   .v3-offer .v3-scribble svg {
     position: absolute;
-    left: 0;
+    left: 8px;
     bottom: 0;
-    width: 64px;
-    height: 28px;
+    width: 36px;
+    height: 44px;
     stroke: #3a4558;
     fill: none;
     stroke-width: 1.6;
     stroke-linecap: round;
     stroke-linejoin: round;
   }
-  .v3-offer .v3-scribble-arrow--up { display: none; }
   @media (max-width: 900px) {
     .v3-offer-grid { grid-template-columns: 1fr; }
     .v3-offer .v3-fields { grid-template-columns: 1fr; }
-    .v3-offer .v3-scribble { margin-top: 4px; padding-top: 40px; padding-bottom: 0; }
-    .v3-offer .v3-scribble-arrow--side { display: none; }
-    .v3-offer .v3-scribble-arrow--up {
-      display: block;
-      left: 4px;
-      top: 0;
-      bottom: auto;
-      width: 42px;
-      height: 36px;
-      transform: none;
-    }
+    .v3-plans { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -1344,14 +1339,22 @@
   <div class="v3-offer-grid">
     <div>
       <span class="v3-kicker">06 · Тарифы и заявка</span>
-      <h2 class="v3-title">Вся платформа<br><span>Idea Desk</span></h2>
-      <div class="v3-price">20 000 ₽ <span>/ мес.</span></div>
-      <p class="v3-note">Быстрый старт. Прозрачные условия. Поддержка на всех этапах.</p>
+      <h2 class="v3-title">Два способа начать<br><span>Idea Desk</span></h2>
+      <div class="v3-plans">
+        <article class="v3-plan">
+          <b>Вся платформа</b>
+          <div class="v3-price">20 000 ₽ <span>/ мес.</span></div>
+          <p class="v3-note">Быстрый старт. Прозрачные условия. Поддержка на всех этапах.</p>
+        </article>
+        <article class="v3-plan">
+          <b>Пробный период</b>
+          <div class="v3-price">На своей коллекции</div>
+          <p class="v3-note">Сначала смотрите, как команда ведёт идеи. Платформу подключаете, когда сценарий понятен.</p>
+        </article>
+      </div>
     </div>
-    <!-- Форму в этот HTML не вставлять: в Тильде сразу после блока добавить BF203N -->
     <p class="v3-scribble">Начните создавать коллекции, удобные уже сегодня.
-      <svg class="v3-scribble-arrow--side" viewBox="0 0 64 28" aria-hidden="true"><path d="M58 6C34 8 22 14 10 16"/><path d="M18 8L8 16l12 4"/></svg>
-      <svg class="v3-scribble-arrow--up" viewBox="0 0 42 36" aria-hidden="true"><path d="M8 32C12 18 22 12 28 6"/><path d="M18 10l12-8 2 12"/></svg>
+      <svg viewBox="0 0 36 44" aria-hidden="true"><path d="M18 2c2 14 1 24 0 34"/><path d="M8 26l10 12 10-12"/></svg>
     </p>
   </div>
 </section>
