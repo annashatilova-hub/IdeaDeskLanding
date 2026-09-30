@@ -7,7 +7,7 @@
 <link rel="stylesheet" href="https://static.tildacdn.com/css/fonts-tildasans.css">
 <style>
 :root{
-  --bg:#fff;
+  --bg:#f3f1ec;
   --surface:#fff;
   --surface-soft:#f8faff;
   --text:#1c1f22;
@@ -197,6 +197,28 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:12px}
   .systems{padding-top:60px}.system-grid{grid-template-columns:1fr}
   .arrow-box{transform:rotate(90deg)}
 }
+.story{padding:64px 0 40px}
+.story h1{font-size:clamp(36px,5vw,56px);max-width:16ch;margin:0 0 16px}
+.story .lead{font-size:20px;max-width:40rem}
+.work{display:grid;grid-template-columns:280px 1fr;gap:28px;align-items:start}
+.work-list{display:grid;gap:8px}
+.work-list button{
+  appearance:none;text-align:left;border:1px solid transparent;background:transparent;
+  border-radius:14px;padding:12px 14px;font:inherit;cursor:pointer;color:var(--text-2)
+}
+.work-list button strong{display:block;color:var(--text);font-size:16px}
+.work-list button span{font-size:13px}
+.work-list button.is-active{background:#fff;border-color:#e4ddd2;color:var(--text);box-shadow:0 8px 24px rgba(60,40,20,.06)}
+.work-card{background:#fff;border-radius:24px;padding:32px;min-height:280px;border:1px solid #e7e1d8}
+.work-card .who{color:#9a6b32;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+.work-card h2{margin:8px 0 12px;font-size:32px}
+.work-card p{margin:0;font-size:18px;line-height:1.5;color:var(--text-2);max-width:36rem}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;padding:8px 0 12px}
+.notes h3{margin:0 0 8px;font-size:18px}
+.notes p{margin:0;color:var(--text-2);font-size:16px}
+@media(max-width:800px){
+  .work,.notes{grid-template-columns:1fr}
+}
 @media(max-width:620px){
   .container{width:min(calc(100% - 28px),var(--container))}
   .topbar{height:68px}.top-cta{display:none}
@@ -216,151 +238,54 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:12px}
   <div class="container topbar-inner">
     <a class="brand" href="../v3/"><svg class="brand-mark" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M0 12C0 8.27247 0 6.4087 0.608964 4.93853C1.42092 2.97831 2.97831 1.42092 4.93853 0.608964C6.4087 0 8.27247 0 12 0C15.7275 0 17.5913 0 19.0615 0.608964C21.0217 1.42092 22.5791 2.97831 23.391 4.93853C24 6.4087 24 8.27247 24 12C24 15.7275 24 17.5913 23.391 19.0615C22.5791 21.0217 21.0217 22.5791 19.0615 23.391C17.5913 24 15.7275 24 12 24C8.27247 24 6.4087 24 4.93853 23.391C2.97831 22.5791 1.42092 21.0217 0.608964 19.0615C0 17.5913 0 15.7275 0 12Z" fill="url(#map-mark)"/><path d="M17.2362 7.66642C16.481 6.14093 15.0213 5.01497 13.3292 4.6445C11.5572 4.25223 9.74168 4.67355 8.35461 5.79225C6.96028 6.90368 6.1687 8.56719 6.1687 10.3469C6.1687 12.2284 7.29433 14.197 8.99368 15.3375V15.9404C8.98641 16.1438 8.97915 16.4562 9.22607 16.7104C9.48024 16.9719 9.85787 17.001 10.1556 17.001H13.8811C14.2733 17.001 14.571 16.892 14.7743 16.6886C15.0503 16.4053 15.043 16.0421 15.0358 15.846V15.3375C17.2871 13.8192 18.7032 10.6157 17.2362 7.66642Z" fill="white"/><path d="M14.0546 19.501C14.0167 19.501 13.9725 19.492 13.9346 19.4739C12.6652 18.9604 11.3326 18.9604 10.0631 19.4739C9.82944 19.564 9.58313 19.3748 9.51997 19.0415C9.4505 18.7082 9.58944 18.3568 9.82312 18.2667C11.2505 17.6902 12.7536 17.6902 14.1809 18.2667C14.4146 18.3658 14.5536 18.7082 14.4841 19.0415C14.4209 19.3208 14.2441 19.501 14.0546 19.501Z" fill="white"/><defs><linearGradient id="map-mark" x1="-3.36" y1="-4.67" x2="10.6" y2="18.1" gradientUnits="userSpaceOnUse"><stop offset="0.14" stop-color="#7296FD"/><stop offset="1" stop-color="#3669FD"/></linearGradient></defs></svg>Idea Desk</a>
     <nav class="nav">
-      <a href="#process">Как работает</a>
-      <a href="#roles">Роли</a>
-      <a href="#journey">Путь идеи</a>
-      <a href="#systems">Две системы</a>
+      <a href="#path">Путь идеи</a>
+      <a href="#how">Как работает команда</a>
     </nav>
     <a class="top-cta" href="../v3/#request">Оставить заявку</a>
   </div>
 </header>
 
 <main>
-<section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="eyebrow">01 · Карта процесса Idea Desk</div>
-      <h1>Один человек ведёт идею — команда подключается на своём шаге</h1>
-      <p class="lead">Менеджер по продукту заводит идею в коллекцию. Дальше фото, оценка и согласование делают свои части работы и видят только их. Готовая модель уходит в istock.info.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="../v3/#request">Оставить заявку</a>
-        <a class="btn btn-secondary" href="../v3/">← Вернуться на лендинг</a>
+<section class="story">
+  <div class="container">
+    <div class="eyebrow">Как устроена работа</div>
+    <h1>Команда в одном месте. Люди подключаются по задаче</h1>
+    <p class="lead">Лендинг говорит, зачем Idea Desk. Здесь — как этим пользоваться: не нужно знать всю систему, достаточно своего шага.</p>
+  </div>
+</section>
+<section id="path" style="padding-top:10px">
+  <div class="container">
+    <div class="work" id="journey-board">
+      <div class="work-list journey-steps" role="tablist">
+        <button type="button" class="journey-step is-active" role="tab"><strong>01 · Идея</strong><span>Пока работает один человек</span></button>
+        <button type="button" class="journey-step" role="tab"><strong>02 · Фото</strong><span>Подключается фото</span></button>
+        <button type="button" class="journey-step" role="tab"><strong>03 · Оценка</strong><span>Подключается CTR</span></button>
+        <button type="button" class="journey-step" role="tab"><strong>04 · Решение</strong><span>Подключается руководитель</span></button>
+        <button type="button" class="journey-step" role="tab"><strong>05 · Модель</strong><span>Если нужны рисунок и размеры</span></button>
+        <button type="button" class="journey-step" role="tab"><strong>06 · Производство</strong><span>Модель уходит дальше</span></button>
       </div>
-    </div>
-    <div class="hero-card">
-      <div class="hero-card-head">
-        <div class="hero-card-title">Путь одной идеи</div>
-        <div class="status">7 этапов</div>
-      </div>
-      <div class="flow-preview">
-        <div class="flow-mini active"><span class="flow-num">01</span><span class="flow-name">Коллекция</span><span class="flow-sub">Сезон, проект, состав</span></div>
-        <div class="flow-mini"><span class="flow-num">02</span><span class="flow-name">Идеи</span><span class="flow-sub">Фото, откуда идея, изделие</span></div>
-        <div class="flow-mini"><span class="flow-num">03</span><span class="flow-name">Фото</span><span class="flow-sub">Обработка материалов</span></div>
-        <div class="flow-mini"><span class="flow-num">04</span><span class="flow-name">Оценка</span><span class="flow-sub">Артикул, цена, сроки и объём</span></div>
-        <div class="flow-mini"><span class="flow-num">05</span><span class="flow-name">Модель</span><span class="flow-sub">Согласование, цвета</span></div>
-        <div class="flow-mini"><span class="flow-num">06</span><span class="flow-name">В производство</span><span class="flow-sub">Модель уходит в istock.info</span></div>
-      </div>
-      <div class="connector"></div>
-      <div class="flow-mini" style="min-height:78px;background:#fff">
-        <span class="flow-num">07 · istock.info</span><span class="flow-name">Производство</span><span class="flow-sub">Заказы на фабрики, контроль производства и поставки</span>
+      <div class="work-card journey-panel">
+        <div class="who journey-kicker">Продуктовый менеджер</div>
+        <h2>Идея создана</h2>
+        <p>Заводит фото и описание в коллекцию. Остальным пока нечего открывать.</p>
       </div>
     </div>
   </div>
 </section>
-
-<section class="process" id="process">
+<section id="how">
   <div class="container">
-    <div class="section-head">
-      <div><div class="section-kicker">02 · Общая схема</div><h2>Так идея проходит по рукам</h2></div>
-      <p class="section-copy">Сначала работа в Idea Desk: от коллекции до готовой модели. Потом передача в istock.info — на производство.</p>
+    <div class="notes">
+      <div><h3>Работать несложно</h3><p>У человека на экране только его задача: фото, оценка или согласование.</p></div>
+      <div><h3>Одна коллекция</h3><p>Идея не разъезжается по чатам. Все шаги лежат рядом, в одном месте.</p></div>
+      <div><h3>Подключение по задаче</h3><p>Фото, CTR, дизайнер и конструктор приходят, когда шаг дошёл до них.</p></div>
     </div>
-    <div class="process-grid">
-      <article class="step"><div class="step-num">01</div><h3>Коллекция</h3><p>Сезон, проект, состав</p></article>
-      <article class="step"><div class="step-num">02</div><h3>Идеи</h3><p>Фото, откуда идея, какое изделие</p></article>
-      <article class="step"><div class="step-num">03</div><h3>Фото</h3><p>Обработка материалов</p></article>
-      <article class="step"><div class="step-num">04</div><h3>Оценка</h3><p>Артикул, цена, сроки и объём</p></article>
-      <article class="step"><div class="step-num">05</div><h3>Модель</h3><p>Согласование, цвета</p></article>
-      <article class="step"><div class="step-num">06</div><h3>Запустить в производство</h3><p>Модель уходит в istock.info</p></article>
-    </div>
-    <div class="transfer"><span>Idea Desk</span><strong>готовая модель</strong><span>→</span><strong>istock.info</strong></div>
-  </div>
-</section>
-
-<section id="roles">
-  <div class="container">
-    <div class="section-head">
-      <div><div class="section-kicker">03 · Роли и доступы</div><h2>Своя зона ответственности — один общий процесс</h2></div>
-      <p class="section-copy">Каждый видит только нужные поля и задачи, а руководители — всю коллекцию и её готовность.</p>
-    </div>
-    <div class="roles-grid">
-      <article class="role"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6M10 22h4M8.4 14.5A6 6 0 1 1 15.6 14.5C14.5 15.3 14 16.2 14 18h-4c0-1.8-.5-2.7-1.6-3.5Z"/></svg></div><h3>Продуктовый менеджер</h3></div><p>Создаёт идеи, следит за статусами и участвует в решении «берём / нет».</p><span class="role-scope">Идеи</span></article>
-      <article class="role role--violet"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3.5 19c.5-3.2 2.4-5 5.5-5s5 1.8 5.5 5M14 15c2.8-.8 5.5.5 6.5 3"/></svg></div><h3>Руководитель продуктовой команды</h3></div><p>Видит идеи команды, согласует модели и контролирует готовность коллекции.</p><span class="role-scope">Команда</span></article>
-      <article class="role role--violet"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="m15.5 8.5-2 5-5 2 2-5 5-2Z"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Руководитель направления</h3></div><p>Видит все коллекции компании и принимает решения по моделям.</p><span class="role-scope">Портфель</span></article>
-      <article class="role role--cyan"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l1.5-2h7L17 8h3v11H4V8Z"/><circle cx="12" cy="13" r="3.5"/></svg></div><h3>Фотоспециалист</h3></div><p>Берёт фото в работу и загружает результат, не отвлекаясь на чужие поля.</p><span class="role-scope">Контент</span></article>
-      <article class="role role--amber"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 12h2M14 12h2M8 16h2M14 16h2"/></svg></div><h3>Специалист по CTR</h3></div><p>Указывает артикул, цену, сроки и объём для принятия решения.</p><span class="role-scope">Оценка</span></article>
-      <article class="role role--cyan"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 20 4.5-1 10-10-3.5-3.5-10 10L4 20Z"/><path d="m13.5 7 3.5 3.5M4.8 16l3.2 3"/></svg></div><h3>Дизайнер</h3></div><p>Добавляет технический рисунок модели, когда он нужен команде.</p><span class="role-scope">Дизайн</span></article>
-      <article class="role role--green"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 18 13-13 3 3L8 21H5v-3Z"/><path d="m10 13 2 2M13 10l2 2M16 7l2 2"/></svg></div><h3>Конструктор</h3></div><p>Задаёт размеры и технические параметры будущей модели.</p><span class="role-scope">Конструкция</span></article>
-      <article class="role role--green"><div class="role-head"><div class="role-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21V10l6 3V9l6 4V6h4v15H3Z"/><path d="M7 17h2M13 17h2M19 10h2"/></svg></div><h3>Руководитель производства</h3></div><p>После согласования ведёт учёт моделей и работу с лекалами.</p><span class="role-scope">Производство</span></article>
-    </div>
-  </div>
-</section>
-
-<section class="journey" id="journey">
-  <div class="container">
-    <div class="section-head">
-      <div><div class="section-kicker">04 · Один пример</div><h2>Путь одной идеи</h2></div>
-      <p class="section-copy">Нажмите шаг и посмотрите, кто что делает — от фото до запуска в производство.</p>
-    </div>
-    <div class="journey-board" id="journey-board">
-      <div class="journey-steps" role="tablist" aria-label="Шаги одной идеи">
-        <button type="button" class="journey-step is-active" role="tab">01 · Идея</button>
-        <button type="button" class="journey-step" role="tab">02 · Фото</button>
-        <button type="button" class="journey-step" role="tab">03 · Оценка</button>
-        <button type="button" class="journey-step" role="tab">04 · Решение</button>
-        <button type="button" class="journey-step" role="tab">05 · Модель</button>
-        <button type="button" class="journey-step" role="tab">06 · Запуск</button>
-        <button type="button" class="journey-step" role="tab">07 · Производство</button>
-      </div>
-      <div class="journey-panel">
-        <div class="journey-progress" aria-hidden="true"><span></span></div>
-        <div class="journey-kicker">Шаг <b>01</b> из 07</div>
-        <h3>Идея создана</h3>
-        <p>Менеджер по продукту загружает фото и описание в коллекцию сезона.</p>
-        <span class="tag">Idea Desk</span>
-        <div class="journey-nav">
-          <button type="button" data-dir="-1">Назад</button>
-          <button type="button" data-dir="1">Дальше</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="systems" id="systems">
-  <div class="container">
-    <div class="section-head">
-      <div><div class="section-kicker">05 · Две системы — один процесс</div><h2>Idea Desk и istock дополняют друг друга</h2></div>
-      <p class="section-copy">Это не две отдельные программы, а одна цепочка: сначала коллекция, потом производство.</p>
-    </div>
-    <div class="system-grid">
-      <div class="system-card primary"><h3>Idea Desk</h3><p>Место, где собирают коллекцию и доводят модели до готовности</p><ul><li>Сбор и оценка идей</li><li>Фото и примеры изделий</li><li>Согласование моделей</li><li>Подготовка к передаче в производство</li></ul></div>
-      <div class="arrow-box">→</div>
-      <div class="system-card"><h3>istock.info</h3><p>Платформа для заказов на фабрики и контроль производства</p><ul><li>Размещение заказов на фабрики</li><li>Контроль сроков и качества</li><li>Производство и логистика</li></ul></div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="container">
-    <div class="section-head">
-      <div><div class="section-kicker">06 · Как устроена работа</div><h2>Несложно: вся команда в одном месте</h2></div>
-      <p class="section-copy">Не нужно разбираться во всей системе. Человек открывает свою задачу, когда она появляется.</p>
-    </div>
-    <div class="results-grid">
-      <article class="result"><div class="result-icon">01</div><h3>Работать несложно</h3><p>Свой шаг понятен сразу: загрузить фото, поставить оценку или согласовать. Чужие поля не мешают.</p></article>
-      <article class="result"><div class="result-icon">02</div><h3>Вся работа в одном месте</h3><p>Идея, фото, оценка и решение лежат в одной коллекции. Не нужно собирать их из чатов и таблиц.</p></article>
-      <article class="result"><div class="result-icon">03</div><h3>Подключаются по задаче</h3><p>Фото, CTR, дизайнер и конструктор приходят на свой шаг. Пока задачи нет, им нечего разбирать.</p></article>
-    </div>
-    <div class="cta" id="form">
-      <div><div class="section-kicker">Дальше</div><h2>Покажем это на вашей коллекции</h2></div>
-      <div><p style="margin-top:0;color:#5f6870;font-size:16px">Тариф и заявка — на основной странице. Здесь только то, как команда проходит путь идеи.</p>
-        <div class="hero-actions"><a class="btn btn-primary" href="../v3/#request">Оставить заявку</a><a class="btn btn-secondary" href="../v3/">На лендинг</a></div>
-      </div>
+    <div class="hero-actions" style="margin-top:28px">
+      <a class="btn btn-primary" href="../v3/#request">Оставить заявку</a>
+      <a class="btn btn-secondary" href="../v3/">На лендинг</a>
     </div>
   </div>
 </section>
 </main>
-
 <footer>
   <div class="container footer-inner">
     <a class="brand" href="../v3/">Idea Desk</a>
@@ -370,45 +295,31 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:12px}
 <script>
 (function () {
   var steps = [
-    ['Идея создана', 'Менеджер по продукту загружает фото и описание в коллекцию сезона.', 'Idea Desk'],
-    ['Фото обработано', 'Фотоспециалист берёт задачу и загружает готовое фото.', 'Idea Desk'],
-    ['Оценка проставлена', 'Есть артикул, цена, сроки и объём — можно решать, берём идею или нет.', 'Idea Desk'],
-    ['Решение «берём»', 'Руководитель или команда фиксирует: идея входит в модель.', 'Idea Desk'],
-    ['Модель согласована', 'Цвета и состав модели утверждены, статус понятен всем.', 'Idea Desk'],
-    ['Запустить в производство', 'Фото, оценка и решение собраны. Модель уходит в istock.info.', 'Idea Desk'],
-    ['Производство', 'В istock.info размещают заказы на фабрики и следят за объёмом.', 'istock.info']
+    ['Продуктовый менеджер', 'Идея в коллекции', 'Заводит фото и описание. Остальным пока нечего открывать.'],
+    ['Фотоспециалист', 'Появилась задача на фото', 'Подключается, когда фото нужно обработать, и загружает готовое.'],
+    ['Специалист по CTR', 'Пора оценить', 'Ставит артикул, цену, сроки и объём. Этого достаточно, чтобы решить.'],
+    ['Руководитель', 'Решение «берём»', 'Фиксирует, входит идея в модель или нет. Команда видит тот же статус.'],
+    ['Дизайнер и конструктор', 'Если модели нужны детали', 'Рисунок и размеры появляются только когда до них дошла задача.'],
+    ['Запуск в производство', 'Модель собрана', 'Она уходит в istock.info: заказы на фабрики и объём.']
   ];
   var board = document.getElementById('journey-board');
   if (!board) return;
   var buttons = board.querySelectorAll('.journey-step');
-  var title = board.querySelector('h3');
-  var text = board.querySelector('.journey-panel p');
-  var tag = board.querySelector('.tag');
-  var num = board.querySelector('.journey-kicker b');
-  var bar = board.querySelector('.journey-progress span');
-  var prev = board.querySelector('[data-dir="-1"]');
-  var next = board.querySelector('[data-dir="1"]');
-  var index = 0;
+  var who = board.querySelector('.who');
+  var title = board.querySelector('h2');
+  var text = board.querySelector('.work-card p');
   function show(i) {
-    index = Math.max(0, Math.min(steps.length - 1, i));
     buttons.forEach(function (button, n) {
-      button.classList.toggle('is-active', n === index);
-      button.classList.toggle('is-done', n < index);
-      button.setAttribute('aria-selected', n === index ? 'true' : 'false');
+      button.classList.toggle('is-active', n === i);
+      button.setAttribute('aria-selected', n === i ? 'true' : 'false');
     });
-    title.textContent = steps[index][0];
-    text.textContent = steps[index][1];
-    tag.textContent = steps[index][2];
-    num.textContent = String(index + 1).padStart(2, '0');
-    bar.style.width = ((index + 1) / steps.length * 100) + '%';
-    prev.disabled = index === 0;
-    next.disabled = index === steps.length - 1;
+    who.textContent = steps[i][0];
+    title.textContent = steps[i][1];
+    text.textContent = steps[i][2];
   }
   buttons.forEach(function (button, n) {
     button.addEventListener('click', function () { show(n); });
   });
-  prev.addEventListener('click', function () { show(index - 1); });
-  next.addEventListener('click', function () { show(index + 1); });
   show(0);
 })();
 </script>
