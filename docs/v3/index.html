@@ -1211,94 +1211,103 @@
   .v3-offer-leaf svg { width: 100%; height: 100%; fill: currentColor; }
   .v3-offer-leaf--left { left: -40px; bottom: -50px; transform: rotate(20deg); }
   .v3-offer-leaf--right { right: -30px; top: -40px; transform: rotate(-30deg); }
-  .v3-offer-grid {
+  .v3-offer-inner {
     position: relative;
     z-index: 1;
     max-width: 1160px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 28px 32px;
-    align-items: center;
   }
   .v3-offer .v3-kicker {
     display: block;
     margin: 0 0 12px;
-    padding: 0;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: #2e5ee8;
-    background: none;
   }
-  .v3-offer .v3-title span { white-space: nowrap; }
   .v3-offer .v3-title {
-    margin: 0 0 8px;
-    font-size: clamp(26px, 3vw, 34px);
+    margin: 0 0 12px;
+    max-width: 720px;
+    font-size: clamp(28px, 3.4vw, 40px);
     line-height: 1.15;
     font-weight: 800;
-    color: var(--v3-ink);
-  }
-  .v3-offer .v3-price {
-    margin: 0 0 10px;
-    font-size: clamp(28px, 3vw, 36px);
-    font-weight: 800;
     letter-spacing: -0.02em;
-    color: var(--v3-ink);
   }
-  .v3-offer .v3-price span { font-size: 0.55em; font-weight: 700; }
-  .v3-offer .v3-note { margin: 8px 0 0; font-size: 14px; line-height: 1.45; color: var(--v3-muted); }
-  .v3-plans { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 720px; margin-top: 8px; }
-  .v3-plan { padding: 18px 20px; border-radius: 14px; background: rgba(255,255,255,.55); }
-  .v3-plan b { display: block; margin-bottom: 6px; font-size: 14px; letter-spacing: .03em; text-transform: uppercase; color: #2e5ee8; }
-  .v3-plan .v3-price { margin: 0; font-size: 28px; }
-  .v3-offer .v3-form {
-    padding: 0;
-    border-radius: 0;
-    background: none;
-    color: var(--v3-ink);
-  }
-  .v3-form-status { margin: 12px 0 0; font-size: 14px; line-height: 1.4; color: #243046; }
-  .v3-offer .v3-form h3 {
-    margin: 0 0 14px;
-    font-size: 15px;
-    font-weight: 600;
-    text-align: center;
+  .v3-offer .v3-intro {
+    margin: 0 0 28px;
+    max-width: 640px;
+    font-size: 17px;
+    line-height: 1.5;
     color: var(--v3-muted);
   }
-  .v3-offer .v3-fields {
+  .v3-plans {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin-bottom: 14px;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 16px;
   }
-  .v3-offer .v3-form input {
-    width: 100%;
-    min-height: 44px;
-    margin: 0;
-    padding: 11px 14px;
-    font: inherit;
-    font-size: 14px;
-    color: var(--v3-ink);
+  .v3-plan {
+    position: relative;
+    padding: 28px;
+    border-radius: 16px;
     background: #fff;
-    border: 1px solid #e3e8ef;
-    border-radius: 8px;
+    border: 1px solid rgba(54, 105, 253, 0.12);
   }
-  .v3-offer .v3-btn {
-    display: flex;
-    width: min(100%, 220px);
-    min-height: 44px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-    border: 0;
-    border-radius: 8px;
-    background: var(--v3-blue-dark);
+  .v3-plan--trial { border: 2px solid var(--v3-blue); }
+  .v3-plan-badge {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: var(--v3-blue);
     color: #fff;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 700;
-    cursor: pointer;
+  }
+  .v3-plan-kicker {
+    margin: 0 0 8px;
+    color: var(--v3-blue);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .v3-plan h3 {
+    margin: 0 0 10px;
+    font-size: 26px;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+  .v3-plan p { margin: 0; color: var(--v3-muted); font-size: 15px; line-height: 1.5; }
+  .v3-plan .v3-lead { margin-bottom: 16px; color: var(--v3-ink); font-size: 16px; }
+  .v3-points { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .v3-points li { display: flex; gap: 10px; align-items: flex-start; color: #3e4a5c; font-size: 14px; line-height: 1.4; }
+  .v3-points li::before {
+    content: '✓';
+    flex: 0 0 22px;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
+    background: #ebf0fe;
+    color: var(--v3-blue);
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+    font-weight: 800;
+  }
+  .v3-plan .v3-price {
+    margin: 18px 0 6px;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+  .v3-plan .v3-price span { font-size: 14px; font-weight: 700; color: var(--v3-muted); }
+  .v3-plan .v3-after {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid #dfe4ea;
+    font-size: 13px;
   }
   .v3-offer .v3-scribble {
     position: relative;
@@ -1323,9 +1332,8 @@
     stroke-linejoin: round;
   }
   @media (max-width: 900px) {
-    .v3-offer-grid { grid-template-columns: 1fr; }
-    .v3-offer .v3-fields { grid-template-columns: 1fr; }
     .v3-plans { grid-template-columns: 1fr; }
+    .v3-plan-badge { position: static; display: inline-block; margin-bottom: 12px; }
   }
 </style>
 
@@ -1336,22 +1344,30 @@
   <div class="v3-offer-leaf v3-offer-leaf--right" aria-hidden="true">
     <svg viewBox="0 0 80 80"><path d="M70 10C50 14 42 32 40 50c-8-10-22-16-34-14 8 16 24 28 44 30 8 1 16-1 20-4z"/></svg>
   </div>
-  <div class="v3-offer-grid">
-    <div>
-      <span class="v3-kicker">06 · Тарифы и заявка</span>
-      <h2 class="v3-title">Два способа начать<br><span>Idea Desk</span></h2>
-      <div class="v3-plans">
-        <article class="v3-plan">
-          <b>Вся платформа</b>
-          <div class="v3-price">20 000 ₽ <span>/ мес.</span></div>
-          <p class="v3-note">Быстрый старт. Прозрачные условия. Поддержка на всех этапах.</p>
-        </article>
-        <article class="v3-plan">
-          <b>Пробный период</b>
-          <div class="v3-price">На своей коллекции</div>
-          <p class="v3-note">Сначала смотрите, как команда ведёт идеи. Платформу подключаете, когда сценарий понятен.</p>
-        </article>
-      </div>
+  <div class="v3-offer-inner">
+    <span class="v3-kicker">06 · Тарифы и заявка</span>
+    <h2 class="v3-title">Попробуйте Idea Desk на своей коллекции</h2>
+    <p class="v3-intro">Не нужно сразу принимать решение о подключении. Сначала создайте свою коллекцию и посмотрите, как команда будет вести идеи в одном месте.</p>
+    <div class="v3-plans">
+      <article class="v3-plan v3-plan--trial">
+        <div class="v3-plan-badge">Попробовать бесплатно</div>
+        <p class="v3-plan-kicker">Начать сейчас</p>
+        <h3>Пробный период</h3>
+        <p class="v3-lead">Посмотрите Idea Desk в работе на своих реальных задачах.</p>
+        <ul class="v3-points">
+          <li>Создайте свою коллекцию и добавьте идеи</li>
+          <li>Проверьте, как команда проходит этапы разработки</li>
+          <li>Оцените, подходит ли такой сценарий вашей работе</li>
+        </ul>
+      </article>
+      <article class="v3-plan">
+        <p class="v3-plan-kicker">Когда готовы продолжить</p>
+        <h3>Вся платформа Idea Desk</h3>
+        <p>Полноценная работа команды: коллекции, идеи, материалы, согласования и подготовка моделей к передаче в производство.</p>
+        <div class="v3-price">20 000 ₽ <span>/ мес.</span></div>
+        <p>Быстрый старт. Прозрачные условия. Поддержка на всех этапах.</p>
+        <p class="v3-after">Можно перейти на полный тариф после пробного периода, когда сценарий работы станет понятен команде.</p>
+      </article>
     </div>
     <p class="v3-scribble">Начните создавать коллекции, удобные уже сегодня.
       <svg viewBox="0 0 36 44" aria-hidden="true"><path d="M18 2c2 14 1 24 0 34"/><path d="M8 26l10 12 10-12"/></svg>
