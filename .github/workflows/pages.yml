@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'tilda-landing/**'
+      - 'assets/**'
       - 'docs/tz-product-map.md'
       - 'package.json'
       - 'package-lock.json'

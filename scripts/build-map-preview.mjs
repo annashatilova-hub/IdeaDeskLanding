@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
@@ -66,6 +66,13 @@ const html = existsSync(pagePath)
   ? readFileSync(pagePath, 'utf-8').replace('<head>', `<head>\n<meta name="build" content="${buildId}">`)
   : composed;
 writeFileSync(join(docsMap, 'index.html'), html, 'utf-8');
+
+const docsAssets = join(root, 'docs/assets');
+mkdirSync(docsAssets, { recursive: true });
+copyFileSync(
+  join(root, 'assets/idea-desk-map-hero.jpg'),
+  join(docsAssets, 'idea-desk-map-hero.jpg'),
+);
 
 const blocksDir = join(docsMap, 'blocks');
 mkdirSync(blocksDir, { recursive: true });
