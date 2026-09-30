@@ -127,22 +127,33 @@ h2{font-size:clamp(28px,3.4vw,40px);line-height:1.15;letter-spacing:-.02em;margi
 }
 .role-scope:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--role-color);box-shadow:0 0 0 4px var(--role-soft)}
 .journey{background:#f3f6fb}
-.timeline{position:relative;margin-top:38px}
-.timeline:before{
-  content:"";position:absolute;left:24px;top:0;bottom:0;width:1px;background:#c9d7e1
+.journey-board{margin-top:28px}
+.journey-steps{display:flex;flex-wrap:wrap;gap:8px}
+.journey-step{
+  appearance:none;border:1px solid #d5deea;background:#fff;color:var(--text);
+  min-height:44px;padding:0 14px;border-radius:999px;font:inherit;font-size:14px;font-weight:700;
+  cursor:pointer
 }
-.timeline-item{display:grid;grid-template-columns:50px 1fr;gap:22px;position:relative;margin-bottom:20px}
-.timeline-dot{
-  width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #cbd9e2;
-  display:grid;place-items:center;color:var(--blue-dark);font-size:12px;font-weight:750;z-index:1
+.journey-step.is-done{border-color:#c5d4f8;color:var(--blue)}
+.journey-step.is-active{background:var(--blue);border-color:var(--blue);color:#fff}
+.journey-panel{
+  margin-top:16px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;
+  box-shadow:0 12px 34px rgba(31,43,65,.05)
 }
-.timeline-card{
-  background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px 24px;
-  display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center
+.journey-progress{height:4px;border-radius:99px;background:#e7eef8;margin-bottom:18px;overflow:hidden}
+.journey-progress span{display:block;height:100%;background:var(--blue);width:14%;transition:width .25s ease}
+.journey-kicker{color:var(--blue);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.journey-panel h3{margin:8px 0 10px;font-size:28px;letter-spacing:-.02em}
+.journey-panel p{margin:0;max-width:640px;font-size:18px;line-height:1.5;color:var(--text-2)}
+.journey-panel .tag{display:inline-block;margin-top:16px}
+.journey-nav{display:flex;gap:10px;margin-top:22px}
+.journey-nav button{
+  appearance:none;min-height:44px;padding:0 18px;border-radius:8px;font:inherit;font-size:15px;font-weight:700;cursor:pointer
 }
-.timeline-card h3{margin:0 0 5px;font-size:16px}
-.timeline-card p{margin:0;color:var(--text-2);font-size:13px}
-.tag{font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:7px 9px;border-radius:999px;white-space:nowrap}
+.journey-nav button[data-dir="-1"]{background:#f5f7fa;border:1px solid var(--line);color:var(--text)}
+.journey-nav button[data-dir="1"]{background:#243046;border:0;color:#fff}
+.journey-nav button:disabled{opacity:.4;cursor:default}
+.tag{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:7px 10px;border-radius:999px;white-space:nowrap}
 .systems{background:#fff}
 .system-grid{display:grid;grid-template-columns:1fr 90px 1fr;align-items:center;gap:20px}
 .system-card{
@@ -288,16 +299,29 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:12px}
   <div class="container">
     <div class="section-head">
       <div><div class="section-kicker">04 · Один пример</div><h2>Путь одной идеи</h2></div>
-      <p class="section-copy">Как одна идея проходит путь — от фото до готовности к производству.</p>
+      <p class="section-copy">Нажмите шаг и посмотрите, кто что делает — от фото до запуска в производство.</p>
     </div>
-    <div class="timeline">
-      <div class="timeline-item"><div class="timeline-dot">01</div><div class="timeline-card"><div><h3>Идея создана</h3><p>Менеджер по продукту загружает фото и описание в коллекцию сезона.</p></div><span class="tag">Idea Desk</span></div></div>
-      <div class="timeline-item"><div class="timeline-dot">02</div><div class="timeline-card"><div><h3>Фото обработано</h3><p>Фотоспециалист берёт задачу и загружает готовое фото.</p></div><span class="tag">Idea Desk</span></div></div>
-      <div class="timeline-item"><div class="timeline-dot">03</div><div class="timeline-card"><div><h3>Оценка проставлена</h3><p>Есть артикул, цена, сроки и объём — можно решать, берём идею или нет.</p></div><span class="tag">Idea Desk</span></div></div>
-      <div class="timeline-item"><div class="timeline-dot">04</div><div class="timeline-card"><div><h3>Решение «берём»</h3><p>Руководитель или команда фиксирует: идея входит в модель.</p></div><span class="tag">Idea Desk</span></div></div>
-      <div class="timeline-item"><div class="timeline-dot">05</div><div class="timeline-card"><div><h3>Модель согласована</h3><p>Цвета и состав модели утверждены, статус понятен всем.</p></div><span class="tag">Idea Desk</span></div></div>
-      <div class="timeline-item"><div class="timeline-dot">06</div><div class="timeline-card"><div><h3>Запустить в производство</h3><p>Фото, оценка и решение собраны. Модель уходит в istock.info.</p></div><span class="tag">Idea Desk</span></div></div>
-      <div class="timeline-item"><div class="timeline-dot">07</div><div class="timeline-card"><div><h3>Передано в istock.info</h3><p>Модель уходит в производство вместе с объёмом: можно размещать заказы на фабрики.</p></div><span class="tag">istock.info</span></div></div>
+    <div class="journey-board" id="journey-board">
+      <div class="journey-steps" role="tablist" aria-label="Шаги одной идеи">
+        <button type="button" class="journey-step is-active" role="tab">01 · Идея</button>
+        <button type="button" class="journey-step" role="tab">02 · Фото</button>
+        <button type="button" class="journey-step" role="tab">03 · Оценка</button>
+        <button type="button" class="journey-step" role="tab">04 · Решение</button>
+        <button type="button" class="journey-step" role="tab">05 · Модель</button>
+        <button type="button" class="journey-step" role="tab">06 · Запуск</button>
+        <button type="button" class="journey-step" role="tab">07 · Производство</button>
+      </div>
+      <div class="journey-panel">
+        <div class="journey-progress" aria-hidden="true"><span></span></div>
+        <div class="journey-kicker">Шаг <b>01</b> из 07</div>
+        <h3>Идея создана</h3>
+        <p>Менеджер по продукту загружает фото и описание в коллекцию сезона.</p>
+        <span class="tag">Idea Desk</span>
+        <div class="journey-nav">
+          <button type="button" data-dir="-1">Назад</button>
+          <button type="button" data-dir="1">Дальше</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -343,5 +367,50 @@ footer{padding:28px 0 36px;color:var(--muted);font-size:12px}
     <div>Карта процесса · <a href="../v3/">Основной лендинг</a></div>
   </div>
 </footer>
+<script>
+(function () {
+  var steps = [
+    ['Идея создана', 'Менеджер по продукту загружает фото и описание в коллекцию сезона.', 'Idea Desk'],
+    ['Фото обработано', 'Фотоспециалист берёт задачу и загружает готовое фото.', 'Idea Desk'],
+    ['Оценка проставлена', 'Есть артикул, цена, сроки и объём — можно решать, берём идею или нет.', 'Idea Desk'],
+    ['Решение «берём»', 'Руководитель или команда фиксирует: идея входит в модель.', 'Idea Desk'],
+    ['Модель согласована', 'Цвета и состав модели утверждены, статус понятен всем.', 'Idea Desk'],
+    ['Запустить в производство', 'Фото, оценка и решение собраны. Модель уходит в istock.info.', 'Idea Desk'],
+    ['Производство', 'В istock.info размещают заказы на фабрики и следят за объёмом.', 'istock.info']
+  ];
+  var board = document.getElementById('journey-board');
+  if (!board) return;
+  var buttons = board.querySelectorAll('.journey-step');
+  var title = board.querySelector('h3');
+  var text = board.querySelector('.journey-panel p');
+  var tag = board.querySelector('.tag');
+  var num = board.querySelector('.journey-kicker b');
+  var bar = board.querySelector('.journey-progress span');
+  var prev = board.querySelector('[data-dir="-1"]');
+  var next = board.querySelector('[data-dir="1"]');
+  var index = 0;
+  function show(i) {
+    index = Math.max(0, Math.min(steps.length - 1, i));
+    buttons.forEach(function (button, n) {
+      button.classList.toggle('is-active', n === index);
+      button.classList.toggle('is-done', n < index);
+      button.setAttribute('aria-selected', n === index ? 'true' : 'false');
+    });
+    title.textContent = steps[index][0];
+    text.textContent = steps[index][1];
+    tag.textContent = steps[index][2];
+    num.textContent = String(index + 1).padStart(2, '0');
+    bar.style.width = ((index + 1) / steps.length * 100) + '%';
+    prev.disabled = index === 0;
+    next.disabled = index === steps.length - 1;
+  }
+  buttons.forEach(function (button, n) {
+    button.addEventListener('click', function () { show(n); });
+  });
+  prev.addEventListener('click', function () { show(index - 1); });
+  next.addEventListener('click', function () { show(index + 1); });
+  show(0);
+})();
+</script>
 </body>
 </html>
